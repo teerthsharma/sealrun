@@ -26,7 +26,7 @@ def white_noise(rng):
 
 
 class Lab(unittest.TestCase):
-    def variogram_slope_recovers_h_half(self):
+    def hurst_recovers_half_on_synthetic_ground(self):
         rng = random.Random(7)
         rough = fractal.hurst(integrated_noise(rng), LAGS)
         white = fractal.hurst(white_noise(rng), LAGS)

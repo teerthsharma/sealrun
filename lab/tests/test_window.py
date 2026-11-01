@@ -13,7 +13,7 @@ REGION = SERVER / "world" / "region"
 
 
 class Lab(unittest.TestCase):
-    def window_box_and_digest_are_stable(self):
+    def window_box_and_fingerprint_hold_on_real_chunks(self):
         lo, hi = (0, 0, 16), (3, 2, 19)
         box = window.box(REGION, lo, hi)
         self.assertEqual(len(box), 4 * 3 * 4)

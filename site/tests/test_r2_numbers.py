@@ -9,7 +9,7 @@ import r2_numbers
 
 
 class Lab(unittest.TestCase):
-    def test_numbers_read_live_missing_is_not_run(self):
+    def test_numbers_are_read_fresh_and_missing_says_not_run(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "aim.json").write_text(json.dumps({"lever": True}), encoding="utf-8")
