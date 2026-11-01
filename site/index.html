@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sealrun goals</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f5f1;
+  --surface: #fffffc;
+  --ink: #1d2127;
+  --muted: #5b6370;
+  --rule: #d9d6cc;
+  --pending: #656d78;
+  --active: #1f5fd1;
+  --failing: #b3261e;
+  --reached: #17703f;
+  --holds: #17703f;
+  --change: #8a5300;
+  --breaks: #b3261e;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171b;
+    --surface: #1c1f25;
+    --ink: #e9e7e1;
+    --muted: #a3a9b2;
+    --rule: #33373f;
+    --pending: #a3aab4;
+    --active: #8db4ff;
+    --failing: #ff8f84;
+    --reached: #7fd6a2;
+    --holds: #7fd6a2;
+    --change: #f0bd6a;
+    --breaks: #ff8f84;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font: 1rem/1.6 var(--sans); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+code { font-family: ui-monospace, Consolas, monospace; font-size: 0.85em; overflow-wrap: anywhere; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+p { margin: 0; }
+.wrap { max-width: 52rem; margin: 0 auto; padding: 0 16px; }
+
+[data-status="pending"] { --c: var(--pending); }
+[data-status="active"] { --c: var(--active); }
+[data-status="failing"] { --c: var(--failing); }
+[data-status="reached"] { --c: var(--reached); }
+[data-verdict="holds"] { --c: var(--holds); }
+[data-verdict="change"] { --c: var(--change); }
+[data-verdict="breaks"] { --c: var(--breaks); }
+
+.hero { padding: 5rem 0 3rem; border-bottom: 1px solid var(--rule); }
+.hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); letter-spacing: -0.02em; line-height: 1; margin: 0; }
+.promise { font: 1.35rem/1.45 var(--serif); max-width: 28ch; margin: 1rem 0 2rem; }
+.counts { display: flex; flex-wrap: wrap; gap: 0.6rem 1.75rem; margin: 0; padding: 0; list-style: none; color: var(--muted); }
+.counts li { display: flex; align-items: baseline; gap: 0.4rem; }
+.counts strong { font: 600 1.5rem var(--serif); color: var(--ink); }
+.swatch { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--c); align-self: center; }
+
+.tree { margin-top: 2.5rem; }
+.branch { margin-top: 2rem; }
+.kids { margin: 0.5rem 0 0 0.4rem; padding-left: 1.1rem; border-left: 1px solid var(--rule); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1.1rem 1.25rem;
+  margin: 0.9rem 0;
+  max-width: 40rem;
+}
+.card h2 { font-size: 1.6rem; margin: 0.35rem 0 0.5rem; }
+.card h3 { font-size: 1.3rem; margin: 0.35rem 0 0.5rem; }
+.card h4 { font-size: 1.12rem; margin: 0.35rem 0 0.5rem; }
+.plain { margin-top: 0.5rem; }
+.gid { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; font-size: 0.88rem; color: var(--muted); }
+.pill {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  color: var(--c, var(--muted));
+  border: 1px solid currentColor; border-radius: 999px;
+  padding: 0.05rem 0.6rem; font-size: 0.82rem;
+}
+.pill::before { content: ""; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: currentColor; }
+dl { display: grid; gap: 0.7rem; margin: 0.8rem 0 0; }
+dt { font-size: 0.85rem; color: var(--muted); }
+dd { margin: 0.1rem 0 0; }
+dd ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+.meta { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; margin-top: 0.9rem; font-size: 0.88rem; color: var(--muted); }
+
+.section { margin-top: 5rem; }
+.section > h2 { font-size: 2rem; margin: 0 0 0.5rem; }
+.intro { color: var(--muted); max-width: 44ch; margin-bottom: 1.5rem; }
+.facts { list-style: none; margin: 0; padding: 0; }
+.facts li { border-top: 1px solid var(--rule); padding: 1rem 0 1.1rem; max-width: 40rem; }
+.facts p + p { margin-top: 0.35rem; }
+.source { font-size: 0.85rem; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .hero { padding-top: 3rem; }
+  .kids { padding-left: 0.75rem; margin-left: 0.2rem; }
+  .card { padding: 1rem; }
+}
+</style>
+</head>
+<body>
+<main class="wrap" id="app"><p>Loading goals.</p></main>
+<script>
+function renderPage(data) {
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const linked = (s) => esc(s).replace(/https?:\/\/[^\s<]+/g, (u) => `<a href="${u}">${u}</a>`);
+  const goals = data.goals;
+  const byId = Object.fromEntries(goals.map((g) => [g.id, g]));
+  const deptTitle = Object.fromEntries(data.departments.map((d) => [d.name, d.title]));
+  const role = { Foreman: 'plan step', Chase: 'safety check' };
+  const statuses = ['pending', 'active', 'failing', 'reached'];
+  const verdictKey = (v) => (/does not/.test(v) ? 'breaks' : /change/.test(v) ? 'change' : 'holds');
+  const kids = (id) => goals.filter((g) => g.parent === id);
+
+  const card = (g, tag) => `<article class="card" id="goal-${esc(g.id)}" data-goal="${esc(g.id)}">
+    <p class="gid"><span>${esc(g.id)}</span><span class="pill" data-status="${esc(g.status)}">${esc(g.status)}</span></p>
+    <${tag}>${esc(g.title)}</${tag}>
+    ${g.plain ? `<p class="plain">${esc(g.plain)}</p>` : ''}
+    <dl>
+      ${g.why ? `<div><dt>Why it matters</dt><dd>${esc(g.why)}</dd></div>` : ''}
+      ${g.done_when ? `<div><dt>Done when</dt><dd>${esc(g.done_when)}</dd></div>` : ''}
+    </dl>
+    <p class="meta"><span>Charted by ${esc(g.fellow)}${role[g.fellow] ? `, ${role[g.fellow]}` : ''}</span>${deptTitle[g.department] ? `<span>${esc(deptTitle[g.department])}</span>` : ''}</p>
+  </article>`;
+
+  const node = (g, level) => {
+    const tag = `h${Math.min(level + 2, 4)}`;
+    const children = kids(g.id);
+    if (!children.length) return card(g, tag);
+    return `<section class="branch">${card(g, tag)}<div class="kids">${children.map((c) => node(c, level + 1)).join('')}</div></section>`;
+  };
+
+  const counts = statuses.map((s) => [s, goals.filter((g) => g.status === s).length]);
+  const hero = `<header class="hero">
+    <h1>sealrun</h1>
+    <p class="promise">Speedrun a game by reading the shape of its world.</p>
+    <ul class="counts">
+      <li><strong>${goals.length}</strong> goals</li>
+      ${counts.map(([s, n]) => `<li data-status="${s}"><span class="swatch"></span><strong>${n}</strong> ${s}</li>`).join('')}
+    </ul>
+  </header>`;
+
+  const theory = `<section class="section" id="theory">
+    <h2>The theory, checked</h2>
+    <p class="intro">Ten claims from the owner, each with a verdict and what sealrun keeps.</p>
+    ${data.theory.map((t) => `<article class="card">
+      <p class="gid"><span>${esc(t.claim)}</span><span class="pill" data-verdict="${verdictKey(t.verdict)}">${esc(t.verdict)}</span></p>
+      <h3>${esc(t.plain)}</h3>
+      <dl>
+        <div><dt>Why</dt><dd>${esc(t.why)}</dd></div>
+        <div><dt>What sealrun keeps</dt><dd>${esc(t.keep)}</dd></div>
+      </dl>
+    </article>`).join('')}
+  </section>`;
+
+  const facts = `<section class="section" id="facts">
+    <h2>Facts</h2>
+    <p class="intro">Checked facts, each with the source it came from.</p>
+    <ol class="facts">${data.facts.map((f) => `<li id="fact-${esc(f.id)}">
+      <p class="gid"><span>${esc(f.id)}</span></p>
+      <p>${esc(f.plain)}</p>
+      <p class="source"><code>${linked(f.source)}</code></p>
+    </li>`).join('')}</ol>
+  </section>`;
+
+  const skills = (label, list) => (list && list.length
+    ? `<div><dt>${label}</dt><dd><ul>${list.map((s) => `<li><strong>${esc(s.skill)}</strong>, ${esc(s.why)}</li>`).join('')}</ul></dd></div>`
+    : '');
+
+  const departments = `<section class="section" id="departments">
+    <h2>Departments</h2>
+    <p class="intro">Each team that builds part of sealrun, and the skills it loads first.</p>
+    ${data.departments.map((d) => `<article class="card" id="dept-${esc(d.name)}">
+      <h3>${esc(d.title)}</h3>
+      <p class="plain">${esc(d.plain)}</p>
+      <p class="meta">${d.goals.length ? d.goals.map((id) => `<a href="#goal-${esc(id)}">${esc(id)}</a>`).join('') : '<span>No goals of its own</span>'}</p>
+      <dl>${skills('Residents load', d.residents_skills)}${skills('Nurses load', d.nurses_skills)}</dl>
+    </article>`).join('')}
+  </section>`;
+
+  const alternatives = `<section class="section" id="ideas-that-lost">
+    <h2>Ideas that lost</h2>
+    <p class="intro">Ideas that were considered and dropped on cost, each with the goal it competed with.</p>
+    ${data.alternatives.map((a) => {
+      const target = byId[a.alt_of];
+      return `<article class="card" data-alt="${esc(a.id)}">
+        <p class="gid"><span>${esc(a.id)}</span><span class="pill" data-status="${esc(a.status)}">${esc(a.status)}</span></p>
+        <h3>${esc(a.title)}</h3>
+        <p class="plain">${esc(a.plain)}</p>
+        <dl><div><dt>Why it matters</dt><dd>${esc(a.why)}</dd></div></dl>
+        <p class="meta"><span>Alternative to <a href="#goal-${esc(a.alt_of)}">${esc(a.alt_of)}${target ? ` ${esc(target.title)}` : ''}</a></span></p>
+      </article>`;
+    }).join('')}
+  </section>`;
+
+  return hero
+    + `<section class="tree" aria-label="Goals">${node(byId[data.need], 0)}</section>`
+    + theory + facts + departments + alternatives;
+}
+</script>
+<script>
+fetch('goals.json')
+  .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+  .then((data) => { document.getElementById('app').innerHTML = renderPage(data); })
+  .catch(() => {
+    document.getElementById('app').textContent = 'Could not load goals.json. Serve the site folder over http, for example python -m http.server.';
+  });
+</script>
+</body>
+</html>
