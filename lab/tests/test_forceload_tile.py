@@ -18,17 +18,7 @@ CENTRE = (64, 64)
 TICKET = "forceload add 1024 1024"
 IST = timezone(timedelta(hours=5, minutes=30))
 RESULT = Path(__file__).resolve().parents[1] / "results" / "forceload_tile.json"
-RAYS = {
-    "east": (1, 0),
-    "west": (-1, 0),
-    "south": (0, 1),
-    "north": (0, -1),
-    "southeast": (1, 1),
-    "southwest": (-1, 1),
-    "northeast": (1, -1),
-    "northwest": (-1, -1),
-}
-DISTANCES = range(4)
+OFFSETS = range(-3, 4)
 
 
 class Lab(unittest.TestCase):
@@ -44,27 +34,25 @@ class Lab(unittest.TestCase):
 
             region = scratch["dir"] / "world" / "region"
             cx, cz = CENTRE
-            rays = {
-                name: {
-                    str(d): anvil.chunk_status(region, cx + ux * d, cz + uz * d)
-                    for d in DISTANCES
-                }
-                for name, (ux, uz) in RAYS.items()
+            grid = {
+                f"{dx},{dz}": anvil.chunk_status(region, cx + dx, cz + dz)
+                for dx in OFFSETS
+                for dz in OFFSETS
             }
             payload = {
                 "centre": list(CENTRE),
                 "ticket": TICKET,
-                "ticket_held_at_stop": True,
                 "when": datetime.now(IST).isoformat(timespec="seconds"),
-                "rays": rays,
+                "grid": grid,
             }
             with open(RESULT, "w") as f:
                 json.dump(payload, f, indent=1)
 
-            for name, by_d in rays.items():
-                for d in DISTANCES:
+            for dx in OFFSETS:
+                for dz in OFFSETS:
+                    d = max(abs(dx), abs(dz))
                     want = "full" if d <= 2 else None
-                    self.assertEqual(by_d[str(d)], want, f"{name} d={d}")
+                    self.assertEqual(grid[f"{dx},{dz}"], want, f"dx={dx} dz={dz} d={d}")
         finally:
             if srv is not None:
                 srv.stop()
