@@ -40,6 +40,8 @@ class Lab(unittest.TestCase):
     def test_settle_does_not_change_blocks(self):
         a = self._world(0)
         b = self._world(60)
+        self.assertEqual(sum(v is None for v in a.values()), 0)
+        self.assertEqual(sum(v is None for v in b.values()), 0)
         fp_a = window.fingerprint(a)
         fp_b = window.fingerprint(b)
         print(f"fingerprint A (saved at once) {fp_a} positions {len(a)} not_full {sum(v is None for v in a.values())}")
