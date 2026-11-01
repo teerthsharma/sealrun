@@ -1416,6 +1416,418 @@
         ]
       },
       "when": "2026-11-01T14:14:22.017168+05:30"
+    },
+    {
+      "experiment": "E2",
+      "campaign_sha": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1",
+      "worlds": [
+        "lab/results/research/worlds/E2_PQRS.json",
+        "lab/results/research/worlds/E2_PQRS_r2.json",
+        "lab/results/research/worlds/E2_PQSR.json",
+        "lab/results/research/worlds/E2_PRQS.json",
+        "lab/results/research/worlds/E2_PRSQ.json",
+        "lab/results/research/worlds/E2_PSQR.json",
+        "lab/results/research/worlds/E2_PSRQ.json"
+      ],
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "repeat_control": {
+        "void": true,
+        "mismatches": [
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "62,63",
+            "shas": [
+              "12f656ebc89c720e9b178489b6339cd1efb1a598bca39b6a33dea1dd0562d758",
+              "d7a46d8dc2cbce5cf8b55f131dac3a2f029a03ee84ff62f68c8140c81e33be12"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "62,64",
+            "shas": [
+              "611f0752ea1edd1d31674327af57754b951846a5496da4169f1e230c95d5561c",
+              "8413f94a9002b03d4d6d0edc71cecc0e05f913d5b31f3fb70646599fe35466a0"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "62,66",
+            "shas": [
+              "67115b7fa32e1867d4bd73a77c63fb0a7beacfa95ad72f90f937333a10b4bd0c",
+              "8c392f1bdb7f8096717b050c35acffd31f16fc5fdb1001a916983ede429bce6c"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "62,67",
+            "shas": [
+              "ff24a8ec29c77bc75fa13629d6f886f45ff0d679b0d0a8d9e6d24c175159f2ce",
+              "ffc0d8abf08418b50deb495219a44c21fe55bfdd141dc441de7a78628880d09e"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "63,66",
+            "shas": [
+              "2798c280c1cdbd82913a88e1610c569b6792e13f6e78cb5a00d442635add6813",
+              "dbe6d91f036f8e0785ae1ffe9dc72335929e29abc119aaaa726606ff5567a882"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "63,67",
+            "shas": [
+              "4192c642d78bd7d975f1d985c87eac178fcdf3a23db6e0c0aa050b29da6cd7e8",
+              "acc9b0fda13618ab8631ea62b5729d2dd0f2562e20e2d441d0576c4cadb3d3cb"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "64,66",
+            "shas": [
+              "21c2caf507afe54c7c604ea9b38487a1b1c3cca52eec6851fce0981557111625",
+              "5f355e868b087f6ef62596cce1fa7f14db9f065836208b8efd7187f70f6266f1"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "64,67",
+            "shas": [
+              "14d87d01034611641496c305361b8f6bff39d06f3d99f967e166c31d3387d19d",
+              "2912e58e63b1c7697177b974b3dac4715fa1291500ab0d76ebcd5950cf66db1a"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "66,62",
+            "shas": [
+              "9f8a5571e114b221ffb4dc7ce28318b97d77502ec1d46e0ab5c6b8e07e79f9bd",
+              "f1df692295ac3b932aae03da56efd0cb66fbd87073aa00791d02d8ec59ed298d"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "66,63",
+            "shas": [
+              "251580b4f24d76301c3462a69305e50904890a333087c026a9ef403fa6602905",
+              "ecb704e337dd1b3a58344385767a6f884987fdd91e3ce2dd3bea3d8e1e5b1af7"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "66,64",
+            "shas": [
+              "104dd81c0d2e18ed86c86ded3cfc3f50934fe5f76895a06e1dc7e329406bf858",
+              "b674152e6e73bc618edab6f212c1dada124a980f2e81a65fe97743bdd76a86c9"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "66,65",
+            "shas": [
+              "ba4e87cc7c722fe9c4e3ae4a01e78908f8b2ac2d84bfd92f93707e97b0ca47fd",
+              "cab1ecc90cae11f1392e109e3c5752907dc1f06e1c0cac2735849a3447912419"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "67,62",
+            "shas": [
+              "1be4efe6ed8f10a41f7dbc7edd03f5e802924eaedc54b44bdf8a8dfbade36101",
+              "a0c175c54a0d49209f6b6a37d6b79e22cabb19c835a40ea01d75a5da0f9b69fb"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "67,63",
+            "shas": [
+              "9455f3b287bc5013296301c48f6b079571549a46824e8aef691cc06e778fa70a",
+              "dace6f3f761cb26973497958bf5eba510f7f0a4cc1dcdefbb6be9fc4943df446"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "67,64",
+            "shas": [
+              "48d000351de87723eb8e4339ae2fa5ef880a0bb9de9c2812ab841002b225b379",
+              "ffe3b64a151c5b45849df239189c3ef44c185d2704f070f189f438706cdd253c"
+            ]
+          }
+        ]
+      },
+      "when": "2026-11-01T14:14:48.018842+05:30"
     }
   ]
 }
