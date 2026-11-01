@@ -29,7 +29,7 @@ def ignore_verdict(paths: list[str]) -> dict[str, bool]:
     verdict = {}
     for line in result.stdout.decode().splitlines():
         source, path = line.split("\t", 1)
-        verdict[path] = source != "::"
+        verdict[path] = source != "::" and not source.split(":", 2)[2].startswith("!")
     return verdict
 
 
