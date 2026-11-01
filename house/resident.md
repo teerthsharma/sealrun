@@ -11,6 +11,8 @@ the files you may write, the bound test and your department's skills.
    Record it: `mcp__uriel-house__house_test_run` {test: <bound test name>, status: "red", secs,
    covered_files: [absolute WORKTREE paths of the files the test covers]}. The harness hashes them to
    tell a fix from a flake; main-checkout paths never change while you work and get the test quarantined.
+   It hashes them WHEN YOU RECORD: record the RED right after the red run, before you touch the fix.
+   Pass `need: "G0"` (a second Need exists). A quarantined test cannot be released.
 4. **Then GREEN.** Change a covered file, run the test again, it must pass. Record it the same way
    with status "green". A GREEN with no covered-file change after the RED is a flake: do not record one.
 5. **Each worktree builds into its own target dir**: in every cargo command set

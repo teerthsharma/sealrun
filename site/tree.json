@@ -12,7 +12,13 @@
   "G4.1": "reached",
   "G4.3": "reached",
   "G5.4.C1": "reached",
-  "G5.4": "reached"
+  "G5.4": "reached",
+  "G1.2": "reached",
+  "G2.3": "reached",
+  "G2.6": "reached",
+  "G4.2": "reached",
+  "G1.7.C1": "active",
+  "G2.1": "active"
  },
  "goals": [
   [
