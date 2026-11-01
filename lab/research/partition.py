@@ -164,10 +164,12 @@ def verdict(source, measured, expected_orders, predicted, predicted_partition=No
     base = {"source": source, "basis": basis, "n_orders": measured["n_orders"],
             "expected_orders": expected_orders, "predicted_classes": predicted,
             "measured_classes": measured["n_classes"]}
-    if excluded:
-        return base | {"status": "noisy_chunks_excluded", "match": None, "partition_match": None}
-    if measured["n_orders"] != expected_orders:
-        return base | {"status": "partial_coverage", "match": None, "partition_match": None}
+    if excluded or measured["n_orders"] != expected_orders:
+        cause = "noisy_chunks_excluded" if excluded else "partial_coverage"
+        if measured["n_classes"] > predicted:
+            return base | {"status": "refuted_lower_bound", "cause": cause, "match": False,
+                           "partition_match": None}
+        return base | {"status": cause, "match": None, "partition_match": None}
     res = base | {"status": "compared", "match": predicted == measured["n_classes"],
                   "partition_match": None}
     if predicted_partition is not None:

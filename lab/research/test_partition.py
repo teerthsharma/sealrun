@@ -367,5 +367,26 @@ class Polytope(unittest.TestCase):
             self.assertEqual(e["status"], "no_entry")
 
 
+class LowerBound(unittest.TestCase):
+    def meas(self, n_orders, n_classes):
+        return {"n_orders": n_orders, "n_classes": n_classes, "classes": []}
+
+    def test_clean_classes_above_prediction_refute_it_under_exclusion(self):
+        v = P.verdict("sim", self.meas(6, 6), 6, 4, excluded=True)
+        self.assertEqual(v["status"], "refuted_lower_bound")
+        self.assertFalse(v["match"])
+        self.assertEqual(v["cause"], "noisy_chunks_excluded")
+
+    def test_clean_classes_at_or_below_prediction_stay_inconclusive(self):
+        v = P.verdict("sim", self.meas(6, 3), 6, 4, excluded=True)
+        self.assertEqual(v["status"], "noisy_chunks_excluded")
+        self.assertIsNone(v["match"])
+
+    def test_partial_coverage_can_also_refute_by_lower_bound(self):
+        v = P.verdict("cameron", self.meas(2, 5), 24, 4)
+        self.assertEqual(v["status"], "refuted_lower_bound")
+        self.assertEqual(v["cause"], "partial_coverage")
+
+
 if __name__ == "__main__":
     unittest.main()
