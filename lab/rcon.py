@@ -40,8 +40,13 @@ class Client:
     def command(self, text: str) -> str:
         n = self._next_id
         self._next_id += 2
-        self._sock.sendall(encode(n, COMMAND, text) + encode(n + 1, RESPONSE, ""))
+        self._sock.sendall(encode(n, COMMAND, text))
         parts = []
+        while not parts:
+            rid, _, body = self._recv()
+            if rid == n:
+                parts.append(body)
+        self._sock.sendall(encode(n + 1, RESPONSE, ""))
         while True:
             rid, _, body = self._recv()
             if rid == n + 1:
