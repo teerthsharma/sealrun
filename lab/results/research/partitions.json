@@ -816,6 +816,1719 @@
         "status": "no_ore_counts"
       },
       "when": "2026-11-01T08:48:11.412803+00:00"
+    },
+    {
+      "experiment": "E1",
+      "inputs": [
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_ABC.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_ABC_r2.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_ACB.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_BAC.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_BCA.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_CAB.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_CBA.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E1_CBA_r2.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        }
+      ],
+      "n_worlds": 8,
+      "pairs": [
+        {
+          "a": "E1_ABC",
+          "b": "E1_ABC_r2",
+          "diff_total": 275
+        },
+        {
+          "a": "E1_ABC",
+          "b": "E1_ACB",
+          "diff_total": 3993
+        },
+        {
+          "a": "E1_ABC",
+          "b": "E1_BAC",
+          "diff_total": 1399
+        },
+        {
+          "a": "E1_ABC",
+          "b": "E1_BCA",
+          "diff_total": 1338
+        },
+        {
+          "a": "E1_ABC",
+          "b": "E1_CAB",
+          "diff_total": 4329
+        },
+        {
+          "a": "E1_ABC",
+          "b": "E1_CBA",
+          "diff_total": 4892
+        },
+        {
+          "a": "E1_ABC",
+          "b": "E1_CBA_r2",
+          "diff_total": 4732
+        },
+        {
+          "a": "E1_ABC_r2",
+          "b": "E1_ACB",
+          "diff_total": 3854
+        },
+        {
+          "a": "E1_ABC_r2",
+          "b": "E1_BAC",
+          "diff_total": 1268
+        },
+        {
+          "a": "E1_ABC_r2",
+          "b": "E1_BCA",
+          "diff_total": 1263
+        },
+        {
+          "a": "E1_ABC_r2",
+          "b": "E1_CAB",
+          "diff_total": 4266
+        },
+        {
+          "a": "E1_ABC_r2",
+          "b": "E1_CBA",
+          "diff_total": 4697
+        },
+        {
+          "a": "E1_ABC_r2",
+          "b": "E1_CBA_r2",
+          "diff_total": 4671
+        },
+        {
+          "a": "E1_ACB",
+          "b": "E1_BAC",
+          "diff_total": 3626
+        },
+        {
+          "a": "E1_ACB",
+          "b": "E1_BCA",
+          "diff_total": 3637
+        },
+        {
+          "a": "E1_ACB",
+          "b": "E1_CAB",
+          "diff_total": 3200
+        },
+        {
+          "a": "E1_ACB",
+          "b": "E1_CBA",
+          "diff_total": 3597
+        },
+        {
+          "a": "E1_ACB",
+          "b": "E1_CBA_r2",
+          "diff_total": 2964
+        },
+        {
+          "a": "E1_BAC",
+          "b": "E1_BCA",
+          "diff_total": 115
+        },
+        {
+          "a": "E1_BAC",
+          "b": "E1_CAB",
+          "diff_total": 3946
+        },
+        {
+          "a": "E1_BAC",
+          "b": "E1_CBA",
+          "diff_total": 3583
+        },
+        {
+          "a": "E1_BAC",
+          "b": "E1_CBA_r2",
+          "diff_total": 3445
+        },
+        {
+          "a": "E1_BCA",
+          "b": "E1_CAB",
+          "diff_total": 3929
+        },
+        {
+          "a": "E1_BCA",
+          "b": "E1_CBA",
+          "diff_total": 3574
+        },
+        {
+          "a": "E1_BCA",
+          "b": "E1_CBA_r2",
+          "diff_total": 3552
+        },
+        {
+          "a": "E1_CAB",
+          "b": "E1_CBA",
+          "diff_total": 789
+        },
+        {
+          "a": "E1_CAB",
+          "b": "E1_CBA_r2",
+          "diff_total": 2989
+        },
+        {
+          "a": "E1_CBA",
+          "b": "E1_CBA_r2",
+          "diff_total": 2456
+        }
+      ],
+      "pairs_complete": true,
+      "pairs_source": "C:/Users/seal/AppData/Local/Temp/claude/C--Users-seal-Documents-GitHub-sealrun/f708d1ce-97b8-4985-b4ab-75b219fa060b/scratchpad/in/campaign2/quotient_E1.json",
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "shape": null,
+      "r_dec": 3,
+      "noise": {
+        "rule": "a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are removed before the classes, per-chunk partitions and ore comparison; diff counts come from the campaign diff report when given",
+        "clean_chunks": [
+          "62,65",
+          "63,63",
+          "63,64",
+          "63,65",
+          "64,63",
+          "64,64",
+          "64,66",
+          "65,63",
+          "65,64",
+          "65,65",
+          "65,66",
+          "66,66",
+          "67,65",
+          "67,66",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "69,65",
+          "69,66",
+          "70,62",
+          "70,63",
+          "70,65",
+          "71,64",
+          "73,64",
+          "74,64",
+          "75,63",
+          "75,64",
+          "76,64",
+          "76,65"
+        ],
+        "noisy_chunks": [
+          "62,62",
+          "62,63",
+          "62,64",
+          "62,66",
+          "63,62",
+          "63,66",
+          "64,62",
+          "64,65",
+          "65,62",
+          "66,62",
+          "66,63",
+          "66,64",
+          "66,65",
+          "67,62",
+          "67,63",
+          "67,64",
+          "68,62",
+          "69,62",
+          "69,63",
+          "69,64",
+          "70,64",
+          "70,66",
+          "71,62",
+          "71,63",
+          "71,65",
+          "71,66",
+          "72,62",
+          "72,63",
+          "72,64",
+          "72,65",
+          "72,66",
+          "73,62",
+          "73,63",
+          "73,65",
+          "73,66",
+          "74,62",
+          "74,63",
+          "74,65",
+          "74,66",
+          "75,62",
+          "75,65",
+          "75,66",
+          "76,62",
+          "76,63",
+          "76,66"
+        ],
+        "noisy": [
+          {
+            "chunk": "62,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 1
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 16
+              }
+            ],
+            "max_diff_blocks": 16
+          },
+          {
+            "chunk": "62,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 36
+              }
+            ],
+            "max_diff_blocks": 36
+          },
+          {
+            "chunk": "62,64",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 37
+              }
+            ],
+            "max_diff_blocks": 37
+          },
+          {
+            "chunk": "62,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 40
+              }
+            ],
+            "max_diff_blocks": 40
+          },
+          {
+            "chunk": "63,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 24
+              }
+            ],
+            "max_diff_blocks": 24
+          },
+          {
+            "chunk": "63,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 3
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 15
+              }
+            ],
+            "max_diff_blocks": 15
+          },
+          {
+            "chunk": "64,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 20
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 25
+              }
+            ],
+            "max_diff_blocks": 25
+          },
+          {
+            "chunk": "64,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 1
+              }
+            ],
+            "max_diff_blocks": 1
+          },
+          {
+            "chunk": "65,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 13
+              }
+            ],
+            "max_diff_blocks": 13
+          },
+          {
+            "chunk": "66,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 10
+              }
+            ],
+            "max_diff_blocks": 10
+          },
+          {
+            "chunk": "66,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "66,64",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 30
+              }
+            ],
+            "max_diff_blocks": 30
+          },
+          {
+            "chunk": "66,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "67,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 10
+              }
+            ],
+            "max_diff_blocks": 10
+          },
+          {
+            "chunk": "67,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 20
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 20
+              }
+            ],
+            "max_diff_blocks": 20
+          },
+          {
+            "chunk": "67,64",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 8
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 8
+              }
+            ],
+            "max_diff_blocks": 8
+          },
+          {
+            "chunk": "68,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 1
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 21
+              }
+            ],
+            "max_diff_blocks": 21
+          },
+          {
+            "chunk": "69,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 9
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 10
+              }
+            ],
+            "max_diff_blocks": 10
+          },
+          {
+            "chunk": "69,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 3
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 3
+              }
+            ],
+            "max_diff_blocks": 3
+          },
+          {
+            "chunk": "69,64",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 5
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 5
+              }
+            ],
+            "max_diff_blocks": 5
+          },
+          {
+            "chunk": "70,64",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 1
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 1
+              }
+            ],
+            "max_diff_blocks": 1
+          },
+          {
+            "chunk": "70,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 3
+              }
+            ],
+            "max_diff_blocks": 3
+          },
+          {
+            "chunk": "71,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 10
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 26
+              }
+            ],
+            "max_diff_blocks": 26
+          },
+          {
+            "chunk": "71,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 1
+              }
+            ],
+            "max_diff_blocks": 1
+          },
+          {
+            "chunk": "71,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 15
+              }
+            ],
+            "max_diff_blocks": 15
+          },
+          {
+            "chunk": "71,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 16
+              }
+            ],
+            "max_diff_blocks": 16
+          },
+          {
+            "chunk": "72,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 401
+              }
+            ],
+            "max_diff_blocks": 401
+          },
+          {
+            "chunk": "72,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 419
+              }
+            ],
+            "max_diff_blocks": 419
+          },
+          {
+            "chunk": "72,64",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 1
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 9
+              }
+            ],
+            "max_diff_blocks": 9
+          },
+          {
+            "chunk": "72,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "72,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 49
+              }
+            ],
+            "max_diff_blocks": 49
+          },
+          {
+            "chunk": "73,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 6
+              }
+            ],
+            "max_diff_blocks": 6
+          },
+          {
+            "chunk": "73,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 6
+              }
+            ],
+            "max_diff_blocks": 6
+          },
+          {
+            "chunk": "73,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 4
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 5
+              }
+            ],
+            "max_diff_blocks": 5
+          },
+          {
+            "chunk": "73,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 307
+              }
+            ],
+            "max_diff_blocks": 307
+          },
+          {
+            "chunk": "74,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 8
+              }
+            ],
+            "max_diff_blocks": 8
+          },
+          {
+            "chunk": "74,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 7
+              },
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 4
+              }
+            ],
+            "max_diff_blocks": 7
+          },
+          {
+            "chunk": "74,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 5
+              }
+            ],
+            "max_diff_blocks": 5
+          },
+          {
+            "chunk": "74,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 499
+              }
+            ],
+            "max_diff_blocks": 499
+          },
+          {
+            "chunk": "75,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 30
+              }
+            ],
+            "max_diff_blocks": 30
+          },
+          {
+            "chunk": "75,65",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "75,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 17
+              }
+            ],
+            "max_diff_blocks": 17
+          },
+          {
+            "chunk": "76,62",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 446
+              }
+            ],
+            "max_diff_blocks": 446
+          },
+          {
+            "chunk": "76,63",
+            "repeat_pairs": [
+              {
+                "a": "E1_CBA",
+                "b": "E1_CBA_r2",
+                "order": "74,64;69,64;64,64",
+                "diff_blocks": 24
+              }
+            ],
+            "max_diff_blocks": 24
+          },
+          {
+            "chunk": "76,66",
+            "repeat_pairs": [
+              {
+                "a": "E1_ABC",
+                "b": "E1_ABC_r2",
+                "order": "64,64;69,64;74,64",
+                "diff_blocks": 1
+              }
+            ],
+            "max_diff_blocks": 1
+          }
+        ],
+        "repeat_pairs_tested": 2
+      },
+      "n_orders": 6,
+      "n_classes": 6,
+      "bits_lost": 0.0,
+      "valid_partition": true,
+      "conflicted_orders": 0,
+      "conflicted": [],
+      "classes": [
+        {
+          "members": [
+            "64,64;69,64;74,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,64;74,64;69,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "69,64;64,64;74,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "69,64;74,64;64,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "74,64;64,64;69,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "74,64;69,64;64,64"
+          ],
+          "n_orders": 1
+        }
+      ],
+      "per_chunk": {
+        "62,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "74,64;64,64;69,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,63": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,63": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,66": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,63": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "74,64;64,64;69,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,64": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "74,64;64,64;69,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,66": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "66,66": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "67,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "67,66": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64"
+            ],
+            [
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "68,63": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64"
+            ],
+            [
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "68,64": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "68,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "64,64;74,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "68,66": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "64,64;74,64;69,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "69,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "69,66": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "69,64;64,64;74,64",
+              "74,64;64,64;69,64"
+            ],
+            [
+              "64,64;74,64;69,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "69,64;74,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "70,62": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "70,63": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64"
+            ],
+            [
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "70,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64"
+            ],
+            [
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "71,64": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64"
+            ],
+            [
+              "64,64;74,64;69,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ],
+            [
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "73,64": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64"
+            ],
+            [
+              "64,64;74,64;69,64"
+            ],
+            [
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "74,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "75,63": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "75,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "76,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "76,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;69,64;74,64",
+              "64,64;74,64;69,64",
+              "69,64;64,64;74,64",
+              "69,64;74,64;64,64",
+              "74,64;64,64;69,64",
+              "74,64;69,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        }
+      },
+      "per_chunk_refinement_violations": 0,
+      "all_chunks": {
+        "n_orders": 6,
+        "n_classes": 8,
+        "valid_partition": false,
+        "conflicted_orders": 2,
+        "conflicted": [
+          "64,64;69,64;74,64",
+          "74,64;69,64;64,64"
+        ]
+      },
+      "transitivity": {
+        "items": 8,
+        "distinct_ordered_triples": 336,
+        "violating_triples": 0,
+        "symmetry_violations": 0,
+        "diagonal_violations": 0,
+        "zero_vs_class_disagreements": 0
+      },
+      "predictions": [
+        {
+          "source": "sim",
+          "basis": "E1 r_dec=3",
+          "n_orders": 6,
+          "expected_orders": 6,
+          "predicted_classes": 4,
+          "measured_classes": 6,
+          "status": "refuted_lower_bound",
+          "cause": "noisy_chunks_excluded",
+          "match": false,
+          "partition_match": null
+        },
+        {
+          "source": "polytope",
+          "basis": "stamp family F, R=3",
+          "n_orders": 6,
+          "expected_orders": 6,
+          "predicted_classes": 4,
+          "measured_classes": 6,
+          "status": "refuted_lower_bound",
+          "cause": "noisy_chunks_excluded",
+          "match": false,
+          "partition_match": null
+        },
+        {
+          "source": "cameron",
+          "status": "no_entry",
+          "match": null
+        }
+      ],
+      "predictions_refs": {
+        "sim": "ab6d189:lab/results/research/quotient_predictions.json",
+        "polytope": "main 8a5f170:lab/results/research/quotient_polytope.json",
+        "polytope_R": 3
+      },
+      "ore_comparison": {
+        "status": "compared",
+        "grouping": "signature",
+        "grouping_reason": "classes: exact equality of all chunk hashes",
+        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
+        "keys_tested": 8,
+        "comparisons": [
+          {
+            "ore": "diamond",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          },
+          {
+            "ore": "iron",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 5.0,
+            "ci95": [
+              5.0,
+              5.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          },
+          {
+            "ore": "coal",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 8.0,
+            "ci95": [
+              8.0,
+              8.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          },
+          {
+            "ore": "gold",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "lapis",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "redstone",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": -1.0,
+            "ci95": [
+              -1.0,
+              -1.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          },
+          {
+            "ore": "emerald",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "total",
+            "classes": [
+              [
+                "64,64;69,64;74,64"
+              ],
+              [
+                "74,64;69,64;64,64"
+              ]
+            ],
+            "mean_diff": 13.0,
+            "ci95": [
+              13.0,
+              13.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          }
+        ],
+        "insufficient_repeats": [
+          {
+            "members": [
+              "64,64;74,64;69,64"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "69,64;64,64;74,64"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "69,64;74,64;64,64"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "74,64;64,64;69,64"
+            ],
+            "worlds": 1
+          }
+        ],
+        "repeat_spread_max": 0
+      },
+      "when": "2026-11-01T08:50:30.430995+00:00"
     }
   ]
 }
