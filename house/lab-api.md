@@ -244,4 +244,17 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   Lead, unverified: by the 1.16 status chain a FULL chunk's 8 neighbours are already past FEATURES, so 0 outside
   is expected; the measurement decides.
 
+## Round 2, batch 13
+- `choice.py` (N2.G1.4.4), pure: `per_gb(run) -> float` = `worlds_per_minute / (peak_mb_total / 1024)`.
+  `pick(vanilla_runs: list[dict], other: dict | None) -> dict` = {"route": "vanilla" | "in_process",
+  "worlds_per_minute_per_gb", "vanilla_best_n", "why"}: the best vanilla run by `per_gb`; `other` wins only when it
+  is present, has no "blocked" key and its `per_gb` is strictly larger; otherwise "vanilla", and "why" says
+  "missing" or quotes the blocked reason. `python lab/choice.py` reads `lab/results/worlds_vanilla.json` and writes
+  `lab/results/world_route.json` = pick(runs, {"route": "in_process", "blocked": "Fabric/mod download needs the
+  owner's approval of the file list (permissions ledger row 15)"}) plus "when". Test
+  `route_choice_picks_more_worlds_per_gb_and_falls_back`: other better -> in_process; other worse or equal ->
+  vanilla; other None -> vanilla "missing"; other blocked but better -> vanilla with the reason; on the committed
+  numbers vanilla_best_n is 1 (3.07 / (812.2 / 1024) = 3.87 vs 4.42 / (1609.2 / 1024) = 2.81); the committed
+  world_route.json equals pick recomputed from the committed worlds_vanilla.json (ignoring "when").
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
