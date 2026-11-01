@@ -157,7 +157,7 @@
    "plain": "Run one, two and three of our private servers at once, resetting each over and over for three minutes, and count fresh worlds per minute and memory per world.",
    "why": "This is the baseline route and needs nothing new to be downloaded.",
    "done_when": "The results file holds worlds per minute, total memory and memory per world for one, two and three servers.",
-   "status": "active",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -193,7 +193,7 @@
    "plain": "Read the saved numbers and pick the route with more worlds per minute for each gigabyte, falling back to ordinary servers whenever the other route is missing or blocked.",
    "why": "One file tells every later experiment which route and how many workers to use.",
    "done_when": "Made-up numbers give the right winner, a blocked or missing route falls back to ordinary servers, and the real choice file is saved.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -205,7 +205,7 @@
    "plain": "Hand a list of build orders to the chosen workers, never more than three servers at once, and get the results back in the order the jobs were given.",
    "why": "The order experiment gets its dozens of worlds faster, and it can use either route without being rewritten.",
    "done_when": "With pretend workers the results come back in job order, one worker failing is reported, and asking for four servers is refused.",
-   "status": "pending",
+   "status": "active",
    "department": "neurology"
   },
   {
@@ -385,7 +385,7 @@
    "plain": "The lab builds chosen chunks one after another, far from the world spawn, and waits for each to finish before asking for the next.",
    "why": "If two chunks are built at once the order is not ours, so the order experiment would mean nothing.",
    "done_when": "Chunks come out in the order we gave, and a neighbour of a finished chunk is still half built.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -433,7 +433,7 @@
    "plain": "Given a list of chunks, build them in exactly that order on a fresh world and return the blocks of the whole area.",
    "why": "Everything after this is a comparison of such runs.",
    "done_when": "A run of two chunks returns both chunks as finished with the full box of blocks.",
-   "status": "active",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -445,7 +445,7 @@
    "plain": "The smallest honest experiment: one pair of neighbour chunks built A then B and B then A, with a control that repeats one order.",
    "why": "One pair is cheap, and the control says whether a difference could be noise.",
    "done_when": "The control shows zero differing blocks, and the pair has an exact count.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -457,7 +457,7 @@
    "plain": "Build A then B twice on fresh worlds and count the differing blocks; this must be zero or the test is too noisy to use.",
    "why": "If the same order differs from itself, nothing later can be trusted; if so, mask the moving water and lava and run it again before going on.",
    "done_when": "The count is zero, or the leftover differences are listed and masked.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -469,7 +469,7 @@
    "plain": "Build the pair in both orders and count the differing blocks; zero means this pair has no lever, and more pairs are tried next.",
    "why": "Differing blocks here would be the first proof that building order changes a chunk.",
    "done_when": "The results file holds the exact count of differing blocks and where they are.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -565,7 +565,7 @@
    "plain": "Build chunk A, break blocks near its edge, build chunk B, and count changed cells outside the edit against a run with no edit.",
    "why": "Changed cells outside the edit would mean the player shaped the next chunk.",
    "done_when": "The results file holds the count of changed cells outside the edit and where they are.",
-   "status": "pending",
+   "status": "active",
    "department": "neurology"
   },
   {
@@ -1009,7 +1009,7 @@
    "plain": "The same order is saved after a short wait and after a long wait on the real server, and the blocks are compared.",
    "why": "Water and sand keep moving after a chunk is made, which could look like an order effect.",
    "done_when": "The two saves give the same blocks, or the number that differs is reported.",
-   "status": "active",
+   "status": "reached",
    "department": "immunology"
   },
   {
