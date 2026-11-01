@@ -36,7 +36,20 @@ class Lab(unittest.TestCase):
             self.assertIsNone(got["worlds_per_minute"])
             self.assertIsNone(got["mb_per_world"])
 
-        source = (LAB / "oneprocess_worlds.py").read_text(encoding="utf-8")
+            mods_only = Path(tmp) / "mods_only"
+            (mods_only / "mods").mkdir(parents=True)
+            (mods_only / "mods" / "speedrunner.jar").write_bytes(b"stub")
+            got = oneprocess_worlds.result(mods_only)
+            self.assertEqual(got["status"], "blocked")
+            self.assertIn("not approved", got["reason"])
+
+            loader_only = Path(tmp) / "loader_only"
+            (loader_only / "versions" / "fabric-loader-x").mkdir(parents=True)
+            got = oneprocess_worlds.result(loader_only)
+            self.assertEqual(got["status"], "blocked")
+            self.assertIn("not approved", got["reason"])
+
+        source =(LAB / "oneprocess_worlds.py").read_text(encoding="utf-8")
         for name in NETWORK:
             self.assertIsNone(
                 re.search(rf"^\s*(import|from)\s+{name}\b", source, re.M),
