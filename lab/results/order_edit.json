@@ -1,0 +1,228 @@
+{
+  "A": [
+    64,
+    64
+  ],
+  "B": [
+    68,
+    64
+  ],
+  "edit": {
+    "lo": [
+      1068,
+      30,
+      1024
+    ],
+    "hi": [
+      1071,
+      33,
+      1027
+    ],
+    "op": "break"
+  },
+  "positions": 327680,
+  "inside_changed": 64,
+  "outside_changed": 48,
+  "added": 0,
+  "removed": 0,
+  "by_chunk_outside": {
+    "66,64": 34,
+    "67,64": 8,
+    "68,64": 6
+  },
+  "examples_outside": [
+    [
+      [
+        1059,
+        50,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1059,
+        51,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1060,
+        52,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1061,
+        43,
+        1025
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1061,
+        49,
+        1036
+      ],
+      "minecraft:dirt",
+      "minecraft:iron_ore"
+    ],
+    [
+      [
+        1061,
+        51,
+        1036
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1061,
+        52,
+        1038
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1061,
+        52,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        43,
+        1024
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        43,
+        1025
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        43,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        48,
+        1037
+      ],
+      "minecraft:dirt",
+      "minecraft:iron_ore"
+    ],
+    [
+      [
+        1062,
+        49,
+        1037
+      ],
+      "minecraft:dirt",
+      "minecraft:iron_ore"
+    ],
+    [
+      [
+        1062,
+        50,
+        1036
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        51,
+        1036
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        52,
+        1038
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        52,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1063,
+        50,
+        1037
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1063,
+        51,
+        1037
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1063,
+        51,
+        1038
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ]
+  ],
+  "edit_before": {
+    "minecraft:stone": 55,
+    "minecraft:granite": 9
+  },
+  "not_full": [
+    0,
+    0
+  ],
+  "fingerprints": [
+    "e41da4c0e78ae71433f6fc6ef62332cdb69d09b91fb1f031b72225ea08102721",
+    "2e736215c303fe68bbbe984c8cc9532dd8f1fd6f7c9733c57251a3ebcbf862ce"
+  ],
+  "when": "2026-11-01T10:43:43.776243+05:30"
+}
