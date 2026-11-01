@@ -1,0 +1,14 @@
+{
+  "client_1_16_1": {
+    "present": true,
+    "path": "versions/1.16.1/1.16.1.jar"
+  },
+  "fabric_loader": [],
+  "mods": [],
+  "java": [
+    {
+      "path": "runtime/jre-legacy/windows/jre-legacy/bin/java.exe",
+      "version": "java version \"1.8.0_51\""
+    }
+  ]
+}
