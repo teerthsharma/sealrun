@@ -107,12 +107,16 @@ def boot(scratch: dict, timeout: float = 120.0) -> Server:
             stderr=subprocess.STDOUT,
             creationflags=CREATE_NO_WINDOW,
         )
-    while DONE not in _text(log):
-        if proc.poll() is not None:
-            raise _fail(proc, log, f"server exited with {proc.returncode} before Done")
-        if time.monotonic() - t0 > timeout:
-            raise _fail(proc, log, f"no Done within {timeout} s")
-        time.sleep(0.5)
+    try:
+        while DONE not in _text(log):
+            if proc.poll() is not None:
+                raise _fail(proc, log, f"server exited with {proc.returncode} before Done")
+            if time.monotonic() - t0 > timeout:
+                raise _fail(proc, log, f"no Done within {timeout} s")
+            time.sleep(0.5)
+    except BaseException:
+        procs.stop(proc, grace=0.0)
+        raise
     boot_secs = time.monotonic() - t0
     try:
         client = rcon.Client("127.0.0.1", scratch["rcon_port"], scratch["rcon_password"])
