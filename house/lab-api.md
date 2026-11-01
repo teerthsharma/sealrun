@@ -109,4 +109,36 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   half the mean squared height difference over pairs at that lag along x and z; `hurst(heights, lags) -> float` =
   half the least-squares slope of log gamma on log lag. Synthetic test ground comes from a seeded `random.Random`.
 
+## Round 2, batch 5
+- `server.py` (N2.G1.2.3), on top of the names above: `free_mb()` reads free physical RAM with `ctypes`
+  (`GlobalMemoryStatusEx`); `running_count()` counts `Server`s this process started whose `proc.poll()` is None;
+  `start_allowed` is `free_mb >= need_mb and running < cap`.
+  `boot(scratch, timeout=120.0) -> Server`: checks `start_allowed(free_mb(), running_count())` first (RuntimeError,
+  no process). Starts `[SEALRUN_JAVA, "-Xmx1G", "-jar", "server.jar", "nogui"]` in `scratch["dir"]` with
+  `stdin=PIPE`, stdout and stderr to `scratch["dir"] / "boot.out"` (a file, never a pipe), `creationflags =
+  CREATE_NO_WINDOW`. Waits until `boot.out` holds `Done (`; on timeout or early exit it stops the process it
+  started (`procs.stop`) and raises RuntimeError with the last log lines. Then opens `rcon.Client("127.0.0.1",
+  scratch["rcon_port"], scratch["rcon_password"])`.
+  `Server`: `proc`, `scratch`, `client`, `boot_secs` (float); `command(text) -> str`; `stop(grace=30.0) -> int`
+  (asks with `stop` over RCON, then `procs.stop(proc, ask, grace)`, closes the client, returns the exit code; a
+  second call returns the same code); `with boot(s) as srv:` stops on exit, error or not.
+  If the real server shows `rcon.Client` wrong (the marker reply), fix `rcon.py` minimally and keep
+  `lab/tests/test_rcon_fake.py` green; report the real reply text.
+- "Port free" in a test means a TCP connect to `127.0.0.1:<port>` is refused (never a bind: Windows keeps
+  TIME_WAIT). A guard proves no orphan by `proc.poll() is not None`, `running_count() == 0` and both ports refused.
+- `lever.py` (N2.G3.7.3): exactly the batch 4 names; `lab/tests/test_guard_lever_player_legal.py` must pass.
+- `flatten.py` (N2.G4.1.1): `TILES = {"air": 0, "stone": 1, "water": 2, "tree": 3, "iron": 4, "goal": 5}`
+  (the byte values of `crates/world/src/grid.rs` `Tile`). `flatten.grid(blocks, x0, z0, w, h) -> list[list[int]]`,
+  `h` rows of `w` ints, row `z - z0`, column `x - x0`; `blocks` is `window.box` output. Ground of a column = the
+  highest y whose name is not in `flatten.PASS` (air, cave_air, void_air, grass, tall_grass, fern, large_fern,
+  snow, seagrass, tall_seagrass, kelp, kelp_plant, flowers, sugar_cane, dead_bush) and does not end in `_leaves`.
+  First rule that holds wins: ground ends in `_log` gives tree; ground is `minecraft:water` gives water;
+  `minecraft:iron_ore` at ground-6..ground gives iron; a 4-neighbour inside the box whose ground differs by 2 or
+  more gives stone; else air. A column with no non-None block raises ValueError naming (x, z).
+- `site/r2.html` (N2.G5.3): one top-level `function renderR2(data)` returning an HTML string, tested with node
+  the way `site/tests/test_render.py` tests `renderPage`. A card per goal with `data-goal="<id>"` (title, plain,
+  status, department). Bars from `data.orders` (`[{"order": [[cx, cz], ...], "diff": int}]`), one element with
+  `data-order` per row, height by `diff`; no `orders` key gives the text `not run yet`, never a 0 bar. Colour only
+  by status (a meaningful datum), never decoration. The page fetches `r2.json` next to it.
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
