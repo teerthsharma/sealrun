@@ -229,4 +229,19 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   measurement needs: AB's fingerprint equals the control's (the lab is deterministic) and the json is written; the
   count of differing blocks is the result, any value valid (0 kills this pair as a lever, with a route).
 
+## Round 2, batch 12
+- `test_order_edit.py` (N2.G3.5.2): A = (64, 64), B = (68, 64). EDIT = break the 4x4x4 cube x 1068..1071,
+  y 30..33, z 1024..1027 (chunk (66, 64), the east edge of A's measured full tile). Two fresh worlds, same
+  steps except the edit: boot; `orderrun.wait_loaded(srv, *A)`; edited world only: every line of
+  `edits.commands(EDIT ops, A's 5x5 tile)` through `srv.command`; `wait_loaded(srv, *B)`; `save-all flush`; stop.
+  Window `window.box` over chunks 64..68 of row z 64: lo (1024, 0, 1024), hi (1103, 255, 1039), 327680 cells.
+  `blockdiff.diff(plain, edited)`, changed cells split into inside EDIT and outside. Writes
+  `lab/results/order_edit.json` = {"A", "B", "edit": {"lo", "hi", "op": "break"}, "positions", "inside_changed",
+  "outside_changed", "added", "removed", "by_chunk_outside" {chunk: n}, "examples_outside" (<= 20 of (pos, plain,
+  edited)), "edit_before" {block: count of plain's blocks at the 64 edit cells}, "not_full" [plain, edited],
+  "fingerprints", "when"} before asserting. Asserts only: both windows have 0 None cells, every edit cell reads
+  `minecraft:air` in the edited world, the json is written. outside_changed is the result, any value valid.
+  Lead, unverified: by the 1.16 status chain a FULL chunk's 8 neighbours are already past FEATURES, so 0 outside
+  is expected; the measurement decides.
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
