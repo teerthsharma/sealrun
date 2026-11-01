@@ -1,4 +1,5 @@
-//! realmodel::moves is the per-move API; it forwards state::moves costs and adds only the caps filter.
+//! realmodel::moves is the per-move API; it forwards state::moves costs and drops moves whose next state passes a cap.
+//! Caps mirror realmodel.rs within_caps (private, so restated): wood 5, stone 11, iron_ore 3, iron 3.
 use sealrun_route::metric::{dig, Tool, CRAFT_TICKS, WALK_TICKS};
 use sealrun_route::realmodel::{moves as real_moves, Step};
 use sealrun_route::state::{moves as state_moves, Inv, Move, State};
@@ -7,6 +8,11 @@ use sealrun_world::grid::{Grid, Tile};
 // SMELT_TICKS is private to state.rs and has no metric.rs value, so smelt is compared state vs realmodel only.
 const TILES: [Tile; 6] = [Tile::Air, Tile::Stone, Tile::Water, Tile::Tree, Tile::Iron, Tile::Goal];
 const TOOLS: [Tool; 4] = [Tool::Hand, Tool::Wood, Tool::Stone, Tool::Iron];
+const CAP_WOOD: u16 = 5;
+const CAP_STONE: u16 = 11;
+const CAP_IRON_ORE: u16 = 3;
+const CAP_IRON: u16 = 3;
+const EXPECTED_GAPS: usize = 2464;
 
 #[derive(Clone, Copy, Debug)]
 enum Want {
@@ -18,28 +24,50 @@ enum Want {
 #[derive(Default)]
 struct Tally {
     cases: usize,
-    walk: usize,
-    mine: usize,
-    craft: usize,
-    smelt: usize,
-    bad: Vec<String>,
+    seen: [usize; 4],
+    gap: [usize; 4],
+    cost_bad: Vec<String>,
+    presence_bad: Vec<String>,
 }
 
-fn check(t: &mut Tally, case: &str, m: Move, want: Want, sc: Option<u64>, rc: Option<u64>) {
-    let ok = match want {
-        Want::Absent => sc.is_none() && rc.is_none(),
-        Want::Cost(c) => sc == Some(c) && rc == Some(c),
-        Want::Present => sc.is_some() && sc == rc,
-    };
-    t.cases += 1;
+fn kind(m: Move) -> usize {
     match m {
-        Move::Walk(_) => t.walk += 1,
-        Move::Mine(_) => t.mine += 1,
-        Move::Craft(_) => t.craft += 1,
-        Move::Smelt => t.smelt += 1,
+        Move::Walk(_) => 0,
+        Move::Mine(_) => 1,
+        Move::Craft(_) => 2,
+        Move::Smelt => 3,
     }
-    if !ok {
-        t.bad.push(format!("{case} {m:?} want {want:?}: state {sc:?}, realmodel {rc:?}"));
+}
+
+fn past_cap(s: &State) -> bool {
+    s.inv.wood > CAP_WOOD || s.inv.stone > CAP_STONE || s.inv.iron_ore > CAP_IRON_ORE || s.inv.iron > CAP_IRON
+}
+
+fn check(t: &mut Tally, case: &str, m: Move, want: Want, state: Option<(u64, bool)>, real: Option<u64>) {
+    t.cases += 1;
+    t.seen[kind(m)] += 1;
+    let s = state.map(|(c, _)| c);
+    let cost_ok = match want {
+        Want::Absent => s.is_none() && real.is_none(),
+        Want::Cost(c) => s.unwrap_or(c) == c && real.unwrap_or(c) == c,
+        Want::Present => match (s, real) {
+            (Some(a), Some(b)) => a == b,
+            _ => true,
+        },
+    };
+    if !cost_ok {
+        t.cost_bad.push(format!("{case} {m:?} want {want:?}: state {s:?}, realmodel {real:?}"));
+    }
+    match (state, real) {
+        (Some((_, true)), None) => t.gap[kind(m)] += 1,
+        (Some((_, false)), None) => {
+            t.presence_bad.push(format!("{case} {m:?}: state offers, realmodel drops, next state within caps"))
+        }
+        (None, Some(_)) => t.presence_bad.push(format!("{case} {m:?}: realmodel offers, state does not")),
+        (None, None) if !matches!(want, Want::Absent) => {
+            t.presence_bad.push(format!("{case} {m:?}: neither model offers, metric expects it"))
+        }
+        _ => {}
     }
 }
 
@@ -73,7 +101,7 @@ fn guard_route_costs_match_metric() {
             let s = State { pos: (1, 0), inv };
             let st = state_moves(&grid, &s);
             let rl = real_moves(&grid, &s);
-            let sc = |m: Move| st.iter().find(|(x, _, _)| *x == m).map(|(_, _, c)| *c);
+            let sc = |m: Move| st.iter().find(|(x, _, _)| *x == m).map(|(_, n, c)| (*c, past_cap(n)));
             let rc = |m: Move| rl.iter().find(|(x, _, _)| *x == Step::Base(m)).map(|(_, _, c)| *c);
             let case = format!("tile={tile:?} inv={inv:?}");
 
@@ -101,20 +129,27 @@ fn guard_route_costs_match_metric() {
             for (step, _, _) in &rl {
                 if let Step::Base(m) = step {
                     if sc(*m).is_none() {
-                        t.bad.push(format!("{case} {m:?}: realmodel offers, state does not"));
+                        t.presence_bad.push(format!("{case} {m:?}: realmodel offers, state does not"));
                     }
                 }
             }
         }
     }
+    let gaps: usize = t.gap.iter().sum();
     println!(
-        "guard_route_costs_match_metric: {} cases ({} walk, {} mine, {} craft, {} smelt), {} mismatches",
-        t.cases,
-        t.walk,
-        t.mine,
-        t.craft,
-        t.smelt,
-        t.bad.len()
+        "guard_route_costs_match_metric: {} cases ({} walk, {} mine, {} craft, {} smelt)",
+        t.cases, t.seen[0], t.seen[1], t.seen[2], t.seen[3]
     );
-    assert!(t.bad.is_empty(), "{} of {} cases mismatch:\n{}", t.bad.len(), t.cases, t.bad.join("\n"));
+    println!(
+        "cap-boundary gaps: {} walk, {} mine, {} craft, {} smelt = {gaps}; cost mismatches {}; presence failures {}",
+        t.gap[0],
+        t.gap[1],
+        t.gap[2],
+        t.gap[3],
+        t.cost_bad.len(),
+        t.presence_bad.len()
+    );
+    assert!(t.cost_bad.is_empty(), "{} cost mismatches:\n{}", t.cost_bad.len(), t.cost_bad.join("\n"));
+    assert!(t.presence_bad.is_empty(), "{} presence failures:\n{}", t.presence_bad.len(), t.presence_bad.join("\n"));
+    assert_eq!(gaps, EXPECTED_GAPS, "cap-boundary gap count changed; the caps or the move list moved");
 }
