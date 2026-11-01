@@ -29,3 +29,13 @@ def chunk_data(region_path, lx, lz):
     if comp == 3:
         return raw
     raise ValueError(f"unknown compression {comp}")
+
+
+def section_blocks(palette, states):
+    bits = max(4, (len(palette) - 1).bit_length())
+    per = 64 // bits
+    mask = (1 << bits) - 1
+    return [
+        palette[((states[i // per] & 0xFFFFFFFFFFFFFFFF) >> ((i % per) * bits)) & mask]
+        for i in range(4096)
+    ]
