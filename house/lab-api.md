@@ -196,4 +196,23 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   Always stops its server; the caller makes and removes the scratch. Test `run_order_returns_window_for_two_chunks`:
   real server, order [(64, 64), (65, 64)], 131072 positions, none None.
 
+## Round 2, batch 10
+- Real servers: every boot goes through `python C:/Users/seal/Documents/GitHub/sealrun-wt/slot.py <cmd>`, at most
+  2 at once across all agents (owner cap). A run that needs both slots nests it: `slot.py python slot.py <cmd>`.
+- `bench_vanilla.py` (N2.G1.4.1): `measure(n: int, secs: float, root: Path) -> dict` runs n servers at once
+  (n in 1..2: the cap; 3 is not run and the result says so), each in its own scratch, each looping
+  `server.reset` until `secs` pass; counts worlds (resets finished) and samples `bench.peak_mb` of every java.
+  Keys: `n`, `secs`, `worlds`, `worlds_per_minute`, `peak_mb_total`, `mb_per_world` (= peak_mb_total / n),
+  `other_java` (as bench), `when`. `python lab/bench_vanilla.py` holds both slots and writes
+  `lab/results/worlds_vanilla.json` = {"runs": [n=1, n=2], "not_run": {"n": 3, "why": "owner cap of 2 real servers"}}.
+  Numbers are measured, never typed in. Test `n_vanilla_servers_worlds_per_minute_and_ram_per_world`: a short
+  measure(1, 60) boots, gets worlds >= 1, mb 200..2000, leaves no java and no scratch; the committed json has both
+  runs with `other_java` 0.
+- `test_forceload_tile.py` (N2.G3.2.A1): one forceload on (64, 64), stop with the ticket held; all 8 rays (east,
+  west, north, south and the 4 diagonals) read full at d 0..2 and None at d 3; writes
+  `lab/results/forceload_tile.json` before asserting. Claims "not saved at 3", never "not generated".
+- `test_guard_settle_invariance.py` (N2.G3.C3, guard): two fresh worlds, same single forceload on (64, 64), one
+  saved and stopped at once after load, one after 60 s; `window.fingerprint` of chunk (64, 64)'s blocks (via
+  `window.box`) equal. Unequal is a finding (waiting changes blocks), reported, never bent.
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
