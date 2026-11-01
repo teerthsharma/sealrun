@@ -49,6 +49,34 @@
   "done_when": "site/r3.html loads r3.json and links from the main page."
  },
  {
+  "id": "N3.G2.X",
+  "title": "E1, E2 and E3 against their predictions",
+  "plain": "Three ticket layouts (a line of 3, the 2x2 square, a triangle) are built in every order and the count of different worlds is checked against the saved prediction.",
+  "why": "The first three layouts decide whether the law survives.",
+  "done_when": "E1, E2 and E3 each match their predicted count."
+ },
+ {
+  "id": "N3.G2.Y",
+  "title": "E4, repeat controls and the polytope identity",
+  "plain": "The line of 4 is checked against its prediction, every repeat control must show no difference, and the counts are compared with the corners of a many-sided shape.",
+  "why": "These checks make the counts trustworthy and tie them to known geometry.",
+  "done_when": "E4 matches, all repeats are identical, and the polytope corners agree."
+ },
+ {
+  "id": "N3.G6.X",
+  "title": "Route model and race",
+  "plain": "A planner with dig and swim prices is built and raced against plain breadth-first search with equal step budgets.",
+  "why": "The fair race is the base of every route claim.",
+  "done_when": "Dig and swim cost on a hand map, the bottleneck bound, and equal budgets."
+ },
+ {
+  "id": "N3.G6.Y",
+  "title": "Real terrain and the player move",
+  "plain": "On real seed 7 terrain the planner is compared with breadth-first search, a route is looked for, and the reach of the build-order move is stated.",
+  "why": "This is where routing meets the real map and the order lever.",
+  "done_when": "Planner not worse than BFS, a route exists, and the lever reach is stated."
+ },
+ {
   "id": "N3.G1.1",
   "title": "Count worlds by brute force",
   "plain": "A small function tries every order of k tickets, treats pairs that cannot swap as fixed, and counts the different results.",
