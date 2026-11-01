@@ -6926,6 +6926,354 @@
           }
         }
       }
+    },
+    {
+      "experiment": "cal",
+      "campaign_sha": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1",
+      "worlds": [
+        "lab/results/research/worlds/cal_O1_r1.json",
+        "lab/results/research/worlds/cal_O1_r2.json",
+        "lab/results/research/worlds/cal_O2_r1.json",
+        "lab/results/research/worlds/cal_O2_r2.json"
+      ],
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "repeat_control": {
+        "noisy_chunks": 1,
+        "mismatches": [
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "64,65",
+            "shas": [
+              "8727a4b546ab50bae8d98e570f0a7fb937142f70fb564c6028aa340e24dcab9f",
+              "acc4fe630e8737ae36bb00dc279ff5fee2e545e822887a948a7930e9d349a52a"
+            ]
+          }
+        ]
+      },
+      "when": "2026-11-01T14:16:27.311510+05:30",
+      "k": 4,
+      "distinct_orders": 2,
+      "chunks_total": 4,
+      "chunks_stable": 3,
+      "summary": {
+        "noisy": [
+          "64,65"
+        ],
+        "violations": [],
+        "constant": 1,
+        "non_ball_S_hat": [
+          "64,64",
+          "65,64"
+        ],
+        "match_by_R": {
+          "2": {
+            "exact": 0,
+            "tied": 0,
+            "fits": 2
+          },
+          "3": {
+            "exact": 0,
+            "tied": 0,
+            "fits": 2
+          },
+          "4": {
+            "exact": 0,
+            "tied": 0,
+            "fits": 2
+          }
+        }
+      },
+      "chunks": {
+        "64,64": {
+          "noisy": false,
+          "constant": false,
+          "n_fits": 6,
+          "fits": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "S_hat": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "ball": {
+            "2": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": true
+            },
+            "3": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": true
+            },
+            "4": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": true
+            }
+          }
+        },
+        "64,65": {
+          "noisy": true,
+          "repeat_diff_orders": 1
+        },
+        "65,64": {
+          "noisy": false,
+          "constant": false,
+          "n_fits": 6,
+          "fits": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "S_hat": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "ball": {
+            "2": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": true
+            },
+            "3": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": true
+            },
+            "4": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": true
+            }
+          }
+        },
+        "65,65": {
+          "noisy": false,
+          "constant": true,
+          "n_fits": 9,
+          "fits": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "S_hat": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "ball": {
+            "2": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": false
+            },
+            "3": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": false
+            },
+            "4": {
+              "set": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "exact": false,
+              "tied": false,
+              "fits": false
+            }
+          }
+        }
+      }
     }
   ]
 }
