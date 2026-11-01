@@ -8,7 +8,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E0",
@@ -309,7 +310,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E0",
@@ -610,7 +612,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E1",
@@ -797,7 +800,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E1",
@@ -984,7 +988,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E2",
@@ -1225,7 +1230,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E2",
@@ -1466,7 +1472,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E3",
@@ -1721,7 +1728,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E3",
@@ -1976,7 +1984,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E4",
@@ -2429,7 +2438,8 @@
       "source": {
         "ref": "main",
         "path": "lab/results/research/quotient_predictions.json",
-        "commit": "8a5f17072fb36a3815d6cad12c258aa024108448",
+        "commit": "504fb5973c35bc8aa6587d3469fce75c51e566d0",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
         "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
       },
       "layout": "E4",
@@ -2877,6 +2887,994 @@
       "domain_complete": true,
       "cross_class_edges": 18,
       "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "955d2118cd60d675f6ef9822406d505026a43026",
+        "blob": "66c12c83160abe719428002fe6b2dfb2fdb85b73",
+        "file_last_commit": "955d2118cd60d675f6ef9822406d505026a43026"
+      },
+      "layout": "round2_order_square",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 4,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 2,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 2,
+          "index": 1,
+          "orders": [
+            [
+              2,
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 3,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 3,
+          "index": 3,
+          "orders": [
+            [
+              3,
+              0,
+              2,
+              1
+            ]
+          ]
+        }
+      ],
+      "domain_size": 4,
+      "domain_complete": false,
+      "cross_class_edges": 1,
+      "listed_to_unlisted_edges": 10
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "955d2118cd60d675f6ef9822406d505026a43026",
+        "blob": "66c12c83160abe719428002fe6b2dfb2fdb85b73",
+        "file_last_commit": "955d2118cd60d675f6ef9822406d505026a43026"
+      },
+      "layout": "round2_order_collapse",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 1,
+      "classes": [
+        {
+          "size": 2,
+          "b0": 2,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 2,
+          "chi": 2,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 2,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": false,
+          "witness": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 6,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ]
+          ]
+        }
+      ],
+      "domain_size": 2,
+      "domain_complete": false,
+      "cross_class_edges": 0,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "955d2118cd60d675f6ef9822406d505026a43026",
+        "blob": "66c12c83160abe719428002fe6b2dfb2fdb85b73",
+        "file_last_commit": "955d2118cd60d675f6ef9822406d505026a43026"
+      },
+      "layout": "round2_order_pair",
+      "r_dec": null,
+      "k": 2,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 2,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 1,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 1,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 2,
+      "domain_complete": true,
+      "cross_class_edges": 1,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/campaign",
+        "path": "lab/results/research/quotient_E1.json",
+        "commit": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1",
+        "blob": "195c7f5bed1702c1d335304f2d58929af1557696",
+        "file_last_commit": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1"
+      },
+      "layout": "E1",
+      "r_dec": null,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 6,
+      "stored_classes": 8,
+      "control_duplicates": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "classes": [
+            0,
+            1
+          ]
+        },
+        {
+          "order": [
+            2,
+            1,
+            0
+          ],
+          "classes": [
+            6,
+            7
+          ]
+        }
+      ],
+      "controls_max_diff": 2456,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/campaign",
+        "path": "lab/results/research/quotient_E2.json",
+        "commit": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1",
+        "blob": "804ccfa8aa4c7853ce9b2274133f256c046078ee",
+        "file_last_commit": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1"
+      },
+      "layout": "E2",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 6,
+      "stored_classes": 7,
+      "control_duplicates": [
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "classes": [
+            0,
+            1
+          ]
+        }
+      ],
+      "controls_max_diff": 310,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 4,
+          "orders": [
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 5,
+          "orders": [
+            [
+              0,
+              3,
+              1,
+              2
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": false,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 6
+    }
+  ],
+  "skipped": [
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "955d2118cd60d675f6ef9822406d505026a43026",
+        "blob": "66c12c83160abe719428002fe6b2dfb2fdb85b73",
+        "file_last_commit": "955d2118cd60d675f6ef9822406d505026a43026"
+      },
+      "layout": "cal_square_O12",
+      "reason": "not a partition: conflicted orders ['64,64;65,64;64,65;65,65']"
     }
   ]
 }

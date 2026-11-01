@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from fibers import Permutohedron, analyse_class, analyse_partition, load_partition  # noqa: E402
+from fibers import Permutohedron, analyse_class, analyse_partition, load_campaign, load_partition  # noqa: E402
 
 
 class PermutohedronTests(unittest.TestCase):
@@ -83,6 +83,37 @@ class LoaderTests(unittest.TestCase):
         k, classes = load_partition(rec)
         self.assertEqual(k, 3)
         self.assertEqual(classes, [[(0, 1, 2), (1, 0, 2)], [(2, 1, 0)]])
+
+    def test_load_partition_reads_member_strings(self):
+        rec = {
+            "tickets": [[64, 64], [65, 64]],
+            "classes": [{"members": ["64,64;65,64"], "n_orders": 1},
+                        {"members": ["65,64;64,64"], "n_orders": 1}],
+        }
+        k, classes = load_partition(rec)
+        self.assertEqual(k, 2)
+        self.assertEqual(classes, [[(0, 1)], [(1, 0)]])
+
+    def test_load_campaign_collapses_repeat_controls(self):
+        A = [[64, 64], [69, 64], [74, 64]]
+        B = [[69, 64], [64, 64], [74, 64]]
+        rec = {
+            "experiment": "E1",
+            "classes": [
+                {"class": 0, "worlds": ["E1_ABC"], "orders": [A]},
+                {"class": 1, "worlds": ["E1_ABC_r2"], "orders": [A]},
+                {"class": 2, "worlds": ["E1_BAC"], "orders": [B]},
+            ],
+        }
+        k, classes, dups = load_campaign(rec)
+        self.assertEqual(k, 3)
+        self.assertEqual(classes, [[(0, 1, 2)], [(1, 0, 2)]])
+        self.assertEqual(dups, [{"order": [0, 1, 2], "classes": [0, 1]}])
+
+    def test_overlapping_classes_are_rejected(self):
+        P = Permutohedron(3)
+        with self.assertRaises(ValueError):
+            analyse_partition(P, [[(0, 1, 2)], [(0, 1, 2), (2, 1, 0)]])
 
 
 if __name__ == "__main__":

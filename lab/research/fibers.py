@@ -270,8 +270,27 @@ def load_partition(rec):
         raise ValueError("tickets length differs from k")
     classes = []
     for cls in rec["classes"]:
-        classes.append([tuple(tickets.index(t) for t in order) for order in cls])
+        if isinstance(cls, dict):
+            orders = [[tuple(int(x) for x in t.split(",")) for t in m.split(";")] for m in cls["members"]]
+        else:
+            orders = cls
+        classes.append([tuple(tickets.index(list(t)) for t in order) for order in orders])
     return k, classes
+
+
+def load_campaign(rec):
+    tickets = sorted({tuple(t) for c in rec["classes"] for o in c["orders"] for t in o})
+    tickets = [list(t) for t in tickets]
+    seen, classes, dups = {}, [], []
+    for c in rec["classes"]:
+        for o in c["orders"]:
+            perm = tuple(tickets.index(list(t)) for t in o)
+            if perm in seen:
+                dups.append({"order": list(perm), "classes": [seen[perm], c["class"]]})
+                continue
+            seen[perm] = c["class"]
+            classes.append([perm])
+    return len(tickets), classes, dups
 
 
 def git_show(ref, path):
@@ -291,42 +310,65 @@ def git_file_commit(ref, path):
 
 def run_source(ref, path):
     data = json.loads(git_show(ref, path))
-    records = data["records"] if "records" in data else [data]
+    records = data["records"] if "records" in data else data.get("runs", [data])
     commit = git_rev(ref)
     file_commit = git_file_commit(ref, path)
-    runs = []
+    blob = git_rev(f"{ref}:{path}")
+    source = {"ref": ref, "path": path, "commit": commit, "blob": blob, "file_last_commit": file_commit}
+    runs, skipped = [], []
     for rec in records:
-        if "classes" not in rec or "tickets" not in rec:
+        layout = rec.get("layout", rec.get("experiment"))
+        campaign = "classes" in rec and rec["classes"] and isinstance(rec["classes"][0], dict) \
+            and "orders" in rec["classes"][0]
+        if not campaign and ("classes" not in rec or "tickets" not in rec):
+            skipped.append({"source": source, "layout": layout, "reason": "no classes or tickets field"})
             continue
-        k, classes = load_partition(rec)
+        if rec.get("valid_partition") is False:
+            skipped.append({"source": source, "layout": layout,
+                            "reason": f"not a partition: conflicted orders {rec.get('conflicted')}"})
+            continue
+        extra = {}
+        if campaign:
+            k, classes, dups = load_campaign(rec)
+            tickets = sorted({tuple(t) for c in rec["classes"] for o in c["orders"] for t in o})
+            tickets = [list(t) for t in tickets]
+            extra = {"stored_classes": len(rec["classes"]), "control_duplicates": dups,
+                     "controls_max_diff": rec.get("controls_max_diff")}
+        else:
+            k, classes = load_partition(rec)
+            tickets = rec["tickets"]
         P = Permutohedron(k)
         res = analyse_partition(P, classes)
         run = {
-            "source": {"ref": ref, "path": path, "commit": commit, "file_last_commit": file_commit},
-            "layout": rec.get("layout"),
+            "source": source,
+            "layout": layout,
             "r_dec": rec.get("r_dec"),
             "k": k,
-            "tickets": rec["tickets"],
+            "tickets": tickets,
             "predicted_classes": rec.get("predicted_classes"),
             "found_classes": len(classes),
         }
+        run.update(extra)
         run.update(res)
         runs.append(run)
-    return runs
+    return runs, skipped
 
 
-def append_runs(runs, out=OUT):
+def append_runs(runs, skipped, out=OUT):
     if out.exists():
         doc = json.loads(out.read_text())
     else:
-        doc = {"lane": "fibers", "round": 3, "run": "n3", "version": 1, "runs": []}
-    new_keys = {(n["source"]["path"], n["source"]["commit"], n["layout"], n["r_dec"]) for n in runs}
-    keep = [r for r in doc["runs"]
-            if (r["source"]["path"], r["source"]["commit"], r["layout"], r["r_dec"]) not in new_keys]
-    doc["runs"] = keep + runs
+        doc = {"lane": "fibers", "round": 3, "run": "n3", "version": 1, "runs": [], "skipped": []}
+    doc.setdefault("skipped", [])
+    new_keys = {(n["source"]["path"], n["source"]["blob"], n["layout"], n["r_dec"]) for n in runs}
+    doc["runs"] = [r for r in doc["runs"]
+                   if (r["source"]["path"], r["source"].get("blob"), r["layout"], r["r_dec"]) not in new_keys] + runs
+    skip_keys = {(s["source"]["path"], s["source"]["blob"], s["layout"]) for s in skipped}
+    doc["skipped"] = [s for s in doc["skipped"]
+                      if (s["source"]["path"], s["source"].get("blob"), s["layout"]) not in skip_keys] + skipped
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(doc, indent=2) + "\n")
-    return len(doc["runs"])
+    return len(doc["runs"]), len(doc["skipped"])
 
 
 def summary_lines(run):
@@ -347,11 +389,14 @@ def main(argv=None):
     ap.add_argument("--path", required=True)
     ap.add_argument("--out", default=str(OUT))
     args = ap.parse_args(argv)
-    runs = run_source(args.ref, args.path)
+    runs, skipped = run_source(args.ref, args.path)
     for run in runs:
         print("\n".join(summary_lines(run)))
-    n = append_runs(runs, Path(args.out))
-    print(f"appended {len(runs)} runs from {args.ref}:{args.path}; file now has {n} runs")
+    for s in skipped:
+        print(f"skipped {s['layout']}: {s['reason']}")
+    n_runs, n_skipped = append_runs(runs, skipped, Path(args.out))
+    print(f"appended {len(runs)} runs and {len(skipped)} skips from {args.ref}:{args.path}; "
+          f"file now has {n_runs} runs, {n_skipped} skips")
     return 0
 
 
