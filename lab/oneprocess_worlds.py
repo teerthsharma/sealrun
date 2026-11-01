@@ -9,13 +9,18 @@ OUT = Path(__file__).resolve().parent / "results" / "worlds_one_process.json"
 def result(mc_dir: Path) -> dict:
     probe = fabric_probe.probe(mc_dir)
     loader, mods = probe["fabric_loader"], probe["mods"]
-    status = "not run" if loader and mods else "blocked"
-    return {
-        "status": status,
-        "reason": (
+    if loader and mods:
+        status = "not run"
+        reason = "fabric loader and mods are present; measuring worlds is a later leaf"
+    else:
+        status = "blocked"
+        reason = (
             "file list not approved by the owner (house/permissions-6h.md row 15); "
             f"fabric_loader: {loader}, mods: {mods}"
-        ),
+        )
+    return {
+        "status": status,
+        "reason": reason,
         "worlds_per_minute": None,
         "mb_per_world": None,
     }

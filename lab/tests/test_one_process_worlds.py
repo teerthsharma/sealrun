@@ -31,6 +31,8 @@ class Lab(unittest.TestCase):
             (staged / "mods" / "speedrunner.jar").write_bytes(b"stub")
             got = oneprocess_worlds.result(staged)
             self.assertEqual(got["status"], "not run")
+            self.assertNotIn("not approved", got["reason"])
+            self.assertIn("later leaf", got["reason"])
             self.assertIsNone(got["worlds_per_minute"])
             self.assertIsNone(got["mb_per_world"])
 
