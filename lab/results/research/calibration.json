@@ -1,0 +1,321 @@
+{
+  "experiment": "calibration",
+  "predictions_sha": "ab6d18945d3e1d97135aa3117c73af0b2188fc73",
+  "chunks": [
+    "64,64",
+    "64,65",
+    "65,64",
+    "65,65"
+  ],
+  "skipped_far": [],
+  "worlds": [
+    {
+      "label": "cal_O1_r1",
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "boot_secs": 32.11,
+      "settle_s": 10.17,
+      "not_full_cells": 0
+    },
+    {
+      "label": "cal_O1_r2",
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "boot_secs": 26.73,
+      "settle_s": 10.28,
+      "not_full_cells": 0
+    },
+    {
+      "label": "cal_O2_r1",
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "boot_secs": 30.97,
+      "settle_s": 10.33,
+      "not_full_cells": 0
+    },
+    {
+      "label": "cal_O2_r2",
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "boot_secs": 29.86,
+      "settle_s": 10.39,
+      "not_full_cells": 0
+    }
+  ],
+  "classes": [
+    {
+      "class": 0,
+      "worlds": [
+        "cal_O1_r1"
+      ],
+      "orders": [
+        [
+          [
+            64,
+            64
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            64,
+            65
+          ],
+          [
+            65,
+            65
+          ]
+        ]
+      ]
+    },
+    {
+      "class": 1,
+      "worlds": [
+        "cal_O1_r2"
+      ],
+      "orders": [
+        [
+          [
+            64,
+            64
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            64,
+            65
+          ],
+          [
+            65,
+            65
+          ]
+        ]
+      ]
+    },
+    {
+      "class": 2,
+      "worlds": [
+        "cal_O2_r1",
+        "cal_O2_r2"
+      ],
+      "orders": [
+        [
+          [
+            64,
+            65
+          ],
+          [
+            64,
+            64
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            65,
+            65
+          ]
+        ],
+        [
+          [
+            64,
+            65
+          ],
+          [
+            64,
+            64
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            65,
+            65
+          ]
+        ]
+      ]
+    }
+  ],
+  "class_count": 3,
+  "per_chunk_partition": {
+    "64,64": [
+      [
+        "cal_O1_r1",
+        "cal_O1_r2"
+      ],
+      [
+        "cal_O2_r1",
+        "cal_O2_r2"
+      ]
+    ],
+    "64,65": [
+      [
+        "cal_O1_r1"
+      ],
+      [
+        "cal_O1_r2"
+      ],
+      [
+        "cal_O2_r1",
+        "cal_O2_r2"
+      ]
+    ],
+    "65,64": [
+      [
+        "cal_O1_r1",
+        "cal_O1_r2"
+      ],
+      [
+        "cal_O2_r1",
+        "cal_O2_r2"
+      ]
+    ],
+    "65,65": [
+      [
+        "cal_O1_r1",
+        "cal_O1_r2",
+        "cal_O2_r1",
+        "cal_O2_r2"
+      ]
+    ]
+  },
+  "pairs": [
+    {
+      "a": "cal_O1_r1",
+      "b": "cal_O1_r2",
+      "control": true,
+      "equal_chunks": "1011",
+      "diff_total": 1,
+      "diff_by_chunk": {
+        "64,65": 1
+      }
+    },
+    {
+      "a": "cal_O1_r1",
+      "b": "cal_O2_r1",
+      "control": false,
+      "equal_chunks": "0001",
+      "diff_total": 44,
+      "diff_by_chunk": {
+        "64,64": 26,
+        "64,65": 15,
+        "65,64": 3
+      }
+    },
+    {
+      "a": "cal_O1_r1",
+      "b": "cal_O2_r2",
+      "control": false,
+      "equal_chunks": "0001",
+      "diff_total": 44,
+      "diff_by_chunk": {
+        "64,64": 26,
+        "64,65": 15,
+        "65,64": 3
+      }
+    },
+    {
+      "a": "cal_O1_r2",
+      "b": "cal_O2_r1",
+      "control": false,
+      "equal_chunks": "0001",
+      "diff_total": 43,
+      "diff_by_chunk": {
+        "64,64": 26,
+        "64,65": 14,
+        "65,64": 3
+      }
+    },
+    {
+      "a": "cal_O1_r2",
+      "b": "cal_O2_r2",
+      "control": false,
+      "equal_chunks": "0001",
+      "diff_total": 43,
+      "diff_by_chunk": {
+        "64,64": 26,
+        "64,65": 14,
+        "65,64": 3
+      }
+    },
+    {
+      "a": "cal_O2_r1",
+      "b": "cal_O2_r2",
+      "control": true,
+      "equal_chunks": "1111",
+      "diff_total": 0,
+      "diff_by_chunk": {}
+    }
+  ],
+  "controls_max_diff": 1,
+  "when": "2026-11-01T14:06:33.659050+05:30"
+}
