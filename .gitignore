@@ -16,3 +16,8 @@ session.lock
 level.dat_old
 raids.dat
 raids_end.dat
+__pycache__/
+.pytest_cache/
+.claude/
+house/
+house-events.jsonl

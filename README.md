@@ -35,7 +35,8 @@ Every line below was measured on a real Minecraft 1.16.1 server on seed 7.
 - **The spawn area is islands.** On the seed 7 spawn map there are 158 separate walkable regions. Pay 10 to swim and they merge to 77. Pay 23 to dig and they merge to 1.
 - **A planner that can dig and swim routes every start point.** 179 of 179 at a million steps, same as plain search. At 10,000 steps plain search is ahead (67 against 13). Where both find a route, the planner's route is never slower in game ticks.
 - **We found nobody who has written this down.** We searched 53 sources (the Minecraft wiki, bug trackers, math papers) and found no one who states how build order shapes a Minecraft world.
-- **The Blood Lab works.** 10 of 16 rebuilt so far. Small AI agents rebuilt published results from scratch: 104 of 256 simple rules that ignore update order (matches the paper), 24, 14 and 20 corners for three classic shapes, the counts 6, 8, 14, 24 for ways to point the links of small maps, 1, 3, 8, 21, 55 for trace counts, 36 links in the order graph of 4 tickets, and 200 random maps where two region-counting methods agree.
+- **The Blood Lab works.** 15 of 16 rebuilt so far. Small AI agents rebuilt published maths from scratch, and each one had to print the same number as its source: 104 of 256 simple rules that ignore update order, 24, 14 and 20 corners for three classic shapes, 200 random maps where two island-counting methods agree, and the "elder rule" for which island lives on when two islands merge.
+- **Our first-ticket count is a known shape.** Counted over every run of neighbouring tickets, the first-ticket rule splits the 24 build orders of 4 tickets into 14 groups. Those are exactly the 14 groups that binary search trees give, a grouping mathematicians already study.
 
 ## See it: one ticket, 25 chunks
 
@@ -51,9 +52,9 @@ This matters for one reason. If a second ticket lands inside a block that is alr
 
 **Round 2, a real server.** A set of Python scripts starts a real Minecraft server, builds chunks with `/forceload`, saves, stops, and reads the save files from disk. One fresh world takes about 20 seconds and under 1 GB. This is where the 25-chunk block and the first sign of build order came from.
 
-**Round 3, the rule.** Before running anything new, we wrote down a rule and committed it: each chunk keeps only the first ticket that reaches it. Then we tested it. It lost. We now test a wider version.
+**Round 3, the rule.** Before running anything new, we wrote down a rule and committed it: each chunk keeps only the first ticket that reaches it. Then we tested it. It lost. A wider version lost on most chunks too.
 
-**The Blood Lab.** 10 of 16 papers, bug reports and algorithms rebuilt so far, in code under `lab/blood/`. Each one must reproduce a number printed in its source or it does not go in.
+**The Blood Lab.** 15 of 16 papers, bug reports and algorithms rebuilt so far, in code under `lab/blood/`. Each one must reproduce a number printed in its source or it does not go in.
 
 **The bug hunt.** We search our own code for real bugs in six areas. Each area announces up front how many probes it runs and how many real bugs end the hunt. A bug only counts with a test that fails on today's code and prints the wrong answer it saw.
 
@@ -80,6 +81,8 @@ The first tree is reachable at exactly the cheaper of the two prices, in all 961
 Grey is what the first rule said, written down before the runs. Orange is what the server gave. One layout matched. The rest did not, and the rule lost.
 
 There is a second problem we found on the way. **Building the same order twice does not always give the same world.** Repeats differ by 122 to 3,396 blocks, mostly in the ring 2 to 3 chunks from the tickets, where chunks are only half loaded. Across 11 worlds, each odd chunk came out in one of just 2 or 3 versions, so it is not random noise. 59 to 63% of the differing blocks sit in the outermost row of a chunk (23% if spread evenly), mostly granite, andesite and diorite blobs.
+
+Were other programs on the machine causing it? We booted the same order 6 more times with only one Minecraft server running and nothing else. 15 of 25 chunks still came out differently, each in 2 to 4 versions. So the cause is inside the server itself.
 
 Our best guess: a blob that crosses a chunk border is placed by whichever neighbour decorates first, so the server's own thread timing acts like a hidden second build order. That is the explanation we are testing, not a proven one.
 
