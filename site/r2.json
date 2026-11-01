@@ -61,7 +61,7 @@
    "plain": "The toolbox starts a private copy of the server, waits until it says it is ready, resets the world and always shuts it down.",
    "why": "A reset in about 20 seconds makes every experiment start from the same empty world.",
    "done_when": "Boot, reset and stop all work, each is timed, and no Java process is left behind.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -97,7 +97,7 @@
    "plain": "Start the server with a 1 GB limit and no window, and wait until its log says Done.",
    "why": "This is the first moment the server can be used, and the time to get there is a number we report.",
    "done_when": "The server prints Done within 60 seconds and answers the list command.",
-   "status": "active",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -109,7 +109,7 @@
    "plain": "Stop the server, delete its world, and start it again so nothing from before survives.",
    "why": "Every experiment must start from the same blank world or its numbers mean nothing.",
    "done_when": "A block placed before the reset is gone after it, and no Java process is left running.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -121,7 +121,7 @@
    "plain": "Measure how long boot and reset take and the most memory the server uses, and save the numbers.",
    "why": "The earlier memory number was one sample, and the plan for how many servers to run at once depends on the peak.",
    "done_when": "A results file holds boot seconds, reset seconds and the peak memory in megabytes.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -157,7 +157,7 @@
    "plain": "Run one, two and three of our private servers at once, resetting each over and over for three minutes, and count fresh worlds per minute and memory per world.",
    "why": "This is the baseline route and needs nothing new to be downloaded.",
    "done_when": "The results file holds worlds per minute, total memory and memory per world for one, two and three servers.",
-   "status": "pending",
+   "status": "active",
    "department": "neurology"
   },
   {
@@ -181,7 +181,7 @@
    "plain": "Measure worlds per minute and memory per world with the speedrunner mods that prepare several worlds inside one game process; it downloads nothing until the owner approves the file list, and otherwise records exactly why it is blocked.",
    "why": "Several worlds sharing one process could beat several servers per gigabyte, but this route needs a game window and downloads, so it must not hold anything else up.",
    "done_when": "The results file holds the measured numbers, or says blocked with the reason.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -217,7 +217,7 @@
    "plain": "A Python reader opens the world files the server saved and says which block sits at any position.",
    "why": "The experiments compare blocks, so the reader must be right before any number is believed.",
    "done_when": "The reader returns exactly the blocks we placed with commands on a live server.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -289,7 +289,7 @@
    "plain": "The reader reads a whole box of blocks, and is proven on the live server.",
    "why": "A reader is only trusted after it reads back what the game itself wrote.",
    "done_when": "A box fingerprint is stable and five placed blocks are read back right.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -313,7 +313,7 @@
    "plain": "Place five known blocks with commands, save, stop, and check the reader finds every one of them.",
    "why": "This is the only proof that the reader sees what the game really wrote.",
    "done_when": "All five placed blocks, including a negative position and a slice edge, are read back right.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -409,7 +409,7 @@
    "plain": "The server builds a big area around spawn at start; check that a chunk thousands of blocks away is not built until we ask.",
    "why": "If spawn already built our test chunks, the order would be the server's and not ours.",
    "done_when": "The far chunk is absent from the saved files before we ask and finished after.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -421,7 +421,7 @@
    "plain": "Build one chunk, then read the status of its neighbour in the saved files.",
    "why": "Building a chunk makes the neighbours partly, which is why order could matter.",
    "done_when": "The neighbour exists but its status is not full.",
-   "status": "pending",
+   "status": "retired",
    "department": "neurology"
   },
   {
@@ -433,7 +433,7 @@
    "plain": "Given a list of chunks, build them in exactly that order on a fresh world and return the blocks of the whole area.",
    "why": "Everything after this is a comparison of such runs.",
    "done_when": "A run of two chunks returns both chunks as finished with the full box of blocks.",
-   "status": "pending",
+   "status": "active",
    "department": "neurology"
   },
   {
@@ -505,7 +505,7 @@
    "plain": "Build the square in all 24 orders, compare each with the first, and tally the ores per chunk for every order.",
    "why": "This is the main table: how many blocks and how many diamonds change with the order.",
    "done_when": "The results file has 24 rows with differing-block counts and ore counts.",
-   "status": "pending",
+   "status": "retired",
    "department": "neurology"
   },
   {
@@ -709,7 +709,7 @@
    "plain": "Turn each column of blocks into one square: tree if a log stands there, water, iron if ore is within six blocks below, a stone wall if the ground jumps two blocks, else open ground.",
    "why": "The solver is flat, so this rule is a stated model, and it is tested so it can be changed.",
    "done_when": "A made-up landscape gives the expected tree, water, iron, wall and open squares.",
-   "status": "active",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -877,7 +877,7 @@
    "plain": "A page draws a card for every goal and one bar for every build order showing its differing-block count.",
    "why": "A bar chart of counts per order is the picture of the experiment.",
    "done_when": "The page reads the data file and has a card hook per goal and a bar hook per order.",
-   "status": "active",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -913,7 +913,7 @@
    "plain": "The test makes a lab run crash and hang on purpose, then checks that no Minecraft server is still running and the port is free.",
    "why": "A forgotten server eats a gigabyte of memory and blocks the next run.",
    "done_when": "No server process and no held port after done, crash and stuck runs.",
-   "status": "active",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -925,7 +925,7 @@
    "plain": "The reset step is asked to delete your real server folder and a random folder; it must refuse both and only clear its own scratch world.",
    "why": "Reset means deleting a world, so a wrong path could destroy real files.",
    "done_when": "Both bad paths are refused and the scratch world is cleared.",
-   "status": "blocked",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -937,7 +937,7 @@
    "plain": "The lab is told memory is low, or three servers are already running, and must refuse to start another.",
    "why": "Servers and builds share 16 GB, and running out would freeze the computer.",
    "done_when": "Low memory and a fourth server are both refused.",
-   "status": "blocked",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -961,7 +961,7 @@
    "plain": "Blocks are placed at chunk borders, at negative coordinates, and at the lowest and highest heights, then read back after a save.",
    "why": "A reader that is wrong at the edges would invent differences exactly where chunks meet.",
    "done_when": "Every placed block reads back as the same block.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -1009,7 +1009,7 @@
    "plain": "The same order is saved after a short wait and after a long wait on the real server, and the blocks are compared.",
    "why": "Water and sand keep moving after a chunk is made, which could look like an order effect.",
    "done_when": "The two saves give the same blocks, or the number that differs is reported.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -1021,7 +1021,7 @@
    "plain": "Each step in a claimed lever is tagged as a player action or an admin command, and any admin command makes the lever lab-only.",
    "why": "Commands like forceload are not moves in a real run, so a lever that needs them is no use for a speedrun.",
    "done_when": "Admin-only levers are labelled lab-only and player ones are not.",
-   "status": "blocked",
+   "status": "reached",
    "department": "immunology"
   },
   {
