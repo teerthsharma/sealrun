@@ -59,6 +59,19 @@ class Lab(unittest.TestCase):
             (decoy / "server.properties").write_text("server-port=25565")
             self.assert_refused(decoy, decoy)
 
+        with self.subTest("f: root itself with a marker is refused and its world kept"):
+            self.make_server(self.root)
+            self.assert_refused(self.root, self.root)
+
+        with self.subTest("g: marked scratch folder without world/ is not an error"):
+            s7 = self.root / "s7"
+            s7.mkdir()
+            (s7 / serverdir.MARKER).write_text("sealrun")
+            (s7 / "server.jar").write_bytes(b"jar")
+            server.delete_world(s7, self.root)
+            self.assertTrue((s7 / serverdir.MARKER).exists())
+            self.assertTrue((s7 / "server.jar").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
