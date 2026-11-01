@@ -1,13 +1,18 @@
 {
  "departments": [
   {
-   "name": "lab",
-   "title": "The Lab (server and chunk reader)",
+   "name": "neurology",
+   "title": "Neurology (field research and complex problems)",
+   "head": "Foreman",
+   "temperament": "immunology",
    "goals": [
-    "N2.G1",
-    "N2.G2"
+    "N2.G1.4",
+    "N2.G3.2",
+    "N2.G3.3",
+    "N2.G3.4",
+    "N2.G3.5"
    ],
-   "plain": "Starts the real Minecraft 1.16.1 server with no game client, sends it commands, reads its saved chunks back as blocks, and shuts it down cleanly.",
+   "plain": "Runs experiments on the real server where nobody knows the answer yet: how many fresh worlds fit in the memory, and whether anything done before a chunk exists changes that chunk.",
    "residents_skills": [
     {
      "skill": "ponytail:ponytail",
@@ -27,115 +32,39 @@
     },
     {
      "skill": "tdd-fix",
-     "why": "a reader that disagrees with /setblock is a bug: RED, fix, mutate"
+     "why": "fix the fault that is present: RED, fix, mutate, nothing more"
     },
     {
      "skill": "superpowers:systematic-debugging",
-     "why": "find the first byte or block where reader and server differ"
+     "why": "find the first place expected and actual differ"
     },
     {
      "skill": "investigator",
-     "why": "chase a hung server or a leaked process to evidence"
+     "why": "chase a hang, leak or crash to evidence"
     },
     {
      "skill": "discover-debugging",
-     "why": "debugging playbooks for odd process and socket failures"
+     "why": "playbooks for odd process and socket failures"
     },
     {
      "skill": "discover-testing",
-     "why": "a test that boots a server needs timeouts and guaranteed cleanup"
-    },
-    {
-     "skill": "discover-distributed",
-     "why": "a client and a server talking over RCON: framing, timeouts, retries"
-    },
-    {
-     "skill": "discover-systems-theory",
-     "why": "RAM budget of three 1 GB servers on a 16 GB box"
+     "why": "timeouts and guaranteed cleanup in tests that boot a server"
     },
     {
      "skill": "anthropic-skills:verify-claims",
-     "why": "a reader is trusted only after it reads back a placed block"
-    },
-    {
-     "skill": "discover-engineering",
-     "why": "stdlib-only Python tooling layout, run scripts as plain files"
-    }
-   ],
-   "nurses_skills": [
-    {
-     "skill": "basic-toolkit",
-     "why": "read logs, grep, collect command output verbatim"
-    },
-    {
-     "skill": "anthropic-skills:verify-claims",
-     "why": "check each claim about the server against its log"
-    },
-    {
-     "skill": "super-investigator",
-     "why": "re-derive byte offsets and counts by hand"
-    },
-    {
-     "skill": "investigator",
-     "why": "find leaked java processes and stuck ports"
-    }
-   ]
-  },
-  {
-   "name": "lever",
-   "title": "The Lever (next-chunk experiment)",
-   "goals": [
-    "N2.G3"
-   ],
-   "plain": "Generates the same seed in different orders and compares every block, to learn whether anything done before a chunk exists can change it.",
-   "residents_skills": [
-    {
-     "skill": "ponytail:ponytail",
-     "why": "write the least code that passes"
-    },
-    {
-     "skill": "coding-guidelines",
-     "why": "house code style before the first line"
-    },
-    {
-     "skill": "superpowers:test-driven-development",
-     "why": "RED test first, then the fix"
-    },
-    {
-     "skill": "superpowers:verification-before-completion",
-     "why": "re-run the test and show the output before saying done"
+     "why": "a reader or claim is trusted only after it reads back a known value"
     },
     {
      "skill": "discover-research",
-     "why": "design a fair order experiment with a control"
+     "why": "design a fair experiment with a control"
     },
     {
      "skill": "research-verdict",
-     "why": "say alive or dead from the measured block differences"
+     "why": "say alive or dead from the measured differences"
     },
     {
      "skill": "discover-topology",
-     "why": "fractal and manifold ideas from the owner's sketch, as falsifiable tests"
-    },
-    {
-     "skill": "discover-math",
-     "why": "order-search bounds, and a Godel/Turing statement placed honestly"
-    },
-    {
-     "skill": "tdd-fix",
-     "why": "a claimed lever with no RED differing block is not a finding"
-    },
-    {
-     "skill": "superpowers:systematic-debugging",
-     "why": "find which block differs first and why"
-    },
-    {
-     "skill": "discover-testing",
-     "why": "repeat runs to separate real order effects from noise"
-    },
-    {
-     "skill": "anthropic-skills:verify-claims",
-     "why": "check each claim about the game against the server run"
+     "why": "fractal and manifold ideas as falsifiable tests"
     },
     {
      "skill": "discover-systems-theory",
@@ -144,30 +73,33 @@
    ],
    "nurses_skills": [
     {
-     "skill": "super-investigator",
-     "why": "recount differing blocks from the raw dumps"
+     "skill": "basic-toolkit",
+     "why": "read, grep, run a named test, collect output verbatim"
     },
     {
      "skill": "anthropic-skills:verify-claims",
-     "why": "check each reported difference against source"
+     "why": "check each claim against source"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive numbers, paths and byte offsets by hand"
     },
     {
      "skill": "meta-cognition-parallel",
-     "why": "compare two orders side by side"
-    },
-    {
-     "skill": "basic-toolkit",
-     "why": "collect the dumps and diffs"
+     "why": "compare two independent readings side by side"
     }
    ]
   },
   {
-   "name": "speedrun",
-   "title": "Speedrun (route on real terrain)",
+   "name": "surgery",
+   "title": "Surgery (maths that exists, applied to the game)",
+   "head": "Chase",
+   "temperament": "oncology",
    "goals": [
-    "N2.G4"
+    "N2.G3.6",
+    "N2.G4.2"
    ],
-   "plain": "Plans the fastest wood-to-iron route on the real seed-7 world read from the saved chunks, and races it against a baseline.",
+   "plain": "Takes maths that already exists (coupling between chunks, order effects, route cost and search bounds) and adds it to the planner and the aiming step, so the route and the order search are provably no larger than needed.",
    "residents_skills": [
     {
      "skill": "ponytail:ponytail",
@@ -186,36 +118,12 @@
      "why": "re-run the test and show the output before saying done"
     },
     {
-     "skill": "discover-math",
-     "why": "metric and A* admissibility on the real block grid"
-    },
-    {
-     "skill": "discover-systems-theory",
-     "why": "the tech tree as a DAG with a tick budget"
-    },
-    {
-     "skill": "discover-research",
-     "why": "design the fair planner-vs-baseline experiment"
-    },
-    {
-     "skill": "research-verdict",
-     "why": "say alive or dead from the measured ticks"
-    },
-    {
-     "skill": "discover-rust-game-design",
-     "why": "speedrun route and inventory state design"
-    },
-    {
      "skill": "rust-patterns",
-     "why": "idiomatic Rust for the planner"
+     "why": "idiomatic, safe Rust"
     },
     {
-     "skill": "m10-performance",
-     "why": "search speed decides the same-budget race"
-    },
-    {
-     "skill": "m14-mental-model",
-     "why": "keep state, cost and heuristic straight"
+     "skill": "m01-ownership",
+     "why": "ownership and borrowing right the first time"
     },
     {
      "skill": "m05-type-driven",
@@ -224,34 +132,85 @@
     {
      "skill": "m06-error-handling",
      "why": "a missing chunk is an error, not a zero block"
+    },
+    {
+     "skill": "m15-anti-pattern",
+     "why": "spot the over-built or over-clever pattern"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "no unsafe unless proven needed"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "only as much speed as the budget needs"
+    },
+    {
+     "skill": "discover-math",
+     "why": "order-search bounds, metric and A* admissibility"
+    },
+    {
+     "skill": "discover-systems-theory",
+     "why": "the tech tree as a DAG with a tick budget"
+    },
+    {
+     "skill": "discover-topology",
+     "why": "coupling and curvature as falsifiable tests"
+    },
+    {
+     "skill": "research-verdict",
+     "why": "say alive or dead from the measured ticks"
+    },
+    {
+     "skill": "discover-rust-game-design",
+     "why": "speedrun route and inventory state design"
     }
    ],
    "nurses_skills": [
     {
-     "skill": "rust-code-navigator",
-     "why": "find the metric and Dijkstra code to reuse"
-    },
-    {
-     "skill": "rust-trait-explorer",
-     "why": "map the planner trait and its implementors"
+     "skill": "super-investigator",
+     "why": "re-derive numbers, paths and byte offsets by hand"
     },
     {
      "skill": "meta-cognition-parallel",
-     "why": "compare planner outputs side by side"
+     "why": "compare two independent readings side by side"
     },
     {
-     "skill": "super-investigator",
-     "why": "re-derive a claimed tick count by hand"
+     "skill": "rust-code-navigator",
+     "why": "definitions and usages"
     }
    ]
   },
   {
-   "name": "window",
-   "title": "The Window (website for round 2)",
+   "name": "immunology",
+   "title": "Immunology (fix what is present, no overshoot)",
+   "head": "Cameron",
+   "temperament": "immunology",
    "goals": [
+    "N2.G1.1",
+    "N2.G1.2",
+    "N2.G1.3",
+    "N2.G1.C1",
+    "N2.G1.C2",
+    "N2.G1.C3",
+    "N2.G2",
+    "N2.G3.1",
+    "N2.G3.7",
+    "N2.G3.C1",
+    "N2.G3.C2",
+    "N2.G3.C3",
+    "N2.G3.C4",
+    "N2.G3.C5",
+    "N2.G4.1.1",
+    "N2.G4.1.2",
+    "N2.G4.1.4",
+    "N2.G4.1.5",
+    "N2.G4.1.6",
+    "N2.G4.1.A1",
+    "N2.G4.C2",
     "N2.G5"
    ],
-   "plain": "Shows the round 2 goals in plain English with the experiment's measured numbers.",
+   "plain": "Builds and repairs what is already needed: the server toolbox, the chunk reader, the measuring tools, the verdict writer and the website, and stops anyone else from doing more than the fault asks.",
    "residents_skills": [
     {
      "skill": "ponytail:ponytail",
@@ -270,20 +229,36 @@
      "why": "re-run the test and show the output before saying done"
     },
     {
+     "skill": "tdd-fix",
+     "why": "fix the fault that is present: RED, fix, mutate, nothing more"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "find the first place expected and actual differ"
+    },
+    {
+     "skill": "investigator",
+     "why": "chase a hang, leak or crash to evidence"
+    },
+    {
+     "skill": "discover-debugging",
+     "why": "playbooks for odd process and socket failures"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "timeouts and guaranteed cleanup in tests that boot a server"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "a reader or claim is trusted only after it reads back a known value"
+    },
+    {
      "skill": "frontend-design:frontend-design",
-     "why": "distinctive, readable page design"
-    },
-    {
-     "skill": "site-revamp",
-     "why": "full rebuild standard, not a reskin"
-    },
-    {
-     "skill": "visual-companion",
-     "why": "show the experiment as pictures"
+     "why": "readable page design, only for the website goals"
     },
     {
      "skill": "dataviz",
-     "why": "colour only by meaningful data, such as differing blocks"
+     "why": "colour only by meaningful data"
     },
     {
      "skill": "anti-slop",
@@ -296,41 +271,8 @@
    ],
    "nurses_skills": [
     {
-     "skill": "dataviz",
-     "why": "check chart colours and labels"
-    },
-    {
      "skill": "basic-toolkit",
-     "why": "collect the page text and status JSON"
-    }
-   ]
-  },
-  {
-   "name": "ward2",
-   "title": "Nurses' Ward (audit and evidence)",
-   "goals": [],
-   "plain": "Reads, greps, re-runs and cross-checks what the residents claim, including server logs and region-file bytes.",
-   "residents_skills": [],
-   "nurses_skills": [
-    {
-     "skill": "superpowers:verification-before-completion",
-     "why": "report command, exit code and first failing line"
-    },
-    {
-     "skill": "superpowers:test-driven-development",
-     "why": "confirm the RED run came before the fix"
-    },
-    {
-     "skill": "superpowers:systematic-debugging",
-     "why": "isolate a failing check before reporting"
-    },
-    {
-     "skill": "ponytail:ponytail",
-     "why": "report only what was asked"
-    },
-    {
-     "skill": "coding-guidelines",
-     "why": "check diffs against house style"
+     "why": "read, grep, run a named test, collect output verbatim"
     },
     {
      "skill": "anthropic-skills:verify-claims",
@@ -338,23 +280,92 @@
     },
     {
      "skill": "super-investigator",
-     "why": "re-derive numbers and paths"
+     "why": "re-derive numbers, paths and byte offsets by hand"
     },
     {
      "skill": "investigator",
-     "why": "chase a hang or crash to evidence"
+     "why": "find leaked processes and stuck ports"
     },
     {
-     "skill": "discover-debugging",
-     "why": "debugging playbooks for odd failures"
+     "skill": "dataviz",
+     "why": "check chart colours and labels"
+    }
+   ]
+  },
+  {
+   "name": "oncology",
+   "title": "Oncology (Rust that cannot be broken)",
+   "head": "Wilson",
+   "temperament": "oncology",
+   "goals": [
+    "N2.G4.1.3",
+    "N2.G4.C1",
+    "N2.G4.C3",
+    "N2.G4.C4"
+   ],
+   "plain": "Keeps the Rust side bulletproof: the grid reader, the rule checker that replays routes, the map-edge wall and the fair rival route finder, each with just enough code and no more.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
     },
     {
-     "skill": "meta-cognition-parallel",
-     "why": "cross-check independent readings"
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
     },
     {
-     "skill": "super-genius-rick",
-     "why": "hard-problem second opinion"
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "rust-patterns",
+     "why": "idiomatic, safe Rust"
+    },
+    {
+     "skill": "m01-ownership",
+     "why": "ownership and borrowing right the first time"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "newtypes so ticks, blocks and items cannot mix"
+    },
+    {
+     "skill": "m06-error-handling",
+     "why": "a missing chunk is an error, not a zero block"
+    },
+    {
+     "skill": "m15-anti-pattern",
+     "why": "spot the over-built or over-clever pattern"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "no unsafe unless proven needed"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "only as much speed as the budget needs"
+    },
+    {
+     "skill": "m04-zero-cost",
+     "why": "generics and traits without cost"
+    },
+    {
+     "skill": "m07-concurrency",
+     "why": "only where the server lab needs threads"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each claim against source"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive numbers, paths and byte offsets by hand"
     },
     {
      "skill": "rust-code-navigator",
@@ -363,13 +374,141 @@
     {
      "skill": "rust-call-graph",
      "why": "who calls what"
-    },
-    {
-     "skill": "basic-toolkit",
-     "why": "grep, read and collect"
     }
    ]
   }
  ],
- "unassigned": []
+ "resident_temperaments": {
+  "immunology": {
+   "way_of_thinking": "The art of keeping life alive. Find the fault that is actually present, reproduce it with a failing test, fix exactly that and nothing around it. A fix larger than its fault is an overshoot, the same harm as the fault, so refuse the tidy-up, the extra option and the new abstraction. Confirm the patient is still well afterwards: the test turns green and reverting the fix turns it red again.",
+   "skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "tdd-fix",
+     "why": "fix the fault that is present: RED, fix, mutate, nothing more"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "find the first place expected and actual differ"
+    },
+    {
+     "skill": "investigator",
+     "why": "chase a hang, leak or crash to evidence"
+    },
+    {
+     "skill": "discover-debugging",
+     "why": "playbooks for odd process and socket failures"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "timeouts and guaranteed cleanup in tests that boot a server"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "a reader or claim is trusted only after it reads back a known value"
+    }
+   ]
+  },
+  "oncology": {
+   "way_of_thinking": "The art of proportions: just enough, in the right place. Be careful before being clever. Measure the size of the problem first, then use the smallest amount of Rust that closes it, with types that make the wrong state impossible and an error for every missing case. Anything that grows without a reason (code, unsafe, speed work, dependencies) is the thing to cut.",
+   "skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "rust-patterns",
+     "why": "idiomatic, safe Rust"
+    },
+    {
+     "skill": "m01-ownership",
+     "why": "ownership and borrowing right the first time"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "newtypes so ticks, blocks and items cannot mix"
+    },
+    {
+     "skill": "m06-error-handling",
+     "why": "a missing chunk is an error, not a zero block"
+    },
+    {
+     "skill": "m15-anti-pattern",
+     "why": "spot the over-built or over-clever pattern"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "no unsafe unless proven needed"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "only as much speed as the budget needs"
+    }
+   ]
+  }
+ },
+ "nurses": {
+  "note": "plain haiku helpers for every department, no personality: read, grep, run a named test, collect output verbatim",
+  "skills": [
+   {
+    "skill": "basic-toolkit",
+    "why": "read, grep, run a named test, collect output verbatim"
+   },
+   {
+    "skill": "anthropic-skills:verify-claims",
+    "why": "check each claim against source"
+   },
+   {
+    "skill": "super-investigator",
+    "why": "re-derive numbers, paths and byte offsets by hand"
+   },
+   {
+    "skill": "investigator",
+    "why": "find leaked processes and stuck ports"
+   },
+   {
+    "skill": "meta-cognition-parallel",
+    "why": "compare two independent readings side by side"
+   },
+   {
+    "skill": "rust-code-navigator",
+    "why": "definitions and usages"
+   },
+   {
+    "skill": "rust-call-graph",
+    "why": "who calls what"
+   },
+   {
+    "skill": "dataviz",
+    "why": "check chart colours and labels"
+   }
+  ]
+ }
 }

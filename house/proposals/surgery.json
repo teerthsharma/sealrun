@@ -1,0 +1,196 @@
+{
+ "need": "N2.G0",
+ "fellow": "Chase",
+ "department": "Surgery",
+ "notes": "Placeholders: ids N2.G7.x and parents/needs N2.G3.4, N2.G3.5, N2.G2 follow house/departments.md and may be renumbered by House. Foreman and Cameron own the order run (G3.4), the player edit (G3.5) and the reader (G2); blockdiff.py, ores.py, orders.py and squares_plan.py do not exist yet, so the tests use synthetic inputs and each goal needs the goal that creates its real input. Kill conditions per goal are in house/surgery-chaos-coupling.md sections 2 to 7. Rust test name assumes crate sealrun-topo; confirm the package name.",
+ "goals": [
+  {
+   "id": "N2.G7.1",
+   "parent": "N2.G3",
+   "text": "A script turns the 24 build orders of four chunks into a table of how much each chunk changes when the order changes, and one number for how strongly neighbours depend on each other.",
+   "leaf": true,
+   "tier": "sonnet",
+   "class": "test_unit",
+   "needs": [
+    "N2.G3.4"
+   ],
+   "writes": [],
+   "reads": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/anvil.py"
+   ],
+   "creates": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/coupling.py",
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/tests/test_coupling.py"
+   ],
+   "test": {
+    "name": "coupling_permutohedron_defects",
+    "cmd": "python lab/tests/test_coupling.py Lab.coupling_permutohedron_defects",
+    "class": "test_unit"
+   },
+   "est": {
+    "ram_mb": 100,
+    "secs": 10,
+    "tokens": 9000
+   },
+   "guards": null,
+   "alt_of": null
+  },
+  {
+   "id": "N2.G7.2",
+   "parent": "N2.G3",
+   "text": "A script counts how many blocks differ at each chunk distance from one change (a swapped build or one placed block) and says how far the damage reaches and whether it grows or dies out.",
+   "leaf": true,
+   "tier": "sonnet",
+   "class": "test_unit",
+   "needs": [
+    "N2.G3.5"
+   ],
+   "writes": [],
+   "reads": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/anvil.py"
+   ],
+   "creates": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/damage.py",
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/tests/test_damage.py"
+   ],
+   "test": {
+    "name": "damage_profile_and_rho_known_chain",
+    "cmd": "python lab/tests/test_damage.py Lab.damage_profile_and_rho_known_chain",
+    "class": "test_unit"
+   },
+   "est": {
+    "ram_mb": 100,
+    "secs": 10,
+    "tokens": 9000
+   },
+   "guards": null,
+   "alt_of": null
+  },
+  {
+   "id": "N2.G7.3",
+   "parent": "N2.G3",
+   "text": "A script checks whether the ore count of any build order can be predicted from which of two chunks was built first, for each pair, using only some of the orders and testing on the rest.",
+   "leaf": true,
+   "tier": "sonnet",
+   "class": "test_unit",
+   "needs": [
+    "N2.G3.4",
+    "N2.G7.1"
+   ],
+   "writes": [],
+   "reads": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/anvil.py"
+   ],
+   "creates": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/pairsum.py",
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/tests/test_pairsum.py"
+   ],
+   "test": {
+    "name": "pairsum_heldout_error_zero_on_additive",
+    "cmd": "python lab/tests/test_pairsum.py Lab.pairsum_heldout_error_zero_on_additive",
+    "class": "test_unit"
+   },
+   "est": {
+    "ram_mb": 100,
+    "secs": 10,
+    "tokens": 9000
+   },
+   "guards": null,
+   "alt_of": null
+  },
+  {
+   "id": "N2.G7.4",
+   "parent": "N2.G3",
+   "text": "The Rust topology crate gets a function that measures how much the neighbours of two linked chunks overlap (Ollivier curvature), so a lopsided coupling shows up as a number per link.",
+   "leaf": true,
+   "tier": "sonnet",
+   "class": "test_unit",
+   "needs": [
+    "N2.G7.1"
+   ],
+   "writes": [
+    "C:/Users/seal/Documents/GitHub/sealrun/crates/topo/src/lib.rs"
+   ],
+   "reads": [
+    "C:/Users/seal/Documents/GitHub/sealrun/crates/topo/src/lib.rs"
+   ],
+   "creates": [
+    "C:/Users/seal/Documents/GitHub/sealrun/crates/topo/src/ricci.rs"
+   ],
+   "test": {
+    "name": "ricci_c4_zero_and_half_grid_flat",
+    "cmd": "cargo test -p sealrun-topo ricci_c4_zero_and_half_grid_flat",
+    "class": "test_unit"
+   },
+   "est": {
+    "ram_mb": 1500,
+    "secs": 120,
+    "tokens": 12000
+   },
+   "guards": null,
+   "alt_of": null
+  },
+  {
+   "id": "N2.G7.5",
+   "parent": "N2.G3",
+   "text": "The test builds the same four chunks twice in the same order on the real server and checks that not one block differs, because otherwise every other order experiment only measures noise.",
+   "leaf": true,
+   "tier": "sonnet",
+   "class": "run_test",
+   "needs": [
+    "N2.G3.4"
+   ],
+   "writes": [],
+   "reads": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/anvil.py"
+   ],
+   "creates": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/tests/test_guard_repeat_order.py"
+   ],
+   "test": {
+    "name": "test_repeat_order_zero_diff",
+    "cmd": "python lab/tests/test_guard_repeat_order.py",
+    "class": "run_test"
+   },
+   "est": {
+    "ram_mb": 1500,
+    "secs": 180,
+    "tokens": 8000
+   },
+   "guards": "N2.G3.4",
+   "alt_of": null
+  },
+  {
+   "id": "N2.G7.6",
+   "parent": "N2.G4",
+   "text": "A script measures how rough seed 7's ground is at different distances and says whether a straight line fits, so the word fractal is used only if it is true.",
+   "leaf": true,
+   "tier": "sonnet",
+   "class": "test_unit",
+   "needs": [
+    "N2.G2"
+   ],
+   "writes": [],
+   "reads": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/anvil.py",
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/nbt.py"
+   ],
+   "creates": [
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/fractal.py",
+    "C:/Users/seal/Documents/GitHub/sealrun/lab/tests/test_fractal.py"
+   ],
+   "test": {
+    "name": "variogram_slope_recovers_h_half",
+    "cmd": "python lab/tests/test_fractal.py Lab.variogram_slope_recovers_h_half",
+    "class": "test_unit"
+   },
+   "est": {
+    "ram_mb": 100,
+    "secs": 10,
+    "tokens": 9000
+   },
+   "guards": null,
+   "alt_of": null
+  }
+ ]
+}
