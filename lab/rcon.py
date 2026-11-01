@@ -1,3 +1,4 @@
+import socket
 import struct
 
 LOGIN = 3
@@ -21,3 +22,43 @@ def decode(buf: bytes) -> tuple[int, int, str, bytes]:
         raise ValueError("missing terminator")
     body = buf[12 : 4 + length - 2].decode("utf-8")
     return req_id, ptype, body, buf[4 + length :]
+
+
+class Client:
+    def __init__(self, host, port, password, timeout=10.0):
+        self._sock = socket.create_connection((host, port), timeout=timeout)
+        self._buf = b""
+        self._next_id = 2
+        try:
+            self._sock.sendall(encode(1, LOGIN, password))
+            if self._recv()[0] == -1:
+                raise PermissionError("rcon login rejected")
+        except BaseException:
+            self._sock.close()
+            raise
+
+    def command(self, text: str) -> str:
+        n = self._next_id
+        self._next_id += 2
+        self._sock.sendall(encode(n, COMMAND, text) + encode(n + 1, RESPONSE, ""))
+        parts = []
+        while True:
+            rid, _, body = self._recv()
+            if rid == n + 1:
+                return "".join(parts)
+            if rid == n:
+                parts.append(body)
+
+    def close(self) -> None:
+        self._sock.close()
+
+    def _recv(self) -> tuple[int, int, str]:
+        while True:
+            try:
+                req_id, ptype, body, self._buf = decode(self._buf)
+                return req_id, ptype, body
+            except ValueError:
+                data = self._sock.recv(65536)
+                if not data:
+                    raise ConnectionError("rcon connection closed")
+                self._buf += data
