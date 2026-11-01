@@ -149,6 +149,12 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   and holds `MARKER`; then removes `scratch_dir / "world"`; a missing world is not an error).
   `server.reset(srv, root) -> Server`: `srv.stop()`, `delete_world(srv.scratch["dir"], root)`, `boot(srv.scratch)`;
   returns the new Server (same scratch, same ports). `lab/tests/test_guard_reset_scope.py` must pass unchanged.
+- `oneprocess_worlds.py` (N2.G1.4.3): `result(mc_dir: Path) -> dict` uses `fabric_probe.probe(mc_dir)`; with no Fabric
+  loader or no mods it gives `{"status": "blocked", "reason": "file list not approved by the owner (house/permissions-
+  6h.md row 15); fabric_loader: [...], mods: [...]", "worlds_per_minute": None, "mb_per_world": None}`; with both
+  present it gives `{"status": "not run", ...}` and the same two None numbers (measuring is a later leaf). `python
+  lab/oneprocess_worlds.py` writes `lab/results/worlds_one_process.json` from the real `.minecraft`. The module
+  imports no network library (no urllib, http, socket) and downloads nothing.
 - Real-server facts (N2.G1.2.3, measured): boot to `Done (` 19.0-21.0 s alone, 27 s with a second boot running;
   `list` answers `There are 0 of a max of 4 players online: `. A block check is `execute if block x y z <block>`
   after `forceload add x z` (`orderrun.wait_loaded`).
