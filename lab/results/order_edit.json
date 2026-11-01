@@ -22,13 +22,50 @@
   },
   "positions": 327680,
   "inside_changed": 64,
-  "outside_changed": 6,
+  "outside_changed": 10,
   "added": 0,
   "removed": 0,
   "by_chunk_outside": {
+    "66,64": 4,
     "68,64": 6
   },
   "examples_outside": [
+    [
+      [
+        1061,
+        43,
+        1025
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        43,
+        1024
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        43,
+        1025
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1062,
+        43,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
     [
       [
         1092,
@@ -95,14 +132,17 @@
     0
   ],
   "fingerprints": {
-    "p1": "9fd4b7ed847b0f7c61abb41cc4de9c493b67a43cdd289cd08262d6bc162aa0f4",
+    "p1": "d677348255e62346129bf9c7206da060c00644d639e74c96e50c53ddb94152cb",
     "p2": "9fd4b7ed847b0f7c61abb41cc4de9c493b67a43cdd289cd08262d6bc162aa0f4",
     "e1": "3aaf87b10bab07d7039c7f67e53d41b499ef18110c4f04b59f8fc1ab88b57177",
-    "e2": "3aaf87b10bab07d7039c7f67e53d41b499ef18110c4f04b59f8fc1ab88b57177"
+    "e2": "7cfb7eb1a1777b62446440bb1973323e503476cdb0f13c22bd4a2c229e777b48"
   },
   "noise": {
-    "count": 0,
-    "by_chunk": {}
+    "count": 42,
+    "by_chunk": {
+      "66,64": 34,
+      "67,64": 8
+    }
   },
   "edit_attributed": {
     "count": 6,
@@ -170,23 +210,23 @@
     "p1": [
       0.62,
       0.02,
-      0.31
+      0.28
     ],
     "p2": [
-      0.42,
+      0.5,
       0.01,
       0.28
     ],
     "e1": [
-      0.44,
-      0.0,
-      0.28
+      0.59,
+      0.01,
+      0.38
     ],
     "e2": [
-      0.52,
-      0.02,
-      0.3
+      0.53,
+      0.0,
+      0.28
     ]
   },
-  "when": "2026-11-01T11:48:47.608939+05:30"
+  "when": "2026-11-01T11:53:20.666309+05:30"
 }
