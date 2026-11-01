@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {"name": "site-preview", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "7741", "--bind", "127.0.0.1", "-d", "site"], "port": 7741}
+  ]
+}

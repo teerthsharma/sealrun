@@ -27,6 +27,7 @@ def main(argv):
     for f in ("foreman.json", "chase.json", "cameron.json"):
         for c in load(f, []):
             copy[c["id"]] = c
+    copy.setdefault("G0", {"title": "sealrun", "plain": "Read a game's seed, learn the shape of its world, and plan the fastest route to the end, starting with a Minecraft-like world.", "why": "Knowing the shape of the map first means the planner never searches places it cannot reach.", "done_when": "Every goal below is reached with a test that failed first and then passed."})
     depts = load("departments.json", {"departments": []})["departments"]
     dept_of = {g: d["name"] for d in depts for g in d.get("goals", [])}
 
