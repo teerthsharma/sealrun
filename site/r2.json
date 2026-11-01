@@ -13,7 +13,7 @@
    "plain": "A small Python toolbox starts the Minecraft server with no game window, sends it commands, resets it, shuts it down and times every step.",
    "why": "Every experiment after this one needs a server we can start and wipe from a script, safely.",
    "done_when": "A script can boot, command, reset and stop the server, and no server is left running afterwards.",
-   "status": "pending",
+   "status": "reached",
    "department": null
   },
   {
@@ -145,7 +145,7 @@
    "plain": "Memory is the limit, so the lab measures which way of making many fresh worlds gives the most worlds per minute for each gigabyte: several ordinary servers, or many worlds inside one game process the way speedrunners do.",
    "why": "The order experiment needs dozens of fresh worlds, and the cheaper way to get them saves hours; this is a measured choice and not a belief.",
    "done_when": "Both ways have saved numbers (or a stated reason one could not run), and a choice file names the winner.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -205,7 +205,7 @@
    "plain": "Hand a list of build orders to the chosen workers, never more than three servers at once, and get the results back in the order the jobs were given.",
    "why": "The order experiment gets its dozens of worlds faster, and it can use either route without being rewritten.",
    "done_when": "With pretend workers the results come back in job order, one worker failing is reported, and asking for four servers is refused.",
-   "status": "active",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -541,7 +541,7 @@
    "plain": "If the order did nothing, test the other lever: blocks the player broke or placed in a finished chunk before its neighbour is built.",
    "why": "A player can do this in the real game, so it is the next place to look.",
    "done_when": "Cells outside the edit are counted as changed or not, against a no-edit control.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -565,7 +565,7 @@
    "plain": "Build chunk A, break blocks near its edge, build chunk B, and count changed cells outside the edit against a run with no edit.",
    "why": "Changed cells outside the edit would mean the player shaped the next chunk.",
    "done_when": "The results file holds the count of changed cells outside the edit and where they are.",
-   "status": "active",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -721,7 +721,7 @@
    "plain": "Write the squares in the byte format the Rust grid reads, and keep one tiny sample file both languages must agree on.",
    "why": "Python writes and Rust reads, so one shared sample stops them drifting apart.",
    "done_when": "The bytes Python writes equal the saved sample file, byte for byte.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -733,7 +733,7 @@
    "plain": "The round 1 Rust grid reader loads the shared sample file and gives the right size and squares; no new Rust library is needed.",
    "why": "If Python and Rust ever disagree about the file, this test fails first.",
    "done_when": "Loading the shared sample gives the right size and the right squares.",
-   "status": "pending",
+   "status": "active",
    "department": "oncology"
   },
   {
@@ -745,7 +745,7 @@
    "plain": "A script turns a box of real blocks into a grid file using the flattening rule and the grid writer, with the area (64 by 64 squares around spawn) written down in one place.",
    "why": "The export logic is checked on made-up blocks before it ever touches the real world.",
    "done_when": "A made-up box of blocks becomes the expected grid bytes.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -793,7 +793,7 @@
    "plain": "Choose a start square near the middle and a finish square next to the nearest iron, on any grid, so every race uses the same rule.",
    "why": "Fixed rules for start and finish keep the race fair and repeatable.",
    "done_when": "On a hand-made grid the start and the finish are the squares worked out on paper.",
-   "status": "pending",
+   "status": "reached",
    "department": "surgery"
   },
   {
@@ -805,7 +805,7 @@
    "plain": "On a map with a short wall and a long way round, the round 1 plain search digs the wall and the planner walks round in fewer ticks.",
    "why": "This shows on a small map exactly why planning in ticks beats counting moves.",
    "done_when": "The planner's ticks are lower than the plain search's on the trap map.",
-   "status": "pending",
+   "status": "reached",
    "department": "surgery"
   },
   {
@@ -817,7 +817,7 @@
    "plain": "Run both on the real seed 7 grid from one start and save the ticks of each.",
    "why": "This is the first real result for goal two.",
    "done_when": "The planner's ticks are not above the rival's, and the file records both numbers.",
-   "status": "pending",
+   "status": "blocked",
    "department": "surgery"
   },
   {
@@ -1045,7 +1045,7 @@
    "plain": "Routes on the real terrain are replayed by a separate checker; mining iron with a wooden pickaxe or none must be rejected.",
    "why": "A route that breaks the game's rules is not a speedrun.",
    "done_when": "Every route passes the checker and the trap route is rejected.",
-   "status": "pending",
+   "status": "reached",
    "department": "oncology"
   },
   {
@@ -1057,7 +1057,7 @@
    "plain": "Every block name in the seed 7 area must have a known meaning, and lava, water and unknown names must never count as walkable floor.",
    "why": "A route across lava looks fast on paper and ends the run.",
    "done_when": "No unmapped block name and no unsafe block counted as floor.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -1069,7 +1069,7 @@
    "plain": "A route that steps outside the area we read must be rejected.",
    "why": "We know nothing outside the area, so leaving it would invent shortcuts.",
    "done_when": "The route using unknown cells is rejected.",
-   "status": "pending",
+   "status": "active",
    "department": "oncology"
   },
   {
@@ -1141,7 +1141,7 @@
    "plain": "The server already builds a big area around the world spawn while it starts. The route is planned on that area, where a real run begins, with no extra build commands.",
    "why": "The fastest run starts at spawn, so planning there is both cheaper and the true starting map.",
    "done_when": "After a plain boot the reader finds a start square, a tree, stone and iron in the spawn area.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
