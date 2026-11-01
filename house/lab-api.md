@@ -265,4 +265,20 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   numbers vanilla_best_n is 1 (3.07 / (812.2 / 1024) = 3.87 vs 4.42 / (1609.2 / 1024) = 2.81); the committed
   world_route.json equals pick recomputed from the committed worlds_vanilla.json (ignoring "when").
 
+## Round 2, batch 14
+- `pool.py` (N2.G1.4.5), pure: `run(jobs: list, fn, workers: int) -> list` runs `fn(job)` for every job with at most
+  `workers` at once (`concurrent.futures.ThreadPoolExecutor`) and returns the results in job order. `workers` must be
+  1 or 2 (the owner cap of 2 real servers overrules the chart's 3); otherwise `ValueError` before any job starts. An
+  exception in a job propagates. Test `pool_returns_results_in_job_order_and_refuses_four_servers`, pure, fake `fn`
+  that sleeps a job-dependent time so jobs finish out of order: results come back in job order; the highest number of
+  jobs running at once is exactly 2 for workers 2 with 4 jobs and 1 for workers 1; workers 3 and 4 raise ValueError
+  and `fn` is never called; a job that raises makes `run` raise.
+- `test_order_collapse.py` (N2.G3.C6, guard of N2.G3.4): O1 = `orders.square_orders(64, 64)[0]`, O2 = `[O1[0]] +
+  O1[:0:-1]` (same first chunk, the other three reversed). Three fresh worlds: `orderrun.run_order(O1)`,
+  `run_order(O2)`, `run_order(O1)` again (control). `blockdiff.diff(O1, control)` and `diff(O1, O2)`. Writes
+  `lab/results/order_collapse.json` = {"orders": [O1, O2], "positions", "control_changed", "pair_changed",
+  "by_chunk_pair" {chunk: n}, "examples" (<= 20 of (pos, O1, O2)), "fingerprints" [O1, O2, control], "not_full"
+  [three None counts], "when"} before asserting. Asserts: 0 None in all three windows, control_changed 0, pair_changed
+  0 (the 4-class collapse). Nonzero is a finding (the collapse is false), reported, never bent.
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
