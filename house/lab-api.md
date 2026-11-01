@@ -241,8 +241,16 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   edited)), "edit_before" {block: count of plain's blocks at the 64 edit cells}, "not_full" [plain, edited],
   "fingerprints", "when"} before asserting. Asserts only: both windows have 0 None cells, every edit cell reads
   `minecraft:air` in the edited world, the json is written. outside_changed is the result, any value valid.
-  Lead, unverified: by the 1.16 status chain a FULL chunk's 8 neighbours are already past FEATURES, so 0 outside
-  is expected; the measurement decides.
+  (The lead "0 outside expected" was refuted by the batch 12 lane; see the fix below.)
+- Batch 12 fix (lane r2-batch12): the rush flow above is not deterministic (plain vs plain: 17 cells differ, chunks
+  67 and 68). The test uses the settled flow instead. `settle(srv, tile)`: for each chunk of `tile` poll
+  `execute if block <cx*16> 0 <cz*16> minecraft:bedrock` every 0.5 s until "Test passed" (120 s budget for the
+  whole tile, else RuntimeError), then `save-all flush`, then sleep 10 s; returns the poll seconds. Steps per world:
+  boot; `wait_loaded(A)`; settle(A's tile); edit loop (edited world only); settle(A's tile); `wait_loaded(B)`;
+  settle(B's tile = chunks 66..70 x 62..66); `save-all flush`; stop. Three fresh worlds: plain, plain again
+  (control), edited. Asserts added: the two plain fingerprints are equal (the measurement needs a deterministic
+  control). The json adds "control_fingerprint" and "settle_s" {world: [three poll seconds]}. Lane numbers to
+  reproduce (settled, 2 of 2 per arm): outside 6, all in chunk (68, 64), andesite -> diorite.
 
 ## Round 2, batch 13
 - `choice.py` (N2.G1.4.4), pure: `per_gb(run) -> float` = `worlds_per_minute / (peak_mb_total / 1024)`.
