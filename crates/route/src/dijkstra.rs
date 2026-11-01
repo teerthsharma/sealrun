@@ -48,9 +48,9 @@ mod tests {
         dist[src] = Some(0);
         for _ in 1..n.max(1) {
             let mut changed = false;
-            for u in 0..n {
+            for (u, edges) in adj.iter().enumerate() {
                 let Some(du) = dist[u] else { continue };
-                for &(v, w) in &adj[u] {
+                for &(v, w) in edges {
                     let Some(nd) = du.checked_add(w) else { continue };
                     if dist[v].is_none_or(|old| nd < old) {
                         dist[v] = Some(nd);
@@ -73,12 +73,12 @@ mod tests {
             let n = 1 + rng.below(30) as usize;
             let density = rng.below(100);
             let mut adj = vec![Vec::new(); n];
-            for u in 0..n {
+            for edges in adj.iter_mut() {
                 for v in 0..n {
                     if rng.below(100) < density {
                         let w = rng.below(101);
                         zero_edges += (w == 0) as usize;
-                        adj[u].push((v, w));
+                        edges.push((v, w));
                     }
                 }
             }
