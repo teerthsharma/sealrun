@@ -1,0 +1,526 @@
+{
+ "method": "gudhi.CubicalComplex sublevel, persistence(field 2)",
+ "gudhi_version": "3.12.0",
+ "OBST": 1000.0,
+ "OBST_CUT": 500.0,
+ "systems": {
+  "a_swim10_dig23": {
+   "s": 10,
+   "d": 23,
+   "betti_rows": [
+    {
+     "T": 0,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 1,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 2,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 3,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 4,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 5,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 6,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 7,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 8,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 9,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 10,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 11,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 12,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 13,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 14,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 15,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 16,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 17,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 18,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 19,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 20,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 21,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 22,
+     "gudhi_b0": 77,
+     "gudhi_b1": 33,
+     "plain_b0": 77,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 23,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 24,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 25,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 26,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 27,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 28,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 29,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 30,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    }
+   ],
+   "all_T_agree": true,
+   "H0_finite_pairs_gudhi": 163,
+   "H0_finite_pairs_plain": 163,
+   "H0_finite_pairs_multiset_equal": true,
+   "H1_finite_pairs_gudhi": 25
+  },
+  "b_equal_cost23": {
+   "s": 23,
+   "d": 23,
+   "betti_rows": [
+    {
+     "T": 0,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 1,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 2,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 3,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 4,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 5,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 6,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 7,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 8,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 9,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 10,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 11,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 12,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 13,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 14,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 15,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 16,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 17,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 18,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 19,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 20,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 21,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 22,
+     "gudhi_b0": 158,
+     "gudhi_b1": 4,
+     "plain_b0": 158,
+     "plain_b1": 4,
+     "agree": true
+    },
+    {
+     "T": 23,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 24,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 25,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 26,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 27,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 28,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 29,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    },
+    {
+     "T": 30,
+     "gudhi_b0": 1,
+     "gudhi_b1": 33,
+     "plain_b0": 1,
+     "plain_b1": 33,
+     "agree": true
+    }
+   ],
+   "all_T_agree": true,
+   "H0_finite_pairs_gudhi": 157,
+   "H0_finite_pairs_plain": 157,
+   "H0_finite_pairs_multiset_equal": true,
+   "H1_finite_pairs_gudhi": 1
+  }
+ }
+}

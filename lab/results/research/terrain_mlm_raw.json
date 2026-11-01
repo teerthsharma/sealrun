@@ -1,0 +1,17 @@
+{
+  "note": "verbatim mlm tool results, transcribed from the calls made in the research/terrain session; masks and point clouds are written by lab/research/terrain_ph.py",
+  "euler_characteristic": {
+    "air_T0": {"mask_ref": "lab/results/research/mlm_inputs/mask_air_T0.npy", "foreground": 1417, "chi": 154, "b0": 158, "b1": 4, "connectivity": 4, "engine": "sigmoid.vision.euler"},
+    "air_water_T10": {"mask_ref": "lab/results/research/mlm_inputs/mask_air_water_T10.npy", "foreground": 2955, "chi": 44, "b0": 77, "b1": 33, "connectivity": 4, "engine": "sigmoid.vision.euler"},
+    "air_water_stone_T23": {"mask_ref": "lab/results/research/mlm_inputs/mask_air_water_stone_T23.npy", "foreground": 4030, "chi": -32, "b0": 1, "b1": 33, "connectivity": 4, "engine": "sigmoid.vision.euler"}
+  },
+  "ph_summary_thresh1_max_dim0": {
+    "air_T0": {"ref": "lab/results/research/mlm_inputs/points_air_T0.npy", "n_points": 1417, "engine": "ripser", "thresh": 1.0, "dim0_n_essential": 158, "dim0_n_finite": 1259, "dim0_max_death": 1.0},
+    "air_water_T10": {"ref": "lab/results/research/mlm_inputs/points_air_water_T10.npy", "n_points": 2955, "engine": "ripser", "thresh": 1.0, "dim0_n_essential": 77, "dim0_n_finite": 2878, "dim0_max_death": 1.0},
+    "air_water_stone_T23": {"ref": "lab/results/research/mlm_inputs/points_air_water_stone_T23.npy", "n_points": 4030, "engine": "ripser", "thresh": 1.0, "dim0_n_essential": 1, "dim0_n_finite": 4029, "dim0_max_death": 1.0}
+  },
+  "T_to_mask": {
+    "a_swim10_dig23": {"0-9": "air_T0", "10-22": "air_water_T10", "23-30": "air_water_stone_T23"},
+    "b_equal_cost23": {"0-22": "air_T0", "23-30": "air_water_stone_T23"}
+  }
+}
