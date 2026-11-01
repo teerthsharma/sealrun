@@ -388,5 +388,36 @@ class LowerBound(unittest.TestCase):
         self.assertEqual(v["cause"], "partial_coverage")
 
 
+class Pairs(unittest.TestCase):
+    def test_transitivity_counts_distinct_ordered_triples(self):
+        r = P.transitivity(list(range(4)), [[0] * 4 for _ in range(4)])
+        self.assertEqual(r["distinct_ordered_triples"], 24)
+        self.assertNotIn("triples", r)
+
+    def test_entry_carries_pairs_from_the_diff_report(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "A.json").write_text(json.dumps({"order": [[0, 0]], "chunks": {"0,0": {"sha256": "a"}}}))
+            (d / "B.json").write_text(json.dumps({"order": [[1, 0]], "chunks": {"0,0": {"sha256": "b"}}}))
+            rep = d / "rep.json"
+            rep.write_text(json.dumps({"pairs": [
+                {"a": "A", "b": "B", "control": False, "diff_total": 5, "diff_by_chunk": {"0,0": 5}}]}))
+            e = P.analyse([d / "A.json", d / "B.json"], experiment="t", r_dec=None, sim=None, sim_ref=None,
+                          poly=None, poly_ref=None, poly_r=3, diff_path=rep)
+            self.assertEqual(e["n_worlds"], 2)
+            self.assertEqual(e["pairs"], [{"a": "A", "b": "B", "diff_total": 5}])
+            self.assertTrue(e["pairs_complete"])
+
+    def test_entry_without_report_has_no_pairs(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "A.json").write_text(json.dumps({"order": [[0, 0]], "chunks": {"0,0": {"sha256": "a"}}}))
+            (d / "B.json").write_text(json.dumps({"order": [[1, 0]], "chunks": {"0,0": {"sha256": "b"}}}))
+            e = P.analyse([d / "A.json", d / "B.json"], experiment="t", r_dec=None, sim=None, sim_ref=None,
+                          poly=None, poly_ref=None, poly_r=3, diff_path=None)
+            self.assertEqual(e["pairs"], [])
+            self.assertFalse(e["pairs_complete"])
+
+
 if __name__ == "__main__":
     unittest.main()

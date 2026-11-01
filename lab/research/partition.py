@@ -140,9 +140,9 @@ def transitivity(items, d, class_of=None):
     n = len(d)
     sym = sum(1 for a, b in itertools.combinations(range(n), 2) if d[a][b] != d[b][a])
     diag = sum(1 for a in range(n) if d[a][a] != 0)
-    viol = sum(1 for a, b, c in itertools.product(range(n), repeat=3)
-               if d[a][b] == 0 and d[b][c] == 0 and d[a][c] != 0)
-    out = {"items": len(items), "triples": n ** 3, "violating_triples": viol,
+    trip = list(itertools.permutations(range(n), 3))
+    viol = sum(1 for a, b, c in trip if d[a][b] == 0 and d[b][c] == 0 and d[a][c] != 0)
+    out = {"items": len(items), "distinct_ordered_triples": len(trip), "violating_triples": viol,
            "symmetry_violations": sym, "diagonal_violations": diag}
     if class_of is not None:
         out["zero_vs_class_disagreements"] = sum(
@@ -371,7 +371,11 @@ def analyse(paths, *, experiment, r_dec, sim, sim_ref, poly, poly_ref, poly_r, d
         tr = transitivity(labels, d, class_of)
     else:
         tr = {"status": "not_run", "reason": "no pairwise diff report given"}
-    return {"experiment": experiment, "inputs": metas, "n_worlds": len(worlds),
+    pairs = [{"a": p["a"], "b": p["b"], "diff_total": p["diff_total"]} for p in report["pairs"]] if report else []
+    n = len(worlds)
+    return {"experiment": experiment, "inputs": metas, "n_worlds": n,
+            "pairs": pairs, "pairs_complete": bool(report) and len(pairs) == n * (n - 1) // 2,
+            "pairs_source": diff_path,
             "tickets": [list(t) for t in tickets], "shape": shape(tickets), "r_dec": r_dec,
             "noise": {k: noise[k] for k in ("rule", "clean_chunks", "noisy_chunks", "noisy", "repeat_pairs_tested")},
             **whole, "per_chunk": per,
