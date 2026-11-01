@@ -13,8 +13,9 @@ the files you may write, the bound test and your department's skills.
    tell a fix from a flake; main-checkout paths never change while you work and get the test quarantined.
 4. **Then GREEN.** Change a covered file, run the test again, it must pass. Record it the same way
    with status "green". A GREEN with no covered-file change after the RED is a flake: do not record one.
-5. **Builds share one target dir**, so RAM stays safe: in every cargo command set
-   `CARGO_TARGET_DIR=C:/Users/seal/Documents/GitHub/sealrun/target` and `CARGO_BUILD_JOBS=2`.
+5. **Each worktree builds into its own target dir**: in every cargo command set
+   `CARGO_TARGET_DIR=<your worktree>/target` and `CARGO_BUILD_JOBS=2`. A shared dir reused
+   another worktree's binary (same metadata hash), so a test could pass without running your code.
 6. **Lazy and exact.** std first, no new dependency for what 20 lines do, no comments that repeat
    the code (at most 2 comment lines per ~60 lines), no files beyond the ones listed.
 7. **Commit** in your worktree branch when GREEN:
