@@ -329,4 +329,45 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   `inv.furnace && inv.pick >= Tool::Stone` replays Ok to 485 ticks through `check`. Run `cargo test -p sealrun-route --test guard_real_rules` (the chart's `-p route` names no
   package).
 
+## Round 2, batch 16 (House, 12:25)
+- `lab/tests/test_order_first_chunk.py` (N2.G3.4.A3), real, 4 boots: copy `run_fresh` from test_order_collapse.py
+  (make_scratch, `orderrun.run_order`, remove in a finally). For each corner c of `orders.square(64, 64)`, in that
+  order, the class order is the first entry of `orders.square_orders(64, 64)` whose first chunk is c; build each once
+  (4 worlds). differ[c] = len(`blockdiff.diff(world[0], world[c])["changed"]`), also counted by chunk;
+  ores[c] = `ores.tally(world[c])` per chunk. Write `lab/results/order_square.json`: `classes` (4 entries: first
+  chunk, order, differing_blocks, by_chunk, none_cells, ores by "cx,cz"), `rows` (24, one per square_orders(64, 64)
+  entry in list order: order, first_chunk, class_index, measured true only for the 4 built orders, differing_blocks
+  and ores copied from its class, `inferred_from` "n2-F6" for the 20 not built), `when`. Method
+  `four_first_chunk_classes_tallied` (no test_ prefix, run by name): 0 None cells in each world, differ[class 0] = 0,
+  24 rows, 6 rows per class, json written; prints differing_blocks per class. Whether classes differ is the
+  measurement: report it, never assert it.
+- `crates/route/tests/real_grid_contract.rs` (N2.G4.1.3), pure: test `loads_contract_grid_tiles`:
+  `Grid::from_bytes(include_bytes!("fixtures/contract_4x3.grid"))` is Ok with w 4, h 3 and `get(x, y)` equal to
+  [[0,1,2,3],[4,5,0,1],[2,3,4,5]][y][x] as Tile; `to_bytes()` equals the file bytes; the file with byte 8 set to 6 is
+  `Err(GridError::UnknownTile(6))`; the first 7 bytes are `Err(ShortHeader)`; the file without its last byte is
+  `Err(LengthMismatch)`. Run `cargo test -p sealrun-route --test real_grid_contract`.
+- `lab/seed7_area.py` + `lab/tests/test_seed7_script.py` (N2.G4.1.6), pure: `HALF = 32`, `SIZE = 64` (the area,
+  written down only here). `rows(blocks, spawn)` = `flatten.grid(blocks, sx - HALF, sz - HALF, SIZE, SIZE)`;
+  `write(blocks, spawn, path)` = `gridfile.write(path, rows(blocks, spawn))`; `capture(scratch, path)`: blocks, spawn =
+  `spawn_area.read(scratch, half=HALF)`, then `write`, returns spawn (not run by this leaf's test). Method
+  `area_script_turns_window_into_grid_bytes` (run by name): a synthetic box for spawn (100, 200), x 68..131,
+  z 168..231, y 60..64: stone up to y 63, grass_block at 64, except (70, 170) with an oak_log at y 65 and (90, 190)
+  with water at y 64. Bytes: header w 64, h 64, length 4104, byte 8 + (70-68) + 64*(170-168) = 3, byte 8 + 22 +
+  64*22 = 2, every other cell 0; removing column (131, 231) raises ValueError.
+- `crates/route/tests/real_race.rs` (N2.G4.2.3): BLOCKED by House. It needs the committed real seed 7 grid that
+  N2.G4.1.5 writes, and N2.G4.1.5 waits on N2.G4.1.6 (this batch); the chart has no NEEDS edge from N2.G4.2.3 to
+  N2.G4.1.5. Not dispatched; next batch after N2.G4.1.5.
+- `crates/route/tests/guard_block_names.rs` (N2.G4.C2, guard of N2.G4), pure: test `guard_block_names`: for every
+  byte b in 0..=255 the 1x1 grid `[1,0,0,0, 1,0,0,0, b]` is Ok iff b <= 5, else `Err(UnknownTile(b))`; `is_open` is
+  true for Air and Goal only; on the 3x1 grid [Air, Water, Air] from (0, 0) with `Inv::EMPTY`, `state::moves` has no
+  `Walk((1, 0))` and no `Mine((1, 0))`. Known gap, not this leaf: `lab/flatten.py` `_tile` maps a surface
+  `minecraft:lava` to air or stone by the height rule (lava is not in PASS and not water), so lava can become walkable
+  air; the Rust crate cannot see block names. Run `cargo test -p sealrun-route --test guard_block_names`.
+- `crates/route/tests/guard_crop_edge_wall.rs` (N2.G4.C3, guard of N2.G4), pure: test `guard_crop_edge_wall`: on a
+  3x3 all-Air grid, for every cell with `Inv::EMPTY`, every `Walk(p)` and `Mine(p)` of `state::moves` has p.0 < 3 and
+  p.1 < 3; from (0, 0) the walks are exactly {(1, 0), (0, 1)}; on a 1x1 Air grid `plan::plan` and
+  `baseline::bfs(.., 10_000)` to done `inv.wood >= 1` return None; control: on the 2x1 grid [Air, Tree] `plan` to the
+  same done returns Some with route [Mine((1, 0))] and 60 ticks. Run `cargo test -p sealrun-route --test
+  guard_crop_edge_wall` (the chart's `-p route` names no package).
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
