@@ -1,0 +1,51 @@
+[
+ {
+  "id": "N3.C1",
+  "title": "Predictions come first",
+  "plain": "The test checks the saved history of the project: the file with our predictions must have been saved before any file with experiment results, and a made-up history where it was saved after must be rejected.",
+  "why": "A prediction written after seeing the numbers is not a prediction.",
+  "done_when": "Predictions are older than every result they are compared with, and a reversed or tied history fails."
+ },
+ {
+  "id": "N3.C2",
+  "title": "Every setup repeats cleanly",
+  "plain": "Each setup must have been run twice with the same order, and the two worlds must differ in zero blocks; a setup with no repeat or a differing repeat may not report how many kinds of world it found.",
+  "why": "If the same order disagrees with itself, differences between orders cannot be believed.",
+  "done_when": "A missing or differing repeat voids the count and a clean repeat lets it stand."
+ },
+ {
+  "id": "N3.C3",
+  "title": "The window is inside the finished area",
+  "plain": "Every chunk we compare must be close enough to a ticket to be fully built; a window with a corner too far from every ticket must be rejected.",
+  "why": "Chunks outside the finished area are only partly saved, so comparing them would invent or hide differences.",
+  "done_when": "All window chunks are within 2 chunks of a ticket in every setup, and the too-wide example fails."
+ },
+ {
+  "id": "N3.C4",
+  "title": "Same world means the same everywhere",
+  "plain": "If world a matches b and b matches c, then a must match c; a table of comparisons that breaks this, or disagrees with the saved fingerprints, is rejected.",
+  "why": "Grouping orders into kinds of world only makes sense if matching is consistent.",
+  "done_when": "No measured triple breaks the rule and made-up broken tables fail."
+ },
+ {
+  "id": "N3.C5",
+  "title": "No Minecraft files in the repo",
+  "plain": "The test looks at every file the repo would publish and rejects world saves, level files and server jars, and any result file over 2 MB.",
+  "why": "Minecraft's files are not ours to publish and the repo should stay small.",
+  "done_when": "A throwaway repo with such files fails and the real repo has none."
+ },
+ {
+  "id": "N3.C6",
+  "title": "Route costs match the rulebook",
+  "plain": "The new route model must charge the same time for walking, digging with each tool, crafting and smelting as the round 1 rules do.",
+  "why": "A route is only comparable to round 1 if the same move costs the same.",
+  "done_when": "Every round 1 move costs the same in the model and in the rules."
+ },
+ {
+  "id": "N3.C7",
+  "title": "Waiting does not change the world",
+  "plain": "Two touching tickets are built once with no wait and once with a one minute wait between them, and the saved blocks in their window must match.",
+  "why": "If waiting changes the world, a count of kinds of world would count waiting schedules, not orders.",
+  "done_when": "The two windows have zero differing blocks."
+ }
+]
