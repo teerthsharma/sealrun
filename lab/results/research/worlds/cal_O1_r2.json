@@ -1,0 +1,81 @@
+{
+  "boot_secs": 26.73,
+  "settle_s": 10.28,
+  "chunks": {
+    "64,64": {
+      "sha256": "ea68c6f5a3e78742d0d950e5e66e55903939f688e8c8fb8452abca71223e3b5f",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 147,
+        "coal": 217,
+        "gold": 16,
+        "lapis": 2,
+        "redstone": 35,
+        "emerald": 0
+      }
+    },
+    "64,65": {
+      "sha256": "acc4fe630e8737ae36bb00dc279ff5fee2e545e822887a948a7930e9d349a52a",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 108,
+        "coal": 186,
+        "gold": 12,
+        "lapis": 5,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "65,64": {
+      "sha256": "325585a86f648dcef6562b7e48fca5fb4ed09ac5a1ed723ee6b958ec7dc46e70",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 138,
+        "coal": 117,
+        "gold": 8,
+        "lapis": 5,
+        "redstone": 41,
+        "emerald": 0
+      }
+    },
+    "65,65": {
+      "sha256": "4185d8f3dff45b9f54f9f7a00f677fffe5f543b17689670162f2a158ed6069bb",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 88,
+        "coal": 274,
+        "gold": 10,
+        "lapis": 0,
+        "redstone": 18,
+        "emerald": 0
+      }
+    }
+  },
+  "raw": "C:\\Users\\seal\\sealrun-lab\\raw\\cal_O1_r2",
+  "when": "2026-11-01T13:50:25.396410+05:30",
+  "order": [
+    [
+      64,
+      64
+    ],
+    [
+      65,
+      64
+    ],
+    [
+      64,
+      65
+    ],
+    [
+      65,
+      65
+    ]
+  ],
+  "window": "64,64,65,65",
+  "window_chunks": 4,
+  "skipped_far": []
+}
