@@ -160,6 +160,136 @@
         "66,65": 1,
         "66,66": 2
       },
+      "per_chunk_states": {
+        "62,62": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a3",
+            "a4"
+          ]
+        ],
+        "62,63": [
+          [
+            "a1",
+            "a4"
+          ],
+          [
+            "a2",
+            "a3"
+          ]
+        ],
+        "62,64": [
+          [
+            "a1",
+            "a4"
+          ],
+          [
+            "a2",
+            "a3"
+          ]
+        ],
+        "62,66": [
+          [
+            "a1"
+          ],
+          [
+            "a2",
+            "a3",
+            "a4"
+          ]
+        ],
+        "63,62": [
+          [
+            "a1",
+            "a2",
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "63,66": [
+          [
+            "a1"
+          ],
+          [
+            "a2",
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "64,62": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "65,62": [
+          [
+            "a1",
+            "a2"
+          ],
+          [
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "65,66": [
+          [
+            "a1",
+            "a2",
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "66,62": [
+          [
+            "a1",
+            "a3"
+          ],
+          [
+            "a2"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "66,64": [
+          [
+            "a1",
+            "a2",
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ],
+        "66,66": [
+          [
+            "a1",
+            "a2",
+            "a3"
+          ],
+          [
+            "a4"
+          ]
+        ]
+      },
       "pair_diffs_total": {
         "a1-a2": 133,
         "a1-a3": 170,
@@ -18234,6 +18364,9398 @@
           "b": "minecraft:andesite",
           "edge": 1,
           "side": "x-"
+        }
+      ]
+    },
+    "b": {
+      "tags": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "worlds": [
+        {
+          "tag": "b1",
+          "pre_flush_wait_s": 60.0,
+          "ring_ticket": false,
+          "free_mb_before_boot": 6755,
+          "boot_s": 18.92,
+          "java_pid": 21480,
+          "tile_load_s": 0.39,
+          "ring_load_s": null,
+          "stop_code": 0,
+          "not_full": 0,
+          "conc_boot": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 1,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 1
+          },
+          "conc_save": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 2,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 2
+          }
+        },
+        {
+          "tag": "b2",
+          "pre_flush_wait_s": 60.0,
+          "ring_ticket": false,
+          "free_mb_before_boot": 6954,
+          "boot_s": 21.61,
+          "java_pid": 8520,
+          "tile_load_s": 0.48,
+          "ring_load_s": null,
+          "stop_code": 0,
+          "not_full": 0,
+          "conc_boot": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 2,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 2
+          },
+          "conc_save": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 2,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 2
+          }
+        },
+        {
+          "tag": "b3",
+          "pre_flush_wait_s": 60.0,
+          "ring_ticket": false,
+          "free_mb_before_boot": 6741,
+          "boot_s": 17.84,
+          "java_pid": 18968,
+          "tile_load_s": 1.09,
+          "ring_load_s": null,
+          "stop_code": 0,
+          "not_full": 0,
+          "conc_boot": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 2,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 2
+          },
+          "conc_save": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 3,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 3
+          }
+        },
+        {
+          "tag": "b4",
+          "pre_flush_wait_s": 60.0,
+          "ring_ticket": false,
+          "free_mb_before_boot": 6594,
+          "boot_s": 17.39,
+          "java_pid": 23604,
+          "tile_load_s": 0.61,
+          "ring_load_s": null,
+          "stop_code": 0,
+          "not_full": 0,
+          "conc_boot": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 1,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 1
+          },
+          "conc_save": {
+            "slot_dirs_live": 3,
+            "slot_dirs": 3,
+            "java_total": 3,
+            "java_cmdline_lab": 0,
+            "java_cwd_lab": 3
+          }
+        }
+      ],
+      "per_chunk_distinct_sha": {
+        "62,62": 2,
+        "62,63": 2,
+        "62,64": 2,
+        "62,65": 1,
+        "62,66": 2,
+        "63,62": 2,
+        "63,63": 1,
+        "63,64": 1,
+        "63,65": 1,
+        "63,66": 3,
+        "64,62": 2,
+        "64,63": 1,
+        "64,64": 1,
+        "64,65": 1,
+        "64,66": 1,
+        "65,62": 1,
+        "65,63": 1,
+        "65,64": 1,
+        "65,65": 1,
+        "65,66": 2,
+        "66,62": 2,
+        "66,63": 1,
+        "66,64": 2,
+        "66,65": 1,
+        "66,66": 1
+      },
+      "per_chunk_states": {
+        "62,62": [
+          [
+            "b1",
+            "b2",
+            "b4"
+          ],
+          [
+            "b3"
+          ]
+        ],
+        "62,63": [
+          [
+            "b1",
+            "b2",
+            "b3"
+          ],
+          [
+            "b4"
+          ]
+        ],
+        "62,64": [
+          [
+            "b1",
+            "b2",
+            "b3"
+          ],
+          [
+            "b4"
+          ]
+        ],
+        "62,66": [
+          [
+            "b1",
+            "b3",
+            "b4"
+          ],
+          [
+            "b2"
+          ]
+        ],
+        "63,62": [
+          [
+            "b1",
+            "b2",
+            "b4"
+          ],
+          [
+            "b3"
+          ]
+        ],
+        "63,66": [
+          [
+            "b1",
+            "b4"
+          ],
+          [
+            "b2"
+          ],
+          [
+            "b3"
+          ]
+        ],
+        "64,62": [
+          [
+            "b1",
+            "b2",
+            "b4"
+          ],
+          [
+            "b3"
+          ]
+        ],
+        "65,66": [
+          [
+            "b1",
+            "b2"
+          ],
+          [
+            "b3",
+            "b4"
+          ]
+        ],
+        "66,62": [
+          [
+            "b1",
+            "b4"
+          ],
+          [
+            "b2",
+            "b3"
+          ]
+        ],
+        "66,64": [
+          [
+            "b1",
+            "b3"
+          ],
+          [
+            "b2",
+            "b4"
+          ]
+        ]
+      },
+      "pair_diffs_total": {
+        "b1-b2": 64,
+        "b1-b3": 52,
+        "b1-b4": 79,
+        "b2-b3": 106,
+        "b2-b4": 135,
+        "b3-b4": 127
+      },
+      "pair_diffs_per_chunk": {
+        "62,62": {
+          "b1-b3": 1,
+          "b2-b3": 1,
+          "b3-b4": 1
+        },
+        "62,63": {
+          "b1-b4": 36,
+          "b2-b4": 36,
+          "b3-b4": 36
+        },
+        "62,64": {
+          "b1-b4": 37,
+          "b2-b4": 37,
+          "b3-b4": 37
+        },
+        "62,66": {
+          "b1-b2": 40,
+          "b2-b3": 40,
+          "b2-b4": 40
+        },
+        "63,62": {
+          "b1-b3": 24,
+          "b2-b3": 24,
+          "b3-b4": 24
+        },
+        "63,66": {
+          "b1-b2": 18,
+          "b1-b3": 3,
+          "b2-b3": 15,
+          "b2-b4": 18,
+          "b3-b4": 3
+        },
+        "64,62": {
+          "b1-b3": 20,
+          "b2-b3": 20,
+          "b3-b4": 20
+        },
+        "65,66": {
+          "b1-b3": 2,
+          "b1-b4": 2,
+          "b2-b3": 2,
+          "b2-b4": 2
+        },
+        "66,62": {
+          "b1-b2": 2,
+          "b1-b3": 2,
+          "b2-b4": 2,
+          "b3-b4": 2
+        },
+        "66,64": {
+          "b1-b2": 4,
+          "b1-b4": 4,
+          "b2-b3": 4,
+          "b3-b4": 4
+        }
+      },
+      "union_differing_blocks": 184,
+      "y_range": [
+        3,
+        71
+      ],
+      "block_name_pairs": [
+        [
+          "minecraft:granite",
+          "minecraft:diorite",
+          143
+        ],
+        [
+          "minecraft:andesite",
+          "minecraft:granite",
+          123
+        ],
+        [
+          "minecraft:diorite",
+          "minecraft:andesite",
+          92
+        ],
+        [
+          "minecraft:granite",
+          "minecraft:andesite",
+          63
+        ],
+        [
+          "minecraft:diorite",
+          "minecraft:granite",
+          28
+        ],
+        [
+          "minecraft:coal_ore",
+          "minecraft:dirt",
+          23
+        ],
+        [
+          "minecraft:dirt",
+          "minecraft:coal_ore",
+          16
+        ],
+        [
+          "minecraft:andesite",
+          "minecraft:diorite",
+          16
+        ],
+        [
+          "minecraft:iron_ore",
+          "minecraft:coal_ore",
+          14
+        ],
+        [
+          "minecraft:coal_ore",
+          "minecraft:iron_ore",
+          10
+        ],
+        [
+          "minecraft:iron_ore",
+          "minecraft:dirt",
+          6
+        ],
+        [
+          "minecraft:redstone_ore",
+          "minecraft:dirt",
+          4
+        ]
+      ],
+      "edge_distance_histogram": {
+        "0": 350,
+        "1": 157,
+        "2": 56
+      },
+      "positions": [
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            62,
+            62
+          ],
+          "pos": [
+            1006,
+            69,
+            1005
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:poppy",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            62
+          ],
+          "pos": [
+            1006,
+            69,
+            1005
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:poppy",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            62
+          ],
+          "pos": [
+            1006,
+            69,
+            1005
+          ],
+          "a": "minecraft:poppy",
+          "b": "minecraft:grass",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            59,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            995,
+            70,
+            1023
+          ],
+          "a": "minecraft:tall_grass",
+          "b": "minecraft:grass",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            995,
+            71,
+            1023
+          ],
+          "a": "minecraft:tall_grass",
+          "b": "minecraft:air",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            43,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            43,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            5,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            6,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            1000,
+            6,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            59,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            995,
+            70,
+            1023
+          ],
+          "a": "minecraft:tall_grass",
+          "b": "minecraft:grass",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            995,
+            71,
+            1023
+          ],
+          "a": "minecraft:tall_grass",
+          "b": "minecraft:air",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            43,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            43,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            5,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            6,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            1000,
+            6,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            992,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            993,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            57,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            57,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            58,
+            1022
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            58,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            994,
+            59,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            995,
+            70,
+            1023
+          ],
+          "a": "minecraft:tall_grass",
+          "b": "minecraft:grass",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            995,
+            71,
+            1023
+          ],
+          "a": "minecraft:tall_grass",
+          "b": "minecraft:air",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            43,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            996,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            43,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            997,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            44,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            45,
+            1022
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            998,
+            45,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            5,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            6,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            43,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            999,
+            44,
+            1023
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            63
+          ],
+          "pos": [
+            1000,
+            6,
+            1023
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            56,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            56,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            57,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            996,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            996,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            43,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            45,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            43,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            45,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            56,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            56,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            57,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            996,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            996,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            43,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            45,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            43,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            45,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            992,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            56,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            993,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            56,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            56,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            57,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            57,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            994,
+            58,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            996,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            996,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            997,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            43,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            998,
+            45,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            43,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            44,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            999,
+            45,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            43,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1024
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1025
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            44,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            62,
+            64
+          ],
+          "pos": [
+            1000,
+            45,
+            1026
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            3,
+            1060
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            4,
+            1060
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            4,
+            1061
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            58,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            58,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            59,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            4,
+            1059
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:redstone_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            4,
+            1060
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            5,
+            1061
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            12,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            12,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            13,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            13,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            57,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1060
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            59,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1059
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:redstone_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1060
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1061
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            5,
+            1061
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            11,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            11,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1070
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1070
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            14,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            14,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1060
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1063
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1060
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1063
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            3,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            4,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            4,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            58,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            59,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            4,
+            1059
+          ],
+          "a": "minecraft:redstone_ore",
+          "b": "minecraft:dirt",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            4,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            5,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            13,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            57,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1060
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            59,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1059
+          ],
+          "a": "minecraft:redstone_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            5,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            11,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            11,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            14,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            14,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1060
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1063
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1060
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1063
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            3,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            4,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            4,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            58,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1005,
+            59,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            4,
+            1059
+          ],
+          "a": "minecraft:redstone_ore",
+          "b": "minecraft:dirt",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            4,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            5,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            13,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            57,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1060
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            58,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1006,
+            59,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1059
+          ],
+          "a": "minecraft:redstone_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1060
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            4,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            5,
+            1061
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            11,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            11,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            12,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            13,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            14,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            14,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1060
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            57,
+            1063
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1060
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            62,
+            66
+          ],
+          "pos": [
+            1007,
+            58,
+            1063
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1021,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1021,
+            36,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            34,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            35,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            36,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            53,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            54,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            30,
+            994
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            31,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            34,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            35,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            36,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            38,
+            998
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            51,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            54,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1021,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1021,
+            36,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            34,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            35,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            36,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            53,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            54,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            30,
+            994
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            31,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            34,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            35,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            36,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            38,
+            998
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            51,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            54,
+            995
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1021,
+            35,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1021,
+            36,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            34,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            35,
+            995
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            35,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            36,
+            995
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            53,
+            995
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1022,
+            54,
+            995
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            30,
+            994
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            31,
+            995
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            34,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            35,
+            995
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            35,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            36,
+            995
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            38,
+            998
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            51,
+            998
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            997
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            998
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            52,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            995
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            997
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            998
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            53,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            62
+          ],
+          "pos": [
+            1023,
+            54,
+            995
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            4,
+            1062
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            5,
+            1062
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            11,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1070
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1070
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            57,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            57,
+            1062
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            58,
+            1061
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            12,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            12,
+            1069
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            13,
+            1068
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1063
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1064
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1023,
+            11,
+            1063
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1063
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1064
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1023,
+            11,
+            1063
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            4,
+            1062
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            5,
+            1062
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            11,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            57,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            57,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            4,
+            1062
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            5,
+            1062
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            11,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            12,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            13,
+            1070
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            57,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            57,
+            1062
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1008,
+            58,
+            1061
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            12,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            12,
+            1069
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1009,
+            13,
+            1068
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1063
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1064
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1023,
+            11,
+            1063
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1063
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1022,
+            11,
+            1064
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 1,
+          "side": "x+"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            63,
+            66
+          ],
+          "pos": [
+            1023,
+            11,
+            1063
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            30,
+            994
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            35,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            36,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            36,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            37,
+            997
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            37,
+            998
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            48,
+            1001
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            69,
+            1007
+          ],
+          "a": "minecraft:air",
+          "b": "minecraft:grass",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1025,
+            51,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1025,
+            52,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            30,
+            994
+          ],
+          "a": "minecraft:iron_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            35,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            35,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            36,
+            995
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            36,
+            996
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            37,
+            997
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            37,
+            998
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:coal_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            48,
+            1001
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            997
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            998
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            69,
+            1007
+          ],
+          "a": "minecraft:air",
+          "b": "minecraft:grass",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1025,
+            51,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1025,
+            52,
+            999
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            30,
+            994
+          ],
+          "a": "minecraft:dirt",
+          "b": "minecraft:iron_ore",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            35,
+            995
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            35,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            36,
+            995
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            36,
+            996
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            37,
+            997
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            37,
+            998
+          ],
+          "a": "minecraft:coal_ore",
+          "b": "minecraft:dirt",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            48,
+            1001
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:granite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            997
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            998
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            51,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            997
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            998
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            52,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            997
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            998
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            53,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1024,
+            69,
+            1007
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:air",
+          "edge": 0,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1025,
+            51,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            64,
+            62
+          ],
+          "pos": [
+            1025,
+            52,
+            999
+          ],
+          "a": "minecraft:granite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            68,
+            1058
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            69,
+            1058
+          ],
+          "a": "minecraft:air",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            68,
+            1058
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            69,
+            1058
+          ],
+          "a": "minecraft:air",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            68,
+            1058
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            69,
+            1058
+          ],
+          "a": "minecraft:air",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            68,
+            1058
+          ],
+          "a": "minecraft:grass",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            65,
+            66
+          ],
+          "pos": [
+            1053,
+            69,
+            1058
+          ],
+          "a": "minecraft:air",
+          "b": "minecraft:tall_grass",
+          "edge": 2,
+          "side": "x+"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            41,
+            1004
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            42,
+            1004
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            41,
+            1004
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b3",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            42,
+            1004
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            41,
+            1004
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b2-b4",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            42,
+            1004
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            41,
+            1004
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            66,
+            62
+          ],
+          "pos": [
+            1058,
+            42,
+            1004
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "x-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1061,
+            43,
+            1025
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1024
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1025
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b2",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1026
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1061,
+            43,
+            1025
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1024
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1025
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b1-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1026
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1061,
+            43,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1024
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1025
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b2-b3",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1026
+          ],
+          "a": "minecraft:diorite",
+          "b": "minecraft:andesite",
+          "edge": 2,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1061,
+            43,
+            1025
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1024
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 0,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1025
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 1,
+          "side": "z-"
+        },
+        {
+          "pair": "b3-b4",
+          "chunk": [
+            66,
+            64
+          ],
+          "pos": [
+            1062,
+            43,
+            1026
+          ],
+          "a": "minecraft:andesite",
+          "b": "minecraft:diorite",
+          "edge": 2,
+          "side": "z-"
         }
       ]
     }

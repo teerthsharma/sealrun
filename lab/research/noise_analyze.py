@@ -51,12 +51,16 @@ def summarize(cond):
         return None
     worlds = [json.loads(p.read_text(encoding="utf-8")) for p in paths]
     tags = [w["tag"] for w in worlds]
-    per_chunk_distinct, pair_totals, per_chunk_pairs = {}, Counter(), {}
+    per_chunk_distinct, per_chunk_states, pair_totals, per_chunk_pairs = {}, {}, Counter(), {}
     names, ys, edges, positions, union = Counter(), [], Counter(), [], set()
     for cx, cz in dc.TILE:
         key = f"{cx},{cz}"
         shas = {t: w["chunks"][key]["sha256"] for t, w in zip(tags, worlds)}
         per_chunk_distinct[key] = len(set(shas.values()))
+        groups = {}
+        for t, h in shas.items():
+            groups.setdefault(h, []).append(t)
+        per_chunk_states[key] = sorted(groups.values())
         if per_chunk_distinct[key] == 1:
             continue
         arrs = {t: load(cond, t, cx, cz) for t in tags}
@@ -87,6 +91,7 @@ def summarize(cond):
             "conc_boot": conc(w, "conc_boot"), "conc_save": conc(w, "conc_save"),
         } for w in worlds],
         "per_chunk_distinct_sha": per_chunk_distinct,
+        "per_chunk_states": {k: v for k, v in per_chunk_states.items() if len(v) > 1},
         "pair_diffs_total": {k: pair_totals[k] for k in sorted(pair_totals)},
         "pair_diffs_per_chunk": per_chunk_pairs,
         "union_differing_blocks": len(union),
