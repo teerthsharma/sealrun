@@ -1,0 +1,1962 @@
+{
+  "squares": [
+    [
+      64,
+      64
+    ],
+    [
+      -64,
+      64
+    ],
+    [
+      64,
+      -64
+    ]
+  ],
+  "rows": [
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        64
+      ],
+      "order": [
+        [
+          65,
+          65
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -63,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -63,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -63,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -63,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -64,
+          65
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -64,
+          64
+        ],
+        [
+          -63,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        -64,
+        64
+      ],
+      "order": [
+        [
+          -63,
+          65
+        ],
+        [
+          -64,
+          65
+        ],
+        [
+          -63,
+          64
+        ],
+        [
+          -64,
+          64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          65,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          65,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          64,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          64,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          65,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          65,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          64,
+          -63
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          64,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          65,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    },
+    {
+      "square": [
+        64,
+        -64
+      ],
+      "order": [
+        [
+          65,
+          -63
+        ],
+        [
+          64,
+          -63
+        ],
+        [
+          65,
+          -64
+        ],
+        [
+          64,
+          -64
+        ]
+      ],
+      "status": "not run",
+      "differing_blocks": null,
+      "diamonds": null
+    }
+  ]
+}
