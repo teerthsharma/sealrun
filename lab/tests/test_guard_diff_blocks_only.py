@@ -29,7 +29,7 @@ def _metadata_only(level):
 
 def _one_block_long(level):
     edited = copy.deepcopy(level)
-    section = next(s for s in edited["Sections"] if len(s["Palette"]) > 1)
+    section = next(s for s in edited["Sections"] if len(s.get("Palette", [])) > 1)
     palette_size = len(section["Palette"])
     bits = max(4, (palette_size - 1).bit_length())
     mask = (1 << bits) - 1
@@ -52,11 +52,11 @@ class Lab(unittest.TestCase):
 
         original_blocks = window.chunk_blocks(level)
         touched_blocks = window.chunk_blocks(touched)
-        self.assertEqual(touched_blocks, original_blocks)
         self.assertEqual(
             window.fingerprint(touched_blocks),
             window.fingerprint(original_blocks),
         )
+        self.assertTrue(touched_blocks == original_blocks, "block maps differ")
 
         control = _one_block_long(level)
         self.assertNotEqual(window.chunk_blocks(control), original_blocks)
