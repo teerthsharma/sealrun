@@ -1,5 +1,5 @@
+import ast
 import json
-import re
 import sys
 import tempfile
 import unittest
@@ -49,12 +49,14 @@ class Lab(unittest.TestCase):
             self.assertEqual(got["status"], "blocked")
             self.assertIn("not approved", got["reason"])
 
-        source =(LAB / "oneprocess_worlds.py").read_text(encoding="utf-8")
-        for name in NETWORK:
-            self.assertIsNone(
-                re.search(rf"^\s*(import|from)\s+{name}\b", source, re.M),
-                f"oneprocess_worlds imports {name}",
-            )
+        tree = ast.parse((LAB / "oneprocess_worlds.py").read_text(encoding="utf-8"))
+        imported = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                imported.update(alias.name.split(".")[0] for alias in node.names)
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                imported.add(node.module.split(".")[0])
+        self.assertEqual(sorted(imported & set(NETWORK)), [], "oneprocess_worlds imports a network library")
 
         out = LAB / "results" / "worlds_one_process.json"
         self.assertTrue(out.is_file())
