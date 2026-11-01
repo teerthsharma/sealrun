@@ -98,6 +98,8 @@ def summarize(cond):
         "y_range": [min(ys), max(ys)] if ys else None,
         "block_name_pairs": [[a, b, n] for (a, b), n in names.most_common(12)],
         "edge_distance_histogram": {str(d): edges[d] for d in sorted(edges)},
+        "edge_distance_union": {str(d): n for d, n in sorted(Counter(edge(x, z)[0] for x, _, z in union).items())},
+        "edge_uniform_cells_per_chunk": {str(k): (16 - 2 * k) ** 2 - max(14 - 2 * k, 0) ** 2 for k in range(8)},
         "positions": positions,
     }
 
