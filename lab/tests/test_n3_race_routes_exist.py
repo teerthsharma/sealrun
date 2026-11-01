@@ -1,17 +1,31 @@
 import json
 import os
+import struct
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 RACE = Path(os.environ.get("RACE_REALMODEL_JSON") or ROOT / "lab" / "results" / "research" / "race_realmodel.json")
+ROUND1 = Path(os.environ.get("ROUND1_REACH_JSON") or ROOT / "lab" / "results" / "research" / "round1_reach.json")
+GRID = ROOT / "lab" / "results" / "research" / "seed7_spawn.grid"
 SPAWN = (32, 32)
 
 
+def air_count(path):
+    raw = path.read_bytes()
+    w, h = struct.unpack("<II", raw[:8])
+    return raw[8:8 + w * h].count(0)
+
+
 class Lab(unittest.TestCase):
-    # Round-1 side unchecked: no round-1 record exists in the repo (the 0-of-1,417 probe is cited in house/prognosis-r2.md, its grid was only in a session scratchpad).
-    # Only the priced side is asserted here.
     def priced_model_finds_route_where_round1_found_none(self):
+        self.assertTrue(ROUND1.exists(), f"missing round-1 record {ROUND1.name}: run crates/route/tests/round1_reach.rs")
+        r1 = json.loads(ROUND1.read_text())
+        self.assertEqual(r1["grid"], "lab/results/research/seed7_spawn.grid")
+        self.assertEqual(r1["starts"], air_count(GRID), "round-1 start count is not the grid's air tiles")
+        print(f"round 1: starts {r1['starts']} routed {r1['routed']} at {r1['source_commit']}")
+        self.assertEqual(r1["routed"], 0, "round-1 planner routes from its starts")
+
         data = json.loads(RACE.read_text())
         spawn = [r for r in data["rows"] if r["kind"] == "centre" and (r["x"], r["y"]) == SPAWN]
         self.assertEqual(len(spawn), 1, f"expected one spawn start row at {SPAWN}")
