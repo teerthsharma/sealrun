@@ -12,13 +12,12 @@ ROUTE = {"played": False, "note": "planned on a map, not yet played in the real 
 
 
 def department(gid, depts):
-    for d in depts:
-        if gid in d.get("goals", []):
-            return d["name"]
-    gk = gid.split(".")[1:2]
-    for d in depts:
-        if any(g.split(".")[1:2] == gk for g in d.get("goals", [])):
-            return d["name"]
+    parts = gid.split(".")
+    for n in range(len(parts), 1, -1):
+        ancestor = ".".join(parts[:n])
+        for d in depts:
+            if ancestor in d.get("goals", []):
+                return d["name"]
     return None
 
 

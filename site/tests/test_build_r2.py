@@ -14,7 +14,7 @@ def write(folder, name, data):
 
 
 class Lab(unittest.TestCase):
-    def build_r2_merges_charts_by_id(self):
+    def test_build_r2_merges_charts_by_id(self):
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
             write(folder, "foreman.json", [
@@ -40,8 +40,14 @@ class Lab(unittest.TestCase):
         self.assertEqual(merged["status"], "reached")
         self.assertEqual(merged["department"], "neurology")
         self.assertEqual(goals["N2.G3.9"]["status"], "pending")
-        self.assertEqual(goals["N2.G3.9"]["department"], "neurology")
+        self.assertIsNone(goals["N2.G3.9"]["department"])
         self.assertEqual(result["route"], {"played": False, "note": "planned on a map, not yet played in the real game"})
+
+    def test_department_is_nearest_listed_ancestor(self):
+        depts = json.loads((build_r2.CHARTS / "departments.json").read_text(encoding="utf-8"))["departments"]
+        self.assertEqual(build_r2.department("N2.G3.6.1", depts), "surgery")
+        self.assertEqual(build_r2.department("N2.G1.1.1", depts), "immunology")
+        self.assertIsNone(build_r2.department("N2.G6.1", depts))
 
 
 if __name__ == "__main__":

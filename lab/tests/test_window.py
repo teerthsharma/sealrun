@@ -39,6 +39,11 @@ class Lab(unittest.TestCase):
         self.assertLessEqual(len(blocks), 65536)
         self.assertGreaterEqual(min(y for _, y, _ in blocks), 0)
 
+    def test_box_is_none_in_absent_chunk_and_blocks_in_present_chunk(self):
+        box = window.box(REGION, (0, 0, 0), (0, 0, 16))
+        self.assertIsNone(box[(0, 0, 0)])
+        self.assertEqual(box[(0, 0, 16)], "minecraft:bedrock")
+
 
 if __name__ == "__main__":
     unittest.main()

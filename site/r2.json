@@ -14,7 +14,7 @@
    "why": "Every experiment after this one needs a server we can start and wipe from a script, safely.",
    "done_when": "A script can boot, command, reset and stop the server, and no server is left running afterwards.",
    "status": "pending",
-   "department": "neurology"
+   "department": null
   },
   {
    "id": "N2.G1.1",
@@ -38,7 +38,7 @@
    "why": "A single wrong byte and the server ignores us, so the format is checked first against the written spec.",
    "done_when": "The login and command messages come out byte for byte as the spec says.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.1.2",
@@ -50,7 +50,7 @@
    "why": "We can test refusals and very long answers instantly, without waiting 20 seconds for the real game.",
    "done_when": "A wrong password is refused and a reply over 4096 bytes arrives whole.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.2",
@@ -74,7 +74,7 @@
    "why": "The original server folder stays exactly as it is, and each copy can run beside another.",
    "done_when": "The copy has RCON on, a long random password and its own port, and the original files are unchanged.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.2.2",
@@ -86,7 +86,7 @@
    "why": "A stuck server would otherwise sit on our small memory for good.",
    "done_when": "A stubborn test program is gone within the time limit.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.2.3",
@@ -98,7 +98,7 @@
    "why": "This is the first moment the server can be used, and the time to get there is a number we report.",
    "done_when": "The server prints Done within 60 seconds and answers the list command.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.2.4",
@@ -110,7 +110,7 @@
    "why": "Every experiment must start from the same blank world or its numbers mean nothing.",
    "done_when": "A block placed before the reset is gone after it, and no Java process is left running.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.2.5",
@@ -122,7 +122,7 @@
    "why": "The earlier memory number was one sample, and the plan for how many servers to run at once depends on the peak.",
    "done_when": "A results file holds boot seconds, reset seconds and the peak memory in megabytes.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G1.3",
@@ -326,7 +326,7 @@
    "why": "This is goal one: a move made before a chunk exists that changes the chunk, measured on the real game.",
    "done_when": "A results file says, with counts, whether building order or a player edit changed any block, and whether it moved diamonds.",
    "status": "pending",
-   "department": "neurology"
+   "department": null
   },
   {
    "id": "N2.G3.8",
@@ -338,7 +338,7 @@
    "why": "This is the order experiment itself, from smallest step to widest search.",
    "done_when": "Every order is built, compared and counted, and the control is zero.",
    "status": "pending",
-   "department": "neurology"
+   "department": null
   },
   {
    "id": "N2.G3.1",
@@ -362,7 +362,7 @@
    "why": "Zero or not zero differing blocks decides the whole order question.",
    "done_when": "Three planted differences are found and identical maps give an empty list.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G3.1.2",
@@ -374,7 +374,7 @@
    "why": "The aim is more diamond, so diamond must be counted per chunk.",
    "done_when": "A hand-made box with known ores gives the exact counts per chunk.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G3.2",
@@ -530,7 +530,7 @@
    "why": "These steps turn the measured counts into an answer, whichever way they came out.",
    "done_when": "The edit lever is tested, the aim says aimed or no lever, and the verdict is written.",
    "status": "pending",
-   "department": "neurology"
+   "department": null
   },
   {
    "id": "N2.G3.5",
@@ -590,7 +590,7 @@
    "why": "Both answers must be correct, because a zero result is a result.",
    "done_when": "A table with a clear best picks it, and an all-equal table answers no lever.",
    "status": "pending",
-   "department": "neurology"
+   "department": "surgery"
   },
   {
    "id": "N2.G3.6.2",
@@ -602,7 +602,7 @@
    "why": "The gain only means something against the average order.",
    "done_when": "The file says aimed with the best count and the average, or says no lever.",
    "status": "pending",
-   "department": "neurology"
+   "department": "surgery"
   },
   {
    "id": "N2.G3.6.3",
@@ -614,7 +614,7 @@
    "why": "A gain that does not repeat is not a gain.",
    "done_when": "Both repeats give the table's count, or the file says nothing to repeat.",
    "status": "pending",
-   "department": "neurology"
+   "department": "surgery"
   },
   {
    "id": "N2.G3.6.4",
@@ -626,7 +626,7 @@
    "why": "A rule that only works where it was found cannot be used in a run.",
    "done_when": "The rule's diamonds beat the average at the new square, or the file says it did not.",
    "status": "pending",
-   "department": "neurology"
+   "department": "surgery"
   },
   {
    "id": "N2.G3.7",
@@ -650,7 +650,7 @@
    "why": "Every claim then carries its own bound.",
    "done_when": "Made-up result files give the right alive, dead and not-run statements with the bounds and a reroute.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G3.7.2",
@@ -662,7 +662,7 @@
    "why": "This is the single answer to goal one.",
    "done_when": "The saved verdict repeats the exact counts in the result files.",
    "status": "pending",
-   "department": "neurology"
+   "department": "immunology"
   },
   {
    "id": "N2.G4",
@@ -674,7 +674,7 @@
    "why": "This is goal two: a fastest route on the real map, beating a simple baseline in game ticks.",
    "done_when": "On the real map the planner finishes in fewer ticks than the plain search, with numbers saved.",
    "status": "pending",
-   "department": "surgery"
+   "department": null
   },
   {
    "id": "N2.G4.1",
@@ -686,7 +686,7 @@
    "why": "The solver and the real game meet here, so a mistake here ruins every route.",
    "done_when": "A real area of seed 7 is a grid file, and sampled squares match the live server.",
    "status": "pending",
-   "department": "surgery"
+   "department": null
   },
   {
    "id": "N2.G4.7",
@@ -698,7 +698,7 @@
    "why": "Python writes and Rust reads, so one shared sample stops them drifting apart.",
    "done_when": "The bytes Python writes equal the saved sample, and Rust reads the sample's squares correctly.",
    "status": "pending",
-   "department": "surgery"
+   "department": null
   },
   {
    "id": "N2.G4.1.1",
@@ -1130,7 +1130,7 @@
    "why": "Four chunks have 24 orders but nine have 362,880; the pair model needs about 37 runs for nine, so aiming scales past a square.",
    "done_when": "On a made-up table the model predicts unseen orders exactly, picks the best one, and says so when the table is not a sum of pairs.",
    "status": "pending",
-   "department": "neurology"
+   "department": "surgery"
   },
   {
    "id": "N2.G4.1.A1",
