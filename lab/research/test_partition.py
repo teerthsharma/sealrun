@@ -251,6 +251,20 @@ class OreComparison(unittest.TestCase):
         self.assertEqual(r["comparisons"], [])
         self.assertEqual([c["members"] for c in r["insufficient_repeats"]], [["1,0;0,0"]])
 
+    def test_invalid_partition_compares_by_order_and_says_so(self):
+        a = {"0,0": {"iron": 1}, "1,0": {"iron": 0}}
+        b = {"0,0": {"iron": 9}, "1,0": {"iron": 0}}
+        worlds = [cworld([[0, 0], [1, 0]], "A1", {"0,0": "x", "1,0": "x"}, a),
+                  cworld([[0, 0], [1, 0]], "A2", {"0,0": "z", "1,0": "x"}, a),
+                  cworld([[1, 0], [0, 0]], "B1", {"0,0": "y", "1,0": "y"}, b),
+                  cworld([[1, 0], [0, 0]], "B2", {"0,0": "y", "1,0": "y"}, b)]
+        r = P.ore_comparison(worlds, P.partition(worlds))
+        self.assertEqual(r["grouping"], "order")
+        self.assertIn("partition invalid", r["grouping_reason"])
+        iron = [c for c in r["comparisons"] if c["ore"] == "iron"][0]
+        self.assertAlmostEqual(iron["mean_diff"], -8.0, places=9)
+        self.assertTrue(iron["excludes_zero"])
+
     def test_repeat_classes_compared_with_ci(self):
         a = {"0,0": {"iron": 1}, "1,0": {"iron": 0}}
         b = {"0,0": {"iron": 9}, "1,0": {"iron": 0}}

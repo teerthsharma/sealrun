@@ -242,13 +242,19 @@ def bootstrap_diff(a, b, n=RESAMPLES, seed=SEED):
 
 
 def ore_comparison(worlds, whole):
-    if not whole["valid_partition"]:
-        return {"status": "invalid_partition"}
     if not any("ores" in c for w in worlds for c in w["chunks"].values()):
         return {"status": "no_ore_counts"}
+    if whole["valid_partition"]:
+        grouping = "signature"
+        reason = "classes: exact equality of all chunk hashes"
+        key_of = signature
+    else:
+        grouping = "order"
+        reason = "partition invalid: an order has two different worlds, so classes are undefined; compared by order"
+        key_of = lambda w: okey(w["order"])
     groups = {}
     for w in worlds:
-        groups.setdefault(signature(w), []).append(w)
+        groups.setdefault(key_of(w), []).append(w)
     rep, insufficient, spread = [], [], 0
     for g in groups.values():
         by_order = {}
@@ -275,7 +281,8 @@ def ore_comparison(worlds, whole):
             b = [ore_value(w, key) for w in rep[j]]
             comps.append({"ore": key, "classes": [members(rep[i]), members(rep[j])],
                           **bootstrap_diff(a, b)})
-    return {"status": status, "method": "plain-Python percentile bootstrap, random.choices, "
+    return {"status": status, "grouping": grouping, "grouping_reason": reason,
+            "method": "plain-Python percentile bootstrap, random.choices, "
                                          f"{RESAMPLES} resamples, seed {SEED}; not mlm runs_compare",
             "keys_tested": len(ORE_KEYS), "comparisons": comps,
             "insufficient_repeats": insufficient, "repeat_spread_max": spread}
