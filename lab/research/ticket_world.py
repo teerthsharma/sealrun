@@ -130,7 +130,7 @@ def main(argv=None):
     p.add_argument("window")
     p.add_argument("tickets", nargs="+")
     p.add_argument("--skip-far", action="store_true")
-    a = p.parse_args(argv)
+    a = p.parse_intermixed_args(argv)
     tickets = [parse_chunk(t) for t in a.tickets]
     chunks = parse_window(a.window)
     chunks, far = reach(chunks, tickets)
