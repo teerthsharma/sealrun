@@ -187,6 +187,9 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
 - Measured (Finding n2-F1, 3 identical runs): one `forceload add` makes its chunk and every chunk within Chebyshev
   distance 2 `"full"` on disk; distance 3..12 is not on disk (not on disk is not "not generated"). So a list of
   neighbouring chunks is one move per 5x5 tile: only the first ticket of a tile changes what gets built.
+  Finding n2-F2 (Wilson r2-batch8 V4): while the ticket holds, flush writes only the full chunks; after
+  `forceload remove`, 60 s and stop the partials are on disk: d 3 `features`, d 4 `liquid_carvers`, d 5..12
+  `structure_starts`. Ores (features) are placed at distance 3 of a ticket while only distance <= 2 is full.
 - `orderrun.run_order(scratch: dict, order: list[tuple[int, int]]) -> dict[(x, y, z), str | None]` (N2.G3.2.4):
   `server.boot(scratch)`, then for each `(cx, cz)` in order `wait_loaded` (False raises RuntimeError naming the chunk)
   and `save-all flush`; stop; return `window.box(region, lo, hi)` over the bounding box of the listed chunks, y 0..255.
