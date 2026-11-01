@@ -221,5 +221,12 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   "positions", "changed", "added", "removed", "fingerprints": [two], "when"} before asserting; then changed, added and
   removed are all 0. Measured once already by Wilson's lane V1 (r2-batch9): 0 of 131072 differ. Nonzero = the order
   experiment is too noisy to use: reported, never bent.
+- `test_order_pair.py` (N2.G3.3.2): AB = run_order [(64, 64), (65, 64)], BA = run_order [(65, 64), (64, 64)], each on
+  a fresh world. By the measured tile this compares two ticket centres, not two build orders inside one tile.
+  `blockdiff.diff(AB, BA)`; writes `lab/results/order_pair.json` = {"orders": [AB, BA], "positions", "changed",
+  "added", "removed", "examples" (<= 20 of (pos, AB, BA)), "by_chunk" {chunk: changed}, "ores" {order: {chunk:
+  `ores.tally`}}, "fingerprints", "control_fingerprint" (from order_control.json), "when"}. Asserts only what the
+  measurement needs: AB's fingerprint equals the control's (the lab is deterministic) and the json is written; the
+  count of differing blocks is the result, any value valid (0 kills this pair as a lever, with a route).
 
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
