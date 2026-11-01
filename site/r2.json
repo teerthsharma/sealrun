@@ -25,7 +25,7 @@
    "plain": "The toolbox learns the server's remote-command language (RCON) so a script can type commands into the server.",
    "why": "Without it nothing can place blocks or generate chunks on purpose.",
    "done_when": "A script can log in and get an answer back, and a wrong password is refused.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -37,7 +37,7 @@
    "plain": "Turn a command into the exact bytes the server expects, and turn the server's bytes back into text.",
    "why": "A single wrong byte and the server ignores us, so the format is checked first against the written spec.",
    "done_when": "The login and command messages come out byte for byte as the spec says.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -49,7 +49,7 @@
    "plain": "A client logs in, sends commands and joins long answers, tested against a pretend server that we control.",
    "why": "We can test refusals and very long answers instantly, without waiting 20 seconds for the real game.",
    "done_when": "A wrong password is refused and a reply over 4096 bytes arrives whole.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -73,7 +73,7 @@
    "plain": "Copy the server jar and settings into a scratch folder, turn the remote commands on with a random password and a free port, and never touch the original folder.",
    "why": "The original server folder stays exactly as it is, and each copy can run beside another.",
    "done_when": "The copy has RCON on, a long random password and its own port, and the original files are unchanged.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -85,7 +85,7 @@
    "plain": "Ask a program to stop, wait a set time, and kill it if it ignores us.",
    "why": "A stuck server would otherwise sit on our small memory for good.",
    "done_when": "A stubborn test program is gone within the time limit.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -97,7 +97,7 @@
    "plain": "Start the server with a 1 GB limit and no window, and wait until its log says Done.",
    "why": "This is the first moment the server can be used, and the time to get there is a number we report.",
    "done_when": "The server prints Done within 60 seconds and answers the list command.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -133,7 +133,7 @@
    "plain": "A check walks the whole repository and fails if it finds the server program, a world file or a server settings file.",
    "why": "The game files belong to someone else, so none may ever be committed.",
    "done_when": "The check passes on the repo and fails on a copy that has a jar or a region file in it.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -169,7 +169,7 @@
    "plain": "List, without downloading or changing anything, whether the owner's game folder already holds a 1.16.1 client, the Fabric mod loader, a mods folder and the right Java.",
    "why": "Whether the many-worlds route can start at all depends on this, and the answer is read, not remembered.",
    "done_when": "The results file says found or missing for each item, and the game folder is unchanged.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -229,7 +229,7 @@
    "plain": "The reader learns to open a region file, unpack the data format and turn a slice of a chunk into block names.",
    "why": "These are the steps every later read depends on.",
    "done_when": "Hand-built region files and slices read back exactly.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -241,7 +241,7 @@
    "plain": "Read the nested data format (NBT) the game saves chunks in: named values, lists and arrays of numbers.",
    "why": "Everything in a world file is stored in this format.",
    "done_when": "A hand-built sample with a compound, a list and a long array reads back exactly.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -253,7 +253,7 @@
    "plain": "A region file holds up to 1024 chunks; find which are present and unpack one chunk's bytes.",
    "why": "This is how we know which chunks the server has built.",
    "done_when": "A made-up region file with two chunks lists exactly those two and unpacks one.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -265,7 +265,7 @@
    "plain": "Turn one slice of a chunk (a palette of block names plus packed numbers) into 4096 block names, using the 1.16 packing where numbers never straddle two values.",
    "why": "Version 1.16 changed the packing, and the old layout silently gives wrong blocks.",
    "done_when": "Hand-packed slices with 5-bit and 6-bit entries unpack to the exact blocks.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -277,7 +277,7 @@
    "plain": "Ask for the block at x, y, z, including negative coordinates, plus a chunk's build status, with missing chunks answering nothing.",
    "why": "Negative positions are where reading mistakes hide, and the build status shows if a chunk is finished.",
    "done_when": "Positions in chunk minus one and at slice edges read right, and a missing chunk answers none.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -301,7 +301,7 @@
    "plain": "Read every block in a box and fingerprint it, so two boxes can be compared quickly.",
    "why": "The order experiment compares boxes of blocks and a fingerprint tells at once if they match.",
    "done_when": "The same box read twice gives the same fingerprint, and one changed block changes it.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -349,7 +349,7 @@
    "plain": "Two small tools: one finds every block that differs between two builds, the other counts ores.",
    "why": "Every claim in this branch is a count made by these tools.",
    "done_when": "Both tools give the right counts on hand-made examples.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -361,7 +361,7 @@
    "plain": "Compare two block maps and list every position whose block changed, appeared or vanished.",
    "why": "Zero or not zero differing blocks decides the whole order question.",
    "done_when": "Three planted differences are found and identical maps give an empty list.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -373,7 +373,7 @@
    "plain": "Count diamond, iron, coal, gold, lapis, redstone and emerald blocks in a box, chunk by chunk.",
    "why": "The aim is more diamond, so diamond must be counted per chunk.",
    "done_when": "A hand-made box with known ores gives the exact counts per chunk.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -397,7 +397,7 @@
    "plain": "Ask the server to hold a chunk loaded, then keep asking whether bedrock is there until the answer is yes or time runs out.",
    "why": "This is how one chunk is finished before the next is requested.",
    "done_when": "A pretend server that says not yet three times and then yes makes it wait, and a timeout is reported.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -493,7 +493,7 @@
    "plain": "Write down every order in which four chunks of a square can be built, and start the empty not-run table that the later runs fill in.",
    "why": "The experiment must not miss or repeat an order, and an unfilled table must read as not run.",
    "done_when": "There are 24 orders, all different, each with the four chunks, and the starter table says not run.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -517,7 +517,7 @@
    "plain": "Repeat all 24 orders on two other squares far from the first.",
    "why": "A lever that exists only at one place would not help a speedrun.",
    "done_when": "The results file holds 48 more rows from two other squares.",
-   "status": "pending",
+   "status": "retired",
    "department": "neurology"
   },
   {
@@ -553,7 +553,7 @@
    "plain": "Turn a list of blocks to break or place into server commands that only touch finished, loaded chunks.",
    "why": "A command into an unloaded chunk would build it early and spoil the order.",
    "done_when": "The commands are right for a break and a place, and one into an unloaded chunk is refused.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -589,7 +589,7 @@
    "plain": "Given a table of orders and diamond counts, pick the order with the most diamonds in the target chunk, or say there is no lever when all counts are equal.",
    "why": "Both answers must be correct, because a zero result is a result.",
    "done_when": "A table with a clear best picks it, and an all-equal table answers no lever.",
-   "status": "pending",
+   "status": "reached",
    "department": "surgery"
   },
   {
@@ -649,7 +649,7 @@
    "plain": "Turn the result files into plain statements that each name the seed, area, height and number of orders, say not run for missing files, and give the next route for a dead lever.",
    "why": "Every claim then carries its own bound.",
    "done_when": "Made-up result files give the right alive, dead and not-run statements with the bounds and a reroute.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -709,7 +709,7 @@
    "plain": "Turn each column of blocks into one square: tree if a log stands there, water, iron if ore is within six blocks below, a stone wall if the ground jumps two blocks, else open ground.",
    "why": "The solver is flat, so this rule is a stated model, and it is tested so it can be changed.",
    "done_when": "A made-up landscape gives the expected tree, water, iron, wall and open squares.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -757,7 +757,7 @@
    "plain": "Build an area of the real seed 7 world, read it, and save it as a grid; it must have open ground, a tree, stone and iron, or the area is widened.",
    "why": "This is the real map the race is run on.",
    "done_when": "The grid file exists and contains a start square, a tree, stone and iron.",
-   "status": "pending",
+   "status": "retired",
    "department": "immunology"
   },
   {
@@ -853,7 +853,7 @@
    "plain": "A script merges the fellows' plain-English files for round 2 with each goal's status into one data file.",
    "why": "The page reads one file, the same way round 1 does.",
    "done_when": "Goals from two chart files are merged by id and a goal without a status shows pending.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -865,7 +865,7 @@
    "plain": "The same script copies the numbers from the result files into the data file, and a missing file is marked not run, never zero.",
    "why": "A missing result shown as zero would look like a finding.",
    "done_when": "With no result files every number says not run, and with files the counts are copied exactly.",
-   "status": "pending",
+   "status": "retired",
    "department": "immunology"
   },
   {
@@ -877,7 +877,7 @@
    "plain": "A page draws a card for every goal and one bar for every build order showing its differing-block count.",
    "why": "A bar chart of counts per order is the picture of the experiment.",
    "done_when": "The page reads the data file and has a card hook per goal and a bar hook per order.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -913,7 +913,7 @@
    "plain": "The test makes a lab run crash and hang on purpose, then checks that no Minecraft server is still running and the port is free.",
    "why": "A forgotten server eats a gigabyte of memory and blocks the next run.",
    "done_when": "No server process and no held port after done, crash and stuck runs.",
-   "status": "pending",
+   "status": "active",
    "department": "immunology"
   },
   {
@@ -925,7 +925,7 @@
    "plain": "The reset step is asked to delete your real server folder and a random folder; it must refuse both and only clear its own scratch world.",
    "why": "Reset means deleting a world, so a wrong path could destroy real files.",
    "done_when": "Both bad paths are refused and the scratch world is cleared.",
-   "status": "pending",
+   "status": "blocked",
    "department": "immunology"
   },
   {
@@ -937,7 +937,7 @@
    "plain": "The lab is told memory is low, or three servers are already running, and must refuse to start another.",
    "why": "Servers and builds share 16 GB, and running out would freeze the computer.",
    "done_when": "Low memory and a fourth server are both refused.",
-   "status": "pending",
+   "status": "blocked",
    "department": "immunology"
   },
   {
@@ -949,7 +949,7 @@
    "plain": "A hand-made chunk marked half-finished and a missing chunk are read; both must come back as unknown, not air.",
    "why": "Chunks next to a loaded one are only partly made, and reading them as air would fake a difference.",
    "done_when": "Half-made and missing chunks are reported unknown in every case.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -973,7 +973,7 @@
    "plain": "The test scans the repo for region files, the server jar and world saves, and checks the ignore list blocks them.",
    "why": "Minecraft's files are not ours to publish, and the repo should stay small.",
    "done_when": "The scan finds zero Minecraft files and the ignore rules are present.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -985,7 +985,7 @@
    "plain": "Two worlds that differ only in timestamps, lighting or height maps are compared and must show zero differences; one changed block must show exactly one.",
    "why": "The question is about blocks, and other saved data changes every run.",
    "done_when": "Data-only changes give 0 and a single block change gives 1.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -997,7 +997,7 @@
    "plain": "The report builder is given an order comparison with no repeat of the same order and must refuse to say order matters; if the repeat differs, it labels the result shaky.",
    "why": "If the same order disagrees with itself, no difference between orders can be believed.",
    "done_when": "No verdict without a same-order repeat, and shaky is flagged.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -1021,7 +1021,7 @@
    "plain": "Each step in a claimed lever is tagged as a player action or an admin command, and any admin command makes the lever lab-only.",
    "why": "Commands like forceload are not moves in a real run, so a lever that needs them is no use for a speedrun.",
    "done_when": "Admin-only levers are labelled lab-only and player ones are not.",
-   "status": "pending",
+   "status": "blocked",
    "department": "immunology"
   },
   {
@@ -1033,7 +1033,7 @@
    "plain": "A claimed gain is replayed twice in fresh worlds with the found order and compared with the default order from the same session.",
    "why": "A single lucky count would be mistaken for a lever.",
    "done_when": "Both replays match the claimed count and the default count is recorded.",
-   "status": "pending",
+   "status": "blocked",
    "department": "immunology"
   },
   {
@@ -1093,7 +1093,7 @@
    "plain": "The test changes a saved result file and the page must change; a missing file must show not measured, never zero.",
    "why": "Zero differing blocks is a real answer, so a missing result must not look like it.",
    "done_when": "The page follows the file and a missing result reads not measured.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -1105,7 +1105,7 @@
    "plain": "The page must say the route was planned on the map and has not been played in the game.",
    "why": "Ticks on paper are not a finished speedrun, and the site should not suggest they are.",
    "done_when": "The unplayed label is on the page next to the route numbers.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
@@ -1117,7 +1117,7 @@
    "plain": "Instead of repeating all 24 build orders on two more squares one server restart at a time, each of the 24 runs builds all three squares far apart. That is 24 restarts, not 72.",
    "why": "Each restart costs about 20 seconds and 1 GB of the small memory, so the wider test fits in minutes.",
    "done_when": "The plan has exactly 24 server starts for 72 square runs, with every square's own order kept and the squares far apart.",
-   "status": "pending",
+   "status": "reached",
    "department": "neurology"
   },
   {
@@ -1129,7 +1129,7 @@
    "plain": "Each pair of neighbour chunks may add or remove diamonds depending on which is built first. A small sum-of-pairs model is fitted from a few runs and predicts every other order.",
    "why": "Four chunks have 24 orders but nine have 362,880; the pair model needs about 37 runs for nine, so aiming scales past a square.",
    "done_when": "On a made-up table the model predicts unseen orders exactly, picks the best one, and says so when the table is not a sum of pairs.",
-   "status": "pending",
+   "status": "retired",
    "department": "surgery"
   },
   {
@@ -1153,7 +1153,7 @@
    "plain": "The page reads the experiment's result files when it opens instead of copying them in a build step. A missing file shows not run.",
    "why": "A copied number can go stale after a reset and look like a finding; a live read cannot.",
    "done_when": "With no result files every number says not run, and a changed file shows its new number at once.",
-   "status": "pending",
+   "status": "reached",
    "department": "immunology"
   },
   {
