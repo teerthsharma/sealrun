@@ -16,7 +16,7 @@ LAB = Path(os.environ.get("SEALRUN_LAB", str(Path.home() / "sealrun-lab")))
 
 def port_refused(port: int) -> bool:
     with socket.socket() as s:
-        s.settimeout(2)
+        s.settimeout(5)
         try:
             s.connect(("127.0.0.1", port))
         except ConnectionRefusedError:
