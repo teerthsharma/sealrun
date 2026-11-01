@@ -144,4 +144,13 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   `data-order` per row, height by `diff`; no `orders` key gives the text `not run yet`, never a 0 bar. Colour only
   by status (a meaningful datum), never decoration. The page fetches `r2.json` next to it.
 
+## Round 2, batch 6
+- `server.delete_world(scratch_dir, root)` exactly as above (ValueError unless `scratch_dir` resolves inside `root`
+  and holds `MARKER`; then removes `scratch_dir / "world"`; a missing world is not an error).
+  `server.reset(srv, root) -> Server`: `srv.stop()`, `delete_world(srv.scratch["dir"], root)`, `boot(srv.scratch)`;
+  returns the new Server (same scratch, same ports). `lab/tests/test_guard_reset_scope.py` must pass unchanged.
+- Real-server facts (N2.G1.2.3, measured): boot to `Done (` 19.0-21.0 s alone, 27 s with a second boot running;
+  `list` answers `There are 0 of a max of 4 players online: `. A block check is `execute if block x y z <block>`
+  after `forceload add x z` (`orderrun.wait_loaded`).
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
