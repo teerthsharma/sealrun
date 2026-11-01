@@ -1,0 +1,5784 @@
+{
+  "lane": "fibers",
+  "round": 3,
+  "run": "n3",
+  "version": 1,
+  "runs": [
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E0",
+      "r_dec": 2,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": 4,
+      "found_classes": 4,
+      "classes": [
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              2,
+              0,
+              1,
+              3
+            ],
+            [
+              2,
+              0,
+              3,
+              1
+            ],
+            [
+              2,
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              1,
+              2,
+              0,
+              3
+            ],
+            [
+              1,
+              2,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0,
+              2
+            ],
+            [
+              1,
+              3,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              3,
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              0,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              0,
+              2
+            ],
+            [
+              3,
+              1,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 24,
+      "domain_complete": true,
+      "cross_class_edges": 12,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E0",
+      "r_dec": 3,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": 4,
+      "found_classes": 4,
+      "classes": [
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              2,
+              0,
+              1,
+              3
+            ],
+            [
+              2,
+              0,
+              3,
+              1
+            ],
+            [
+              2,
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              1,
+              2,
+              0,
+              3
+            ],
+            [
+              1,
+              2,
+              3,
+              0
+            ],
+            [
+              1,
+              3,
+              0,
+              2
+            ],
+            [
+              1,
+              3,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 6,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 6,
+          "E": 6,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 6,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              3,
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              0,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              0,
+              2
+            ],
+            [
+              3,
+              1,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 24,
+      "domain_complete": true,
+      "cross_class_edges": 12,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E1",
+      "r_dec": 2,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "predicted_classes": 4,
+      "found_classes": 4,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            1
+          ],
+          "boundary_swap_labels": [
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 4,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E1",
+      "r_dec": 3,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "predicted_classes": 4,
+      "found_classes": 4,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            1
+          ],
+          "boundary_swap_labels": [
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 4,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E2",
+      "r_dec": 2,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": 5,
+      "found_classes": 5,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 4,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 2,
+          "index": 4,
+          "orders": [
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": false,
+      "cross_class_edges": 5,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E2",
+      "r_dec": 3,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": 5,
+      "found_classes": 5,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 4,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 2,
+          "index": 4,
+          "orders": [
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": false,
+      "cross_class_edges": 5,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E3",
+      "r_dec": 2,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          67,
+          64
+        ],
+        [
+          64,
+          67
+        ]
+      ],
+      "predicted_classes": 6,
+      "found_classes": 6,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E3",
+      "r_dec": 3,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          67,
+          64
+        ],
+        [
+          64,
+          67
+        ]
+      ],
+      "predicted_classes": 6,
+      "found_classes": 6,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E4",
+      "r_dec": 2,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ],
+        [
+          79,
+          64
+        ]
+      ],
+      "predicted_classes": 8,
+      "found_classes": 8,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              3,
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 5,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 5,
+          "E": 5,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              2,
+              0,
+              1,
+              3
+            ],
+            [
+              2,
+              0,
+              3,
+              1
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              0,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              0,
+              3
+            ],
+            [
+              1,
+              2,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 5,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 5,
+          "E": 5,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              1,
+              3,
+              0,
+              2
+            ],
+            [
+              1,
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              1,
+              0,
+              2
+            ],
+            [
+              3,
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 6,
+          "orders": [
+            [
+              2,
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 7,
+          "orders": [
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 24,
+      "domain_complete": true,
+      "cross_class_edges": 18,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "main",
+        "path": "lab/results/research/quotient_predictions.json",
+        "commit": "7ca16256c8059c6ea42345eb1077c923ddbb29ad",
+        "blob": "20a0ddb9db0135a55ede4cc3c447a24f2d346929",
+        "file_last_commit": "ab6d18945d3e1d97135aa3117c73af0b2188fc73"
+      },
+      "layout": "E4",
+      "r_dec": 3,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ],
+        [
+          79,
+          64
+        ]
+      ],
+      "predicted_classes": 8,
+      "found_classes": 8,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              3,
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 5,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 5,
+          "E": 5,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              2,
+              0,
+              1,
+              3
+            ],
+            [
+              2,
+              0,
+              3,
+              1
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              0,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              0,
+              3
+            ],
+            [
+              1,
+              2,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 5,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 5,
+          "E": 5,
+          "F": 1,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              1,
+              3,
+              0,
+              2
+            ],
+            [
+              1,
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              1,
+              0,
+              2
+            ],
+            [
+              3,
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 3,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 2,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 5,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 5,
+          "to_unlisted_edges": 0,
+          "index": 6,
+          "orders": [
+            [
+              2,
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 7,
+          "orders": [
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 24,
+      "domain_complete": true,
+      "cross_class_edges": 18,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "8e978bbbeececc521bec37d922c538d989e76b48",
+        "blob": "f2d29b9529f77e73f27ba79592440ff7c4e4b508",
+        "file_last_commit": "8e978bbbeececc521bec37d922c538d989e76b48"
+      },
+      "layout": "E1",
+      "r_dec": 3,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 6,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "8e978bbbeececc521bec37d922c538d989e76b48",
+        "blob": "f2d29b9529f77e73f27ba79592440ff7c4e4b508",
+        "file_last_commit": "8e978bbbeececc521bec37d922c538d989e76b48"
+      },
+      "layout": "E2",
+      "r_dec": 3,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 6,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 4,
+          "orders": [
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 5,
+          "orders": [
+            [
+              0,
+              3,
+              1,
+              2
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": false,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "8e978bbbeececc521bec37d922c538d989e76b48",
+        "blob": "f2d29b9529f77e73f27ba79592440ff7c4e4b508",
+        "file_last_commit": "8e978bbbeececc521bec37d922c538d989e76b48"
+      },
+      "layout": "cal_square_O12",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 2,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 3,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 3,
+          "index": 1,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "domain_size": 2,
+      "domain_complete": false,
+      "cross_class_edges": 0,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "8e978bbbeececc521bec37d922c538d989e76b48",
+        "blob": "f2d29b9529f77e73f27ba79592440ff7c4e4b508",
+        "file_last_commit": "8e978bbbeececc521bec37d922c538d989e76b48"
+      },
+      "layout": "round2_order_square",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 4,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 2,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 2,
+          "index": 1,
+          "orders": [
+            [
+              2,
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 3,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 3,
+          "index": 3,
+          "orders": [
+            [
+              3,
+              0,
+              2,
+              1
+            ]
+          ]
+        }
+      ],
+      "domain_size": 4,
+      "domain_complete": false,
+      "cross_class_edges": 1,
+      "listed_to_unlisted_edges": 10
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "8e978bbbeececc521bec37d922c538d989e76b48",
+        "blob": "f2d29b9529f77e73f27ba79592440ff7c4e4b508",
+        "file_last_commit": "8e978bbbeececc521bec37d922c538d989e76b48"
+      },
+      "layout": "round2_order_collapse",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 1,
+      "classes": [
+        {
+          "size": 2,
+          "b0": 2,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 2,
+          "chi": 2,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 2,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": false,
+          "witness": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 0,
+          "to_unlisted_edges": 6,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ]
+          ]
+        }
+      ],
+      "domain_size": 2,
+      "domain_complete": false,
+      "cross_class_edges": 0,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "research/partition",
+        "path": "lab/results/research/partitions.json",
+        "commit": "8e978bbbeececc521bec37d922c538d989e76b48",
+        "blob": "f2d29b9529f77e73f27ba79592440ff7c4e4b508",
+        "file_last_commit": "8e978bbbeececc521bec37d922c538d989e76b48"
+      },
+      "layout": "round2_order_pair",
+      "r_dec": null,
+      "k": 2,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 2,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 1,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 1,
+          "boundary_swaps": [
+            0
+          ],
+          "boundary_swap_labels": [
+            "(0,1)"
+          ],
+          "cross_listed_edges": 1,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 2,
+      "domain_complete": true,
+      "cross_class_edges": 1,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/campaign",
+        "path": "lab/results/research/quotient_E1.json",
+        "commit": "fe45eae07c7ae19ae8a49266c0513902778da15e",
+        "blob": "587b94fc0e6dfa22fa751ec0a957a42a1ff8913d",
+        "file_last_commit": "14b12ff8a9337984941c1d1edb62ce7279d27d10"
+      },
+      "layout": "E1",
+      "r_dec": null,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 6,
+      "partition_basis": "classes_agreeing_chunks",
+      "class_count_all_chunks_hash": 8,
+      "stored_classes": 6,
+      "control_duplicates": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "classes": [
+            0,
+            0
+          ]
+        },
+        {
+          "order": [
+            2,
+            1,
+            0
+          ],
+          "classes": [
+            5,
+            5
+          ]
+        }
+      ],
+      "controls_max_diff": 2456,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/campaign",
+        "path": "lab/results/research/quotient_E2.json",
+        "commit": "fe45eae07c7ae19ae8a49266c0513902778da15e",
+        "blob": "4c4614af97c8c7fcada576912b7bf31f18896519",
+        "file_last_commit": "25068b4061bf8fd1a86e765c11a050ab88aa3708"
+      },
+      "layout": "E2",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 3,
+      "partition_basis": "classes_agreeing_chunks",
+      "class_count_all_chunks_hash": 8,
+      "stored_classes": 3,
+      "control_duplicates": [
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "classes": [
+            0,
+            0
+          ]
+        },
+        {
+          "order": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "classes": [
+            2,
+            2
+          ]
+        }
+      ],
+      "controls_max_diff": 310,
+      "classes": [
+        {
+          "size": 3,
+          "b0": 2,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 2,
+          "chi": 2,
+          "b1_euler": 0,
+          "V": 3,
+          "E": 1,
+          "F": 0,
+          "b0_gudhi": 2,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": false,
+          "witness": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              3,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ],
+          "boundary_edges": 7,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 4,
+          "to_unlisted_edges": 3,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ],
+            [
+              0,
+              3,
+              2,
+              1
+            ],
+            [
+              0,
+              3,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 2,
+          "b0": 2,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 2,
+          "chi": 2,
+          "b1_euler": 0,
+          "V": 2,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 2,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": false,
+          "witness": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ],
+          "boundary_edges": 6,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 4,
+          "to_unlisted_edges": 2,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 1,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": false,
+      "cross_class_edges": 5,
+      "listed_to_unlisted_edges": 6
+    },
+    {
+      "source": {
+        "ref": "research/campaign",
+        "path": "lab/results/research/quotient_E3.json",
+        "commit": "fe45eae07c7ae19ae8a49266c0513902778da15e",
+        "blob": "c63c4f2381651abcbf1f0fd788edfab72c316d31",
+        "file_last_commit": "fe45eae07c7ae19ae8a49266c0513902778da15e"
+      },
+      "layout": "E3",
+      "r_dec": null,
+      "k": 3,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          67
+        ],
+        [
+          67,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 6,
+      "partition_basis": "classes_agreeing_chunks",
+      "class_count_all_chunks_hash": 8,
+      "stored_classes": 6,
+      "control_duplicates": [
+        {
+          "order": [
+            0,
+            2,
+            1
+          ],
+          "classes": [
+            0,
+            0
+          ]
+        },
+        {
+          "order": [
+            1,
+            2,
+            0
+          ],
+          "classes": [
+            5,
+            5
+          ]
+        }
+      ],
+      "controls_max_diff": 952,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 2,
+          "boundary_swaps": [
+            0,
+            1
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)"
+          ],
+          "cross_listed_edges": 2,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 6,
+      "domain_complete": true,
+      "cross_class_edges": 6,
+      "listed_to_unlisted_edges": 0
+    },
+    {
+      "source": {
+        "ref": "research/campaign",
+        "path": "lab/results/research/quotient_E4.json",
+        "commit": "fe45eae07c7ae19ae8a49266c0513902778da15e",
+        "blob": "5b947b384bb917ebc7feefb3bd208f5d506ae3ee",
+        "file_last_commit": "25068b4061bf8fd1a86e765c11a050ab88aa3708"
+      },
+      "layout": "E4",
+      "r_dec": null,
+      "k": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ],
+        [
+          79,
+          64
+        ]
+      ],
+      "predicted_classes": null,
+      "found_classes": 24,
+      "partition_basis": "classes_agreeing_chunks",
+      "class_count_all_chunks_hash": 26,
+      "stored_classes": 24,
+      "control_duplicates": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            0,
+            0
+          ]
+        },
+        {
+          "order": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "classes": [
+            23,
+            23
+          ]
+        }
+      ],
+      "controls_max_diff": 3396,
+      "classes": [
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 0,
+          "orders": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 1,
+          "orders": [
+            [
+              0,
+              1,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 2,
+          "orders": [
+            [
+              0,
+              2,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 3,
+          "orders": [
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 4,
+          "orders": [
+            [
+              0,
+              3,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 5,
+          "orders": [
+            [
+              0,
+              3,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 6,
+          "orders": [
+            [
+              1,
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 7,
+          "orders": [
+            [
+              1,
+              0,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 8,
+          "orders": [
+            [
+              1,
+              2,
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 9,
+          "orders": [
+            [
+              1,
+              2,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 10,
+          "orders": [
+            [
+              1,
+              3,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 11,
+          "orders": [
+            [
+              1,
+              3,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 12,
+          "orders": [
+            [
+              2,
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 13,
+          "orders": [
+            [
+              2,
+              0,
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 14,
+          "orders": [
+            [
+              2,
+              1,
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 15,
+          "orders": [
+            [
+              2,
+              1,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 16,
+          "orders": [
+            [
+              2,
+              3,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 17,
+          "orders": [
+            [
+              2,
+              3,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 18,
+          "orders": [
+            [
+              3,
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 19,
+          "orders": [
+            [
+              3,
+              0,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 20,
+          "orders": [
+            [
+              3,
+              1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 21,
+          "orders": [
+            [
+              3,
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 22,
+          "orders": [
+            [
+              3,
+              2,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "size": 1,
+          "b0": 1,
+          "b1": 0,
+          "b2": 0,
+          "b0_uf": 1,
+          "chi": 1,
+          "b1_euler": 0,
+          "V": 1,
+          "E": 0,
+          "F": 0,
+          "b0_gudhi": 1,
+          "b1_gudhi": 0,
+          "b2_gudhi": 0,
+          "agree": true,
+          "convex": true,
+          "witness": null,
+          "boundary_edges": 3,
+          "boundary_swaps": [
+            0,
+            1,
+            2
+          ],
+          "boundary_swap_labels": [
+            "(0,1)",
+            "(1,2)",
+            "(2,3)"
+          ],
+          "cross_listed_edges": 3,
+          "to_unlisted_edges": 0,
+          "index": 23,
+          "orders": [
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "domain_size": 24,
+      "domain_complete": true,
+      "cross_class_edges": 36,
+      "listed_to_unlisted_edges": 0
+    }
+  ],
+  "skipped": []
+}
