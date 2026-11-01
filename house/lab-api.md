@@ -184,5 +184,13 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
 - `test_guard_setblock_edges.py` (N2.G2.C2, guard `test_guard_setblock_edges`): real server; blocks at x 15|16 and
   z -1|0 (both sides of chunk borders), at (-17, 64, -33) (`r.-1.-1.mca`), at y 0 and y 255; `save-all flush`, stop,
   every one read back exactly with `anvil.block_at`.
+- Measured (Finding n2-F1, 3 identical runs): one `forceload add` makes its chunk and every chunk within Chebyshev
+  distance 2 `"full"` on disk; distance 3..12 is not on disk (not on disk is not "not generated"). So a list of
+  neighbouring chunks is one move per 5x5 tile: only the first ticket of a tile changes what gets built.
+- `orderrun.run_order(scratch: dict, order: list[tuple[int, int]]) -> dict[(x, y, z), str | None]` (N2.G3.2.4):
+  `server.boot(scratch)`, then for each `(cx, cz)` in order `wait_loaded` (False raises RuntimeError naming the chunk)
+  and `save-all flush`; stop; return `window.box(region, lo, hi)` over the bounding box of the listed chunks, y 0..255.
+  Always stops its server; the caller makes and removes the scratch. Test `run_order_returns_window_for_two_chunks`:
+  real server, order [(64, 64), (65, 64)], 131072 positions, none None.
 
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
