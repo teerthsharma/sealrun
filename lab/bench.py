@@ -1,6 +1,7 @@
 import ctypes
 import json
 import os
+import subprocess
 import time
 from ctypes import wintypes
 from datetime import datetime
@@ -51,6 +52,8 @@ def peak_mb(pid: int) -> float:
 
 def measure(root: Path) -> dict:
     free_before = server.free_mb()
+    tasks = subprocess.run(["tasklist", "/FI", "IMAGENAME eq java.exe", "/NH", "/FO", "CSV"], capture_output=True, text=True).stdout
+    other_java = sum(1 for line in tasks.splitlines() if line.startswith('"java.exe"'))
     when = datetime.now().astimezone().isoformat(timespec="seconds")
     scratch = serverdir.make_scratch(SRC, root)
     srv = None
@@ -72,6 +75,7 @@ def measure(root: Path) -> dict:
         "peak_mb": round(peak, 1),
         "xmx": "1G",
         "free_mb_before": free_before,
+        "other_java": other_java,
         "when": when,
         "runs": 1,
     }
