@@ -23,6 +23,7 @@ import ores  # noqa: E402
 import server  # noqa: E402
 import serverdir  # noqa: E402
 import window  # noqa: E402
+import psutil  # noqa: E402
 
 SRC = Path(os.environ.get("SEALRUN_SERVER", "C:/Users/seal/Desktop/sanitised mineraft/server-1.16.1"))
 ROOT = Path(os.environ.get("SEALRUN_LAB", Path.home() / "sealrun-lab"))
@@ -82,20 +83,42 @@ def settle(srv, chunks, timeout=120.0):
     return round(time.monotonic() - t0, 2)
 
 
+def lab_snapshot():
+    java = 0
+    for p in psutil.process_iter(["name"]):
+        try:
+            if (p.info["name"] or "").lower().startswith("java") and Path(p.cwd()).is_relative_to(ROOT):
+                java += 1
+        except (psutil.Error, OSError):
+            pass
+    slots = 0
+    for d in ROOT.glob(".slot*"):
+        f = d / "pid"
+        try:
+            if f.is_file() and psutil.pid_exists(int(f.read_text() or 0)):
+                slots += 1
+        except (ValueError, OSError):
+            pass
+    return {"java_lab": java, "slots_live": slots, "cpu_pct": psutil.cpu_percent(interval=1.0), "free_mb": server.free_mb()}
+
+
 def build(stem, tickets, chunks):
     ROOT.mkdir(parents=True, exist_ok=True)
     wait_ram()
     scratch = serverdir.make_scratch(SRC, ROOT)
     srv = None
     try:
+        before = lab_snapshot()
         srv = server.boot(scratch)
         boot_secs = round(srv.boot_secs, 2)
+        after_boot = lab_snapshot()
         for cx, cz in tickets:
             if not orderrun.wait_loaded(srv, cx, cz):
                 raise RuntimeError(f"ticket ({cx}, {cz}) did not load")
             srv.command("save-all flush")
         settle_s = settle(srv, chunks)
         srv.stop()
+        at_save = lab_snapshot()
         region = Path(scratch["dir"]) / "world" / "region"
         per_chunk = {}
         raw_dir = RAW / stem
@@ -118,6 +141,7 @@ def build(stem, tickets, chunks):
     return {
         "boot_secs": boot_secs,
         "settle_s": settle_s,
+        "servers": {"before_boot": before, "after_boot": after_boot, "at_save": at_save},
         "chunks": per_chunk,
         "raw": str(raw_dir),
         "when": datetime.now(IST).isoformat(),

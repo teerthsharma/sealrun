@@ -31,7 +31,8 @@
       ],
       "boot_secs": 32.11,
       "settle_s": 10.17,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "cal_O1_r2",
@@ -55,7 +56,8 @@
       ],
       "boot_secs": 26.73,
       "settle_s": 10.28,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "cal_O2_r1",
@@ -79,7 +81,8 @@
       ],
       "boot_secs": 30.97,
       "settle_s": 10.33,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "cal_O2_r2",
@@ -103,16 +106,67 @@
       ],
       "boot_secs": 29.86,
       "settle_s": 10.39,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     }
   ],
-  "classes": [
+  "repeat_controls": [
+    {
+      "a": "cal_O1_r1",
+      "b": "cal_O1_r2",
+      "diff_total": 1,
+      "diff_by_chunk": {
+        "64,65": 1
+      }
+    },
+    {
+      "a": "cal_O2_r1",
+      "b": "cal_O2_r2",
+      "diff_total": 0,
+      "diff_by_chunk": {}
+    }
+  ],
+  "controls_max_diff": 1,
+  "agreeing_chunks": [
+    "64,64",
+    "65,64",
+    "65,65"
+  ],
+  "noisy_chunks": {
+    "64,65": {
+      "cal_O1_r1|cal_O1_r2": 1
+    }
+  },
+  "order_dependent_chunks": [
+    "64,64",
+    "65,64"
+  ],
+  "classes_agreeing_chunks": [
     {
       "class": 0,
       "worlds": [
-        "cal_O1_r1"
+        "cal_O1_r1",
+        "cal_O1_r2"
       ],
       "orders": [
+        [
+          [
+            64,
+            64
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            64,
+            65
+          ],
+          [
+            65,
+            65
+          ]
+        ],
         [
           [
             64,
@@ -135,32 +189,6 @@
     },
     {
       "class": 1,
-      "worlds": [
-        "cal_O1_r2"
-      ],
-      "orders": [
-        [
-          [
-            64,
-            64
-          ],
-          [
-            65,
-            64
-          ],
-          [
-            64,
-            65
-          ],
-          [
-            65,
-            65
-          ]
-        ]
-      ]
-    },
-    {
-      "class": 2,
       "worlds": [
         "cal_O2_r1",
         "cal_O2_r2"
@@ -205,7 +233,26 @@
       ]
     }
   ],
-  "class_count": 3,
+  "class_count_agreeing_chunks": 2,
+  "class_count_all_chunks_hash": 3,
+  "chunk_status": {
+    "64,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "64,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "65,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "65,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    }
+  },
   "per_chunk_partition": {
     "64,64": [
       [
@@ -316,6 +363,5 @@
       "diff_by_chunk": {}
     }
   ],
-  "controls_max_diff": 1,
-  "when": "2026-11-01T14:06:33.659050+05:30"
+  "when": "2026-11-01T14:16:21.969170+05:30"
 }

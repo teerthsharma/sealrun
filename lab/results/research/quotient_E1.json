@@ -98,7 +98,8 @@
       ],
       "boot_secs": 18.97,
       "settle_s": 10.16,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_ABC_r2",
@@ -118,7 +119,8 @@
       ],
       "boot_secs": 23.36,
       "settle_s": 10.7,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_ACB",
@@ -138,7 +140,8 @@
       ],
       "boot_secs": 14.8,
       "settle_s": 10.09,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_BAC",
@@ -158,7 +161,8 @@
       ],
       "boot_secs": 18.92,
       "settle_s": 10.3,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_BCA",
@@ -178,7 +182,8 @@
       ],
       "boot_secs": 23.19,
       "settle_s": 11.0,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_CAB",
@@ -198,7 +203,8 @@
       ],
       "boot_secs": 25.31,
       "settle_s": 11.12,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_CBA",
@@ -218,7 +224,8 @@
       ],
       "boot_secs": 22.72,
       "settle_s": 10.77,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E1_CBA_r2",
@@ -238,16 +245,320 @@
       ],
       "boot_secs": 21.0,
       "settle_s": 10.34,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     }
   ],
-  "classes": [
+  "repeat_controls": [
+    {
+      "a": "E1_ABC",
+      "b": "E1_ABC_r2",
+      "diff_total": 275,
+      "diff_by_chunk": {
+        "62,62": 1,
+        "62,63": 36,
+        "62,64": 37,
+        "63,62": 24,
+        "63,66": 3,
+        "64,62": 20,
+        "64,65": 1,
+        "66,62": 2,
+        "66,63": 2,
+        "66,64": 30,
+        "66,65": 2,
+        "67,62": 2,
+        "67,63": 20,
+        "67,64": 8,
+        "68,62": 1,
+        "69,62": 9,
+        "69,63": 3,
+        "69,64": 5,
+        "70,64": 1,
+        "70,66": 3,
+        "71,62": 10,
+        "71,65": 15,
+        "71,66": 16,
+        "72,64": 1,
+        "72,65": 2,
+        "73,65": 4,
+        "74,62": 2,
+        "74,63": 7,
+        "74,65": 5,
+        "75,65": 2,
+        "76,66": 1
+      }
+    },
+    {
+      "a": "E1_CBA",
+      "b": "E1_CBA_r2",
+      "diff_total": 2456,
+      "diff_by_chunk": {
+        "62,62": 16,
+        "62,66": 40,
+        "63,66": 15,
+        "64,62": 25,
+        "65,62": 13,
+        "66,62": 10,
+        "66,63": 2,
+        "67,62": 10,
+        "67,63": 20,
+        "67,64": 8,
+        "68,62": 21,
+        "69,62": 10,
+        "69,63": 3,
+        "69,64": 5,
+        "70,64": 1,
+        "71,62": 26,
+        "71,63": 1,
+        "72,62": 401,
+        "72,63": 419,
+        "72,64": 9,
+        "72,66": 49,
+        "73,62": 6,
+        "73,63": 6,
+        "73,65": 5,
+        "73,66": 307,
+        "74,62": 8,
+        "74,63": 4,
+        "74,66": 499,
+        "75,62": 30,
+        "75,66": 17,
+        "76,62": 446,
+        "76,63": 24
+      }
+    }
+  ],
+  "controls_max_diff": 2456,
+  "agreeing_chunks": [
+    "62,65",
+    "63,63",
+    "63,64",
+    "63,65",
+    "64,63",
+    "64,64",
+    "64,66",
+    "65,63",
+    "65,64",
+    "65,65",
+    "65,66",
+    "66,66",
+    "67,65",
+    "67,66",
+    "68,63",
+    "68,64",
+    "68,65",
+    "68,66",
+    "69,65",
+    "69,66",
+    "70,62",
+    "70,63",
+    "70,65",
+    "71,64",
+    "73,64",
+    "74,64",
+    "75,63",
+    "75,64",
+    "76,64",
+    "76,65"
+  ],
+  "noisy_chunks": {
+    "62,62": {
+      "E1_ABC|E1_ABC_r2": 1,
+      "E1_CBA|E1_CBA_r2": 16
+    },
+    "62,63": {
+      "E1_ABC|E1_ABC_r2": 36
+    },
+    "62,64": {
+      "E1_ABC|E1_ABC_r2": 37
+    },
+    "62,66": {
+      "E1_CBA|E1_CBA_r2": 40
+    },
+    "63,62": {
+      "E1_ABC|E1_ABC_r2": 24
+    },
+    "63,66": {
+      "E1_ABC|E1_ABC_r2": 3,
+      "E1_CBA|E1_CBA_r2": 15
+    },
+    "64,62": {
+      "E1_ABC|E1_ABC_r2": 20,
+      "E1_CBA|E1_CBA_r2": 25
+    },
+    "64,65": {
+      "E1_ABC|E1_ABC_r2": 1
+    },
+    "65,62": {
+      "E1_CBA|E1_CBA_r2": 13
+    },
+    "66,62": {
+      "E1_ABC|E1_ABC_r2": 2,
+      "E1_CBA|E1_CBA_r2": 10
+    },
+    "66,63": {
+      "E1_ABC|E1_ABC_r2": 2,
+      "E1_CBA|E1_CBA_r2": 2
+    },
+    "66,64": {
+      "E1_ABC|E1_ABC_r2": 30
+    },
+    "66,65": {
+      "E1_ABC|E1_ABC_r2": 2
+    },
+    "67,62": {
+      "E1_ABC|E1_ABC_r2": 2,
+      "E1_CBA|E1_CBA_r2": 10
+    },
+    "67,63": {
+      "E1_ABC|E1_ABC_r2": 20,
+      "E1_CBA|E1_CBA_r2": 20
+    },
+    "67,64": {
+      "E1_ABC|E1_ABC_r2": 8,
+      "E1_CBA|E1_CBA_r2": 8
+    },
+    "68,62": {
+      "E1_ABC|E1_ABC_r2": 1,
+      "E1_CBA|E1_CBA_r2": 21
+    },
+    "69,62": {
+      "E1_ABC|E1_ABC_r2": 9,
+      "E1_CBA|E1_CBA_r2": 10
+    },
+    "69,63": {
+      "E1_ABC|E1_ABC_r2": 3,
+      "E1_CBA|E1_CBA_r2": 3
+    },
+    "69,64": {
+      "E1_ABC|E1_ABC_r2": 5,
+      "E1_CBA|E1_CBA_r2": 5
+    },
+    "70,64": {
+      "E1_ABC|E1_ABC_r2": 1,
+      "E1_CBA|E1_CBA_r2": 1
+    },
+    "70,66": {
+      "E1_ABC|E1_ABC_r2": 3
+    },
+    "71,62": {
+      "E1_ABC|E1_ABC_r2": 10,
+      "E1_CBA|E1_CBA_r2": 26
+    },
+    "71,63": {
+      "E1_CBA|E1_CBA_r2": 1
+    },
+    "71,65": {
+      "E1_ABC|E1_ABC_r2": 15
+    },
+    "71,66": {
+      "E1_ABC|E1_ABC_r2": 16
+    },
+    "72,62": {
+      "E1_CBA|E1_CBA_r2": 401
+    },
+    "72,63": {
+      "E1_CBA|E1_CBA_r2": 419
+    },
+    "72,64": {
+      "E1_ABC|E1_ABC_r2": 1,
+      "E1_CBA|E1_CBA_r2": 9
+    },
+    "72,65": {
+      "E1_ABC|E1_ABC_r2": 2
+    },
+    "72,66": {
+      "E1_CBA|E1_CBA_r2": 49
+    },
+    "73,62": {
+      "E1_CBA|E1_CBA_r2": 6
+    },
+    "73,63": {
+      "E1_CBA|E1_CBA_r2": 6
+    },
+    "73,65": {
+      "E1_ABC|E1_ABC_r2": 4,
+      "E1_CBA|E1_CBA_r2": 5
+    },
+    "73,66": {
+      "E1_CBA|E1_CBA_r2": 307
+    },
+    "74,62": {
+      "E1_ABC|E1_ABC_r2": 2,
+      "E1_CBA|E1_CBA_r2": 8
+    },
+    "74,63": {
+      "E1_ABC|E1_ABC_r2": 7,
+      "E1_CBA|E1_CBA_r2": 4
+    },
+    "74,65": {
+      "E1_ABC|E1_ABC_r2": 5
+    },
+    "74,66": {
+      "E1_CBA|E1_CBA_r2": 499
+    },
+    "75,62": {
+      "E1_CBA|E1_CBA_r2": 30
+    },
+    "75,65": {
+      "E1_ABC|E1_ABC_r2": 2
+    },
+    "75,66": {
+      "E1_CBA|E1_CBA_r2": 17
+    },
+    "76,62": {
+      "E1_CBA|E1_CBA_r2": 446
+    },
+    "76,63": {
+      "E1_CBA|E1_CBA_r2": 24
+    },
+    "76,66": {
+      "E1_ABC|E1_ABC_r2": 1
+    }
+  },
+  "order_dependent_chunks": [
+    "62,65",
+    "63,63",
+    "64,63",
+    "65,63",
+    "65,64",
+    "65,65",
+    "65,66",
+    "66,66",
+    "67,65",
+    "67,66",
+    "68,63",
+    "68,64",
+    "68,65",
+    "68,66",
+    "69,66",
+    "70,63",
+    "70,65",
+    "71,64",
+    "73,64"
+  ],
+  "classes_agreeing_chunks": [
     {
       "class": 0,
       "worlds": [
-        "E1_ABC"
+        "E1_ABC",
+        "E1_ABC_r2"
       ],
       "orders": [
+        [
+          [
+            64,
+            64
+          ],
+          [
+            69,
+            64
+          ],
+          [
+            74,
+            64
+          ]
+        ],
         [
           [
             64,
@@ -266,28 +577,6 @@
     },
     {
       "class": 1,
-      "worlds": [
-        "E1_ABC_r2"
-      ],
-      "orders": [
-        [
-          [
-            64,
-            64
-          ],
-          [
-            69,
-            64
-          ],
-          [
-            74,
-            64
-          ]
-        ]
-      ]
-    },
-    {
-      "class": 2,
       "worlds": [
         "E1_ACB"
       ],
@@ -309,7 +598,7 @@
       ]
     },
     {
-      "class": 3,
+      "class": 2,
       "worlds": [
         "E1_BAC"
       ],
@@ -331,7 +620,7 @@
       ]
     },
     {
-      "class": 4,
+      "class": 3,
       "worlds": [
         "E1_BCA"
       ],
@@ -353,7 +642,7 @@
       ]
     },
     {
-      "class": 5,
+      "class": 4,
       "worlds": [
         "E1_CAB"
       ],
@@ -375,9 +664,10 @@
       ]
     },
     {
-      "class": 6,
+      "class": 5,
       "worlds": [
-        "E1_CBA"
+        "E1_CBA",
+        "E1_CBA_r2"
       ],
       "orders": [
         [
@@ -393,15 +683,7 @@
             64,
             64
           ]
-        ]
-      ]
-    },
-    {
-      "class": 7,
-      "worlds": [
-        "E1_CBA_r2"
-      ],
-      "orders": [
+        ],
         [
           [
             74,
@@ -419,7 +701,310 @@
       ]
     }
   ],
-  "class_count": 8,
+  "class_count_agreeing_chunks": 6,
+  "class_count_all_chunks_hash": 8,
+  "chunk_status": {
+    "62,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "62,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "62,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "62,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "62,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "63,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "63,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "63,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "63,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "63,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "64,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "64,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "64,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "64,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "64,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "65,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "65,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "65,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "65,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "65,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "66,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "66,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "66,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "66,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "66,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "67,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 6
+    },
+    "67,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "67,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "67,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "67,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "68,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "68,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "68,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "68,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "68,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "69,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "69,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "69,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "69,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "69,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "70,62": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "70,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "70,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "70,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "70,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "71,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 5
+    },
+    "71,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 5
+    },
+    "71,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "71,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "71,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 5
+    },
+    "72,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "72,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 5
+    },
+    "72,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 5
+    },
+    "72,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 5
+    },
+    "72,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "73,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "73,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "73,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "73,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 6
+    },
+    "73,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "74,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "74,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "74,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "74,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "74,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "75,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "75,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "75,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "75,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "75,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "76,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "76,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "76,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "76,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "76,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    }
+  },
   "per_chunk_partition": {
     "62,62": [
       [
@@ -3049,6 +3634,5 @@
       }
     }
   ],
-  "controls_max_diff": 2456,
-  "when": "2026-11-01T14:13:48.240555+05:30"
+  "when": "2026-11-01T14:16:21.628223+05:30"
 }

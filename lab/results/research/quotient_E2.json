@@ -63,7 +63,8 @@
       ],
       "boot_secs": 22.09,
       "settle_s": 10.66,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E2_PQRS_r2",
@@ -87,7 +88,8 @@
       ],
       "boot_secs": 17.94,
       "settle_s": 10.83,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E2_PQSR",
@@ -111,7 +113,8 @@
       ],
       "boot_secs": 16.36,
       "settle_s": 11.38,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E2_PRQS",
@@ -135,7 +138,8 @@
       ],
       "boot_secs": 22.17,
       "settle_s": 10.28,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E2_PRSQ",
@@ -159,7 +163,8 @@
       ],
       "boot_secs": 18.42,
       "settle_s": 10.62,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E2_PSQR",
@@ -183,7 +188,8 @@
       ],
       "boot_secs": 21.05,
       "settle_s": 10.42,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     },
     {
       "label": "E2_PSRQ",
@@ -207,16 +213,138 @@
       ],
       "boot_secs": 27.88,
       "settle_s": 10.69,
-      "not_full_cells": 0
+      "not_full_cells": 0,
+      "servers": null
     }
   ],
-  "classes": [
+  "repeat_controls": [
+    {
+      "a": "E2_PQRS",
+      "b": "E2_PQRS_r2",
+      "diff_total": 310,
+      "diff_by_chunk": {
+        "62,63": 36,
+        "62,64": 37,
+        "62,66": 40,
+        "62,67": 55,
+        "63,66": 15,
+        "63,67": 44,
+        "64,66": 4,
+        "64,67": 13,
+        "66,62": 2,
+        "66,63": 2,
+        "66,64": 30,
+        "66,65": 2,
+        "67,62": 2,
+        "67,63": 20,
+        "67,64": 8
+      }
+    }
+  ],
+  "controls_max_diff": 310,
+  "agreeing_chunks": [
+    "62,62",
+    "62,65",
+    "63,62",
+    "63,63",
+    "63,64",
+    "63,65",
+    "64,62",
+    "64,63",
+    "64,64",
+    "64,65",
+    "65,62",
+    "65,63",
+    "65,64",
+    "65,65",
+    "65,66",
+    "65,67",
+    "66,66",
+    "66,67",
+    "67,65",
+    "67,66",
+    "67,67"
+  ],
+  "noisy_chunks": {
+    "62,63": {
+      "E2_PQRS|E2_PQRS_r2": 36
+    },
+    "62,64": {
+      "E2_PQRS|E2_PQRS_r2": 37
+    },
+    "62,66": {
+      "E2_PQRS|E2_PQRS_r2": 40
+    },
+    "62,67": {
+      "E2_PQRS|E2_PQRS_r2": 55
+    },
+    "63,66": {
+      "E2_PQRS|E2_PQRS_r2": 15
+    },
+    "63,67": {
+      "E2_PQRS|E2_PQRS_r2": 44
+    },
+    "64,66": {
+      "E2_PQRS|E2_PQRS_r2": 4
+    },
+    "64,67": {
+      "E2_PQRS|E2_PQRS_r2": 13
+    },
+    "66,62": {
+      "E2_PQRS|E2_PQRS_r2": 2
+    },
+    "66,63": {
+      "E2_PQRS|E2_PQRS_r2": 2
+    },
+    "66,64": {
+      "E2_PQRS|E2_PQRS_r2": 30
+    },
+    "66,65": {
+      "E2_PQRS|E2_PQRS_r2": 2
+    },
+    "67,62": {
+      "E2_PQRS|E2_PQRS_r2": 2
+    },
+    "67,63": {
+      "E2_PQRS|E2_PQRS_r2": 20
+    },
+    "67,64": {
+      "E2_PQRS|E2_PQRS_r2": 8
+    }
+  },
+  "order_dependent_chunks": [
+    "62,62",
+    "62,65",
+    "63,62",
+    "64,62",
+    "65,62"
+  ],
+  "classes_agreeing_chunks": [
     {
       "class": 0,
       "worlds": [
-        "E2_PQRS"
+        "E2_PQRS",
+        "E2_PQRS_r2"
       ],
       "orders": [
+        [
+          [
+            64,
+            64
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            64,
+            65
+          ],
+          [
+            65,
+            65
+          ]
+        ],
         [
           [
             64,
@@ -239,32 +367,6 @@
     },
     {
       "class": 1,
-      "worlds": [
-        "E2_PQRS_r2"
-      ],
-      "orders": [
-        [
-          [
-            64,
-            64
-          ],
-          [
-            65,
-            64
-          ],
-          [
-            64,
-            65
-          ],
-          [
-            65,
-            65
-          ]
-        ]
-      ]
-    },
-    {
-      "class": 2,
       "worlds": [
         "E2_PQSR"
       ],
@@ -290,7 +392,7 @@
       ]
     },
     {
-      "class": 3,
+      "class": 2,
       "worlds": [
         "E2_PRQS"
       ],
@@ -316,7 +418,7 @@
       ]
     },
     {
-      "class": 4,
+      "class": 3,
       "worlds": [
         "E2_PRSQ"
       ],
@@ -342,7 +444,7 @@
       ]
     },
     {
-      "class": 5,
+      "class": 4,
       "worlds": [
         "E2_PSQR"
       ],
@@ -368,7 +470,7 @@
       ]
     },
     {
-      "class": 6,
+      "class": 5,
       "worlds": [
         "E2_PSRQ"
       ],
@@ -394,7 +496,154 @@
       ]
     }
   ],
-  "class_count": 7,
+  "class_count_agreeing_chunks": 6,
+  "class_count_all_chunks_hash": 7,
+  "chunk_status": {
+    "62,62": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "62,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "62,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "62,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "62,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "62,67": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "63,62": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "63,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "63,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "63,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "63,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "63,67": {
+      "repeat_agree": false,
+      "distinct_hashes": 4
+    },
+    "64,62": {
+      "repeat_agree": true,
+      "distinct_hashes": 3
+    },
+    "64,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "64,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "64,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "64,66": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "64,67": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "65,62": {
+      "repeat_agree": true,
+      "distinct_hashes": 2
+    },
+    "65,63": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "65,64": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "65,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "65,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "65,67": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "66,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "66,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "66,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "66,65": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "66,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "66,67": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "67,62": {
+      "repeat_agree": false,
+      "distinct_hashes": 3
+    },
+    "67,63": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "67,64": {
+      "repeat_agree": false,
+      "distinct_hashes": 2
+    },
+    "67,65": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "67,66": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    },
+    "67,67": {
+      "repeat_agree": true,
+      "distinct_hashes": 1
+    }
+  },
   "per_chunk_partition": {
     "62,62": [
       [
@@ -1245,6 +1494,5 @@
       }
     }
   ],
-  "controls_max_diff": 310,
-  "when": "2026-11-01T14:12:39.589225+05:30"
+  "when": "2026-11-01T14:16:33.694638+05:30"
 }
