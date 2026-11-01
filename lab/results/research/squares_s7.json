@@ -1,0 +1,56 @@
+{
+  "spacing": 7,
+  "predictions": {
+    "status": "pre-registered before any compute",
+    "spacing": 7,
+    "tickets": {
+      "A": [
+        64,
+        64
+      ],
+      "B": [
+        71,
+        64
+      ],
+      "C": [
+        64,
+        71
+      ],
+      "D": [
+        71,
+        71
+      ]
+    },
+    "window": "62,62,73,73",
+    "window_rule": "every chunk within Chebyshev 2 of some ticket (ticket_world --skip-far)",
+    "orders_run": 6,
+    "repeat_control": "ABCD_rep",
+    "predictions": {
+      "cameron_8a3707c": {
+        "file": "site/charts/r3/cameron.json",
+        "rule": "each chunk stamped by the first ticket in the order that reaches it within 3 chunks",
+        "classes_expected": 1,
+        "scope": "over all 24 orders",
+        "note": "the run covers 6 named orders plus the repeat when s is 5 or 7"
+      },
+      "polytope_research_polytope": {
+        "file": "lab/results/research/quotient_polytope.json",
+        "head_sha": "43faa40d0b755458ebebd7dd1955e1b8baef298b",
+        "file_last_commit": "b04b482",
+        "square_rows_at_spacing_s": "absent: the file has E0_square (2x2 square, spacing 1) only, plus E2_E3_E4_squares with no hand prediction",
+        "E0_square_F_classes": 4,
+        "E0_square_F_prime_classes": 24
+      }
+    },
+    "named_orders_s5_s7": [
+      "ABCD",
+      "DCBA",
+      "BCDA",
+      "CDAB",
+      "DABC",
+      "ACBD",
+      "ABCD_rep"
+    ],
+    "count_note": "the s=5 and s=7 list in the brief names 7 worlds (6 distinct orders plus the repeat); identity ABCD is rotation 0, so it is not counted twice"
+  }
+}
