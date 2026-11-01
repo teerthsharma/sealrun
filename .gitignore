@@ -7,3 +7,12 @@ eula.txt
 *.mca
 *.mcr
 *.jar
+ops.json
+usercache.json
+whitelist.json
+banned-ips.json
+banned-players.json
+session.lock
+level.dat_old
+raids.dat
+raids_end.dat
