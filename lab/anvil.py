@@ -1,5 +1,8 @@
 import gzip
 import zlib
+from pathlib import Path
+
+import nbt
 
 
 def present(region_path):
@@ -39,3 +42,27 @@ def section_blocks(palette, states):
         palette[((states[i // per] & 0xFFFFFFFFFFFFFFFF) >> ((i % per) * bits)) & mask]
         for i in range(4096)
     ]
+
+
+def _level(region_dir, cx, cz):
+    path = Path(region_dir) / f"r.{cx >> 5}.{cz >> 5}.mca"
+    if not path.is_file():
+        return None
+    data = chunk_data(path, cx & 31, cz & 31)
+    return None if data is None else nbt.read(data)[1]["Level"]
+
+
+def chunk_status(region_dir, cx, cz):
+    level = _level(region_dir, cx, cz)
+    return None if level is None else level.get("Status")
+
+
+def block_at(region_dir, x, y, z):
+    level = _level(region_dir, x >> 4, z >> 4)
+    if level is None or level.get("Status") != "full":
+        return None
+    for section in level.get("Sections", []):
+        if section["Y"] == y >> 4 and "Palette" in section:
+            names = [p["Name"] for p in section["Palette"]]
+            return section_blocks(names, section["BlockStates"])[(y & 15) * 256 + (z & 15) * 16 + (x & 15)]
+    return "minecraft:air"
