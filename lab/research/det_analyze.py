@@ -1,14 +1,13 @@
 """Compare the raw dumps of det_q1 / det_q2 / det_q3 and write lab/results/research/determinism.json.
 
 Usage: python lab/research/det_analyze.py
-Reads only the scratchpad dumps (DET_RAW); no server is started.
+Reads only the scratchpad dumps (DET_RAW); no server is started. Chunk dumps are compared
+block by block (sorted (x, y, z) index, 16 x 256 x 16 per chunk).
 """
 import gzip
 import json
-import pickle
 from collections import Counter
 
-import blockdiff
 import det_common as dc
 import flatten
 
@@ -31,35 +30,44 @@ def self_check():
     assert chunk_index_to_pos(0, 0, CHUNK_BLOCKS - 1) == (15, 255, 15)
 
 
-def load_chunk(tag, cx, cz):
-    with gzip.open(dc.RAW / f"q1_{tag}_{cx}_{cz}.txt.gz", "rb") as f:
+def load_chunk(prefix, tag, cx, cz):
+    with gzip.open(dc.RAW / f"{prefix}_{tag}_{cx}_{cz}.txt.gz", "rb") as f:
         lines = f.read().decode("utf-8").split("\n")
-    assert len(lines) == CHUNK_BLOCKS, (tag, cx, cz, len(lines))
+    assert len(lines) == CHUNK_BLOCKS, (prefix, tag, cx, cz, len(lines))
     return lines
+
+
+def compare_chunks(prefix, tags, chunks, examples, limit=20):
+    per_chunk = {}
+    for cx, cz in chunks:
+        arrs = {t: load_chunk(prefix, t, cx, cz) for t in tags}
+        row = {}
+        for a, b in PAIRS:
+            if a not in arrs or b not in arrs:
+                continue
+            A, B = arrs[a], arrs[b]
+            diffs = [i for i in range(CHUNK_BLOCKS) if A[i] != B[i]]
+            row[f"{a}-{b}"] = len(diffs)
+            names = Counter((A[i], B[i]) for i in diffs)
+            row.setdefault("name_pairs", {})[f"{a}-{b}"] = [[x, y, n] for (x, y), n in names.most_common(5)]
+            for i in diffs[:3]:
+                if len(examples) < limit:
+                    examples.append({"prefix": prefix, "pair": f"{a}-{b}", "chunk": [cx, cz],
+                                     "pos": list(chunk_index_to_pos(cx, cz, i)), "a": A[i], "b": B[i]})
+        per_chunk[f"{cx},{cz}"] = row
+    return per_chunk
 
 
 def q1():
     raw = {t: json.loads((dc.RAW / f"q1_{t}.json").read_text()) for t in ("1", "2", "3")}
-    per_chunk = {}
     examples = []
-    for cx, cz in dc.TILE:
-        arrs = {t: load_chunk(t, cx, cz) for t in raw}
-        row = {}
-        for a, b in PAIRS:
-            A, B = arrs[a], arrs[b]
-            diffs = [i for i in range(CHUNK_BLOCKS) if A[i] != B[i]]
-            row[f"{a}-{b}"] = len(diffs)
-            for i in diffs[:3]:
-                if len(examples) < 20:
-                    examples.append({"pair": f"{a}-{b}", "chunk": [cx, cz],
-                                     "pos": list(chunk_index_to_pos(cx, cz, i)),
-                                     "a": A[i], "b": B[i]})
-        per_chunk[f"{cx},{cz}"] = row
-    totals = {p: sum(r[p] for r in per_chunk.values()) for p in ("1-2", "1-3", "2-3")}
+    per_chunk = compare_chunks("q1", list(raw), dc.TILE, examples)
+    totals = {f"{a}-{b}": sum(r.get(f"{a}-{b}", 0) for r in per_chunk.values()) for a, b in PAIRS}
     return {
         "tile": "62..66 x 62..66, one forceload at (64, 64)",
         "blocks_per_chunk": CHUNK_BLOCKS,
         "runs": {t: {"boot_s": v["boot_s"], "settle_s": v["settle_s"], "stop_code": v["stop_code"],
+                     "java_pid": v.get("java_pid"),
                      "not_full_chunks": sum(c["not_full"] for c in v["chunks"].values())}
                  for t, v in raw.items()},
         "differing_blocks_per_chunk": per_chunk,
@@ -80,21 +88,18 @@ def q2():
     for t, d in data.items():
         tiles[t] = {(x, z): tile for x, z, tile, _, _ in d["cells"]}
         grounds[t] = {(x, z): (gname, gy) for x, z, _, gy, gname in d["cells"]}
-        n = len(d["cells"])
         base[t] = {
-            "cells": n,
+            "cells": len(d["cells"]),
             "water_tile_cells": sum(v == WATER for v in tiles[t].values()),
             "adj_water4": sum(near(tiles[t], x, z, four) for (x, z) in tiles[t]),
             "adj_water8": sum(near(tiles[t], x, z, eight) for (x, z) in tiles[t]),
         }
-    pair_counts = {}
-    for a, b in PAIRS:
-        pair_counts[f"{a}-{b}"] = sum(tiles[a][k] != tiles[b][k] for k in tiles[a])
+    pair_counts = {f"{a}-{b}": sum(tiles[a][k] != tiles[b][k] for k in tiles[a]) for a, b in PAIRS}
+    differing = sorted(k for k in tiles["1"] if len({tiles[t][k] for t in tiles}) > 1)
     ground_only = sum(
         1 for k in tiles["1"]
         if len({tiles[t][k] for t in tiles}) == 1 and len({grounds[t][k] for t in grounds}) > 1
     )
-    differing = sorted(k for k in tiles["1"] if len({tiles[t][k] for t in tiles}) > 1)
     cells = []
     for k in differing:
         cells.append({
@@ -103,62 +108,48 @@ def q2():
             "ground": {t: {"block": grounds[t][k][0], "y": grounds[t][k][1]} for t in grounds},
             "water_adj4": {t: near(tiles[t], k[0], k[1], four) for t in tiles},
             "water_adj8": {t: near(tiles[t], k[0], k[1], eight) for t in tiles},
-            "water_tile": {t: tiles[t][k] == WATER for t in tiles},
         })
-    n_adj4 = sum(any(c["water_adj4"].values()) for c in cells)
-    n_adj8 = sum(any(c["water_adj8"].values()) for c in cells)
-    n_water = sum(any(c["water_tile"].values()) for c in cells)
     return {
-        "grid": "spawn_area.read(half=32) then flatten.grid 64x64 (x0 = spawn_x - 32, z0 = spawn_z - 32)",
-        "spawn": {t: data[t]["spawn"] for t in data},
-        "tile_counts": {t: data[t]["tile_counts"] for t in data},
+        "grid": "64x64 from per-chunk reads, window spawn -32..+31 (x0 = spawn_x - 32, z0 = spawn_z - 32)",
+        "runs": {t: {"spawn": data[t]["spawn"], "java_pid": data[t].get("java_pid"),
+                     "chunk_reads": data[t].get("chunk_reads"), "not_full_blocks": data[t].get("not_full_blocks"),
+                     "tile_counts": data[t]["tile_counts"]} for t in data},
         "base_rate_per_boot": base,
         "differing_cells_per_pair": pair_counts,
         "differing_cells_union": len(differing),
         "ground_only_differences": ground_only,
         "differing_cells_next_to_water": {
-            "4-neighbour": n_adj4,
-            "8-neighbour": n_adj8,
-            "cell_is_water_tile": n_water,
+            "any_4_neighbour_water": sum(any(c["water_adj4"].values()) for c in cells),
+            "any_8_neighbour_water": sum(any(c["water_adj8"].values()) for c in cells),
+            "any_cell_is_water_tile": sum(any(v == WATER for v in c["tile"].values()) for c in cells),
         },
         "cells": cells,
     }
 
 
 def q3():
-    runs = {}
-    for t in ("1", "2"):
-        # pickle: local dumps written by det_q3.py in this lane, not untrusted input
-        with open(dc.RAW / f"q3_{t}.pkl", "rb") as f:
-            blocks = pickle.load(f)
-        meta = json.loads((dc.RAW / f"q3_{t}.json").read_text())
-        runs[t] = (blocks, meta)
-    d = blockdiff.diff(runs["1"][0], runs["2"][0])
-    by_chunk = Counter((p[0] >> 4, p[2] >> 4) for p, _, _ in d["changed"])
-    names = Counter((a, b) for _, a, b in d["changed"])
-    ticks = {}
-    for t, (_, meta) in runs.items():
-        ph = meta["phases"]
-        ticks[t] = [{"phase": x["phase"], "ticks": x["ticks"], "t_s": x["t_s"]} for x in ph]
+    raw = {t: json.loads((dc.RAW / f"q3_{t}.json").read_text()) for t in ("1", "2")}
+    chunks = sorted({tuple(int(v) for v in k.split(",")) for k in raw["1"]["chunks"]})
+    examples = []
+    per_chunk = compare_chunks("q3", list(raw), chunks, examples)
     try:
         r2 = json.loads(ORDER_EDIT.read_text())
         round2 = {"noise_union_count": r2["noise"]["count"], "by_chunk": r2["noise"]["by_chunk"],
-                  "note": "union of (p1 != p2) or (e1 != e2) in round 2; the pure p1-vs-p2 count was not recorded"}
+                  "note": "union of (p1 != p2) or (e1 != e2) in round 2; pure p1-vs-p2 count not recorded"}
     except FileNotFoundError:
         round2 = None
     return {
         "flow": "lab/tests/test_order_edit.py run_fresh(False), gametime read at each phase",
-        "positions": len(runs["1"][0]),
-        "not_full": {t: m["not_full"] for t, (_, m) in runs.items()},
-        "settle_s": {t: m["settle_s"] for t, (_, m) in runs.items()},
-        "boot_s": {t: m["boot_s"] for t, (_, m) in runs.items()},
-        "gametime_phases": ticks,
-        "changed_blocks": len(d["changed"]),
-        "added": len(d["added"]),
-        "missing": len(d["missing"]),
-        "changed_by_chunk": {f"{cx},{cz}": n for (cx, cz), n in sorted(by_chunk.items())},
-        "changed_name_pairs": [[a, b, n] for (a, b), n in names.most_common(10)],
-        "examples": [[list(p), a, b] for p, a, b in d["changed"][:20]],
+        "chunks": [list(c) for c in chunks],
+        "not_full": {t: raw[t]["not_full"] for t in raw},
+        "java_pid": {t: raw[t]["java_pid"] for t in raw},
+        "settle_s": {t: raw[t]["settle_s"] for t in raw},
+        "boot_s": {t: raw[t]["boot_s"] for t in raw},
+        "gametime_phases": {t: [{"phase": x["phase"], "ticks": x["ticks"], "t_s": x["t_s"]}
+                                for x in raw[t]["phases"]] for t in raw},
+        "differing_blocks_per_chunk": per_chunk,
+        "differing_blocks_total": {"1-2": sum(r.get("1-2", 0) for r in per_chunk.values())},
+        "examples": examples,
         "round2_reference": round2,
     }
 
@@ -178,7 +169,7 @@ def main():
     print(json.dumps({"q1_totals": results["q1"]["differing_blocks_total"],
                       "q2_pairs": results["q2"]["differing_cells_per_pair"],
                       "q2_union": results["q2"]["differing_cells_union"],
-                      "q3_changed": results["q3"]["changed_blocks"]}))
+                      "q3_total": results["q3"]["differing_blocks_total"]}))
 
 
 if __name__ == "__main__":

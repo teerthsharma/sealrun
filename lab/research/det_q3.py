@@ -2,10 +2,12 @@
 
 Usage: python lab/research/det_q3.py <tag>
 Same calls as lab/tests/test_order_edit.py run_fresh(False): A ticket, settle A, settle A again,
-B ticket, settle B, save-all flush, stop, window.box over LO..HI. Extra reads: `time query gametime`.
+B ticket, settle B, save-all flush, stop. Extra reads: `time query gametime`.
+The test window LO..HI is read one chunk at a time and each chunk is dumped like det_q1.
 """
+import gzip
+import hashlib
 import json
-import pickle
 import sys
 import time
 from pathlib import Path
@@ -16,6 +18,7 @@ import server
 import serverdir
 import test_order_edit as toe
 import window
+from det_q1 import chunk_names
 
 
 def main(tag: str) -> dict:
@@ -23,7 +26,7 @@ def main(tag: str) -> dict:
     srv = None
     phases = []
     settle_s = {}
-    blocks = None
+    chunks = {}
     t0 = time.monotonic()
 
     def mark(name):
@@ -31,6 +34,7 @@ def main(tag: str) -> dict:
 
     try:
         srv = server.boot(scratch)
+        java_pid = srv.proc.pid
         mark("boot")
         if not orderrun.wait_loaded(srv, *toe.A):
             raise RuntimeError("A did not load")
@@ -46,25 +50,32 @@ def main(tag: str) -> dict:
         mark("settle B")
         srv.command("save-all flush")
         srv.stop()
-        blocks = window.box(Path(scratch["dir"]) / "world" / "region", toe.LO, toe.HI)
+        region = Path(scratch["dir"]) / "world" / "region"
+        for cx in range(toe.LO[0] >> 4, (toe.HI[0] >> 4) + 1):
+            for cz in range(toe.LO[2] >> 4, (toe.HI[2] >> 4) + 1):
+                blocks = window.box(region, (cx * 16, toe.LO[1], cz * 16), (cx * 16 + 15, toe.HI[1], cz * 16 + 15))
+                names = chunk_names(blocks)
+                data = "\n".join(names).encode("utf-8")
+                with gzip.open(dc.RAW / f"q3_{tag}_{cx}_{cz}.txt.gz", "wb") as f:
+                    f.write(data)
+                chunks[f"{cx},{cz}"] = {"n": len(names), "not_full": sum(n == "None" for n in names),
+                                        "sha256": hashlib.sha256(data).hexdigest()}
+                del blocks, names, data
     finally:
         if srv is not None:
             srv.stop()
         serverdir.remove(scratch["dir"])
-    # pickle: written and read only by this lane from its own scratch dumps, never untrusted input
-    with open(dc.RAW / f"q3_{tag}.pkl", "wb") as f:
-        pickle.dump(blocks, f, protocol=4)
     out = {
         "tag": tag,
-        "positions": len(blocks),
-        "not_full": sum(v is None for v in blocks.values()),
+        "chunks": chunks,
+        "not_full": sum(c["not_full"] for c in chunks.values()),
         "boot_s": round(srv.boot_secs, 2),
-        "java_pid": srv.proc.pid,
+        "java_pid": java_pid,
         "settle_s": settle_s,
         "phases": phases,
     }
     (dc.RAW / f"q3_{tag}.json").write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({k: v for k, v in out.items() if k != "phases"}))
+    print(json.dumps({k: v for k, v in out.items() if k not in ("phases", "chunks")}))
     return out
 
 

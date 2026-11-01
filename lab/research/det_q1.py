@@ -18,6 +18,10 @@ import test_order_edit as toe
 import window
 
 
+def chunk_names(blocks):
+    return ["None" if blocks[p] is None else blocks[p] for p in sorted(blocks)]
+
+
 def main(tag: str) -> dict:
     scratch = dc.fresh_scratch()
     srv = None
