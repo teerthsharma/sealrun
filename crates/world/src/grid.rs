@@ -9,6 +9,12 @@ pub enum Tile {
     Goal = 5,
 }
 
+impl Tile {
+    pub fn is_open(self) -> bool {
+        matches!(self, Tile::Air | Tile::Goal)
+    }
+}
+
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum GridError {
     ShortHeader,
