@@ -73,6 +73,8 @@ class FakeServer:
             return rcon.encode(rid, rcon.RESPONSE, LIST_TEXT)
         if ptype == rcon.COMMAND and body == "big":
             return b"".join(rcon.encode(rid, rcon.RESPONSE, text) for text in BIG_BODIES)
+        if ptype == rcon.COMMAND and body == "garbled":
+            return rcon.encode(rid, rcon.RESPONSE, "x")[:-2] + b"XX"
         return rcon.encode(rid, rcon.RESPONSE, "Unknown request 0")
 
 
@@ -96,6 +98,17 @@ class Lab(unittest.TestCase):
         client.close()
         self.assertTrue(server.eofs.get(timeout=5))
         self.assertEqual(threading.active_count(), before)
+
+    def malformed_reply_raises_value_error_fast(self):
+        server = FakeServer()
+        self.addCleanup(server.close)
+        client = rcon.Client("127.0.0.1", server.port, PASSWORD, timeout=5)
+        self.addCleanup(client.close)
+
+        started = time.monotonic()
+        with self.assertRaises(ValueError):
+            client.command("garbled")
+        self.assertLess(time.monotonic() - started, 1)
 
 
 if __name__ == "__main__":

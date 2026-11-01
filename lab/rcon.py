@@ -54,11 +54,12 @@ class Client:
 
     def _recv(self) -> tuple[int, int, str]:
         while True:
-            try:
-                req_id, ptype, body, self._buf = decode(self._buf)
-                return req_id, ptype, body
-            except ValueError:
-                data = self._sock.recv(65536)
-                if not data:
-                    raise ConnectionError("rcon connection closed")
-                self._buf += data
+            if len(self._buf) >= 4:
+                (length,) = struct.unpack_from("<i", self._buf)
+                if len(self._buf) >= 4 + length:
+                    req_id, ptype, body, self._buf = decode(self._buf)
+                    return req_id, ptype, body
+            data = self._sock.recv(65536)
+            if not data:
+                raise ConnectionError("rcon connection closed")
+            self._buf += data
