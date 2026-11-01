@@ -44,5 +44,1427 @@
     },
     "named_orders_s5_s7": null,
     "count_note": "the s=5 and s=7 list in the brief names 7 worlds (6 distinct orders plus the repeat); identity ABCD is rotation 0, so it is not counted twice"
+  },
+  "amendments": [
+    {
+      "date": "2026-11-01",
+      "reason": "coordinator note: the same order can give different worlds (determinism.json on main: differing blocks 54, 40, 94 across its three pairs)",
+      "changes": [
+        "added repeat control DCBA_rep (order DCBA built twice) per spacing",
+        "class counts computed on chunks where both repeat pairs agree; noisy chunks listed apart",
+        "concurrent lab server count recorded at launch, boot, last sample and max, per world",
+        "predictions block above is unchanged"
+      ]
+    }
+  ],
+  "results": {
+    "worlds_run": [
+      "ABCD",
+      "ABDC",
+      "ACBD",
+      "ACDB",
+      "ADBC",
+      "ADCB",
+      "BACD",
+      "BADC",
+      "BCAD",
+      "BCDA",
+      "BDAC",
+      "BDCA",
+      "CABD",
+      "CADB",
+      "CBAD",
+      "CBDA",
+      "CDAB",
+      "CDBA",
+      "DABC",
+      "DACB",
+      "DBAC",
+      "DBCA",
+      "DCAB",
+      "DCBA",
+      "ABCD_rep",
+      "DCBA_rep"
+    ],
+    "window_chunks": 64,
+    "clean_chunks": 33,
+    "noisy_chunks": 31,
+    "class_count_clean": 24,
+    "classes_clean": [
+      {
+        "members": [
+          "ABCD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "ABDC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "ACBD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "ACDB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "ADBC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "ADCB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BACD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BADC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BCAD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BCDA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BDAC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BDCA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CABD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CADB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CBAD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CBDA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CDAB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CDBA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DABC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DACB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DBAC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DBCA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DCAB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DCBA"
+        ],
+        "size": 1
+      }
+    ],
+    "class_count_all_chunks_reference": 24,
+    "noisy_chunk_list": [
+      {
+        "chunk": "62,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "62,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 22,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "62,66",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 8,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "62,67",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 2
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "62,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 5,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "63,67",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 44,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "64,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 25,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "64,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "64,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "64,67",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 13,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "65,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 13,
+          "DCBA|DCBA_rep": 31
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,63",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,66",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 4
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,67",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 21
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 7
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 23
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,63",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "66,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 34,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "66,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 27
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "67,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "67,63",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 20,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "67,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 8,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "67,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 10
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "68,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "69,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 311
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,66",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 153
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,67",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 13
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,68",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 4
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      }
+    ],
+    "repeat_pairs": {
+      "ABCD|ABCD_rep": {
+        "differing_chunks_by_hash": 18,
+        "differing_blocks_raw": 205
+      },
+      "DCBA|DCBA_rep": {
+        "differing_chunks_by_hash": 17,
+        "differing_blocks_raw": 617
+      }
+    },
+    "between_classes": [
+      {
+        "class_reps": [
+          "ABCD",
+          "ABDC"
+        ],
+        "members": [
+          "ABDC"
+        ],
+        "differing_clean_chunks": [
+          "63,62",
+          "63,66",
+          "63,68",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,68",
+          "69,62"
+        ],
+        "differing_blocks_clean": 129
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "ACBD"
+        ],
+        "members": [
+          "ACBD"
+        ],
+        "differing_clean_chunks": [
+          "63,68",
+          "63,69",
+          "64,69"
+        ],
+        "differing_blocks_clean": 727
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "ACDB"
+        ],
+        "members": [
+          "ACDB"
+        ],
+        "differing_clean_chunks": [
+          "62,64",
+          "63,66",
+          "64,66",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 422
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "ADBC"
+        ],
+        "members": [
+          "ADBC"
+        ],
+        "differing_clean_chunks": [
+          "63,66",
+          "63,68",
+          "64,68",
+          "64,69",
+          "65,68",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 477
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "ADCB"
+        ],
+        "members": [
+          "ADCB"
+        ],
+        "differing_clean_chunks": [
+          "63,68",
+          "64,68",
+          "64,69",
+          "65,68",
+          "66,66",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 490
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BACD"
+        ],
+        "members": [
+          "BACD"
+        ],
+        "differing_clean_chunks": [
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "63,69",
+          "64,63",
+          "64,66",
+          "64,69",
+          "65,65",
+          "68,62",
+          "69,64"
+        ],
+        "differing_blocks_clean": 860
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BADC"
+        ],
+        "members": [
+          "BADC"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,63",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,66",
+          "68,62",
+          "69,62"
+        ],
+        "differing_blocks_clean": 313
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BCAD"
+        ],
+        "members": [
+          "BCAD"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "63,69",
+          "64,63",
+          "64,66",
+          "64,69",
+          "65,65",
+          "66,66",
+          "68,62",
+          "68,63",
+          "68,64",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 1356
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BCDA"
+        ],
+        "members": [
+          "BCDA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "63,69",
+          "64,63",
+          "64,66",
+          "64,69",
+          "65,65",
+          "68,62"
+        ],
+        "differing_blocks_clean": 1001
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BDAC"
+        ],
+        "members": [
+          "BDAC"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,63",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,66",
+          "68,62",
+          "68,63",
+          "68,64",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 712
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BDCA"
+        ],
+        "members": [
+          "BDCA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,63",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "68,62",
+          "69,62"
+        ],
+        "differing_blocks_clean": 373
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CABD"
+        ],
+        "members": [
+          "CABD"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "65,65",
+          "66,66",
+          "67,65",
+          "67,66",
+          "68,63",
+          "68,64",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 557
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CADB"
+        ],
+        "members": [
+          "CADB"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "63,69",
+          "64,69",
+          "65,65",
+          "68,62",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 1350
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CBAD"
+        ],
+        "members": [
+          "CBAD"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "64,63",
+          "65,65",
+          "68,62",
+          "69,62"
+        ],
+        "differing_blocks_clean": 303
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CBDA"
+        ],
+        "members": [
+          "CBDA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "64,63",
+          "64,66",
+          "65,65",
+          "66,67",
+          "66,68",
+          "67,66",
+          "67,67",
+          "68,62",
+          "69,62",
+          "69,63"
+        ],
+        "differing_blocks_clean": 348
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CDAB"
+        ],
+        "members": [
+          "CDAB"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "63,69",
+          "64,66",
+          "64,69",
+          "65,65",
+          "66,66",
+          "67,65",
+          "67,66",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 1309
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CDBA"
+        ],
+        "members": [
+          "CDBA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "63,69",
+          "64,63",
+          "64,66",
+          "64,69",
+          "65,65",
+          "68,62",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 1404
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DABC"
+        ],
+        "members": [
+          "DABC"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 679
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DACB"
+        ],
+        "members": [
+          "DACB"
+        ],
+        "differing_clean_chunks": [
+          "63,62",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 635
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DBAC"
+        ],
+        "members": [
+          "DBAC"
+        ],
+        "differing_clean_chunks": [
+          "63,62",
+          "63,63",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,63",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67",
+          "68,62",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 697
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DBCA"
+        ],
+        "members": [
+          "DBCA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "62,68",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,63",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67",
+          "68,62",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 864
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DCAB"
+        ],
+        "members": [
+          "DCAB"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67",
+          "68,62",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 821
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DCBA"
+        ],
+        "members": [
+          "DCBA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,64",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "63,66",
+          "63,68",
+          "64,63",
+          "64,66",
+          "64,68",
+          "64,69",
+          "65,65",
+          "65,68",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67",
+          "68,62",
+          "68,63",
+          "68,64",
+          "68,65",
+          "68,66",
+          "68,68",
+          "69,62",
+          "69,63",
+          "69,64"
+        ],
+        "differing_blocks_clean": 836
+      }
+    ],
+    "boot_secs": {
+      "min": 13.3,
+      "max": 23.78,
+      "per_world": {
+        "ABCD": 20.5,
+        "ABDC": 15.84,
+        "ACBD": 14.81,
+        "ACDB": 20.91,
+        "ADBC": 13.3,
+        "ADCB": 13.81,
+        "BACD": 15.84,
+        "BADC": 15.36,
+        "BCAD": 16.38,
+        "BCDA": 13.81,
+        "BDAC": 13.33,
+        "BDCA": 13.31,
+        "CABD": 14.38,
+        "CADB": 17.39,
+        "CBAD": 20.7,
+        "CBDA": 23.78,
+        "CDAB": 15.86,
+        "CDBA": 15.38,
+        "DABC": 19.42,
+        "DACB": 13.8,
+        "DBAC": 14.3,
+        "DBCA": 19.94,
+        "DCAB": 16.81,
+        "DCBA": 20.98,
+        "ABCD_rep": 16.83,
+        "DCBA_rep": 15.8
+      }
+    },
+    "settle_s": {
+      "min": 10.14,
+      "max": 11.0
+    },
+    "lab_servers": {
+      "per_world": {
+        "ABCD": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 2
+        },
+        "ABDC": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "ACBD": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 1,
+          "max_during": 1
+        },
+        "ACDB": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 2
+        },
+        "ADBC": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "ADCB": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "BACD": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "BADC": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "BCAD": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "BCDA": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "BDAC": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "BDCA": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "CABD": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "CADB": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 1
+        },
+        "CBAD": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 1,
+          "max_during": 1
+        },
+        "CBDA": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 2
+        },
+        "CDAB": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "CDBA": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 1,
+          "max_during": 1
+        },
+        "DABC": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 2
+        },
+        "DACB": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "DBAC": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 1,
+          "max_during": 1
+        },
+        "DBCA": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "DCAB": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 1,
+          "max_during": 1
+        },
+        "DCBA": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "ABCD_rep": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 1,
+          "max_during": 1
+        },
+        "DCBA_rep": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        }
+      },
+      "at_boot": {
+        "min": 1,
+        "max": 2
+      },
+      "at_last_sample": {
+        "min": 0,
+        "max": 1
+      },
+      "max_during": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    "cameron_8a3707c_expected": 20,
+    "cameron_match_clean": false,
+    "polytope": "lab/results/research/quotient_polytope.json at research/polytope head 43faa40 (last file commit b04b482) has no squares-at-spacing-s rows"
   }
 }
