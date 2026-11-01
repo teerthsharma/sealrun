@@ -1,0 +1,534 @@
+{
+ "departments": [
+  {
+   "name": "world",
+   "title": "World Generation",
+   "goals": [
+    "G1"
+   ],
+   "plain": "Builds the seeded Minecraft-style world so the same seed always gives the same blocks.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "discover-rust-game-design",
+     "why": "seeded worlds, chunks and deterministic simulation patterns"
+    },
+    {
+     "skill": "rust-patterns",
+     "why": "idiomatic Rust for the generator"
+    },
+    {
+     "skill": "m01-ownership",
+     "why": "chunk buffers without needless copies"
+    },
+    {
+     "skill": "m04-zero-cost",
+     "why": "std-only generator, no dependency for 20 lines"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "newtypes for Seed and block coordinates"
+    },
+    {
+     "skill": "m09-domain",
+     "why": "model chunk, biome, block as domain types"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "generate a chunk fast enough to search over"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "byte-identical determinism and known-vector tests"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-code-navigator",
+     "why": "find where a generator function is defined and used"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "read, grep and collect test output"
+    }
+   ]
+  },
+  {
+   "name": "topology",
+   "title": "Topology (Betti numbers)",
+   "goals": [
+    "G2"
+   ],
+   "plain": "Counts the separate islands and loops in the walkable ground.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "anthropic-skills:tda-tdd",
+     "why": "topology invariants as failing tests first"
+    },
+    {
+     "skill": "discover-topology",
+     "why": "turn the maths into falsifiable hypotheses"
+    },
+    {
+     "skill": "discover-math",
+     "why": "check the Euler and union-find arguments"
+    },
+    {
+     "skill": "extract-repo-math",
+     "why": "port the right routine from monodromy"
+    },
+    {
+     "skill": "m04-zero-cost",
+     "why": "one pass, no allocation per cell"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "grid and component types that cannot be mixed up"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "near-linear counting over a million cells"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "100-seed brute-force comparison"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "extract-repo-math",
+     "why": "read monodromy and report the formula, not prose"
+    },
+    {
+     "skill": "rust-symbol-analyzer",
+     "why": "locate the grid types the counter reads"
+    }
+   ]
+  },
+  {
+   "name": "surgery",
+   "title": "Surgery (mine and place)",
+   "goals": [
+    "G3"
+   ],
+   "plain": "Updates the island and loop counts when one block is mined or placed, without recounting everything.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "tdd-fix",
+     "why": "an incremental count that differs from a recount is a bug: RED, fix, mutate"
+    },
+    {
+     "skill": "anthropic-skills:tda-tdd",
+     "why": "incremental result must equal full recompute"
+    },
+    {
+     "skill": "discover-topology",
+     "why": "local Euler change and boundary-operator view"
+    },
+    {
+     "skill": "m03-mutability",
+     "why": "one safe mutation path for the grid"
+    },
+    {
+     "skill": "typed-holes-refactor",
+     "why": "reshape the grid API around the update without breaking tests"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "find the first cell where update and recount disagree"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "make illegal edits unrepresentable"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-call-graph",
+     "why": "trace who calls the update"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive a claimed count by hand"
+    }
+   ]
+  },
+  {
+   "name": "routing",
+   "title": "Routing and the any% run",
+   "goals": [
+    "G4"
+   ],
+   "plain": "Plans the fastest route to the win and races it against a baseline planner.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "discover-math",
+     "why": "metric, geodesic and A* admissibility arguments"
+    },
+    {
+     "skill": "discover-systems-theory",
+     "why": "budgets, feedback and the tech-tree DAG"
+    },
+    {
+     "skill": "discover-research",
+     "why": "design the fair planner-vs-baseline experiment"
+    },
+    {
+     "skill": "research-verdict",
+     "why": "say alive or dead from the measured ticks"
+    },
+    {
+     "skill": "discover-rust-game-design",
+     "why": "speedrun route and inventory state design"
+    },
+    {
+     "skill": "discover-ml",
+     "why": "MCTS baseline and rollout behaviour"
+    },
+    {
+     "skill": "domain-ml",
+     "why": "search and planning conventions"
+    },
+    {
+     "skill": "m07-concurrency",
+     "why": "planners sharing one wall-clock budget"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "search speed decides the same-budget race"
+    },
+    {
+     "skill": "m14-mental-model",
+     "why": "keep the state, cost and heuristic model straight"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-trait-explorer",
+     "why": "map the planner trait and its implementors"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "compare planner outputs side by side"
+    }
+   ]
+  },
+  {
+   "name": "website",
+   "title": "The Plain-English Website",
+   "goals": [
+    "G5"
+   ],
+   "plain": "Shows every goal in plain English with its live status on localhost.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "frontend-design:frontend-design",
+     "why": "distinctive, readable page design"
+    },
+    {
+     "skill": "site-revamp",
+     "why": "full rebuild standard, not a reskin"
+    },
+    {
+     "skill": "visual-companion",
+     "why": "show the maths as pictures"
+    },
+    {
+     "skill": "dataviz",
+     "why": "colour only by meaningful data, such as status"
+    },
+    {
+     "skill": "domain-web",
+     "why": "serve the page with the standard library"
+    },
+    {
+     "skill": "anti-slop",
+     "why": "no filler copy or decoration"
+    },
+    {
+     "skill": "discover-wasm",
+     "why": "optional in-browser demo of the world"
+    },
+    {
+     "skill": "domain-cli",
+     "why": "start and stop the server from one command"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "dataviz",
+     "why": "check chart colours and labels"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "collect the page text and status JSON"
+    }
+   ]
+  },
+  {
+   "name": "skeleton",
+   "title": "Workspace Skeleton and Shipping",
+   "goals": [
+    "G6"
+   ],
+   "plain": "Sets up the Rust workspace, builds, README and pull request text.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "rust-router",
+     "why": "pick the right Rust skill for each question"
+    },
+    {
+     "skill": "rust-learner",
+     "why": "look up crate and std facts"
+    },
+    {
+     "skill": "rust-daily",
+     "why": "check current Rust releases and changes"
+    },
+    {
+     "skill": "m11-ecosystem",
+     "why": "choose std over a crate unless it earns its place"
+    },
+    {
+     "skill": "m12-lifecycle",
+     "why": "workspace, resource and build lifecycle"
+    },
+    {
+     "skill": "m06-error-handling",
+     "why": "one error style across crates"
+    },
+    {
+     "skill": "m13-domain-error",
+     "why": "errors that name the failed goal"
+    },
+    {
+     "skill": "m02-resource",
+     "why": "bounded memory on a 3.3 GB machine"
+    },
+    {
+     "skill": "m15-anti-pattern",
+     "why": "catch clone-everything and unwrap habits"
+    },
+    {
+     "skill": "rust-refactor-helper",
+     "why": "safe renames across crates"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "keep the workspace free of unsafe"
+    },
+    {
+     "skill": "domain-cli",
+     "why": "the sealrun command line"
+    },
+    {
+     "skill": "discover-engineering",
+     "why": "repo layout and CI sanity"
+    },
+    {
+     "skill": "ship-like-teerth",
+     "why": "README and layout rules for this owner"
+    },
+    {
+     "skill": "anthropic-skills:research-readme",
+     "why": "README in the house style"
+    },
+    {
+     "skill": "writing-pr-messages",
+     "why": "commit and PR prose rules"
+    },
+    {
+     "skill": "github-master",
+     "why": "push and verify the repo on GitHub"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-deps-visualizer",
+     "why": "show the crate graph and flag heavy dependencies"
+    },
+    {
+     "skill": "github-master",
+     "why": "read-only checks of repo and CI state"
+    }
+   ]
+  },
+  {
+   "name": "ward",
+   "title": "Nurses' Ward (audit and evidence)",
+   "goals": [],
+   "plain": "Reads, greps, re-runs and cross-checks what the residents claim.",
+   "residents_skills": [],
+   "nurses_skills": [
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "report command, exit code and first failing line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "confirm the RED run came before the fix"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "isolate a failing check before reporting"
+    },
+    {
+     "skill": "ponytail:ponytail",
+     "why": "report only what was asked"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "check diffs against house style"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each claim against source"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive numbers and paths"
+    },
+    {
+     "skill": "investigator",
+     "why": "chase a hang or crash to evidence"
+    },
+    {
+     "skill": "discover-debugging",
+     "why": "debugging playbooks for odd failures"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "cross-check independent readings"
+    },
+    {
+     "skill": "super-genius-rick",
+     "why": "hard-problem second opinion"
+    },
+    {
+     "skill": "rust-code-navigator",
+     "why": "definitions and usages"
+    },
+    {
+     "skill": "rust-call-graph",
+     "why": "who calls what"
+    },
+    {
+     "skill": "rust-symbol-analyzer",
+     "why": "symbol and type lookups"
+    },
+    {
+     "skill": "rust-trait-explorer",
+     "why": "trait implementors"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "grep, read and collect"
+    },
+    {
+     "skill": "m14-mental-model",
+     "why": "explain Rust behaviour to residents"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "grep for unsafe blocks"
+    }
+   ]
+  }
+ ],
+ "unassigned": []
+}

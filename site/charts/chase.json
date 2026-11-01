@@ -1,0 +1,107 @@
+[
+ {
+  "id": "G1.9.C1",
+  "title": "World fingerprints stay fixed",
+  "plain": "The test builds 100 worlds and checks each against a fingerprint saved in the repo. If a world ever changes by one block, it fails.",
+  "why": "A route is only the fastest for a world that never changes under it.",
+  "done_when": "All 100 saved fingerprints match."
+ },
+ {
+  "id": "G1.7.C1",
+  "title": "No shaky ingredients in worlds",
+  "plain": "The test scans the world-building code and fails if it finds hash maps (which shuffle their order) or decimal numbers (which round differently on different machines).",
+  "why": "If the world could differ between computers, a saved route would stop working.",
+  "done_when": "The scan finds zero banned words."
+ },
+ {
+  "id": "G1.9.C2",
+  "title": "Fast and slow builds agree",
+  "plain": "The same 100 worlds are built in the optimised build and must match the same saved fingerprints as the debug build.",
+  "why": "A route found with the fast build must still work in the checked build.",
+  "done_when": "The release run matches all 100 fingerprints."
+ },
+ {
+  "id": "G2.8.C1",
+  "title": "Corner touching is counted right",
+  "plain": "Small hand-drawn maps where floor squares meet only at a corner. Floor must count them as two separate islands, and walls must count them as joined.",
+  "why": "Count islands and loops wrongly and the planner sees roads that are not there or misses real ones.",
+  "done_when": "Every hand-drawn shape gives its known island and loop counts."
+ },
+ {
+  "id": "G2.9.C1",
+  "title": "Two ways to count loops agree",
+  "plain": "Loops are counted by measuring holes and again by counting dots, lines and squares. A gap touching the map edge must not be counted as a loop.",
+  "why": "A green test that compares a method with itself proves nothing; two different methods can disagree.",
+  "done_when": "Both counts match on 100 worlds and on edge cases."
+ },
+ {
+  "id": "G2.8.C2",
+  "title": "Sealed caves counted once",
+  "plain": "A solid block with a sealed air bubble must give exactly one enclosed cave; an open bubble gives zero.",
+  "why": "Sealed caves are the places a speedrunner can only reach by mining, so they must be found correctly.",
+  "done_when": "Sealed bubble gives 1, open bubble gives 0, in all test shapes."
+ },
+ {
+  "id": "G3.7.C1",
+  "title": "Placing a block can split land",
+  "plain": "Placing a block on a narrow bridge must cut one island into two, and the fast update must say so.",
+  "why": "Plans that place blocks need counts that can go up as well as down.",
+  "done_when": "The island count rises by one and equals a full recount."
+ },
+ {
+  "id": "G3.7.C2",
+  "title": "Random edits never drift",
+  "plain": "Thousands of random mine and place steps on many worlds. After each step the quick answer must equal a full recount, and undoing must restore the old numbers.",
+  "why": "One wrong step would quietly poison every later step of a plan.",
+  "done_when": "Zero mismatches in every step on 100 worlds."
+ },
+ {
+  "id": "G3.6.C1",
+  "title": "Quick update is really quick",
+  "plain": "A counter records how many cells the quick update visits. One edit on a big map must visit only a small fraction of it.",
+  "why": "If the quick update secretly recounts everything, planning with thousands of edits is too slow.",
+  "done_when": "The visited share stays under the set limit."
+ },
+ {
+  "id": "G4.10.C1",
+  "title": "The rival planner is fair",
+  "plain": "The rival planner, given plenty of time, must find the best route on small worlds. Both planners also share one budget value and one seed list.",
+  "why": "A win against a crippled rival means nothing.",
+  "done_when": "The rival matches the true best route with a big budget."
+ },
+ {
+  "id": "G4.9.C1",
+  "title": "Routes obey the game rules",
+  "plain": "Every route is replayed step by step by a separate rule checker. A route through a wall that needs a pickaxe must be rejected unless the pickaxe is made first.",
+  "why": "A path that looks fine on the map but breaks a game rule is not a speedrun.",
+  "done_when": "Every route passes the rule checker and the trap route is rejected."
+ },
+ {
+  "id": "G4.8.C1",
+  "title": "The truth check counts everything",
+  "plain": "On a world where crafting a tool first is faster, the ground-truth search must track what you carry, and its time must equal the simulator's tick count.",
+  "why": "The ground truth must not share the solver's mistakes.",
+  "done_when": "The answer matches the simulator tick for tick."
+ },
+ {
+  "id": "G4.9.C2",
+  "title": "Ties always break the same way",
+  "plain": "A map with many equally fast routes is solved with the cell order shuffled. The chosen route must be identical every time.",
+  "why": "Same seed, same route is a promise of the whole project.",
+  "done_when": "Every shuffle gives the identical route."
+ },
+ {
+  "id": "G5.C1",
+  "title": "Website stays on this computer",
+  "plain": "The test starts the site and checks it only answers on your own machine's address, not on the network.",
+  "why": "The site shows work in progress and should not be open to others.",
+  "done_when": "The socket address is 127.0.0.1:7740, not 0.0.0.0."
+ },
+ {
+  "id": "G5.4.C1",
+  "title": "Status cannot lie green",
+  "plain": "One test is made to fail on purpose; the website must show that goal as not done.",
+  "why": "A status page that is green by default hides broken work.",
+  "done_when": "The failing goal shows as not done and a passing one as done."
+ }
+]

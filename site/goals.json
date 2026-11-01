@@ -1,0 +1,1632 @@
+{
+ "need": "G0",
+ "goals": [
+  {
+   "id": "G0",
+   "parent": null,
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": null,
+   "title": "G0",
+   "plain": "",
+   "why": "",
+   "done_when": ""
+  },
+  {
+   "id": "G1",
+   "parent": "G0",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "world",
+   "title": "Seeded world",
+   "plain": "The game map is built from a single number called the seed. Give it the same seed and you get exactly the same map, every time.",
+   "why": "A route can only be trusted and replayed if the map never changes between runs.",
+   "done_when": "Two worlds from the same seed are identical byte for byte, and every seed gives a playable map."
+  },
+  {
+   "id": "G1.7",
+   "parent": "G1",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "world",
+   "title": "Numbers and noise",
+   "plain": "Repeatable random numbers and smooth noise are made from the seed. They are the raw material the terrain is shaped from.",
+   "why": "Everything in the world grows from these, so repeatable here means repeatable everywhere.",
+   "done_when": "The same input gives the same number, and neighbouring spots get similar values."
+  },
+  {
+   "id": "G1.1",
+   "parent": "G1.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "rng_same_input_same_output",
+   "status": "pending",
+   "department": "world",
+   "title": "Repeatable random numbers",
+   "plain": "Turn a seed and a map position into a random-looking number that is always the same for the same input.",
+   "why": "Everything in the world grows from this, so repeatable here means repeatable everywhere.",
+   "done_when": "The same input always gives the same number, and different inputs give different numbers."
+  },
+  {
+   "id": "G1.2",
+   "parent": "G1.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "noise_is_smooth_and_bounded",
+   "status": "pending",
+   "department": "world",
+   "title": "Smooth noise",
+   "plain": "Make noise where nearby spots get similar numbers, so the ground forms hills and caves instead of static.",
+   "why": "Real-looking terrain has connected caves and islands, which is what the topology counts.",
+   "done_when": "Neighbouring points differ by small amounts and all values stay between 0 and 1."
+  },
+  {
+   "id": "G1.7.C1",
+   "parent": "G1.7",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "worldgen_source_has_no_hashmap_or_float",
+   "status": "pending",
+   "department": "world",
+   "title": "No shaky ingredients in worlds",
+   "plain": "The test scans the world-building code and fails if it finds hash maps (which shuffle their order) or decimal numbers (which round differently on different machines).",
+   "why": "If the world could differ between computers, a saved route would stop working.",
+   "done_when": "The scan finds zero banned words."
+  },
+  {
+   "id": "G1.8",
+   "parent": "G1",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "world",
+   "title": "The map and its builder",
+   "plain": "The map is a grid of squares, and a builder fills it in from the seed.",
+   "why": "This is the world the runner is raced through.",
+   "done_when": "A grid saves and loads unchanged, and the same seed builds the same bytes."
+  },
+  {
+   "id": "G1.3",
+   "parent": "G1.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "grid_bytes_roundtrip",
+   "status": "pending",
+   "department": "world",
+   "title": "The map grid",
+   "plain": "The map is a grid of squares, each one air, stone, water, tree, iron or the finish flag, and it can be saved as plain bytes.",
+   "why": "Every other part reads this one shared map.",
+   "done_when": "Saving a grid to bytes and loading it back gives the same grid."
+  },
+  {
+   "id": "G1.4",
+   "parent": "G1.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "same_seed_same_world",
+   "status": "pending",
+   "department": "world",
+   "title": "Build world from seed",
+   "plain": "Use the noise to decide where stone, water, caves and ores go, and build the whole map from the seed.",
+   "why": "This is the world the runner will actually be raced through.",
+   "done_when": "Building twice from the same seed gives the same bytes."
+  },
+  {
+   "id": "G1.9",
+   "parent": "G1",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "world",
+   "title": "Playable and pinned",
+   "plain": "Every seed must give a playable world, and a fingerprint of one world is saved so it can never change by accident.",
+   "why": "A map with no iron or flag cannot be speedrun, and a silent change would break saved routes.",
+   "done_when": "All 100 seeds are playable and seed 7 matches its fingerprint."
+  },
+  {
+   "id": "G1.5",
+   "parent": "G1.9",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "every_seed_has_start_wood_iron_goal",
+   "status": "pending",
+   "department": "world",
+   "title": "Every seed is playable",
+   "plain": "Check that every seed gives a start square, trees, iron and a finish flag.",
+   "why": "A map with no iron or no flag cannot be speedrun, so none may slip through.",
+   "done_when": "All of 100 seeds have a start, trees, iron and a finish flag."
+  },
+  {
+   "id": "G1.6",
+   "parent": "G1.9",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "seed_7_world_digest_is_pinned",
+   "status": "pending",
+   "department": "world",
+   "title": "Pinned world fingerprint",
+   "plain": "Save a short fingerprint of the map for seed 7, and fail if it ever changes.",
+   "why": "It catches a silent change to the map that would break every saved route.",
+   "done_when": "Seed 7 gives the same fingerprint as the one written down in the test."
+  },
+  {
+   "id": "G1.9.C1",
+   "parent": "G1.9",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "world_golden_hash_100_seeds",
+   "status": "pending",
+   "department": "world",
+   "title": "World fingerprints stay fixed",
+   "plain": "The test builds 100 worlds and checks each against a fingerprint saved in the repo. If a world ever changes by one block, it fails.",
+   "why": "A route is only the fastest for a world that never changes under it.",
+   "done_when": "All 100 saved fingerprints match."
+  },
+  {
+   "id": "G1.9.C2",
+   "parent": "G1.9",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "world_hash_release_matches_golden",
+   "status": "pending",
+   "department": "world",
+   "title": "Fast and slow builds agree",
+   "plain": "The same 100 worlds are built in the optimised build and must match the same saved fingerprints as the debug build.",
+   "why": "A route found with the fast build must still work in the checked build.",
+   "done_when": "The release run matches all 100 fingerprints."
+  },
+  {
+   "id": "G2",
+   "parent": "G0",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "topology",
+   "title": "Counting the map's shape",
+   "plain": "Topology just means counting the shape of the map: how many separate islands of open ground there are (b0) and how many rings that walk around a hole (b1).",
+   "why": "Knowing the shape first tells the planner what is reachable before it wastes time searching.",
+   "done_when": "The fast counts match a slow trusted count on 100 different seeds."
+  },
+  {
+   "id": "G2.7",
+   "parent": "G2",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "topology",
+   "title": "Two island counters",
+   "plain": "A slow trusted counter and a fast club-joining counter both count the islands of open ground.",
+   "why": "The slow one is the answer key, the fast one is the engine of the solver.",
+   "done_when": "Both count the right islands on small hand-drawn maps."
+  },
+  {
+   "id": "G2.1",
+   "parent": "G2.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "flood_counts_islands",
+   "status": "pending",
+   "department": "topology",
+   "title": "Slow trusted island counter",
+   "plain": "Walk the map square by square and count the separate islands of open ground.",
+   "why": "A simple slow count is the answer key the fast methods are marked against.",
+   "done_when": "It gets the right island count on small hand-drawn maps."
+  },
+  {
+   "id": "G2.2",
+   "parent": "G2.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "union_find_counts_sets",
+   "status": "pending",
+   "department": "topology",
+   "title": "Fast club-joining tool",
+   "plain": "Squares that touch join the same club, and the number of clubs is the number of islands.",
+   "why": "It is the engine of the whole solver: it counts islands fast and keeps counting as the map changes.",
+   "done_when": "It reports the right number of clubs after a list of joins."
+  },
+  {
+   "id": "G2.8",
+   "parent": "G2",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "topology",
+   "title": "Euler number and rings",
+   "plain": "The Euler number is combined with the island count to give islands (b0) and rings (b1) together.",
+   "why": "One call gives the planner the full shape of the map.",
+   "done_when": "A ring of open ground reports one island and one ring."
+  },
+  {
+   "id": "G2.3",
+   "parent": "G2.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "euler_of_ring_is_zero",
+   "status": "pending",
+   "department": "topology",
+   "title": "Euler number",
+   "plain": "Count corners, edges and filled squares to get one score that equals islands minus rings.",
+   "why": "It is a cheap way to find the rings (b1), and it can be updated from a single block.",
+   "done_when": "A ring-shaped map scores zero and a solid blob scores one."
+  },
+  {
+   "id": "G2.4",
+   "parent": "G2.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "betti_of_ring_is_one_one",
+   "status": "pending",
+   "department": "topology",
+   "title": "Islands and rings together",
+   "plain": "Combine the club count and the Euler number to report both islands (b0) and rings (b1).",
+   "why": "One call gives the planner the full shape of the map.",
+   "done_when": "A ring of open ground reports one island and one ring."
+  },
+  {
+   "id": "G2.8.C1",
+   "parent": "G2.8",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "betti_dual_connectivity_corner_touch",
+   "status": "pending",
+   "department": "topology",
+   "title": "Corner touching is counted right",
+   "plain": "Small hand-drawn maps where floor squares meet only at a corner. Floor must count them as two separate islands, and walls must count them as joined.",
+   "why": "Count islands and loops wrongly and the planner sees roads that are not there or misses real ones.",
+   "done_when": "Every hand-drawn shape gives its known island and loop counts."
+  },
+  {
+   "id": "G2.8.C2",
+   "parent": "G2.8",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "betti_b2_enclosed_cavity_counts_once",
+   "status": "pending",
+   "department": "topology",
+   "title": "Sealed caves counted once",
+   "plain": "A solid block with a sealed air bubble must give exactly one enclosed cave; an open bubble gives zero.",
+   "why": "Sealed caves are the places a speedrunner can only reach by mining, so they must be found correctly.",
+   "done_when": "Sealed bubble gives 1, open bubble gives 0, in all test shapes."
+  },
+  {
+   "id": "G2.9",
+   "parent": "G2",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "topology",
+   "title": "Checks and reachable islands",
+   "plain": "The fast counts are checked on 100 seeds, and the islands the player can reach are listed before any planning.",
+   "why": "Agreement on many maps is the proof, and ruling out dead ends saves search time.",
+   "done_when": "All 100 seeds agree, and an ore sealed behind water is reported unreachable."
+  },
+  {
+   "id": "G2.5",
+   "parent": "G2.9",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "betti_matches_oracle_100_seeds",
+   "status": "pending",
+   "department": "topology",
+   "title": "Check against 100 seeds",
+   "plain": "Compare the fast counts with the slow trusted counts on 100 seeds.",
+   "why": "Agreement on many different maps is the proof the topology is right.",
+   "done_when": "All 100 seeds agree on both the island count and the ring count."
+  },
+  {
+   "id": "G2.6",
+   "parent": "G2.9",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "sealed_pocket_is_unreachable",
+   "status": "pending",
+   "department": "topology",
+   "title": "Reachable islands first",
+   "plain": "Before planning, list the islands the player can reach, so items sealed in an unreachable pocket are ruled out.",
+   "why": "Ruling out dead ends for free saves the planner its search time.",
+   "done_when": "An ore sealed behind water is reported as unreachable."
+  },
+  {
+   "id": "G2.9.C1",
+   "parent": "G2.9",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "betti_two_methods_agree_with_border",
+   "status": "pending",
+   "department": "topology",
+   "title": "Two ways to count loops agree",
+   "plain": "Loops are counted by measuring holes and again by counting dots, lines and squares. A gap touching the map edge must not be counted as a loop.",
+   "why": "A green test that compares a method with itself proves nothing; two different methods can disagree.",
+   "done_when": "Both counts match on 100 worlds and on edge cases."
+  },
+  {
+   "id": "G3",
+   "parent": "G0",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "surgery",
+   "title": "Surgery: dig and place",
+   "plain": "When the runner digs or places one block, the island and ring counts are fixed on the spot instead of counting the whole map again.",
+   "why": "A speedrun digs constantly, so each dig must be cheap to understand.",
+   "done_when": "After every dig or place, the quick counts equal a full recount."
+  },
+  {
+   "id": "G3.6",
+   "parent": "G3",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "surgery",
+   "title": "Digging",
+   "plain": "Work out and apply what digging one block does to the island and ring counts.",
+   "why": "Digging joins islands and can close rings, which is how shortcuts appear.",
+   "done_when": "After a dig the counts equal a full recount."
+  },
+  {
+   "id": "G3.1",
+   "parent": "G3.6",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "chi_delta_matches_recompute_all_256",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Local score change",
+   "plain": "Look only at the eight squares around a block to work out how the Euler score changes when it flips between wall and open.",
+   "why": "It makes each dig cost a few steps, not a recount of the whole map.",
+   "done_when": "Its answer matches a full recount for all 256 possible neighbourhoods."
+  },
+  {
+   "id": "G3.2",
+   "parent": "G3.6",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "mine_matches_full_recompute",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Dig a block",
+   "plain": "Dig out one block and update the island and ring counts immediately.",
+   "why": "Digging joins islands and can close rings, which is how shortcuts appear.",
+   "done_when": "After a dig, the counts equal a full recount."
+  },
+  {
+   "id": "G3.6.C1",
+   "parent": "G3.6",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "surgery_work_counter_below_full_recompute",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Quick update is really quick",
+   "plain": "A counter records how many cells the quick update visits. One edit on a big map must visit only a small fraction of it.",
+   "why": "If the quick update secretly recounts everything, planning with thousands of edits is too slow.",
+   "done_when": "The visited share stays under the set limit."
+  },
+  {
+   "id": "G3.7",
+   "parent": "G3",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "surgery",
+   "title": "Placing, preview, stress test",
+   "plain": "Place blocks, preview a dig without doing it, and stress-test every kind of edit against a full recount.",
+   "why": "The runner edits the map constantly, so every edit must keep the counts true.",
+   "done_when": "Quick counts equal the full recount after every edit on every seed."
+  },
+  {
+   "id": "G3.3",
+   "parent": "G3.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "place_matches_full_recompute",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Place a block",
+   "plain": "Place a block on open ground and update the counts, even when it cuts an island in two.",
+   "why": "The runner may need to wall things off, and the counts must stay true.",
+   "done_when": "After placing a block, the counts equal a full recount."
+  },
+  {
+   "id": "G3.4",
+   "parent": "G3.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "random_edits_match_recompute_100_seeds",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Random edit stress test",
+   "plain": "Dig and place hundreds of random blocks on 100 seeds, checking after every edit.",
+   "why": "One lucky case proves nothing, so this tries to break the quick method everywhere.",
+   "done_when": "Quick counts equal the full recount after every edit on every seed."
+  },
+  {
+   "id": "G3.5",
+   "parent": "G3.7",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "preview_matches_apply",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Preview a dig",
+   "plain": "Say how many islands a dig would join and whether it would close a ring, without doing it.",
+   "why": "The planner can compare walls and choose the best one to dig.",
+   "done_when": "The preview matches what really happens when the dig is done."
+  },
+  {
+   "id": "G3.7.C1",
+   "parent": "G3.7",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "surgery_place_block_splits_region",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Placing a block can split land",
+   "plain": "Placing a block on a narrow bridge must cut one island into two, and the fast update must say so.",
+   "why": "Plans that place blocks need counts that can go up as well as down.",
+   "done_when": "The island count rises by one and equals a full recount."
+  },
+  {
+   "id": "G3.7.C2",
+   "parent": "G3.7",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "surgery_random_edits_and_undo_match_recompute",
+   "status": "pending",
+   "department": "surgery",
+   "title": "Random edits never drift",
+   "plain": "Thousands of random mine and place steps on many worlds. After each step the quick answer must equal a full recount, and undoing must restore the old numbers.",
+   "why": "One wrong step would quietly poison every later step of a plan.",
+   "done_when": "Zero mismatches in every step on 100 worlds."
+  },
+  {
+   "id": "G4",
+   "parent": "G0",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "routing",
+   "title": "Routing and the any% run",
+   "plain": "The planner finds the fastest way to win, using the tech tree (what you must make before what) and the shape of the map, then races a plain search.",
+   "why": "This is the point of the project: a faster finish time than a simple search at the same thinking time.",
+   "done_when": "On a fixed list of seeds the planner finishes in fewer game ticks than the baseline, with the same route every run."
+  },
+  {
+   "id": "G4.8",
+   "parent": "G4",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "routing",
+   "title": "Rules and shortest path",
+   "plain": "The rules of the run: a shortest-path finder, the time each action costs, and the tech tree.",
+   "why": "The fastest route depends on what each action really costs.",
+   "done_when": "Dijkstra matches brute force, a pickaxe speeds digging, and the tech tree sorts correctly."
+  },
+  {
+   "id": "G4.1",
+   "parent": "G4.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "dijkstra_matches_bellman_ford",
+   "status": "pending",
+   "department": "routing",
+   "title": "Shortest-path finder",
+   "plain": "Write the standard shortest-path method (Dijkstra) for any map of costs.",
+   "why": "It is the ground truth every faster planner is measured against.",
+   "done_when": "It agrees with a slow brute-force method on random cost maps."
+  },
+  {
+   "id": "G4.2",
+   "parent": "G4.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "stone_is_faster_with_pickaxe",
+   "status": "pending",
+   "department": "routing",
+   "title": "Rules of time",
+   "plain": "Set how many game ticks a walk, a dig or a craft takes, with a pickaxe making digging faster.",
+   "why": "The fastest route depends on what each action really costs.",
+   "done_when": "Digging stone takes fewer ticks with a pickaxe than by hand."
+  },
+  {
+   "id": "G4.3",
+   "parent": "G4.8",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "tech_order_respects_needs",
+   "status": "pending",
+   "department": "routing",
+   "title": "Tech tree chart",
+   "plain": "Write what you must have before you can make the next thing, and sort it so prerequisites come first.",
+   "why": "It tells the planner which items to fetch, and in what order, to reach the goal.",
+   "done_when": "Every item appears after everything it needs, and a loop is reported as an error."
+  },
+  {
+   "id": "G4.8.C1",
+   "parent": "G4.8",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "dijkstra_truth_uses_full_state_and_sim_ticks",
+   "status": "pending",
+   "department": "routing",
+   "title": "The truth check counts everything",
+   "plain": "On a world where crafting a tool first is faster, the ground-truth search must track what you carry, and its time must equal the simulator's tick count.",
+   "why": "The ground truth must not share the solver's mistakes.",
+   "done_when": "The answer matches the simulator tick for tick."
+  },
+  {
+   "id": "G4.9",
+   "parent": "G4",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "routing",
+   "title": "Moments and planning",
+   "plain": "One moment of a run is where you stand and what you carry, and the planner searches through those moments.",
+   "why": "This is the solver's output: the quickest known way to win.",
+   "done_when": "The planner's time equals the plain shortest-path answer."
+  },
+  {
+   "id": "G4.4",
+   "parent": "G4.9",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "iron_needs_stone_pickaxe",
+   "status": "pending",
+   "department": "routing",
+   "title": "A moment in a run",
+   "plain": "Describe one moment as where you stand and what you carry, and list the moves allowed, such as no iron without a stone pickaxe.",
+   "why": "The route is a search through these moments, so they must follow the game's rules.",
+   "done_when": "Mining iron is refused without a stone pickaxe and allowed with one."
+  },
+  {
+   "id": "G4.5",
+   "parent": "G4.9",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "plan_cost_equals_dijkstra",
+   "status": "pending",
+   "department": "routing",
+   "title": "The route planner",
+   "plain": "Search for the fastest run, first asking the map's shape whether the goal can be reached at all.",
+   "why": "It is the solver's output: the quickest known way to win.",
+   "done_when": "Its time equals the plain shortest-path answer on a fixed list of seeds."
+  },
+  {
+   "id": "G4.9.C1",
+   "parent": "G4.9",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "route_replays_legal_in_game_rules",
+   "status": "pending",
+   "department": "routing",
+   "title": "Routes obey the game rules",
+   "plain": "Every route is replayed step by step by a separate rule checker. A route through a wall that needs a pickaxe must be rejected unless the pickaxe is made first.",
+   "why": "A path that looks fine on the map but breaks a game rule is not a speedrun.",
+   "done_when": "Every route passes the rule checker and the trap route is rejected."
+  },
+  {
+   "id": "G4.9.C2",
+   "parent": "G4.9",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "route_tie_break_is_deterministic",
+   "status": "pending",
+   "department": "routing",
+   "title": "Ties always break the same way",
+   "plain": "A map with many equally fast routes is solved with the cell order shuffled. The chosen route must be identical every time.",
+   "why": "Same seed, same route is a promise of the whole project.",
+   "done_when": "Every shuffle gives the identical route."
+  },
+  {
+   "id": "G4.10",
+   "parent": "G4",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "routing",
+   "title": "The rival and the race",
+   "plain": "A plain rival planner is built, then raced against ours on the same seeds with the same thinking time.",
+   "why": "Beating a fair simple rival is how we know the planner is really good.",
+   "done_when": "The planner finishes in fewer ticks and gives the same route each run."
+  },
+  {
+   "id": "G4.6",
+   "parent": "G4.10",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "baseline_bfs_finds_valid_route",
+   "status": "pending",
+   "department": "routing",
+   "title": "The rival planner",
+   "plain": "A plain search that counts moves instead of time and stops when its budget runs out.",
+   "why": "Beating a fair simple rival is how we know the planner is really good.",
+   "done_when": "It returns a legal route that reaches the goal."
+  },
+  {
+   "id": "G4.7",
+   "parent": "G4.10",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "anyp_beats_baseline_and_repeats_exactly",
+   "status": "pending",
+   "department": "routing",
+   "title": "Race the rival",
+   "plain": "Run the planner and the rival on the same seeds with the same thinking time.",
+   "why": "This is the real test of the project: fewer game ticks than the rival.",
+   "done_when": "The planner finishes in fewer ticks and gives the same route each time it runs."
+  },
+  {
+   "id": "G4.10.C1",
+   "parent": "G4.10",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "baseline_with_big_budget_reaches_optimum",
+   "status": "pending",
+   "department": "routing",
+   "title": "The rival planner is fair",
+   "plain": "The rival planner, given plenty of time, must find the best route on small worlds. Both planners also share one budget value and one seed list.",
+   "why": "A win against a crippled rival means nothing.",
+   "done_when": "The rival matches the true best route with a big budget."
+  },
+  {
+   "id": "G5",
+   "parent": "G0",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "website",
+   "title": "The plain-English website",
+   "plain": "One web page lists every goal in simple words with a live badge showing whether it is not started, failing or passing.",
+   "why": "Anyone can see how far the project has got without reading code.",
+   "done_when": "The page opens at http://localhost:7740 and shows every goal and its status."
+  },
+  {
+   "id": "G5.4",
+   "parent": "G5",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "website",
+   "title": "Goal cards with badges",
+   "plain": "The web page itself: a card for every goal, each with a live status badge.",
+   "why": "Anyone can see how far the project has got.",
+   "done_when": "Check scripts find a card and a badge for every goal."
+  },
+  {
+   "id": "G5.1",
+   "parent": "G5.4",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "site_page_renders_goal_cards",
+   "status": "pending",
+   "department": "website",
+   "title": "Goal cards page",
+   "plain": "One web page loads the goal list and shows each goal as a card with a title, a plain explanation and why it matters.",
+   "why": "It turns the plan into something anyone can read.",
+   "done_when": "A check script finds one card for every goal in the list."
+  },
+  {
+   "id": "G5.2",
+   "parent": "G5.4",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "site_page_shows_live_status",
+   "status": "pending",
+   "department": "website",
+   "title": "Live status badges",
+   "plain": "Each card gets a badge (not started, failing, passing) and the page refreshes its data every few seconds.",
+   "why": "Progress shows without anyone touching the page.",
+   "done_when": "A check script finds a badge on every card and the refresh in the page."
+  },
+  {
+   "id": "G5.4.C1",
+   "parent": "G5.4",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "site_status_red_when_test_red",
+   "status": "pending",
+   "department": "website",
+   "title": "Status cannot lie green",
+   "plain": "One test is made to fail on purpose; the website must show that goal as not done.",
+   "why": "A status page that is green by default hides broken work.",
+   "done_when": "The failing goal shows as not done and a passing one as done."
+  },
+  {
+   "id": "G5.3",
+   "parent": "G5",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "site_serves_on_7740",
+   "status": "pending",
+   "department": "website",
+   "title": "Serve on port 7740",
+   "plain": "Start the page on this computer only, at address 127.0.0.1, port 7740.",
+   "why": "This is the address the owner opens to watch the project.",
+   "done_when": "Opening the address returns the page."
+  },
+  {
+   "id": "G5.C1",
+   "parent": "G5",
+   "leaf": true,
+   "fellow": "Chase",
+   "test": "site_binds_loopback_only",
+   "status": "pending",
+   "department": "website",
+   "title": "Website stays on this computer",
+   "plain": "The test starts the site and checks it only answers on your own machine's address, not on the network.",
+   "why": "The site shows work in progress and should not be open to others.",
+   "done_when": "The socket address is 127.0.0.1:7740, not 0.0.0.0."
+  },
+  {
+   "id": "G6",
+   "parent": "G0",
+   "leaf": false,
+   "fellow": "Foreman",
+   "test": null,
+   "status": "pending",
+   "department": "skeleton",
+   "title": "Project skeleton",
+   "plain": "Set up the empty Rust project with three small code libraries: world, topology and route.",
+   "why": "Every other goal needs a known place to put its code.",
+   "done_when": "All three libraries build and can call each other."
+  },
+  {
+   "id": "G6.1",
+   "parent": "G6",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "workspace_manifest_is_valid",
+   "status": "pending",
+   "department": "skeleton",
+   "title": "Top-level project file",
+   "plain": "Create the main Rust project file that says every code library lives in one folder.",
+   "why": "One shared project means one build folder and the computer's memory stays safe.",
+   "done_when": "Cargo can read the project file without errors."
+  },
+  {
+   "id": "G6.2",
+   "parent": "G6",
+   "leaf": true,
+   "fellow": "Foreman",
+   "test": "skeleton_links_all_crates",
+   "status": "pending",
+   "department": "skeleton",
+   "title": "Three empty libraries",
+   "plain": "Create the world, topology and route libraries as empty files that already know about each other.",
+   "why": "Later goals then only fill in files, so they never collide.",
+   "done_when": "One small test in the route library builds and runs, using all three libraries."
+  }
+ ],
+ "alternatives": [
+  {
+   "id": "G1.A1",
+   "parent": null,
+   "leaf": true,
+   "fellow": "Cameron",
+   "test": null,
+   "status": "retired",
+   "department": "world",
+   "title": "Minecraft's real random numbers",
+   "plain": "Minecraft Java builds its world from a simple 48-bit counter that spits out numbers from a seed. Copying that recipe takes about 15 lines of Rust and needs no libraries, so a real Java seed gives the real game's numbers.",
+   "why": "Starting from the true generator means the route we plan is for the real world, not a toy one.",
+   "done_when": "The counter, started from known seeds, prints exactly the numbers Java prints.",
+   "alt_of": "G1.1"
+  },
+  {
+   "id": "G3.A1",
+   "parent": null,
+   "leaf": true,
+   "fellow": "Cameron",
+   "test": null,
+   "status": "retired",
+   "department": "surgery",
+   "title": "Mining fixes the count locally",
+   "plain": "When one block is mined, only the four tiny 2-by-2 windows around it can change the Euler score. Checking those four spots replaces re-counting the whole map.",
+   "why": "The planner can try thousands of dig-here ideas per second because each costs four checks.",
+   "done_when": "After mining or placing a block, the quick update equals a full recount.",
+   "alt_of": "G3.1"
+  },
+  {
+   "id": "G4.A1",
+   "parent": null,
+   "leaf": true,
+   "fellow": "Cameron",
+   "test": null,
+   "status": "retired",
+   "department": "routing",
+   "title": "Exact planning with A*",
+   "plain": "A* is a search that skips any route it can prove is slower, guided by the tech tree (what you must craft before what). It always returns the fastest plan, instead of guessing with random rollouts.",
+   "why": "An exact planner cannot lose to a random baseline, which is the claim the speedrun has to win.",
+   "done_when": "A* route cost equals the slow ground-truth shortest-path cost on every fixed seed.",
+   "alt_of": "G4.5"
+  },
+  {
+   "id": "G5.A1",
+   "parent": null,
+   "leaf": true,
+   "fellow": "Cameron",
+   "test": null,
+   "status": "retired",
+   "department": "website",
+   "title": "Website with no framework",
+   "plain": "The Rust standard library can already listen for web requests, so the site needs about 30 lines instead of a web framework with around 100 extra libraries.",
+   "why": "Fewer libraries means faster builds and less memory on a machine with 3.3 GB free.",
+   "done_when": "Asking the local server on port 7740 for the charts file returns the chart data.",
+   "alt_of": "G5.3"
+  }
+ ],
+ "theory": [
+  {
+   "claim": "C1",
+   "plain": "Treat the seed's noise as a smooth continuous shape instead of searching move by move.",
+   "verdict": "holds with a change",
+   "why": "The noise really is one fixed function of the seed, so the world can be read as a shape. But the route still has to be searched on a graph, because crafting, mining and stamina are steps, not smooth motion.",
+   "keep": "Read the world as a shape (islands, loops, sealed caves) to shrink the search, then still run an exact shortest-route search on the rules.",
+   "test": "On a fixed seed set the solver finds the same cost as Dijkstra and uses fewer node expansions than the BFS baseline."
+  },
+  {
+   "claim": "C2",
+   "plain": "Islands, loops and sealed caves can be computed straight from the seed in constant time.",
+   "verdict": "does not hold as written",
+   "why": "Any single cell can be the one bridge that joins two islands, so an exact count has to look at every cell: it cannot be constant time. Formulas for noise only give averages, not the counts of one real world. Also a resource cluster and a floor island are different things.",
+   "keep": "Compute exact counts by a single scan of the loaded area (about one visit per cell), cached per chunk, with islands = b0, loops = b1, sealed caves = b2.",
+   "test": "Cells visited per scan grows in proportion to cells in the area (not flat), and the counts equal a brute-force flood fill on 100 seeds."
+  },
+  {
+   "claim": "C3",
+   "plain": "Mining and opening doors cut the map so islands and loops drop, opening tunnels between regions.",
+   "verdict": "holds with a change",
+   "why": "Mining can merge two islands, but it can also add a new loop, create a new island, or fill in a hole, depending on the cells around it. Placing a block can split an island. So counts move in both directions.",
+   "keep": "Surgery as an exact local update: each edit changes (b0, b1) by one named move decided by the neighbours, and merging tunnels between regions is the b0-down case.",
+   "test": "After every random mine or place edit the fast update equals a full recount, and placing a block on a one-cell bridge raises b0 by one."
+  },
+  {
+   "claim": "C4",
+   "plain": "Game rules like stamina, speed caps and friction form a distance rule, and the best route is the shortest path under it.",
+   "verdict": "holds with a change",
+   "why": "A shortest path under a cost rule is real. But the game is made of steps, stamina depends on history so cost is not a function of position alone, and friction is not something a metric can describe. The smooth geodesic equation does not apply to a grid.",
+   "keep": "Use the cost rule as edge weights on a graph of position plus inventory plus stamina, and find the best route with Dijkstra or A-star; treat the geodesic as the fine-grid limit.",
+   "test": "The solver's route cost equals Dijkstra on the full state graph and equals the simulator's tick count on a world where crafting first is faster."
+  },
+  {
+   "claim": "C5",
+   "plain": "Fixed-point theorems find the best strategy for several players without searching game moves.",
+   "verdict": "does not hold as written",
+   "why": "Fixed-point theorems prove an equilibrium exists but give no way to compute it, and finding one is hard in general. A speedrun of a seeded world has one player, where the best play is just the shortest route.",
+   "keep": "Drop it from sealrun's single-player any% run. If a two-sided game ever appears, use the zero-sum minimax value (an exact method already in monodromy).",
+   "test": "The toy any% has exactly one agent and its optimum equals the Dijkstra route; a future zero-sum case checks the minimax value against a linear-program answer."
+  },
+  {
+   "claim": "C6",
+   "plain": "Flatten twisted dungeons with conformal maps, and predict unseen parts of the world by analytic continuation.",
+   "verdict": "does not hold as written",
+   "why": "Conformal maps keep angles, not walking distances, and a block dungeon is not a smooth complex shape. Hashed noise is not analytic, so unseen parts cannot be guessed from seen parts.",
+   "keep": "No guessing is needed: the seed gives the unseen chunk exactly by running the generator for it, and that exactness is testable.",
+   "test": "A chunk generated alone is byte-identical to the same chunk generated inside a larger area, for 100 seeds."
+  },
+  {
+   "claim": "C7",
+   "plain": "Lyapunov exponents and coherent structures from chaos theory find stable routes through chaotic fights and physics.",
+   "verdict": "holds with a change",
+   "why": "These tools are real for smooth moving systems and tell where tiny changes blow up. The toy game is a discrete rules machine with no chaos, so there is nothing for them to measure there.",
+   "keep": "Keep as a later robustness check for games with real physics: avoid routes that pass through high-sensitivity places. Port the exponent code from monodromy then, not now.",
+   "test": "The ported exponent code reproduces the known values for the Henon and Lorenz systems from monodromy before it is applied to any game."
+  },
+  {
+   "claim": "C8",
+   "plain": "Embedding noise in complex numbers or quaternions lets a hidden phase rotate through fractal steps instantly.",
+   "verdict": "does not hold as written",
+   "why": "Adding an imaginary part adds no information, because we would be inventing it. Fractal escape times have no shortcut formula: they are computed by iterating. Perlin noise is not an iterated map in the first place.",
+   "keep": "Retire it. Use integer hash noise with fixed-point gradients, which already gives a byte-identical world with no complex numbers.",
+   "test": "The world generator passes the fixed-fingerprint test on 100 seeds using integer arithmetic only."
+  },
+  {
+   "claim": "C9",
+   "plain": "The fractal dimension of each Betti slice summarises an infinitely complex world in constant time.",
+   "verdict": "does not hold as written",
+   "why": "A finite grid has no true fractal dimension; only a slope fitted over several sizes, with noise (monodromy measures about 2.7 percent spread across seeds), and it needs a pass over the data. Only the degree-0 estimator has a theorem behind it.",
+   "keep": "Report a fractal-dimension estimate per loaded region, labelled as an estimate with its spread, computed from monodromy's tree-based method on cluster points.",
+   "test": "The estimator returns the right dimension within a stated tolerance on uniform random points in 2D, before it is used on any world."
+  },
+  {
+   "claim": "C10",
+   "plain": "Benchmark the seed-to-route solver against a Monte Carlo tree search baseline on Crafter or custom seeded grids.",
+   "verdict": "holds with a change",
+   "why": "This is a testable plan. It only means something if the rival gets the same seeds and budget and can reach the optimum when given plenty of time. Crafter has random creatures and no Rust port, so it is not a fixed-seed fair test.",
+   "keep": "Benchmark on custom deterministic seed grids in in-game ticks, and add a fair-rival guard. Crafter is deferred.",
+   "test": "On a fixed seed set the solver's ticks are lower than the baseline's at equal budget, and the baseline with a huge budget matches the true optimum."
+  }
+ ],
+ "facts": [
+  {
+   "id": "F1",
+   "plain": "monodromy, the owner's maths library, is written in Python 3.11+ under the MIT license, not in Rust.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/pyproject.toml:10-11,36"
+  },
+  {
+   "id": "F2",
+   "plain": "monodromy needs numpy, scipy, ripser, persim and mpmath to run; pytest and scikit-learn only for its tests.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/pyproject.toml:16-24,29"
+  },
+  {
+   "id": "F3",
+   "plain": "phdim.py offers total_persistence, ph_dimension, is_fractal and TOPOLOGICAL_DIM, and uses the ripser library to compute persistence.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/monodromy/phdim.py:67,69,71,76,79,86,155"
+  },
+  {
+   "id": "F4",
+   "plain": "dynamics.py offers henon, holmes, sample_attractor, attractor_sampler, jacobians_along, map_spectrum, equivariance_defect, trust_horizon and kaplan_yorke_dimension; it has no Lorenz function (that lives in thesis.py).",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/monodromy/dynamics.py:65,68-70,73,91,98,126,147,163,186,202,223"
+  },
+  {
+   "id": "F5",
+   "plain": "equilibrium.py offers error_rates, minimax_threshold, game_value, relative_margin and equalizer_gap.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/monodromy/equilibrium.py:64-65,68,85,115,120,141"
+  },
+  {
+   "id": "F6",
+   "plain": "schedule.py offers Budget, bonferroni, coarse_to_fine and successive_halving; unit_cost exists but is not exported.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/monodromy/schedule.py:26,29,41,61,65,87,122,134"
+  },
+  {
+   "id": "F7",
+   "plain": "injectivity.py offers twelve public names, from local_floor to certified_injectivity_radius; free_ratio_is_readable exists but is not exported.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/monodromy/injectivity.py:153-155,577-578"
+  },
+  {
+   "id": "F8",
+   "plain": "monodromy's own docs say two of its slope measurements (lambda_n and m(R)) have no theorem behind them, unlike its Lyapunov and PH-dimension estimates.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/docs/mathematics.md:346-360"
+  },
+  {
+   "id": "F9",
+   "plain": "monodromy's docs say its threshold game is a two-player zero-sum minimax, not a Nash equilibrium of a general game.",
+   "source": "C:/Users/seal/Documents/GitHub/monodromy/docs/mathematics.md:340-342"
+  },
+  {
+   "id": "F10",
+   "plain": "These monodromy facts were read at commit 2e5f7d0 (12 October 2026).",
+   "source": "git log -1 in C:/Users/seal/Documents/GitHub/monodromy"
+  },
+  {
+   "id": "F11",
+   "plain": "In Minecraft the same seed always builds the same terrain, but only on the same game version: a new version can turn the same seed into a different world.",
+   "source": "https://minecraft.wiki/w/Seed_(level_generation)"
+  },
+  {
+   "id": "F12",
+   "plain": "Java and Bedrock Minecraft share terrain and biomes for a seed, but structures, decorations, caves and mob spawns differ.",
+   "source": "https://minecraft.wiki/w/Seed_(level_generation)"
+  },
+  {
+   "id": "F13",
+   "plain": "speedrun.com lists Minecraft Any%, Any% Glitchless, and Random Seed and Set Seed categories (with and without glitches), among 13 in total.",
+   "source": "https://www.speedrun.com/api/v1/games/mc/categories"
+  },
+  {
+   "id": "F14",
+   "plain": "Any% Glitchless runs are split by seed type (random or set) and by version range (Pre 1.8, 1.8, 1.9-1.12, 1.13-1.15, 1.16-1.19, 1.20+).",
+   "source": "https://www.speedrun.com/api/v1/categories/mkeyl926/variables"
+  },
+  {
+   "id": "F15",
+   "plain": "A typical random-seed run goes: Nether portal, bastion (pearls from piglins), fortress (blaze rods), eyes of ender, stronghold, End, kill the dragon.",
+   "source": "https://en.wikipedia.org/wiki/Minecraft_speedrunning"
+  },
+  {
+   "id": "F16",
+   "plain": "1.16-1.19 Minecraft speedruns are mostly played on version 1.16.1.",
+   "source": "https://en.wikipedia.org/wiki/Minecraft_speedrunning"
+  },
+  {
+   "id": "F17",
+   "plain": "cubiomes, a free C library (MIT), copies Minecraft Java's biome and structure placement from a seed, but not the individual blocks.",
+   "source": "https://github.com/Cubitect/cubiomes README.md:3,141, LICENSE"
+  },
+  {
+   "id": "F18",
+   "plain": "Amidst (Java, GPL-3.0) and the SeedFinding Java libraries (MIT) also reproduce parts of Minecraft world generation.",
+   "source": "https://api.github.com/repos/toolbox4minecraft/amidst and SeedFinding/mc_*_java"
+  },
+  {
+   "id": "F19",
+   "plain": "Crafter worlds are 64 by 64 tiles, the agent sees a 9 by 9 window, and an episode lasts at most 10,000 steps.",
+   "source": "https://raw.githubusercontent.com/danijar/crafter/main/crafter/env.py:28-29"
+  },
+  {
+   "id": "F20",
+   "plain": "Crafter makes each episode's world from a hash of the seed and the episode number, then grows terrain with simplex noise.",
+   "source": "https://raw.githubusercontent.com/danijar/crafter/main/crafter/env.py:32,38,74; worldgen.py:10-11"
+  },
+  {
+   "id": "F21",
+   "plain": "Crafter has 22 achievements, from collecting wood to collecting a diamond.",
+   "source": "https://raw.githubusercontent.com/danijar/crafter/main/crafter/data.yaml:80"
+  },
+  {
+   "id": "F22",
+   "plain": "The standard persistent homology algorithm can take cubic time (N^3 steps for N cells) in the worst case.",
+   "source": "Morozov 2005, https://mrzv.org/publications/worst-case/biogeometry/"
+  },
+  {
+   "id": "F23",
+   "plain": "The fastest known zigzag persistence runs in matrix-multiplication time, about n^2.376, versus the old n^3.",
+   "source": "Milosavljevic, Morozov, Skraba, SoCG 2011, https://mrzv.org/publications/zzph-mmt/"
+  },
+  {
+   "id": "F24",
+   "plain": "Counting connected pieces with union-find costs almost constant time per step (inverse Ackermann), and that is provably optimal.",
+   "source": "https://en.wikipedia.org/wiki/Disjoint-set_data_structure (Tarjan 1975; Fredman & Saks 1989)"
+  },
+  {
+   "id": "F25",
+   "plain": "Keeping track of connected pieces while edges are also removed costs O(log^2 n) per change with the Holm-de Lichtenberg-Thorup method.",
+   "source": "Holm, de Lichtenberg, Thorup, J. ACM 48:723-760, 2001"
+  },
+  {
+   "id": "F26",
+   "plain": "No method can track connectivity under insertions and deletions faster than about log n per change (cell-probe lower bound).",
+   "source": "Patrascu & Demaine, arXiv cs/0502041"
+  },
+  {
+   "id": "F27",
+   "plain": "For a flat grid of squares, corners minus edges plus faces equals islands minus loops plus enclosed voids (b0 - b1 + b2).",
+   "source": "Hatcher, Algebraic Topology, Theorem 2.44; https://en.wikipedia.org/wiki/Euler_characteristic"
+  }
+ ],
+ "departments": [
+  {
+   "name": "world",
+   "title": "World Generation",
+   "goals": [
+    "G1"
+   ],
+   "plain": "Builds the seeded Minecraft-style world so the same seed always gives the same blocks.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "discover-rust-game-design",
+     "why": "seeded worlds, chunks and deterministic simulation patterns"
+    },
+    {
+     "skill": "rust-patterns",
+     "why": "idiomatic Rust for the generator"
+    },
+    {
+     "skill": "m01-ownership",
+     "why": "chunk buffers without needless copies"
+    },
+    {
+     "skill": "m04-zero-cost",
+     "why": "std-only generator, no dependency for 20 lines"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "newtypes for Seed and block coordinates"
+    },
+    {
+     "skill": "m09-domain",
+     "why": "model chunk, biome, block as domain types"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "generate a chunk fast enough to search over"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "byte-identical determinism and known-vector tests"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-code-navigator",
+     "why": "find where a generator function is defined and used"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "read, grep and collect test output"
+    }
+   ]
+  },
+  {
+   "name": "topology",
+   "title": "Topology (Betti numbers)",
+   "goals": [
+    "G2"
+   ],
+   "plain": "Counts the separate islands and loops in the walkable ground.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "anthropic-skills:tda-tdd",
+     "why": "topology invariants as failing tests first"
+    },
+    {
+     "skill": "discover-topology",
+     "why": "turn the maths into falsifiable hypotheses"
+    },
+    {
+     "skill": "discover-math",
+     "why": "check the Euler and union-find arguments"
+    },
+    {
+     "skill": "extract-repo-math",
+     "why": "port the right routine from monodromy"
+    },
+    {
+     "skill": "m04-zero-cost",
+     "why": "one pass, no allocation per cell"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "grid and component types that cannot be mixed up"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "near-linear counting over a million cells"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "100-seed brute-force comparison"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "extract-repo-math",
+     "why": "read monodromy and report the formula, not prose"
+    },
+    {
+     "skill": "rust-symbol-analyzer",
+     "why": "locate the grid types the counter reads"
+    }
+   ]
+  },
+  {
+   "name": "surgery",
+   "title": "Surgery (mine and place)",
+   "goals": [
+    "G3"
+   ],
+   "plain": "Updates the island and loop counts when one block is mined or placed, without recounting everything.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "tdd-fix",
+     "why": "an incremental count that differs from a recount is a bug: RED, fix, mutate"
+    },
+    {
+     "skill": "anthropic-skills:tda-tdd",
+     "why": "incremental result must equal full recompute"
+    },
+    {
+     "skill": "discover-topology",
+     "why": "local Euler change and boundary-operator view"
+    },
+    {
+     "skill": "m03-mutability",
+     "why": "one safe mutation path for the grid"
+    },
+    {
+     "skill": "typed-holes-refactor",
+     "why": "reshape the grid API around the update without breaking tests"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "find the first cell where update and recount disagree"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "make illegal edits unrepresentable"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-call-graph",
+     "why": "trace who calls the update"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive a claimed count by hand"
+    }
+   ]
+  },
+  {
+   "name": "routing",
+   "title": "Routing and the any% run",
+   "goals": [
+    "G4"
+   ],
+   "plain": "Plans the fastest route to the win and races it against a baseline planner.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "discover-math",
+     "why": "metric, geodesic and A* admissibility arguments"
+    },
+    {
+     "skill": "discover-systems-theory",
+     "why": "budgets, feedback and the tech-tree DAG"
+    },
+    {
+     "skill": "discover-research",
+     "why": "design the fair planner-vs-baseline experiment"
+    },
+    {
+     "skill": "research-verdict",
+     "why": "say alive or dead from the measured ticks"
+    },
+    {
+     "skill": "discover-rust-game-design",
+     "why": "speedrun route and inventory state design"
+    },
+    {
+     "skill": "discover-ml",
+     "why": "MCTS baseline and rollout behaviour"
+    },
+    {
+     "skill": "domain-ml",
+     "why": "search and planning conventions"
+    },
+    {
+     "skill": "m07-concurrency",
+     "why": "planners sharing one wall-clock budget"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "search speed decides the same-budget race"
+    },
+    {
+     "skill": "m14-mental-model",
+     "why": "keep the state, cost and heuristic model straight"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-trait-explorer",
+     "why": "map the planner trait and its implementors"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "compare planner outputs side by side"
+    }
+   ]
+  },
+  {
+   "name": "website",
+   "title": "The Plain-English Website",
+   "goals": [
+    "G5"
+   ],
+   "plain": "Shows every goal in plain English with its live status on localhost.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "frontend-design:frontend-design",
+     "why": "distinctive, readable page design"
+    },
+    {
+     "skill": "site-revamp",
+     "why": "full rebuild standard, not a reskin"
+    },
+    {
+     "skill": "visual-companion",
+     "why": "show the maths as pictures"
+    },
+    {
+     "skill": "dataviz",
+     "why": "colour only by meaningful data, such as status"
+    },
+    {
+     "skill": "domain-web",
+     "why": "serve the page with the standard library"
+    },
+    {
+     "skill": "anti-slop",
+     "why": "no filler copy or decoration"
+    },
+    {
+     "skill": "discover-wasm",
+     "why": "optional in-browser demo of the world"
+    },
+    {
+     "skill": "domain-cli",
+     "why": "start and stop the server from one command"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "dataviz",
+     "why": "check chart colours and labels"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "collect the page text and status JSON"
+    }
+   ]
+  },
+  {
+   "name": "skeleton",
+   "title": "Workspace Skeleton and Shipping",
+   "goals": [
+    "G6"
+   ],
+   "plain": "Sets up the Rust workspace, builds, README and pull request text.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "rust-router",
+     "why": "pick the right Rust skill for each question"
+    },
+    {
+     "skill": "rust-learner",
+     "why": "look up crate and std facts"
+    },
+    {
+     "skill": "rust-daily",
+     "why": "check current Rust releases and changes"
+    },
+    {
+     "skill": "m11-ecosystem",
+     "why": "choose std over a crate unless it earns its place"
+    },
+    {
+     "skill": "m12-lifecycle",
+     "why": "workspace, resource and build lifecycle"
+    },
+    {
+     "skill": "m06-error-handling",
+     "why": "one error style across crates"
+    },
+    {
+     "skill": "m13-domain-error",
+     "why": "errors that name the failed goal"
+    },
+    {
+     "skill": "m02-resource",
+     "why": "bounded memory on a 3.3 GB machine"
+    },
+    {
+     "skill": "m15-anti-pattern",
+     "why": "catch clone-everything and unwrap habits"
+    },
+    {
+     "skill": "rust-refactor-helper",
+     "why": "safe renames across crates"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "keep the workspace free of unsafe"
+    },
+    {
+     "skill": "domain-cli",
+     "why": "the sealrun command line"
+    },
+    {
+     "skill": "discover-engineering",
+     "why": "repo layout and CI sanity"
+    },
+    {
+     "skill": "ship-like-teerth",
+     "why": "README and layout rules for this owner"
+    },
+    {
+     "skill": "anthropic-skills:research-readme",
+     "why": "README in the house style"
+    },
+    {
+     "skill": "writing-pr-messages",
+     "why": "commit and PR prose rules"
+    },
+    {
+     "skill": "github-master",
+     "why": "push and verify the repo on GitHub"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-deps-visualizer",
+     "why": "show the crate graph and flag heavy dependencies"
+    },
+    {
+     "skill": "github-master",
+     "why": "read-only checks of repo and CI state"
+    }
+   ]
+  },
+  {
+   "name": "ward",
+   "title": "Nurses' Ward (audit and evidence)",
+   "goals": [],
+   "plain": "Reads, greps, re-runs and cross-checks what the residents claim.",
+   "residents_skills": [],
+   "nurses_skills": [
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "report command, exit code and first failing line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "confirm the RED run came before the fix"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "isolate a failing check before reporting"
+    },
+    {
+     "skill": "ponytail:ponytail",
+     "why": "report only what was asked"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "check diffs against house style"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each claim against source"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive numbers and paths"
+    },
+    {
+     "skill": "investigator",
+     "why": "chase a hang or crash to evidence"
+    },
+    {
+     "skill": "discover-debugging",
+     "why": "debugging playbooks for odd failures"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "cross-check independent readings"
+    },
+    {
+     "skill": "super-genius-rick",
+     "why": "hard-problem second opinion"
+    },
+    {
+     "skill": "rust-code-navigator",
+     "why": "definitions and usages"
+    },
+    {
+     "skill": "rust-call-graph",
+     "why": "who calls what"
+    },
+    {
+     "skill": "rust-symbol-analyzer",
+     "why": "symbol and type lookups"
+    },
+    {
+     "skill": "rust-trait-explorer",
+     "why": "trait implementors"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "grep, read and collect"
+    },
+    {
+     "skill": "m14-mental-model",
+     "why": "explain Rust behaviour to residents"
+    },
+    {
+     "skill": "unsafe-checker",
+     "why": "grep for unsafe blocks"
+    }
+   ]
+  }
+ ]
+}
