@@ -1,90 +1,6 @@
 {
   "runs": [
     {
-      "experiment": "round2_order_pair",
-      "inputs": [
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\round2\\order_pair.json",
-          "unmapped_fingerprints": 0,
-          "hash_source": "whole-world fingerprint, positional order mapping (assumed)"
-        }
-      ],
-      "n_worlds": 2,
-      "tickets": [
-        [
-          64,
-          64
-        ],
-        [
-          65,
-          64
-        ]
-      ],
-      "shape": null,
-      "r_dec": null,
-      "n_orders": 2,
-      "n_classes": 2,
-      "bits_lost": 0.0,
-      "valid_partition": true,
-      "conflicted_orders": 0,
-      "conflicted": [],
-      "classes": [
-        {
-          "members": [
-            "64,64;65,64"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "65,64;64,64"
-          ],
-          "n_orders": 1
-        }
-      ],
-      "per_chunk": {
-        "world": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;65,64"
-            ],
-            [
-              "65,64;64,64"
-            ]
-          ],
-          "conflicted_orders": 0
-        }
-      },
-      "per_chunk_refinement_violations": 0,
-      "transitivity": {
-        "status": "not_run",
-        "reason": "no pairwise diff report given"
-      },
-      "predictions": [
-        {
-          "source": "sim",
-          "status": "r_dec_required",
-          "match": null
-        },
-        {
-          "source": "polytope",
-          "status": "absent",
-          "match": null
-        },
-        {
-          "source": "cameron",
-          "status": "no_entry",
-          "match": null
-        }
-      ],
-      "predictions_ref": "ab6d189",
-      "ore_comparison": {
-        "status": "no_ore_counts"
-      },
-      "when": "2026-11-01T08:41:41.581799+00:00"
-    },
-    {
       "experiment": "cal_square_O12",
       "inputs": [
         {
@@ -795,6 +711,111 @@
         "status": "no_ore_counts"
       },
       "when": "2026-11-01T08:48:10.807920+00:00"
+    },
+    {
+      "experiment": "round2_order_pair",
+      "inputs": [
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\round2\\order_pair.json",
+          "unmapped_fingerprints": 0,
+          "hash_source": "whole-world fingerprint, positional order mapping (assumed)"
+        }
+      ],
+      "n_worlds": 2,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "shape": null,
+      "r_dec": null,
+      "noise": {
+        "rule": "a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are removed before the classes, per-chunk partitions and ore comparison; diff counts come from the campaign diff report when given",
+        "clean_chunks": [
+          "world"
+        ],
+        "noisy_chunks": [],
+        "noisy": [],
+        "repeat_pairs_tested": 0
+      },
+      "n_orders": 2,
+      "n_classes": 2,
+      "bits_lost": 0.0,
+      "valid_partition": true,
+      "conflicted_orders": 0,
+      "conflicted": [],
+      "classes": [
+        {
+          "members": [
+            "64,64;65,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "65,64;64,64"
+          ],
+          "n_orders": 1
+        }
+      ],
+      "per_chunk": {
+        "world": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;65,64"
+            ],
+            [
+              "65,64;64,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        }
+      },
+      "per_chunk_refinement_violations": 0,
+      "all_chunks": {
+        "n_orders": 2,
+        "n_classes": 2,
+        "valid_partition": true,
+        "conflicted_orders": 0,
+        "conflicted": []
+      },
+      "transitivity": {
+        "status": "not_run",
+        "reason": "no pairwise diff report given"
+      },
+      "predictions": [
+        {
+          "source": "sim",
+          "status": "r_dec_required",
+          "match": null
+        },
+        {
+          "source": "polytope",
+          "status": "no_entry",
+          "match": null,
+          "R": 3
+        },
+        {
+          "source": "cameron",
+          "status": "no_entry",
+          "match": null
+        }
+      ],
+      "predictions_refs": {
+        "sim": "ab6d189:lab/results/research/quotient_predictions.json",
+        "polytope": "main 8a5f170:lab/results/research/quotient_polytope.json",
+        "polytope_R": 3
+      },
+      "ore_comparison": {
+        "status": "no_ore_counts"
+      },
+      "when": "2026-11-01T08:48:11.412803+00:00"
     }
   ]
 }
