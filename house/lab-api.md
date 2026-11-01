@@ -215,4 +215,11 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   saved and stopped at once after load, one after 60 s; `window.fingerprint` of chunk (64, 64)'s blocks (via
   `window.box`) equal. Unequal is a finding (waiting changes blocks), reported, never bent.
 
+## Round 2, batch 11
+- `test_order_control.py` (N2.G3.3.1): two fresh scratch worlds, each `orderrun.run_order(scratch, [(64, 64),
+  (65, 64)])`; `blockdiff.diff` of the two windows; writes `lab/results/order_control.json` = {"order", "runs": 2,
+  "positions", "changed", "added", "removed", "fingerprints": [two], "when"} before asserting; then changed, added and
+  removed are all 0. Measured once already by Wilson's lane V1 (r2-batch9): 0 of 131072 differ. Nonzero = the order
+  experiment is too noisy to use: reported, never bent.
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
