@@ -1,5 +1,5 @@
+import ast
 import json
-import re
 import sys
 import tempfile
 import unittest
@@ -31,15 +31,32 @@ class Lab(unittest.TestCase):
             (staged / "mods" / "speedrunner.jar").write_bytes(b"stub")
             got = oneprocess_worlds.result(staged)
             self.assertEqual(got["status"], "not run")
+            self.assertNotIn("not approved", got["reason"])
+            self.assertIn("later leaf", got["reason"])
             self.assertIsNone(got["worlds_per_minute"])
             self.assertIsNone(got["mb_per_world"])
 
-        source = (LAB / "oneprocess_worlds.py").read_text(encoding="utf-8")
-        for name in NETWORK:
-            self.assertIsNone(
-                re.search(rf"^\s*(import|from)\s+{name}\b", source, re.M),
-                f"oneprocess_worlds imports {name}",
-            )
+            mods_only = Path(tmp) / "mods_only"
+            (mods_only / "mods").mkdir(parents=True)
+            (mods_only / "mods" / "speedrunner.jar").write_bytes(b"stub")
+            got = oneprocess_worlds.result(mods_only)
+            self.assertEqual(got["status"], "blocked")
+            self.assertIn("not approved", got["reason"])
+
+            loader_only = Path(tmp) / "loader_only"
+            (loader_only / "versions" / "fabric-loader-x").mkdir(parents=True)
+            got = oneprocess_worlds.result(loader_only)
+            self.assertEqual(got["status"], "blocked")
+            self.assertIn("not approved", got["reason"])
+
+        tree = ast.parse((LAB / "oneprocess_worlds.py").read_text(encoding="utf-8"))
+        imported = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                imported.update(alias.name.split(".")[0] for alias in node.names)
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                imported.add(node.module.split(".")[0])
+        self.assertEqual(sorted(imported & set(NETWORK)), [], "oneprocess_worlds imports a network library")
 
         out = LAB / "results" / "worlds_one_process.json"
         self.assertTrue(out.is_file())
