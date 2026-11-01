@@ -1,343 +1,6 @@
 {
   "runs": [
     {
-      "experiment": "cal_square_O12",
-      "inputs": [
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O1_r1.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O1_r2.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O2_r1.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O2_r2.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        }
-      ],
-      "n_worlds": 4,
-      "tickets": [
-        [
-          64,
-          64
-        ],
-        [
-          64,
-          65
-        ],
-        [
-          65,
-          64
-        ],
-        [
-          65,
-          65
-        ]
-      ],
-      "shape": [
-        "square",
-        1
-      ],
-      "r_dec": null,
-      "n_orders": 2,
-      "n_classes": 3,
-      "bits_lost": null,
-      "valid_partition": false,
-      "conflicted_orders": 1,
-      "conflicted": [
-        "64,64;65,64;64,65;65,65"
-      ],
-      "classes": [
-        {
-          "members": [
-            "64,64;65,64;64,65;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,64;65,64;64,65;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,65;64,64;65,64;65,65"
-          ],
-          "n_orders": 1
-        }
-      ],
-      "per_chunk": {
-        "64,64": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65"
-            ],
-            [
-              "64,65;64,64;65,64;65,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "64,65": {
-          "n_classes": 3,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65"
-            ],
-            [
-              "64,64;65,64;64,65;65,65"
-            ],
-            [
-              "64,65;64,64;65,64;65,65"
-            ]
-          ],
-          "conflicted_orders": 1
-        },
-        "65,64": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65"
-            ],
-            [
-              "64,65;64,64;65,64;65,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,65": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65",
-              "64,65;64,64;65,64;65,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        }
-      },
-      "per_chunk_refinement_violations": 0,
-      "transitivity": {
-        "items": 4,
-        "triples": 64,
-        "violating_triples": 0,
-        "symmetry_violations": 0,
-        "diagonal_violations": 0,
-        "zero_vs_class_disagreements": 0
-      },
-      "predictions": [
-        {
-          "source": "sim",
-          "status": "r_dec_required",
-          "match": null
-        },
-        {
-          "source": "polytope",
-          "status": "absent",
-          "match": null
-        },
-        {
-          "source": "cameron",
-          "basis": "square spacing 1; Cameron gives no R",
-          "n_orders": 2,
-          "expected_orders": 24,
-          "predicted_classes": 4,
-          "measured_classes": 3,
-          "status": "partial_coverage",
-          "match": null,
-          "partition_match": null
-        }
-      ],
-      "predictions_ref": "ab6d189",
-      "ore_comparison": {
-        "status": "compared",
-        "grouping": "order",
-        "grouping_reason": "partition invalid: an order has two different worlds, so classes are undefined; compared by order",
-        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
-        "keys_tested": 8,
-        "comparisons": [
-          {
-            "ore": "diamond",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 0.0,
-            "ci95": [
-              0.0,
-              0.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": false
-          },
-          {
-            "ore": "iron",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": -2.0,
-            "ci95": [
-              -2.0,
-              -2.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": true
-          },
-          {
-            "ore": "coal",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 0.0,
-            "ci95": [
-              0.0,
-              0.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": false
-          },
-          {
-            "ore": "gold",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 2.0,
-            "ci95": [
-              2.0,
-              2.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": true
-          },
-          {
-            "ore": "lapis",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 0.0,
-            "ci95": [
-              0.0,
-              0.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": false
-          },
-          {
-            "ore": "redstone",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 0.0,
-            "ci95": [
-              0.0,
-              0.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": false
-          },
-          {
-            "ore": "emerald",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 0.0,
-            "ci95": [
-              0.0,
-              0.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": false
-          },
-          {
-            "ore": "total",
-            "classes": [
-              [
-                "64,64;65,64;64,65;65,65"
-              ],
-              [
-                "64,65;64,64;65,64;65,65"
-              ]
-            ],
-            "mean_diff": 0.0,
-            "ci95": [
-              0.0,
-              0.0
-            ],
-            "n_a": 2,
-            "n_b": 2,
-            "resamples": 10000,
-            "seed": 20261101,
-            "excludes_zero": false
-          }
-        ],
-        "insufficient_repeats": [],
-        "repeat_spread_max": 0
-      },
-      "when": "2026-11-01T08:41:41.272442+00:00"
-    },
-    {
       "experiment": "round2_order_square",
       "inputs": [
         {
@@ -717,6 +380,365 @@
         "status": "no_ore_counts"
       },
       "when": "2026-11-01T08:41:41.581799+00:00"
+    },
+    {
+      "experiment": "cal_square_O12",
+      "inputs": [
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O1_r1.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O1_r2.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O2_r1.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign\\cal_O2_r2.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        }
+      ],
+      "n_worlds": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "shape": [
+        "square",
+        1
+      ],
+      "r_dec": null,
+      "noise": {
+        "rule": "a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are removed before the classes, per-chunk partitions and ore comparison; diff counts come from the campaign diff report when given",
+        "clean_chunks": [
+          "64,64",
+          "65,64",
+          "65,65"
+        ],
+        "noisy_chunks": [
+          "64,65"
+        ],
+        "noisy": [
+          {
+            "chunk": "64,65",
+            "repeat_pairs": [
+              {
+                "a": "cal_O1_r1",
+                "b": "cal_O1_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 1
+              }
+            ],
+            "max_diff_blocks": 1
+          }
+        ],
+        "repeat_pairs_tested": 2
+      },
+      "n_orders": 2,
+      "n_classes": 2,
+      "bits_lost": 0.0,
+      "valid_partition": true,
+      "conflicted_orders": 0,
+      "conflicted": [],
+      "classes": [
+        {
+          "members": [
+            "64,64;65,64;64,65;65,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,65;64,64;65,64;65,65"
+          ],
+          "n_orders": 1
+        }
+      ],
+      "per_chunk": {
+        "64,64": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65"
+            ],
+            [
+              "64,65;64,64;65,64;65,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,64": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65"
+            ],
+            [
+              "64,65;64,64;65,64;65,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65",
+              "64,65;64,64;65,64;65,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        }
+      },
+      "per_chunk_refinement_violations": 0,
+      "all_chunks": {
+        "n_orders": 2,
+        "n_classes": 3,
+        "valid_partition": false,
+        "conflicted_orders": 1,
+        "conflicted": [
+          "64,64;65,64;64,65;65,65"
+        ]
+      },
+      "transitivity": {
+        "items": 4,
+        "triples": 64,
+        "violating_triples": 0,
+        "symmetry_violations": 0,
+        "diagonal_violations": 0,
+        "zero_vs_class_disagreements": 0
+      },
+      "predictions": [
+        {
+          "source": "sim",
+          "status": "r_dec_required",
+          "match": null
+        },
+        {
+          "source": "polytope",
+          "basis": "stamp family F, R=3",
+          "n_orders": 2,
+          "expected_orders": 24,
+          "predicted_classes": 4,
+          "measured_classes": 2,
+          "status": "noisy_chunks_excluded",
+          "match": null,
+          "partition_match": null
+        },
+        {
+          "source": "cameron",
+          "basis": "square spacing 1; Cameron gives no R",
+          "n_orders": 2,
+          "expected_orders": 24,
+          "predicted_classes": 4,
+          "measured_classes": 2,
+          "status": "noisy_chunks_excluded",
+          "match": null,
+          "partition_match": null
+        }
+      ],
+      "predictions_refs": {
+        "sim": "ab6d189:lab/results/research/quotient_predictions.json",
+        "polytope": "main 8a5f170:lab/results/research/quotient_polytope.json",
+        "polytope_R": 3
+      },
+      "ore_comparison": {
+        "status": "compared",
+        "grouping": "signature",
+        "grouping_reason": "classes: exact equality of all chunk hashes",
+        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
+        "keys_tested": 8,
+        "comparisons": [
+          {
+            "ore": "diamond",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "iron",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": -2.0,
+            "ci95": [
+              -2.0,
+              -2.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          },
+          {
+            "ore": "coal",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "gold",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 2.0,
+            "ci95": [
+              2.0,
+              2.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": true
+          },
+          {
+            "ore": "lapis",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "redstone",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "emerald",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          },
+          {
+            "ore": "total",
+            "classes": [
+              [
+                "64,64;65,64;64,65;65,65"
+              ],
+              [
+                "64,65;64,64;65,64;65,65"
+              ]
+            ],
+            "mean_diff": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n_a": 2,
+            "n_b": 2,
+            "resamples": 10000,
+            "seed": 20261101,
+            "excludes_zero": false
+          }
+        ],
+        "insufficient_repeats": [],
+        "repeat_spread_max": 0
+      },
+      "when": "2026-11-01T08:47:59.230878+00:00"
     }
   ]
 }
