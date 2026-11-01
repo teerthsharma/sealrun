@@ -1,209 +1,6 @@
 {
   "runs": [
     {
-      "experiment": "round2_order_square",
-      "inputs": [
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\round2\\order_square.json",
-          "excluded_inferred": 20,
-          "hash_source": "PROXY: sha256 of per-chunk ore counts plus differing_blocks vs reference; not a block hash"
-        }
-      ],
-      "n_worlds": 4,
-      "tickets": [
-        [
-          64,
-          64
-        ],
-        [
-          64,
-          65
-        ],
-        [
-          65,
-          64
-        ],
-        [
-          65,
-          65
-        ]
-      ],
-      "shape": [
-        "square",
-        1
-      ],
-      "r_dec": null,
-      "n_orders": 4,
-      "n_classes": 4,
-      "bits_lost": 0.0,
-      "valid_partition": true,
-      "conflicted_orders": 0,
-      "conflicted": [],
-      "classes": [
-        {
-          "members": [
-            "64,64;65,64;64,65;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "65,64;64,64;64,65;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,65;64,64;65,64;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "65,65;64,64;65,64;64,65"
-          ],
-          "n_orders": 1
-        }
-      ],
-      "per_chunk": {
-        "64,64": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65",
-              "65,64;64,64;64,65;65,65",
-              "65,65;64,64;65,64;64,65"
-            ],
-            [
-              "64,65;64,64;65,64;65,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "64,65": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65",
-              "64,65;64,64;65,64;65,65",
-              "65,64;64,64;64,65;65,65"
-            ],
-            [
-              "65,65;64,64;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,64": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65",
-              "64,65;64,64;65,64;65,65",
-              "65,64;64,64;64,65;65,65",
-              "65,65;64,64;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,65": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65",
-              "64,65;64,64;65,64;65,65",
-              "65,64;64,64;64,65;65,65",
-              "65,65;64,64;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "world": {
-          "n_classes": 4,
-          "classes": [
-            [
-              "64,64;65,64;64,65;65,65"
-            ],
-            [
-              "65,64;64,64;64,65;65,65"
-            ],
-            [
-              "64,65;64,64;65,64;65,65"
-            ],
-            [
-              "65,65;64,64;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        }
-      },
-      "per_chunk_refinement_violations": 0,
-      "transitivity": {
-        "status": "not_run",
-        "reason": "no pairwise diff report given"
-      },
-      "predictions": [
-        {
-          "source": "sim",
-          "status": "r_dec_required",
-          "match": null
-        },
-        {
-          "source": "polytope",
-          "status": "absent",
-          "match": null
-        },
-        {
-          "source": "cameron",
-          "basis": "square spacing 1; Cameron gives no R",
-          "n_orders": 4,
-          "expected_orders": 24,
-          "predicted_classes": 4,
-          "measured_classes": 4,
-          "status": "partial_coverage",
-          "match": null,
-          "partition_match": null
-        }
-      ],
-      "predictions_ref": "ab6d189",
-      "ore_comparison": {
-        "status": "fewer_than_two_repeat_classes",
-        "grouping": "signature",
-        "grouping_reason": "classes: exact equality of all chunk hashes",
-        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
-        "keys_tested": 8,
-        "comparisons": [],
-        "insufficient_repeats": [
-          {
-            "members": [
-              "64,64;65,64;64,65;65,65"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "65,64;64,64;64,65;65,65"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "64,65;64,64;65,64;65,65"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "65,65;64,64;65,64;64,65"
-            ],
-            "worlds": 1
-          }
-        ],
-        "repeat_spread_max": 0
-      },
-      "when": "2026-11-01T08:41:41.367347+00:00"
-    },
-    {
       "experiment": "round2_order_collapse",
       "inputs": [
         {
@@ -739,6 +536,239 @@
         "repeat_spread_max": 0
       },
       "when": "2026-11-01T08:47:59.230878+00:00"
+    },
+    {
+      "experiment": "round2_order_square",
+      "inputs": [
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\round2\\order_square.json",
+          "excluded_inferred": 20,
+          "hash_source": "PROXY: sha256 of per-chunk ore counts plus differing_blocks vs reference; not a block hash"
+        }
+      ],
+      "n_worlds": 4,
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "shape": [
+        "square",
+        1
+      ],
+      "r_dec": null,
+      "noise": {
+        "rule": "a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are removed before the classes, per-chunk partitions and ore comparison; diff counts come from the campaign diff report when given",
+        "clean_chunks": [
+          "64,64",
+          "64,65",
+          "65,64",
+          "65,65",
+          "world"
+        ],
+        "noisy_chunks": [],
+        "noisy": [],
+        "repeat_pairs_tested": 0
+      },
+      "n_orders": 4,
+      "n_classes": 4,
+      "bits_lost": 0.0,
+      "valid_partition": true,
+      "conflicted_orders": 0,
+      "conflicted": [],
+      "classes": [
+        {
+          "members": [
+            "64,64;65,64;64,65;65,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "65,64;64,64;64,65;65,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,65;64,64;65,64;65,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "65,65;64,64;65,64;64,65"
+          ],
+          "n_orders": 1
+        }
+      ],
+      "per_chunk": {
+        "64,64": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65",
+              "65,64;64,64;64,65;65,65",
+              "65,65;64,64;65,64;64,65"
+            ],
+            [
+              "64,65;64,64;65,64;65,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65",
+              "64,65;64,64;65,64;65,65",
+              "65,64;64,64;64,65;65,65"
+            ],
+            [
+              "65,65;64,64;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65",
+              "64,65;64,64;65,64;65,65",
+              "65,64;64,64;64,65;65,65",
+              "65,65;64,64;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65",
+              "64,65;64,64;65,64;65,65",
+              "65,64;64,64;64,65;65,65",
+              "65,65;64,64;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "world": {
+          "n_classes": 4,
+          "classes": [
+            [
+              "64,64;65,64;64,65;65,65"
+            ],
+            [
+              "65,64;64,64;64,65;65,65"
+            ],
+            [
+              "64,65;64,64;65,64;65,65"
+            ],
+            [
+              "65,65;64,64;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        }
+      },
+      "per_chunk_refinement_violations": 0,
+      "all_chunks": {
+        "n_orders": 4,
+        "n_classes": 4,
+        "valid_partition": true,
+        "conflicted_orders": 0,
+        "conflicted": []
+      },
+      "transitivity": {
+        "status": "not_run",
+        "reason": "no pairwise diff report given"
+      },
+      "predictions": [
+        {
+          "source": "sim",
+          "status": "r_dec_required",
+          "match": null
+        },
+        {
+          "source": "polytope",
+          "basis": "stamp family F, R=3",
+          "n_orders": 4,
+          "expected_orders": 24,
+          "predicted_classes": 4,
+          "measured_classes": 4,
+          "status": "partial_coverage",
+          "match": null,
+          "partition_match": null
+        },
+        {
+          "source": "cameron",
+          "basis": "square spacing 1; Cameron gives no R",
+          "n_orders": 4,
+          "expected_orders": 24,
+          "predicted_classes": 4,
+          "measured_classes": 4,
+          "status": "partial_coverage",
+          "match": null,
+          "partition_match": null
+        }
+      ],
+      "predictions_refs": {
+        "sim": "ab6d189:lab/results/research/quotient_predictions.json",
+        "polytope": "main 8a5f170:lab/results/research/quotient_polytope.json",
+        "polytope_R": 3
+      },
+      "ore_comparison": {
+        "status": "fewer_than_two_repeat_classes",
+        "grouping": "signature",
+        "grouping_reason": "classes: exact equality of all chunk hashes",
+        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
+        "keys_tested": 8,
+        "comparisons": [],
+        "insufficient_repeats": [
+          {
+            "members": [
+              "64,64;65,64;64,65;65,65"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "65,64;64,64;64,65;65,65"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "64,65;64,64;65,64;65,65"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "65,65;64,64;65,64;64,65"
+            ],
+            "worlds": 1
+          }
+        ],
+        "repeat_spread_max": 0
+      },
+      "when": "2026-11-01T08:48:10.131059+00:00"
     }
   ]
 }
