@@ -75,6 +75,9 @@ class FakeServer:
             return b"".join(rcon.encode(rid, rcon.RESPONSE, text) for text in BIG_BODIES)
         if ptype == rcon.COMMAND and body == "garbled":
             return rcon.encode(rid, rcon.RESPONSE, "x")[:-2] + b"XX"
+        if ptype == rcon.COMMAND and body == "slow":
+            time.sleep(1.5)
+            return rcon.encode(rid, rcon.RESPONSE, "SLOW REPLY")
         return rcon.encode(rid, rcon.RESPONSE, "Unknown request 0")
 
 
@@ -109,6 +112,16 @@ class Lab(unittest.TestCase):
         with self.assertRaises(ValueError):
             client.command("garbled")
         self.assertLess(time.monotonic() - started, 1)
+
+    def stale_reply_is_dropped(self):
+        server = FakeServer()
+        self.addCleanup(server.close)
+        client = rcon.Client("127.0.0.1", server.port, PASSWORD, timeout=1.0)
+        self.addCleanup(client.close)
+
+        with self.assertRaises(socket.timeout):
+            client.command("slow")
+        self.assertEqual(client.command("list"), LIST_TEXT)
 
 
 if __name__ == "__main__":
