@@ -1,4 +1,8 @@
 import time
+from pathlib import Path
+
+import server
+import window
 
 
 def wait_loaded(client, cx, cz, timeout=30.0, poll=0.5, sleep=time.sleep):
@@ -12,3 +16,19 @@ def wait_loaded(client, cx, cz, timeout=30.0, poll=0.5, sleep=time.sleep):
             return False
         sleep(poll)
         waited += poll
+
+
+def run_order(scratch, order):
+    srv = server.boot(scratch)
+    try:
+        for cx, cz in order:
+            if not wait_loaded(srv, cx, cz):
+                raise RuntimeError(f"chunk ({cx}, {cz}) did not load")
+            srv.command("save-all flush")
+    finally:
+        srv.stop()
+    xs = [cx for cx, _ in order]
+    zs = [cz for _, cz in order]
+    lo = (min(xs) * 16, 0, min(zs) * 16)
+    hi = (max(xs) * 16 + 15, 255, max(zs) * 16 + 15)
+    return window.box(Path(scratch["dir"]) / "world" / "region", lo, hi)
