@@ -50,8 +50,9 @@ p { margin: 0; }
 
 [data-status="pending"] { --c: var(--pending); }
 [data-status="active"] { --c: var(--active); }
-[data-status="failing"] { --c: var(--failing); }
+[data-status="blocked"] { --c: var(--failing); }
 [data-status="reached"] { --c: var(--reached); }
+[data-status="retired"] { --c: var(--muted); }
 [data-verdict="holds"] { --c: var(--holds); }
 [data-verdict="change"] { --c: var(--change); }
 [data-verdict="breaks"] { --c: var(--breaks); }
@@ -63,6 +64,7 @@ p { margin: 0; }
 .counts li { display: flex; align-items: baseline; gap: 0.4rem; }
 .counts strong { font: 600 1.5rem var(--serif); color: var(--ink); }
 .swatch { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--c); align-self: center; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .tree { margin-top: 2.5rem; }
 .branch { margin-top: 2rem; }
@@ -110,6 +112,7 @@ dd ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
 </head>
 <body>
 <main class="wrap" id="app"><p>Loading goals.</p></main>
+<p id="live" class="sr-only" aria-live="polite"></p>
 <script>
 function renderPage(data) {
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -118,12 +121,13 @@ function renderPage(data) {
   const byId = Object.fromEntries(goals.map((g) => [g.id, g]));
   const deptTitle = Object.fromEntries(data.departments.map((d) => [d.name, d.title]));
   const role = { Foreman: 'plan step', Chase: 'safety check' };
-  const statuses = ['pending', 'active', 'failing', 'reached'];
+  const badge = (s) => ({ pending: 'not started', active: 'in progress', blocked: 'failing', reached: 'passing', retired: 'retired' })[s] ?? s;
+  const statuses = ['pending', 'active', 'blocked', 'reached'];
   const verdictKey = (v) => (/does not/.test(v) ? 'breaks' : /change/.test(v) ? 'change' : 'holds');
   const kids = (id) => goals.filter((g) => g.parent === id);
 
   const card = (g, tag) => `<article class="card" id="goal-${esc(g.id)}" data-goal="${esc(g.id)}">
-    <p class="gid"><span>${esc(g.id)}</span><span class="pill" data-status="${esc(g.status)}">${esc(g.status)}</span></p>
+    <p class="gid"><span>${esc(g.id)}</span><span class="pill" data-badge data-status="${esc(g.status)}">${esc(badge(g.status))}</span></p>
     <${tag}>${esc(g.title)}</${tag}>
     ${g.plain ? `<p class="plain">${esc(g.plain)}</p>` : ''}
     <dl>
@@ -146,7 +150,7 @@ function renderPage(data) {
     <p class="promise">Speedrun a game by reading the shape of its world.</p>
     <ul class="counts">
       <li><strong>${goals.length}</strong> goals</li>
-      ${counts.map(([s, n]) => `<li data-status="${s}"><span class="swatch"></span><strong>${n}</strong> ${s}</li>`).join('')}
+      ${counts.map(([s, n]) => `<li data-status="${s}"><span class="swatch"></span><strong>${n}</strong> ${badge(s)}</li>`).join('')}
     </ul>
   </header>`;
 
@@ -194,7 +198,7 @@ function renderPage(data) {
     ${data.alternatives.map((a) => {
       const target = byId[a.alt_of];
       return `<article class="card" data-alt="${esc(a.id)}">
-        <p class="gid"><span>${esc(a.id)}</span><span class="pill" data-status="${esc(a.status)}">${esc(a.status)}</span></p>
+        <p class="gid"><span>${esc(a.id)}</span><span class="pill" data-badge data-status="${esc(a.status)}">${esc(badge(a.status))}</span></p>
         <h3>${esc(a.title)}</h3>
         <p class="plain">${esc(a.plain)}</p>
         <dl><div><dt>Why it matters</dt><dd>${esc(a.why)}</dd></div></dl>
@@ -209,12 +213,26 @@ function renderPage(data) {
 }
 </script>
 <script>
-fetch('goals.json')
-  .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
-  .then((data) => { document.getElementById('app').innerHTML = renderPage(data); })
-  .catch(() => {
-    document.getElementById('app').textContent = 'Could not load goals.json. Serve the site folder over http, for example python -m http.server.';
-  });
+const app = document.getElementById('app');
+const live = document.getElementById('live');
+let last = '';
+function refresh() {
+  return fetch('goals.json', { cache: 'no-store' })
+    .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.text(); })
+    .then((text) => {
+      if (text === last) return;
+      const y = window.scrollY;
+      app.innerHTML = renderPage(JSON.parse(text));
+      last = text;
+      live.textContent = app.querySelector('.counts').textContent.replace(/\s+/g, ' ').trim();
+      window.scrollTo(0, y);
+    })
+    .catch(() => {
+      if (!last) app.textContent = 'Could not load goals.json. Serve the site folder over http, for example python -m http.server.';
+    });
+}
+refresh();
+setInterval(refresh, 5000);
 </script>
 </body>
 </html>
