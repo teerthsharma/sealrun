@@ -1,0 +1,59 @@
+{
+ "centre": [
+  64,
+  64
+ ],
+ "ticket": "forceload add 1024 1024",
+ "ticket_held_at_stop": true,
+ "when": "2026-11-01T10:06:14+05:30",
+ "rays": {
+  "east": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "west": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "south": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "north": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "southeast": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "southwest": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "northeast": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  },
+  "northwest": {
+   "0": "full",
+   "1": "full",
+   "2": "full",
+   "3": null
+  }
+ }
+}
