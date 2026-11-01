@@ -761,7 +761,7 @@
    "leaf": true,
    "fellow": "Foreman",
    "test": "site_serves_on_7740",
-   "status": "active",
+   "status": "reached",
    "department": "website",
    "title": "Serve on port 7740",
    "plain": "Start the page on this computer only, at address 127.0.0.1, port 7740.",
