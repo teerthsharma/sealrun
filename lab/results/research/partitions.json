@@ -861,853 +861,6 @@
       "when": "2026-11-01T08:50:53.655276+00:00"
     },
     {
-      "experiment": "E2",
-      "inputs": [
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PQRS.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PQRS_r2.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PQSR.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PRQS.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PRSQ.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PSQR.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        },
-        {
-          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PSRQ.json",
-          "hash_source": "per-chunk sha256 as written by ticket_world.py"
-        }
-      ],
-      "n_worlds": 7,
-      "pairs": [
-        {
-          "a": "E2_PQRS",
-          "b": "E2_PQRS_r2",
-          "diff_total": 310
-        },
-        {
-          "a": "E2_PQRS",
-          "b": "E2_PQSR",
-          "diff_total": 126
-        },
-        {
-          "a": "E2_PQRS",
-          "b": "E2_PRQS",
-          "diff_total": 184
-        },
-        {
-          "a": "E2_PQRS",
-          "b": "E2_PRSQ",
-          "diff_total": 84
-        },
-        {
-          "a": "E2_PQRS",
-          "b": "E2_PSQR",
-          "diff_total": 99
-        },
-        {
-          "a": "E2_PQRS",
-          "b": "E2_PSRQ",
-          "diff_total": 1
-        },
-        {
-          "a": "E2_PQRS_r2",
-          "b": "E2_PQSR",
-          "diff_total": 314
-        },
-        {
-          "a": "E2_PQRS_r2",
-          "b": "E2_PRQS",
-          "diff_total": 222
-        },
-        {
-          "a": "E2_PQRS_r2",
-          "b": "E2_PRSQ",
-          "diff_total": 276
-        },
-        {
-          "a": "E2_PQRS_r2",
-          "b": "E2_PSQR",
-          "diff_total": 287
-        },
-        {
-          "a": "E2_PQRS_r2",
-          "b": "E2_PSRQ",
-          "diff_total": 311
-        },
-        {
-          "a": "E2_PQSR",
-          "b": "E2_PRQS",
-          "diff_total": 108
-        },
-        {
-          "a": "E2_PQSR",
-          "b": "E2_PRSQ",
-          "diff_total": 68
-        },
-        {
-          "a": "E2_PQSR",
-          "b": "E2_PSQR",
-          "diff_total": 111
-        },
-        {
-          "a": "E2_PQSR",
-          "b": "E2_PSRQ",
-          "diff_total": 125
-        },
-        {
-          "a": "E2_PRQS",
-          "b": "E2_PRSQ",
-          "diff_total": 150
-        },
-        {
-          "a": "E2_PRQS",
-          "b": "E2_PSQR",
-          "diff_total": 161
-        },
-        {
-          "a": "E2_PRQS",
-          "b": "E2_PSRQ",
-          "diff_total": 185
-        },
-        {
-          "a": "E2_PRSQ",
-          "b": "E2_PSQR",
-          "diff_total": 69
-        },
-        {
-          "a": "E2_PRSQ",
-          "b": "E2_PSRQ",
-          "diff_total": 83
-        },
-        {
-          "a": "E2_PSQR",
-          "b": "E2_PSRQ",
-          "diff_total": 100
-        }
-      ],
-      "pairs_complete": true,
-      "pairs_source": "C:/Users/seal/AppData/Local/Temp/claude/C--Users-seal-Documents-GitHub-sealrun/f708d1ce-97b8-4985-b4ab-75b219fa060b/scratchpad/in/campaign2/quotient_E2.json",
-      "tickets": [
-        [
-          64,
-          64
-        ],
-        [
-          64,
-          65
-        ],
-        [
-          65,
-          64
-        ],
-        [
-          65,
-          65
-        ]
-      ],
-      "shape": [
-        "square",
-        1
-      ],
-      "r_dec": 3,
-      "noise": {
-        "rule": "a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are removed before the classes, per-chunk partitions and ore comparison; diff counts come from the campaign diff report when given",
-        "clean_chunks": [
-          "62,62",
-          "62,65",
-          "63,62",
-          "63,63",
-          "63,64",
-          "63,65",
-          "64,62",
-          "64,63",
-          "64,64",
-          "64,65",
-          "65,62",
-          "65,63",
-          "65,64",
-          "65,65",
-          "65,66",
-          "65,67",
-          "66,66",
-          "66,67",
-          "67,65",
-          "67,66",
-          "67,67"
-        ],
-        "noisy_chunks": [
-          "62,63",
-          "62,64",
-          "62,66",
-          "62,67",
-          "63,66",
-          "63,67",
-          "64,66",
-          "64,67",
-          "66,62",
-          "66,63",
-          "66,64",
-          "66,65",
-          "67,62",
-          "67,63",
-          "67,64"
-        ],
-        "noisy": [
-          {
-            "chunk": "62,63",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 36
-              }
-            ],
-            "max_diff_blocks": 36
-          },
-          {
-            "chunk": "62,64",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 37
-              }
-            ],
-            "max_diff_blocks": 37
-          },
-          {
-            "chunk": "62,66",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 40
-              }
-            ],
-            "max_diff_blocks": 40
-          },
-          {
-            "chunk": "62,67",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 55
-              }
-            ],
-            "max_diff_blocks": 55
-          },
-          {
-            "chunk": "63,66",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 15
-              }
-            ],
-            "max_diff_blocks": 15
-          },
-          {
-            "chunk": "63,67",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 44
-              }
-            ],
-            "max_diff_blocks": 44
-          },
-          {
-            "chunk": "64,66",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 4
-              }
-            ],
-            "max_diff_blocks": 4
-          },
-          {
-            "chunk": "64,67",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 13
-              }
-            ],
-            "max_diff_blocks": 13
-          },
-          {
-            "chunk": "66,62",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 2
-              }
-            ],
-            "max_diff_blocks": 2
-          },
-          {
-            "chunk": "66,63",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 2
-              }
-            ],
-            "max_diff_blocks": 2
-          },
-          {
-            "chunk": "66,64",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 30
-              }
-            ],
-            "max_diff_blocks": 30
-          },
-          {
-            "chunk": "66,65",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 2
-              }
-            ],
-            "max_diff_blocks": 2
-          },
-          {
-            "chunk": "67,62",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 2
-              }
-            ],
-            "max_diff_blocks": 2
-          },
-          {
-            "chunk": "67,63",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 20
-              }
-            ],
-            "max_diff_blocks": 20
-          },
-          {
-            "chunk": "67,64",
-            "repeat_pairs": [
-              {
-                "a": "E2_PQRS",
-                "b": "E2_PQRS_r2",
-                "order": "64,64;65,64;64,65;65,65",
-                "diff_blocks": 8
-              }
-            ],
-            "max_diff_blocks": 8
-          }
-        ],
-        "repeat_pairs_tested": 1
-      },
-      "n_orders": 6,
-      "n_classes": 6,
-      "bits_lost": 0.0,
-      "valid_partition": true,
-      "conflicted_orders": 0,
-      "conflicted": [],
-      "classes": [
-        {
-          "members": [
-            "64,64;65,64;64,65;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,64;65,64;65,65;64,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,64;64,65;65,64;65,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,64;64,65;65,65;65,64"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,64;65,65;65,64;64,65"
-          ],
-          "n_orders": 1
-        },
-        {
-          "members": [
-            "64,64;65,65;64,65;65,64"
-          ],
-          "n_orders": 1
-        }
-      ],
-      "per_chunk": {
-        "62,62": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,65;65,64;64,65"
-            ],
-            [
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "62,65": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ],
-            [
-              "64,64;64,65;65,65;65,64"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "63,62": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ],
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;65,64;65,65;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "63,63": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "63,64": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "63,65": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "64,62": {
-          "n_classes": 3,
-          "classes": [
-            [
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,65;64,65;65,64"
-            ],
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;65,64;65,65;64,65"
-            ],
-            [
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "64,63": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "64,64": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "64,65": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,62": {
-          "n_classes": 2,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64"
-            ],
-            [
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,63": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,64": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,65": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,66": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "65,67": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "66,66": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "66,67": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "67,65": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "67,66": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        },
-        "67,67": {
-          "n_classes": 1,
-          "classes": [
-            [
-              "64,64;64,65;65,64;65,65",
-              "64,64;64,65;65,65;65,64",
-              "64,64;65,64;64,65;65,65",
-              "64,64;65,64;65,65;64,65",
-              "64,64;65,65;64,65;65,64",
-              "64,64;65,65;65,64;64,65"
-            ]
-          ],
-          "conflicted_orders": 0
-        }
-      },
-      "per_chunk_refinement_violations": 0,
-      "all_chunks": {
-        "n_orders": 6,
-        "n_classes": 7,
-        "valid_partition": false,
-        "conflicted_orders": 1,
-        "conflicted": [
-          "64,64;65,64;64,65;65,65"
-        ]
-      },
-      "transitivity": {
-        "items": 7,
-        "distinct_ordered_triples": 210,
-        "violating_triples": 0,
-        "symmetry_violations": 0,
-        "diagonal_violations": 0,
-        "zero_vs_class_disagreements": 0
-      },
-      "predictions": [
-        {
-          "source": "sim",
-          "basis": "E2 r_dec=3",
-          "n_orders": 6,
-          "expected_orders": 6,
-          "predicted_classes": 5,
-          "measured_classes": 6,
-          "status": "refuted_lower_bound",
-          "cause": "noisy_chunks_excluded",
-          "match": false,
-          "partition_match": null
-        },
-        {
-          "source": "polytope",
-          "basis": "stamp family F, R=3",
-          "n_orders": 6,
-          "expected_orders": 24,
-          "predicted_classes": 4,
-          "measured_classes": 6,
-          "status": "refuted_lower_bound",
-          "cause": "noisy_chunks_excluded",
-          "match": false,
-          "partition_match": null
-        },
-        {
-          "source": "cameron",
-          "basis": "square spacing 1; Cameron gives no R",
-          "n_orders": 6,
-          "expected_orders": 24,
-          "predicted_classes": 4,
-          "measured_classes": 6,
-          "status": "refuted_lower_bound",
-          "cause": "noisy_chunks_excluded",
-          "match": false,
-          "partition_match": null
-        }
-      ],
-      "predictions_refs": {
-        "sim": "ab6d189:lab/results/research/quotient_predictions.json",
-        "polytope": "main 8a5f170:lab/results/research/quotient_polytope.json",
-        "polytope_R": 3
-      },
-      "ore_comparison": {
-        "status": "fewer_than_two_repeat_classes",
-        "grouping": "signature",
-        "grouping_reason": "classes: exact equality of all chunk hashes",
-        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
-        "keys_tested": 8,
-        "comparisons": [],
-        "insufficient_repeats": [
-          {
-            "members": [
-              "64,64;65,64;65,65;64,65"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "64,64;64,65;65,64;65,65"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "64,64;64,65;65,65;65,64"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "64,64;65,65;65,64;64,65"
-            ],
-            "worlds": 1
-          },
-          {
-            "members": [
-              "64,64;65,65;64,65;65,64"
-            ],
-            "worlds": 1
-          }
-        ],
-        "repeat_spread_max": 0
-      },
-      "when": "2026-11-01T08:51:47.420187+00:00"
-    },
-    {
       "experiment": "E1",
       "inputs": [
         {
@@ -3419,6 +2572,853 @@
         "repeat_spread_max": 0
       },
       "when": "2026-11-01T08:52:05.531454+00:00"
+    },
+    {
+      "experiment": "E2",
+      "inputs": [
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PQRS.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PQRS_r2.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PQSR.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PRQS.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PRSQ.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PSQR.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        },
+        {
+          "file": "C:\\Users\\seal\\AppData\\Local\\Temp\\claude\\C--Users-seal-Documents-GitHub-sealrun\\f708d1ce-97b8-4985-b4ab-75b219fa060b\\scratchpad\\in\\campaign2\\E2_PSRQ.json",
+          "hash_source": "per-chunk sha256 as written by ticket_world.py"
+        }
+      ],
+      "n_worlds": 7,
+      "pairs": [
+        {
+          "a": "E2_PQRS",
+          "b": "E2_PQRS_r2",
+          "diff_total": 310
+        },
+        {
+          "a": "E2_PQRS",
+          "b": "E2_PQSR",
+          "diff_total": 126
+        },
+        {
+          "a": "E2_PQRS",
+          "b": "E2_PRQS",
+          "diff_total": 184
+        },
+        {
+          "a": "E2_PQRS",
+          "b": "E2_PRSQ",
+          "diff_total": 84
+        },
+        {
+          "a": "E2_PQRS",
+          "b": "E2_PSQR",
+          "diff_total": 99
+        },
+        {
+          "a": "E2_PQRS",
+          "b": "E2_PSRQ",
+          "diff_total": 1
+        },
+        {
+          "a": "E2_PQRS_r2",
+          "b": "E2_PQSR",
+          "diff_total": 314
+        },
+        {
+          "a": "E2_PQRS_r2",
+          "b": "E2_PRQS",
+          "diff_total": 222
+        },
+        {
+          "a": "E2_PQRS_r2",
+          "b": "E2_PRSQ",
+          "diff_total": 276
+        },
+        {
+          "a": "E2_PQRS_r2",
+          "b": "E2_PSQR",
+          "diff_total": 287
+        },
+        {
+          "a": "E2_PQRS_r2",
+          "b": "E2_PSRQ",
+          "diff_total": 311
+        },
+        {
+          "a": "E2_PQSR",
+          "b": "E2_PRQS",
+          "diff_total": 108
+        },
+        {
+          "a": "E2_PQSR",
+          "b": "E2_PRSQ",
+          "diff_total": 68
+        },
+        {
+          "a": "E2_PQSR",
+          "b": "E2_PSQR",
+          "diff_total": 111
+        },
+        {
+          "a": "E2_PQSR",
+          "b": "E2_PSRQ",
+          "diff_total": 125
+        },
+        {
+          "a": "E2_PRQS",
+          "b": "E2_PRSQ",
+          "diff_total": 150
+        },
+        {
+          "a": "E2_PRQS",
+          "b": "E2_PSQR",
+          "diff_total": 161
+        },
+        {
+          "a": "E2_PRQS",
+          "b": "E2_PSRQ",
+          "diff_total": 185
+        },
+        {
+          "a": "E2_PRSQ",
+          "b": "E2_PSQR",
+          "diff_total": 69
+        },
+        {
+          "a": "E2_PRSQ",
+          "b": "E2_PSRQ",
+          "diff_total": 83
+        },
+        {
+          "a": "E2_PSQR",
+          "b": "E2_PSRQ",
+          "diff_total": 100
+        }
+      ],
+      "pairs_complete": true,
+      "pairs_source": "C:/Users/seal/AppData/Local/Temp/claude/C--Users-seal-Documents-GitHub-sealrun/f708d1ce-97b8-4985-b4ab-75b219fa060b/scratchpad/in/campaign2/quotient_E2.json",
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "shape": [
+        "square",
+        1
+      ],
+      "r_dec": 3,
+      "noise": {
+        "rule": "a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are removed before the classes, per-chunk partitions and ore comparison; diff counts come from the campaign diff report when given",
+        "clean_chunks": [
+          "62,62",
+          "62,65",
+          "63,62",
+          "63,63",
+          "63,64",
+          "63,65",
+          "64,62",
+          "64,63",
+          "64,64",
+          "64,65",
+          "65,62",
+          "65,63",
+          "65,64",
+          "65,65",
+          "65,66",
+          "65,67",
+          "66,66",
+          "66,67",
+          "67,65",
+          "67,66",
+          "67,67"
+        ],
+        "noisy_chunks": [
+          "62,63",
+          "62,64",
+          "62,66",
+          "62,67",
+          "63,66",
+          "63,67",
+          "64,66",
+          "64,67",
+          "66,62",
+          "66,63",
+          "66,64",
+          "66,65",
+          "67,62",
+          "67,63",
+          "67,64"
+        ],
+        "noisy": [
+          {
+            "chunk": "62,63",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 36
+              }
+            ],
+            "max_diff_blocks": 36
+          },
+          {
+            "chunk": "62,64",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 37
+              }
+            ],
+            "max_diff_blocks": 37
+          },
+          {
+            "chunk": "62,66",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 40
+              }
+            ],
+            "max_diff_blocks": 40
+          },
+          {
+            "chunk": "62,67",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 55
+              }
+            ],
+            "max_diff_blocks": 55
+          },
+          {
+            "chunk": "63,66",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 15
+              }
+            ],
+            "max_diff_blocks": 15
+          },
+          {
+            "chunk": "63,67",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 44
+              }
+            ],
+            "max_diff_blocks": 44
+          },
+          {
+            "chunk": "64,66",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 4
+              }
+            ],
+            "max_diff_blocks": 4
+          },
+          {
+            "chunk": "64,67",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 13
+              }
+            ],
+            "max_diff_blocks": 13
+          },
+          {
+            "chunk": "66,62",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "66,63",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "66,64",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 30
+              }
+            ],
+            "max_diff_blocks": 30
+          },
+          {
+            "chunk": "66,65",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "67,62",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 2
+              }
+            ],
+            "max_diff_blocks": 2
+          },
+          {
+            "chunk": "67,63",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 20
+              }
+            ],
+            "max_diff_blocks": 20
+          },
+          {
+            "chunk": "67,64",
+            "repeat_pairs": [
+              {
+                "a": "E2_PQRS",
+                "b": "E2_PQRS_r2",
+                "order": "64,64;65,64;64,65;65,65",
+                "diff_blocks": 8
+              }
+            ],
+            "max_diff_blocks": 8
+          }
+        ],
+        "repeat_pairs_tested": 1
+      },
+      "n_orders": 6,
+      "n_classes": 6,
+      "bits_lost": 0.0,
+      "valid_partition": true,
+      "conflicted_orders": 0,
+      "conflicted": [],
+      "classes": [
+        {
+          "members": [
+            "64,64;65,64;64,65;65,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,64;65,64;65,65;64,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,64;64,65;65,64;65,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,64;64,65;65,65;65,64"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,64;65,65;65,64;64,65"
+          ],
+          "n_orders": 1
+        },
+        {
+          "members": [
+            "64,64;65,65;64,65;65,64"
+          ],
+          "n_orders": 1
+        }
+      ],
+      "per_chunk": {
+        "62,62": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,65;65,64;64,65"
+            ],
+            [
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "62,65": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ],
+            [
+              "64,64;64,65;65,65;65,64"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,62": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ],
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;65,64;65,65;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,63": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "63,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,62": {
+          "n_classes": 3,
+          "classes": [
+            [
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,65;64,65;65,64"
+            ],
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;65,64;65,65;64,65"
+            ],
+            [
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,63": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "64,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,62": {
+          "n_classes": 2,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64"
+            ],
+            [
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,63": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,64": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,66": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "65,67": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "66,66": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "66,67": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "67,65": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "67,66": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        },
+        "67,67": {
+          "n_classes": 1,
+          "classes": [
+            [
+              "64,64;64,65;65,64;65,65",
+              "64,64;64,65;65,65;65,64",
+              "64,64;65,64;64,65;65,65",
+              "64,64;65,64;65,65;64,65",
+              "64,64;65,65;64,65;65,64",
+              "64,64;65,65;65,64;64,65"
+            ]
+          ],
+          "conflicted_orders": 0
+        }
+      },
+      "per_chunk_refinement_violations": 0,
+      "all_chunks": {
+        "n_orders": 6,
+        "n_classes": 7,
+        "valid_partition": false,
+        "conflicted_orders": 1,
+        "conflicted": [
+          "64,64;65,64;64,65;65,65"
+        ]
+      },
+      "transitivity": {
+        "items": 7,
+        "distinct_ordered_triples": 210,
+        "violating_triples": 0,
+        "symmetry_violations": 0,
+        "diagonal_violations": 0,
+        "zero_vs_class_disagreements": 0
+      },
+      "predictions": [
+        {
+          "source": "sim",
+          "basis": "E2 r_dec=3",
+          "n_orders": 6,
+          "expected_orders": 6,
+          "predicted_classes": 5,
+          "measured_classes": 6,
+          "status": "refuted_lower_bound",
+          "cause": "noisy_chunks_excluded",
+          "match": false,
+          "partition_match": null
+        },
+        {
+          "source": "polytope",
+          "basis": "stamp family F, R=3",
+          "n_orders": 6,
+          "expected_orders": 24,
+          "predicted_classes": 4,
+          "measured_classes": 6,
+          "status": "refuted_lower_bound",
+          "cause": "noisy_chunks_excluded",
+          "match": false,
+          "partition_match": null
+        },
+        {
+          "source": "cameron",
+          "basis": "square spacing 1; Cameron gives no R",
+          "n_orders": 6,
+          "expected_orders": 24,
+          "predicted_classes": 4,
+          "measured_classes": 6,
+          "status": "refuted_lower_bound",
+          "cause": "noisy_chunks_excluded",
+          "match": false,
+          "partition_match": null
+        }
+      ],
+      "predictions_refs": {
+        "sim": "ab6d189:lab/results/research/quotient_predictions.json",
+        "polytope": "main 8a5f170:lab/results/research/quotient_polytope.json",
+        "polytope_R": 3
+      },
+      "ore_comparison": {
+        "status": "fewer_than_two_repeat_classes",
+        "grouping": "signature",
+        "grouping_reason": "classes: exact equality of all chunk hashes",
+        "method": "plain-Python percentile bootstrap, random.choices, 10000 resamples, seed 20261101; not mlm runs_compare",
+        "keys_tested": 8,
+        "comparisons": [],
+        "insufficient_repeats": [
+          {
+            "members": [
+              "64,64;65,64;65,65;64,65"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "64,64;64,65;65,64;65,65"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "64,64;64,65;65,65;65,64"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "64,64;65,65;65,64;64,65"
+            ],
+            "worlds": 1
+          },
+          {
+            "members": [
+              "64,64;65,65;64,65;65,64"
+            ],
+            "worlds": 1
+          }
+        ],
+        "repeat_spread_max": 0
+      },
+      "when": "2026-11-01T08:52:15.137348+00:00"
     }
   ]
 }
