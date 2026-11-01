@@ -5,6 +5,7 @@ use std::collections::{BTreeMap, BTreeSet, BinaryHeap, VecDeque};
 use std::cmp::Reverse;
 
 pub const SWIM: u64 = 10;
+pub const NODE_CAP: usize = 2_000_000;
 const TUNNEL_EXTRA: u64 = 5;
 const DIRS: [(i64, i64); 4] = [(-1, 0), (1, 0), (0, -1), (0, 1)];
 
@@ -67,6 +68,9 @@ pub fn plan_real(grid: &Grid, start: State, done: impl Fn(&State) -> bool) -> (O
             path.reverse();
             return (Some(d), path, expanded);
         }
+        if expanded == NODE_CAP {
+            return (None, Vec::new(), expanded);
+        }
         expanded += 1;
         for (m, n, w) in moves(grid, &s) {
             let nd = d + w;
@@ -80,6 +84,7 @@ pub fn plan_real(grid: &Grid, start: State, done: impl Fn(&State) -> bool) -> (O
 }
 
 pub fn bfs_real(grid: &Grid, start: State, done: impl Fn(&State) -> bool, max_nodes: usize) -> (Option<u64>, Vec<Step>, usize) {
+    let max_nodes = max_nodes.min(NODE_CAP);
     let mut seen = BTreeSet::from([start]);
     let mut parent: BTreeMap<State, (State, Step, u64)> = BTreeMap::new();
     let mut frontier = VecDeque::from([start]);

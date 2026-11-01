@@ -2,7 +2,7 @@ mod common;
 
 use common::start_finish;
 use sealrun_route::metric::{Tool, WALK_TICKS};
-use sealrun_route::realmodel::{bfs_real, moves, plan_real, Step};
+use sealrun_route::realmodel::{bfs_real, moves, plan_real, Step, NODE_CAP};
 use sealrun_route::state::{Inv, Move, State};
 use sealrun_world::grid::{Grid, Tile};
 use std::path::Path;
@@ -25,6 +25,18 @@ fn replay(grid: &Grid, start: State, route: &[Step], done: impl Fn(&State) -> bo
 
 fn opt(v: Option<u64>) -> String {
     v.map_or("null".to_string(), |x| x.to_string())
+}
+
+fn cap_hit(ticks: Option<u64>, nodes: usize) -> bool {
+    ticks.is_none() && nodes >= NODE_CAP
+}
+
+fn cell(ticks: Option<u64>, nodes: usize) -> String {
+    if cap_hit(ticks, nodes) {
+        "cap hit".to_string()
+    } else {
+        opt(ticks)
+    }
 }
 
 #[test]
@@ -80,6 +92,8 @@ fn race_on_seed7_spawn_grid() {
     let mut bfs_routed = [0usize; 3];
     let mut bfs_nodes = [0usize; 3];
     let mut bfs_ms = [0f64; 3];
+    let mut plan_caps = 0usize;
+    let mut bfs_caps = [0usize; 3];
 
     println!("start kind  x  y | plan ticks nodes ms | bfs1e4 ticks nodes ms | bfs1e5 ticks nodes ms | bfs1e6 ticks nodes ms");
     for &(pos, kind) in &starts {
@@ -90,6 +104,8 @@ fn race_on_seed7_spawn_grid() {
         if let Some(ticks) = pt {
             assert_eq!(replay(&grid, start, &proute, done), ticks, "plan route cost at {pos:?}");
         }
+        let pcap = cap_hit(pt, pn);
+        plan_caps += pcap as usize;
         plan_routed += pt.is_some() as usize;
         plan_nodes += pn;
         plan_ms += pms;
@@ -104,30 +120,34 @@ fn race_on_seed7_spawn_grid() {
                 assert_eq!(replay(&grid, start, &broute, done), ticks, "bfs route cost at {pos:?}");
             }
             if let Some(q) = bt {
-                assert!(pt.is_some(), "bfs routed {pos:?} at budget {budget} but plan_real did not");
-                let p = pt.unwrap();
-                assert!(p <= q, "plan ticks {p} > bfs ticks {q} at {pos:?} budget {budget}: bug");
+                if let Some(p) = pt {
+                    assert!(p <= q, "plan ticks {p} > bfs ticks {q} at {pos:?} budget {budget}: bug");
+                } else {
+                    assert!(pcap, "bfs routed {pos:?} at budget {budget} but plan_real exhausted without a route");
+                }
             }
             bfs_routed[i] += bt.is_some() as usize;
+            bfs_caps[i] += cap_hit(bt, bn) as usize;
             bfs_nodes[i] += bn;
             bfs_ms[i] += ms;
-            cells.push(format!("{:>6} {:>6} {:>8.1}", opt(bt), bn, ms));
+            cells.push(format!("{:>7} {:>7} {:>8.1}", cell(bt, bn), bn, ms));
             bfs_json.push(format!(
-                "{{\"budget\":{budget},\"ticks\":{},\"nodes\":{bn},\"ms\":{ms:.3}}}",
-                opt(bt)
+                "{{\"budget\":{budget},\"ticks\":{},\"nodes\":{bn},\"cap_hit\":{},\"ms\":{ms:.3}}}",
+                opt(bt),
+                cap_hit(bt, bn)
             ));
         }
         println!(
-            "{kind:<6} {:>3} {:>3} | {:>6} {:>6} {:>8.1} | {}",
+            "{kind:<6} {:>3} {:>3} | {:>7} {:>7} {:>8.1} | {}",
             pos.0,
             pos.1,
-            opt(pt),
+            cell(pt, pn),
             pn,
             pms,
             cells.join(" | ")
         );
         json_rows.push(format!(
-            "{{\"kind\":\"{kind}\",\"x\":{},\"y\":{},\"plan\":{{\"ticks\":{},\"nodes\":{pn},\"ms\":{pms:.3}}},\"bfs\":[{}]}}",
+            "{{\"kind\":\"{kind}\",\"x\":{},\"y\":{},\"plan\":{{\"ticks\":{},\"nodes\":{pn},\"cap_hit\":{pcap},\"ms\":{pms:.3}}},\"bfs\":[{}]}}",
             pos.0,
             pos.1,
             opt(pt),
@@ -140,13 +160,13 @@ fn race_on_seed7_spawn_grid() {
         .enumerate()
         .map(|(i, b)| {
             format!(
-                "{{\"budget\":{b},\"routed\":{},\"nodes\":{},\"ms\":{:.3}}}",
-                bfs_routed[i], bfs_nodes[i], bfs_ms[i]
+                "{{\"budget\":{b},\"routed\":{},\"cap_hits\":{},\"nodes\":{},\"ms\":{:.3}}}",
+                bfs_routed[i], bfs_caps[i], bfs_nodes[i], bfs_ms[i]
             )
         })
         .collect();
     let json = format!(
-        "{{\"grid\":\"crates/route/tests/fixtures/rs_seed7_spawn.grid\",\"goal\":\"iron_ore >= 1\",\"starts\":{},\"plan\":{{\"routed\":{plan_routed},\"nodes\":{plan_nodes},\"ms\":{plan_ms:.3}}},\"bfs\":[{}],\"rows\":[{}]}}\n",
+        "{{\"grid\":\"crates/route/tests/fixtures/rs_seed7_spawn.grid\",\"goal\":\"iron_ore >= 1\",\"node_cap\":{NODE_CAP},\"starts\":{},\"plan\":{{\"routed\":{plan_routed},\"cap_hits\":{plan_caps},\"nodes\":{plan_nodes},\"ms\":{plan_ms:.3}}},\"bfs\":[{}],\"rows\":[{}]}}\n",
         starts.len(),
         bfs_summary.join(","),
         json_rows.join(",")
@@ -155,8 +175,12 @@ fn race_on_seed7_spawn_grid() {
     std::fs::create_dir_all(&out).expect("results dir");
     std::fs::write(out.join("race_realmodel.json"), json).expect("write race json");
 
-    println!("starts {} | plan routed {plan_routed} nodes {plan_nodes} ms {plan_ms:.1}", starts.len());
+    println!("node cap {NODE_CAP}");
+    println!("starts {} | plan routed {plan_routed} cap hits {plan_caps} nodes {plan_nodes} ms {plan_ms:.1}", starts.len());
     for (i, b) in BUDGETS.iter().enumerate() {
-        println!("bfs {b}: routed {} nodes {} ms {:.1}", bfs_routed[i], bfs_nodes[i], bfs_ms[i]);
+        println!(
+            "bfs {b}: routed {} cap hits {} nodes {} ms {:.1}",
+            bfs_routed[i], bfs_caps[i], bfs_nodes[i], bfs_ms[i]
+        );
     }
 }
