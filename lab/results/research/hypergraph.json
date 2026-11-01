@@ -1,0 +1,1421 @@
+{
+  "law": "chunk sha depends on the order only through min_sigma S(c); S_hat(c) = smallest S whose first-of-S partition equals the sha partition",
+  "runs": [
+    {
+      "experiment": "cal",
+      "campaign_sha": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1",
+      "worlds": [
+        "lab/results/research/worlds/cal_O1_r1.json",
+        "lab/results/research/worlds/cal_O1_r2.json",
+        "lab/results/research/worlds/cal_O2_r1.json",
+        "lab/results/research/worlds/cal_O2_r2.json"
+      ],
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          64
+        ],
+        [
+          65,
+          65
+        ]
+      ],
+      "repeat_control": {
+        "void": true,
+        "mismatches": [
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                65,
+                64
+              ],
+              [
+                64,
+                65
+              ],
+              [
+                65,
+                65
+              ]
+            ],
+            "chunk": "64,65",
+            "shas": [
+              "8727a4b546ab50bae8d98e570f0a7fb937142f70fb564c6028aa340e24dcab9f",
+              "acc4fe630e8737ae36bb00dc279ff5fee2e545e822887a948a7930e9d349a52a"
+            ]
+          }
+        ]
+      },
+      "when": "2026-11-01T14:14:09.039483+05:30"
+    },
+    {
+      "experiment": "E1",
+      "campaign_sha": "8c870e7ae2e720daf4f80c4dc500ff4eb1490dd1",
+      "worlds": [
+        "lab/results/research/worlds/E1_ABC.json",
+        "lab/results/research/worlds/E1_ABC_r2.json",
+        "lab/results/research/worlds/E1_ACB.json",
+        "lab/results/research/worlds/E1_BAC.json",
+        "lab/results/research/worlds/E1_BCA.json",
+        "lab/results/research/worlds/E1_CAB.json",
+        "lab/results/research/worlds/E1_CBA.json",
+        "lab/results/research/worlds/E1_CBA_r2.json"
+      ],
+      "tickets": [
+        [
+          64,
+          64
+        ],
+        [
+          69,
+          64
+        ],
+        [
+          74,
+          64
+        ]
+      ],
+      "repeat_control": {
+        "void": true,
+        "mismatches": [
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "62,62",
+            "shas": [
+              "227cd5c77dd50baac3c0dba70d6f95af6431cd1c46aa21a8c88427b1734f9c54",
+              "36aed47899955ec5595eface7d301c64e4bef3be5e092f0ce5f34ef2fdf3fa2f"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "62,63",
+            "shas": [
+              "12f656ebc89c720e9b178489b6339cd1efb1a598bca39b6a33dea1dd0562d758",
+              "d7a46d8dc2cbce5cf8b55f131dac3a2f029a03ee84ff62f68c8140c81e33be12"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "62,64",
+            "shas": [
+              "611f0752ea1edd1d31674327af57754b951846a5496da4169f1e230c95d5561c",
+              "8413f94a9002b03d4d6d0edc71cecc0e05f913d5b31f3fb70646599fe35466a0"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "63,62",
+            "shas": [
+              "353c93debb7247fc235f7768c2bbbab78250f312ce6b1348ead104cee46acb43",
+              "478cad2825a4c890ea708c2ffe8bee68ef4f2c14fb2e6a96530d42dbece0f082"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "63,66",
+            "shas": [
+              "b5368ae1954418b62c472d8b8e88ccd527fc2ac32131d485f608f0b8e6cebdfc",
+              "dbe6d91f036f8e0785ae1ffe9dc72335929e29abc119aaaa726606ff5567a882"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "64,62",
+            "shas": [
+              "11e17cdbec96b597bb78da3b503ce61572c88d4451abdbeee0abb7e2abdf9c1a",
+              "137dc20a4e4959450e215ef8f9f931fd89f93aaa70ad0159359ddd7462984a05"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "64,65",
+            "shas": [
+              "8727a4b546ab50bae8d98e570f0a7fb937142f70fb564c6028aa340e24dcab9f",
+              "acc4fe630e8737ae36bb00dc279ff5fee2e545e822887a948a7930e9d349a52a"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "66,62",
+            "shas": [
+              "9f8a5571e114b221ffb4dc7ce28318b97d77502ec1d46e0ab5c6b8e07e79f9bd",
+              "f1df692295ac3b932aae03da56efd0cb66fbd87073aa00791d02d8ec59ed298d"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "66,63",
+            "shas": [
+              "251580b4f24d76301c3462a69305e50904890a333087c026a9ef403fa6602905",
+              "ecb704e337dd1b3a58344385767a6f884987fdd91e3ce2dd3bea3d8e1e5b1af7"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "66,64",
+            "shas": [
+              "104dd81c0d2e18ed86c86ded3cfc3f50934fe5f76895a06e1dc7e329406bf858",
+              "b674152e6e73bc618edab6f212c1dada124a980f2e81a65fe97743bdd76a86c9"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "66,65",
+            "shas": [
+              "ba4e87cc7c722fe9c4e3ae4a01e78908f8b2ac2d84bfd92f93707e97b0ca47fd",
+              "cab1ecc90cae11f1392e109e3c5752907dc1f06e1c0cac2735849a3447912419"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "67,62",
+            "shas": [
+              "1be4efe6ed8f10a41f7dbc7edd03f5e802924eaedc54b44bdf8a8dfbade36101",
+              "a0c175c54a0d49209f6b6a37d6b79e22cabb19c835a40ea01d75a5da0f9b69fb"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "67,63",
+            "shas": [
+              "9455f3b287bc5013296301c48f6b079571549a46824e8aef691cc06e778fa70a",
+              "dace6f3f761cb26973497958bf5eba510f7f0a4cc1dcdefbb6be9fc4943df446"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "67,64",
+            "shas": [
+              "09ced50b3d8fb1d6315deeb724a855345a21fc295927329437482ff358ae6d56",
+              "c95db82e69bc1c61847ec0970236284cbcc887024668fd78d5c957a12d6ed00d"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "68,62",
+            "shas": [
+              "31dccbec19f0debe4df6c5b7af17f61fc857aed0fa096dfdaeb85c178564a8f7",
+              "b1437f3190a3ffeb2e2f050e9b7cf333a5c08058f4fde919e27e52f18b7cf476"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "69,62",
+            "shas": [
+              "32f715cb6757a52178a671708f9a25d88d186eb6a7809e460f160b2fd514a141",
+              "c761d43ee0d85686a3a3d89dd206cffdc08cedcd1f1bdd77bf9de423aa5457d5"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "69,63",
+            "shas": [
+              "1db6563ce2ef3cbc4f662465fbdc8df7b2eddc0c0531c20f0fd43df78b5dcac8",
+              "87aedf4f1f258f44fccc820791c3a9a18eb23e2028b2c9a043c6784781d160b4"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "69,64",
+            "shas": [
+              "4f6ae5c7275d11d822871aa68b9b48a99e2846c5cc8f9a66a81dbdfca01db276",
+              "dfcdeff70b1978a28d411efe1e99f48c28e6852014d6f7f83e5361f318ae99b1"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "70,64",
+            "shas": [
+              "dc71c821ed4f47eb47be65a154d45283ca054aad2134732f14d2f28bacf0138f",
+              "f1be6c106e2f9677103e2356f31bbb58b5f5e80771e7c8cbb7df8b735179b418"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "70,66",
+            "shas": [
+              "04649a689611d53c231c5cfbbdef48062225e0cf22b273d18516ce419fc62059",
+              "c4fa6695d4ceb465bbe2685a4a8c3aea01d2a21631611a4d6a5c53c20f0001c4"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "71,62",
+            "shas": [
+              "82cf6c7b5f80d3231e566883c13ea7a1c7738328e12431669e68b2d354809834",
+              "f0de0cbe16b5a87f92cf22fb110c5f13386c50f0a0261f7c8d13e139af076bd9"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "71,65",
+            "shas": [
+              "6ecb0bafb761148ff5937239cf90fa7813e913d0458269a7a921543bc4573ab1",
+              "a6aa62df2a2545ff11bab90bc9c75d56d7a8f77d4b1f2bdcfb04b74277790038"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "71,66",
+            "shas": [
+              "6a847dfd0598c11a6237314cdf3f75937f200209980d771c9e77726758442400",
+              "9fc71ef9ae9662f78d56d34abaafd51d98186a205119f82e3c38e3f39395f107"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "72,64",
+            "shas": [
+              "ba9f0cb91def7d092dbe2215d57f2bf58f376b3476ee0ca47dff78acddb1c30c",
+              "beb10a4857a819b68ce12d68dd5a5fe47d01f91108cf3959b065106df1ece8d7"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "72,65",
+            "shas": [
+              "11446718a9fe5f1d81be0ad6221fb9339ac753a311017057e4e6eadc760a6610",
+              "561505cf1fbd9bbcb38e74ed1a6a3475df32ba8a57ac25ba3df882ddf1e52406"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "73,65",
+            "shas": [
+              "85a468e1b62542a6814335888d2aae2d591faa7ca1d453b5658406e42db6d885",
+              "a8eea6105c970d3ef5a35f8899ea9089094fd921e8d4cf682cce893c9cfcfb98"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "74,62",
+            "shas": [
+              "3b16689129ae0a7e188ecc6f634554a3f60a438b3cf62de80792175ba81768bf",
+              "eaac2d62b55aeb7afcd0e4f18ed64528525eccb25188fd9f3d1ce4680d918300"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "74,63",
+            "shas": [
+              "cf3c7384e9034ce80b6b69badca57588e3fbeb630889e2d23939f54efe8f98ca",
+              "e00e8b0ea60b1485cad77823009cee4541e8ab3b2c5a1d9948beb90a1e0a0d0a"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "74,65",
+            "shas": [
+              "32fe5f9f6cb81d5a57a85906188f84adcdf95ca20effb809ceebb0e775462e14",
+              "37bf5156b90b2ff02bec78c5577af32984170541243e0d57621407b4a4c86999"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "75,65",
+            "shas": [
+              "463bc1129c65df25444137ee138557dc453160321053b343c327e0485941d523",
+              "99c31e531bfb8c81a6425b7627d949d2dd091a05e758f563cdef3e7670da7a81"
+            ]
+          },
+          {
+            "order": [
+              [
+                64,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                74,
+                64
+              ]
+            ],
+            "chunk": "76,66",
+            "shas": [
+              "6c87ac623d13697d3d86f14c29d6932bb973614a53878a8267c8549bd96e470f",
+              "72b809222ee307ab07284856470b713a960ddb610eab80180f2bae4ae33dbcad"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "62,62",
+            "shas": [
+              "227cd5c77dd50baac3c0dba70d6f95af6431cd1c46aa21a8c88427b1734f9c54",
+              "62a8f37729f4b2131b0701f78d0d425f0eac075f66265ff8a40419b80b6204f8"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "62,66",
+            "shas": [
+              "67115b7fa32e1867d4bd73a77c63fb0a7beacfa95ad72f90f937333a10b4bd0c",
+              "8c392f1bdb7f8096717b050c35acffd31f16fc5fdb1001a916983ede429bce6c"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "63,66",
+            "shas": [
+              "2798c280c1cdbd82913a88e1610c569b6792e13f6e78cb5a00d442635add6813",
+              "dbe6d91f036f8e0785ae1ffe9dc72335929e29abc119aaaa726606ff5567a882"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "64,62",
+            "shas": [
+              "11e17cdbec96b597bb78da3b503ce61572c88d4451abdbeee0abb7e2abdf9c1a",
+              "d4f98319af262d9da05bfc4c495d0db10d29dd28698abeedd72bbce1cb1afab1"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "65,62",
+            "shas": [
+              "120bda04c5d2fddc65618244d7b10512fe453a189501e58682670d2b2f6e4e5f",
+              "bbf7a2a2f0b0e7b9423790c3ceab6c7ce123475b668b423992ab60b1edefb8cc"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "66,62",
+            "shas": [
+              "e0c3ffea8300aab7c405811b8f5b3e73357f28f6eccc78904d2d85721b0cdbf9",
+              "e9ac3e1c6e32d65866f26f357d26be3ce741afa71b3bfd6da5468f7f7a04ab13"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "66,63",
+            "shas": [
+              "0677fef6c51fa0517539732f108ae981002fcb70d0e0b362f68188600b02dc82",
+              "3299ec3467d033c950001c5e7a3db393440408d85c9d1cdc11fadf08c899f80c"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "67,62",
+            "shas": [
+              "2a8f87df94562db13c70843460a3ed15ff0ef457557c3c9b06bd784c638d2b1a",
+              "bce0d6cb219f56faf31d814760affaba9bd933e6afe937bd55d004c03b8e55fc"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "67,63",
+            "shas": [
+              "7ec10c464cfdf72b55761819c8e7a5890db6bd5b51093542abece48f6c0f99e2",
+              "f54c8a7942a8179cf7882a44cf39d14cd7dcf83effc837b3495087de1f4b40e7"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "67,64",
+            "shas": [
+              "0847347e23c62fe70f70a457d02729f7d2537fe1dc6b39656e4ed64b38ecb104",
+              "f0c791f1ae3296120cb7ab49c5adb2e8957d4b96c82da08d5c690287653a5a9f"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "68,62",
+            "shas": [
+              "1382c0762ce1045d927bfcd087cb27c405f272fe98faa58bffea88d51f59d4e4",
+              "824576e63bcc03d08e6dca918ed2e01fde6b1f0bcffe172835b336d7be389f57"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "69,62",
+            "shas": [
+              "32f715cb6757a52178a671708f9a25d88d186eb6a7809e460f160b2fd514a141",
+              "40134d4f44a3bad744e42d4db80052779558987b59f735555fddb57f0177219f"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "69,63",
+            "shas": [
+              "0265243845a6df1b49825c08d901dd6e60aec93b10990ad922f886bf897473aa",
+              "3e3ded63e19ccadfc8d982eb0baeda6900afa67e6f375707cc61f9b285b68925"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "69,64",
+            "shas": [
+              "4f6ae5c7275d11d822871aa68b9b48a99e2846c5cc8f9a66a81dbdfca01db276",
+              "dfcdeff70b1978a28d411efe1e99f48c28e6852014d6f7f83e5361f318ae99b1"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "70,64",
+            "shas": [
+              "8ecb962b8960701b072ed0aa4c9aed517d9c921b8127d1e09e34c73b821e055c",
+              "9c93a6434096c89d7b613e663e7336ef0adffa4ae043376b6e43b6c1c4c11893"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "71,62",
+            "shas": [
+              "731bd07ed951876aed1172c283af7196dc7bcbf008b25522fee07351eac64df8",
+              "f68f5c5323b04a9967ff35523a94c7ebb49c72845f6d4452299ebf5104b26faf"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "71,63",
+            "shas": [
+              "0fb0d4e5ecbdcded228bf59dbd92a8a61e8e668771fcf83fbf9c957120900c21",
+              "26b603473f8daeebaba16b9f1f9e44939ae33353905e19a428d70c73aef1c006"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "72,62",
+            "shas": [
+              "723acd115f505a7f9f2a601ad8ae1dc0d677c080ab88d463e40ec821926a4d44",
+              "ad8e4539c65eeadd823e9d55397501a2a6c602b6a54283110446fabe9b731a94"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "72,63",
+            "shas": [
+              "125608370653134d2e8daf6102e20b130f3db388521b0b54585edbb9ba06c30a",
+              "9b1533487ca315d1178f96b18cdfe3b97aeb64373590a16bf66015cf62a7a490"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "72,64",
+            "shas": [
+              "0f0cce2f90657c96141be36a4169eaf6c9fea25ea8cd043530dc1e9d9787973a",
+              "648598ffa825a7fde6749d0680a5fa6acf655ba4284ff9d0c6c196543a6367ea"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "72,66",
+            "shas": [
+              "0c332b54f8e033861608a6e07afa2633ac79af248e79b9893e30de59cefae825",
+              "cb387a3291ed4e757de0e932a1ba5fb66c007cd544289c9b4744a52f2e27b122"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "73,62",
+            "shas": [
+              "293d670fdaf167a4d52c7fcbc998aba210a5049e908eca86fc885d67e94791c7",
+              "5358e6136bf379d839b9e1236656c6de1487fc54b573f9a3bca2407f69e2b47a"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "73,63",
+            "shas": [
+              "2aa2d47ab9c7b877c2f8347b2febc31c6b60f39a54990e47e9b1aeab81140d76",
+              "3b621ac0c938a234ad040b707625ba4718c24f6df27991b9c1ccd72e5cb7af63"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "73,65",
+            "shas": [
+              "0659fe9bd009e4e3c43d9a9a6ade6f2461c7ae61a8aab2bc6dd935268ff3b64e",
+              "476e4c7612ea5779cd4d7a8c9043e1e833734ebbdc7b1e5a710e889f34e12189"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "73,66",
+            "shas": [
+              "bce2dfaf7be2c58513ccbf502a932c270c4372530a5f6b68739aa3eac3de4533",
+              "e5091067148f0af3d42851bb981a80ad2bcf31b90acb07e45a91005194e059b4"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "74,62",
+            "shas": [
+              "0f8701ab8f6e26a7e1a624bf5ad1bc7540273feeae5dd70c1664813601854fa0",
+              "eaac2d62b55aeb7afcd0e4f18ed64528525eccb25188fd9f3d1ce4680d918300"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "74,63",
+            "shas": [
+              "8640b48e245d917184c4f008d40e4140ebae2bf4b621f6065f702bcbb75c5003",
+              "e00e8b0ea60b1485cad77823009cee4541e8ab3b2c5a1d9948beb90a1e0a0d0a"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "74,66",
+            "shas": [
+              "736f30b7894f1a6156793067fef60c207e0c8495a73e3f0fecf842c012ee6e9f",
+              "d35c1334e507e53674959de0d717d11b379d61c586bc24b655f6c5d44c68a049"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "75,62",
+            "shas": [
+              "081653f0a7f45b82ef84d5c07956a1f90621c1e1caabf6959c4a0ca4c9abd38f",
+              "fd4a4c28470984337344f0f75b47ce32476f985bebefbcfd00b5be7c0760de64"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "75,66",
+            "shas": [
+              "81c42549c9a4956032a7c8208e267046df036b3f840491265e7edf1c73a1ca91",
+              "e353308aa496f97ea9b73730e887e60177c313d5541747f9b26466dc23764bbd"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "76,62",
+            "shas": [
+              "473b2a23895d072224c264ec508c5c079a0a151057194b28351438424ffe41ea",
+              "a3dc7485f4629aa6fbaca3453047a81214a0a08ee219661bdc96c3fd584eac23"
+            ]
+          },
+          {
+            "order": [
+              [
+                74,
+                64
+              ],
+              [
+                69,
+                64
+              ],
+              [
+                64,
+                64
+              ]
+            ],
+            "chunk": "76,63",
+            "shas": [
+              "36c0c3bd932cc75ca85a3f56e1f607c0bfddad0a589772c159956d4057ff54d1",
+              "3cdcc1d2a460a81ee07875fae2ebaf93379d081a7b0ae8ac1a5ba97eb4e93ea6"
+            ]
+          }
+        ]
+      },
+      "when": "2026-11-01T14:14:22.017168+05:30"
+    }
+  ]
+}
