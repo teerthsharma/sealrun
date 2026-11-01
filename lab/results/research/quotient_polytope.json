@@ -1,0 +1,70 @@
+{
+  "lane": "polytope",
+  "run": "n3 (research round 3)",
+  "status": "predictions committed before compute; results follow in a later commit",
+  "committed_at": "2026-11-01T14:07:53+01:00",
+  "hypothesis": "Chunk generation under forceload tickets stamps each chunk c with the FIRST ticket (in the order) whose Chebyshev radius R covers c. If the saved window W depends on the order only through those stamps, the world is a function of the tuple (min_sigma S(c)) for c in W, where S(c) = set of tickets within distance R of c and min_sigma = the earliest in the order sigma. The number of distinct worlds equals the number of distinct such tuples over all k! orders, which by Postnikov (2009, Permutohedra, associahedra, and beyond, the hypergraphic polytope) equals the number of VERTICES of the Minkowski sum P_F = sum over distinct S in F of Delta_S. UNVERIFIED (House's hypothesis).",
+  "variant_F_prime": "F plus the pair {t,u} for every t != u such that some chunk c with t in S(c) and chunk d with u in S(d) have Chebyshev distance <= 2 and (c in W or d in W or their 3x3 regions overlap W). Operational reading of the coordinator's wording.",
+  "campaign_log_at_commit": [
+    "8c46227 research: calibration aggregate with predictions_sha ab6d189",
+    "7d8409c research: 2x2 square calibration worlds (4 runs, 2 orders)"
+  ],
+  "campaign_ref_at_commit": "8c46227",
+  "campaign_log_note": "lines are `git log research/campaign --oneline -- lab/results/research/` at the time of this commit; 7d8409c is the 2x2 square calibration worlds",
+  "predictions": {
+    "theorem": "classes == distinct points == hull vertices for every family, F and F'",
+    "E0_square": {
+      "F": {
+        "classes": 4,
+        "vertices": 4,
+        "bits_lost": 2.585
+      },
+      "F_prime": {
+        "classes": 24,
+        "vertices": 24,
+        "bits_lost": 0.0
+      },
+      "note": "all window chunks see all 4 tickets for R>=1, so F={all 4}; F' adds all 6 pairs"
+    },
+    "E1_line": {
+      "R2": {
+        "F": {
+          "classes": 1,
+          "vertices": 1,
+          "bits_lost": 2.585
+        },
+        "F_prime": {
+          "classes": 4,
+          "vertices": 4,
+          "bits_lost": 0.585
+        }
+      },
+      "R3": {
+        "F": {
+          "classes": 4,
+          "vertices": 4,
+          "bits_lost": 0.585
+        },
+        "F_prime": {
+          "classes": 4,
+          "vertices": 4,
+          "bits_lost": 0.585
+        }
+      },
+      "R4": {
+        "F": {
+          "classes": 4,
+          "vertices": 4,
+          "bits_lost": 0.585
+        },
+        "F_prime": {
+          "classes": 6,
+          "vertices": 6,
+          "bits_lost": 0.0
+        }
+      }
+    },
+    "E2_E3_E4_squares": "no hand prediction; theorem check only"
+  },
+  "predictions_basis": "hand derivation from the layouts before any compute; see the test file for the checks"
+}
