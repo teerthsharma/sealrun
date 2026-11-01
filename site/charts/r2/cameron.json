@@ -1,0 +1,30 @@
+[
+ {
+  "id": "N2.G3.4.A1",
+  "title": "Three squares per server start",
+  "plain": "Instead of repeating all 24 build orders on two more squares one server restart at a time, each of the 24 runs builds all three squares far apart. That is 24 restarts, not 72.",
+  "why": "Each restart costs about 20 seconds and 1 GB of the small memory, so the wider test fits in minutes.",
+  "done_when": "The plan has exactly 24 server starts for 72 square runs, with every square's own order kept and the squares far apart."
+ },
+ {
+  "id": "N2.G3.6.A1",
+  "title": "Guess the best order from pairs",
+  "plain": "Each pair of neighbour chunks may add or remove diamonds depending on which is built first. A small sum-of-pairs model is fitted from a few runs and predicts every other order.",
+  "why": "Four chunks have 24 orders but nine have 362,880; the pair model needs about 37 runs for nine, so aiming scales past a square.",
+  "done_when": "On a made-up table the model predicts unseen orders exactly, picks the best one, and says so when the table is not a sum of pairs."
+ },
+ {
+  "id": "N2.G4.1.A1",
+  "title": "Use the spawn area as it boots",
+  "plain": "The server already builds a big area around the world spawn while it starts. The route is planned on that area, where a real run begins, with no extra build commands.",
+  "why": "The fastest run starts at spawn, so planning there is both cheaper and the true starting map.",
+  "done_when": "After a plain boot the reader finds a start square, a tree, stone and iron in the spawn area."
+ },
+ {
+  "id": "N2.G5.A1",
+  "title": "Numbers read live",
+  "plain": "The page reads the experiment's result files when it opens instead of copying them in a build step. A missing file shows not run.",
+  "why": "A copied number can go stale after a reset and look like a finding; a live read cannot.",
+  "done_when": "With no result files every number says not run, and a changed file shows its new number at once."
+ }
+]

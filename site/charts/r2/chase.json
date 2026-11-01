@@ -1,0 +1,121 @@
+[
+ {
+  "id": "N2.G1.C1",
+  "title": "No server left running",
+  "plain": "The test makes a lab run crash and hang on purpose, then checks that no Minecraft server is still running and the port is free.",
+  "why": "A forgotten server eats a gigabyte of memory and blocks the next run.",
+  "done_when": "No server process and no held port after done, crash and stuck runs."
+ },
+ {
+  "id": "N2.G1.C2",
+  "title": "Only its own folder is deleted",
+  "plain": "The reset step is asked to delete your real server folder and a random folder; it must refuse both and only clear its own scratch world.",
+  "why": "Reset means deleting a world, so a wrong path could destroy real files.",
+  "done_when": "Both bad paths are refused and the scratch world is cleared."
+ },
+ {
+  "id": "N2.G1.C3",
+  "title": "Memory gate before starting",
+  "plain": "The lab is told memory is low, or three servers are already running, and must refuse to start another.",
+  "why": "Servers and builds share 16 GB, and running out would freeze the computer.",
+  "done_when": "Low memory and a fourth server are both refused."
+ },
+ {
+  "id": "N2.G2.C1",
+  "title": "Only finished chunks are read",
+  "plain": "A hand-made chunk marked half-finished and a missing chunk are read; both must come back as unknown, not air.",
+  "why": "Chunks next to a loaded one are only partly made, and reading them as air would fake a difference.",
+  "done_when": "Half-made and missing chunks are reported unknown in every case."
+ },
+ {
+  "id": "N2.G2.C2",
+  "title": "Edge blocks read back exactly",
+  "plain": "Blocks are placed at chunk borders, at negative coordinates, and at the lowest and highest heights, then read back after a save.",
+  "why": "A reader that is wrong at the edges would invent differences exactly where chunks meet.",
+  "done_when": "Every placed block reads back as the same block."
+ },
+ {
+  "id": "N2.G2.C3",
+  "title": "No Minecraft files in the repo",
+  "plain": "The test scans the repo for region files, the server jar and world saves, and checks the ignore list blocks them.",
+  "why": "Minecraft's files are not ours to publish, and the repo should stay small.",
+  "done_when": "The scan finds zero Minecraft files and the ignore rules are present."
+ },
+ {
+  "id": "N2.G3.C1",
+  "title": "Only block types are compared",
+  "plain": "Two worlds that differ only in timestamps, lighting or height maps are compared and must show zero differences; one changed block must show exactly one.",
+  "why": "The question is about blocks, and other saved data changes every run.",
+  "done_when": "Data-only changes give 0 and a single block change gives 1."
+ },
+ {
+  "id": "N2.G3.C2",
+  "title": "Same order twice comes first",
+  "plain": "The report builder is given an order comparison with no repeat of the same order and must refuse to say order matters; if the repeat differs, it labels the result shaky.",
+  "why": "If the same order disagrees with itself, no difference between orders can be believed.",
+  "done_when": "No verdict without a same-order repeat, and shaky is flagged."
+ },
+ {
+  "id": "N2.G3.C3",
+  "title": "Waiting time is not order",
+  "plain": "The same order is saved after a short wait and after a long wait on the real server, and the blocks are compared.",
+  "why": "Water and sand keep moving after a chunk is made, which could look like an order effect.",
+  "done_when": "The two saves give the same blocks, or the number that differs is reported."
+ },
+ {
+  "id": "N2.G3.C4",
+  "title": "Is the lever a player move",
+  "plain": "Each step in a claimed lever is tagged as a player action or an admin command, and any admin command makes the lever lab-only.",
+  "why": "Commands like forceload are not moves in a real run, so a lever that needs them is no use for a speedrun.",
+  "done_when": "Admin-only levers are labelled lab-only and player ones are not."
+ },
+ {
+  "id": "N2.G3.C5",
+  "title": "More diamonds must replay",
+  "plain": "A claimed gain is replayed twice in fresh worlds with the found order and compared with the default order from the same session.",
+  "why": "A single lucky count would be mistaken for a lever.",
+  "done_when": "Both replays match the claimed count and the default count is recorded."
+ },
+ {
+  "id": "N2.G4.C1",
+  "title": "Real routes obey the real rules",
+  "plain": "Routes on the real terrain are replayed by a separate checker; mining iron with a wooden pickaxe or none must be rejected.",
+  "why": "A route that breaks the game's rules is not a speedrun.",
+  "done_when": "Every route passes the checker and the trap route is rejected."
+ },
+ {
+  "id": "N2.G4.C2",
+  "title": "Lava is not floor",
+  "plain": "Every block name in the seed 7 area must have a known meaning, and lava, water and unknown names must never count as walkable floor.",
+  "why": "A route across lava looks fast on paper and ends the run.",
+  "done_when": "No unmapped block name and no unsafe block counted as floor."
+ },
+ {
+  "id": "N2.G4.C3",
+  "title": "The edge of the map is a wall",
+  "plain": "A route that steps outside the area we read must be rejected.",
+  "why": "We know nothing outside the area, so leaving it would invent shortcuts.",
+  "done_when": "The route using unknown cells is rejected."
+ },
+ {
+  "id": "N2.G4.C4",
+  "title": "The rival route finder is fair",
+  "plain": "Both route finders get the same terrain and the same budget, and on a small crop the rival must find the true best route.",
+  "why": "Beating a weak rival proves nothing.",
+  "done_when": "The rival matches the true best route on the crop with a large budget."
+ },
+ {
+  "id": "N2.G5.C1",
+  "title": "Website numbers come from files",
+  "plain": "The test changes a saved result file and the page must change; a missing file must show not measured, never zero.",
+  "why": "Zero differing blocks is a real answer, so a missing result must not look like it.",
+  "done_when": "The page follows the file and a missing result reads not measured."
+ },
+ {
+  "id": "N2.G5.C2",
+  "title": "Route shown as not yet played",
+  "plain": "The page must say the route was planned on the map and has not been played in the game.",
+  "why": "Ticks on paper are not a finished speedrun, and the site should not suggest they are.",
+  "done_when": "The unplayed label is on the page next to the route numbers."
+ }
+]

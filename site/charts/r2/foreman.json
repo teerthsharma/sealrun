@@ -1,0 +1,527 @@
+[
+ {
+  "id": "N2.G1",
+  "title": "The lab",
+  "plain": "A small Python toolbox starts the Minecraft server with no game window, sends it commands, resets it, shuts it down and times every step.",
+  "why": "Every experiment after this one needs a server we can start and wipe from a script, safely.",
+  "done_when": "A script can boot, command, reset and stop the server, and no server is left running afterwards."
+ },
+ {
+  "id": "N2.G1.1",
+  "title": "Talking to the server",
+  "plain": "The toolbox learns the server's remote-command language (RCON) so a script can type commands into the server.",
+  "why": "Without it nothing can place blocks or generate chunks on purpose.",
+  "done_when": "A script can log in and get an answer back, and a wrong password is refused."
+ },
+ {
+  "id": "N2.G1.1.1",
+  "title": "Build RCON messages",
+  "plain": "Turn a command into the exact bytes the server expects, and turn the server's bytes back into text.",
+  "why": "A single wrong byte and the server ignores us, so the format is checked first against the written spec.",
+  "done_when": "The login and command messages come out byte for byte as the spec says."
+ },
+ {
+  "id": "N2.G1.1.2",
+  "title": "RCON client on a fake server",
+  "plain": "A client logs in, sends commands and joins long answers, tested against a pretend server that we control.",
+  "why": "We can test refusals and very long answers instantly, without waiting 20 seconds for the real game.",
+  "done_when": "A wrong password is refused and a reply over 4096 bytes arrives whole."
+ },
+ {
+  "id": "N2.G1.2",
+  "title": "Running the server",
+  "plain": "The toolbox starts a private copy of the server, waits until it says it is ready, resets the world and always shuts it down.",
+  "why": "A reset in about 20 seconds makes every experiment start from the same empty world.",
+  "done_when": "Boot, reset and stop all work, each is timed, and no Java process is left behind."
+ },
+ {
+  "id": "N2.G1.2.1",
+  "title": "Private server copy",
+  "plain": "Copy the server jar and settings into a scratch folder, turn the remote commands on with a random password and a free port, and never touch the original folder.",
+  "why": "The original server folder stays exactly as it is, and each copy can run beside another.",
+  "done_when": "The copy has RCON on, a long random password and its own port, and the original files are unchanged."
+ },
+ {
+  "id": "N2.G1.2.2",
+  "title": "Stop politely, then force",
+  "plain": "Ask a program to stop, wait a set time, and kill it if it ignores us.",
+  "why": "A stuck server would otherwise sit on our small memory for good.",
+  "done_when": "A stubborn test program is gone within the time limit."
+ },
+ {
+  "id": "N2.G1.2.3",
+  "title": "Start and wait for Done",
+  "plain": "Start the server with a 1 GB limit and no window, and wait until its log says Done.",
+  "why": "This is the first moment the server can be used, and the time to get there is a number we report.",
+  "done_when": "The server prints Done within 60 seconds and answers the list command."
+ },
+ {
+  "id": "N2.G1.2.4",
+  "title": "Reset to an empty world",
+  "plain": "Stop the server, delete its world, and start it again so nothing from before survives.",
+  "why": "Every experiment must start from the same blank world or its numbers mean nothing.",
+  "done_when": "A block placed before the reset is gone after it, and no Java process is left running."
+ },
+ {
+  "id": "N2.G1.2.5",
+  "title": "Time and memory of the lab",
+  "plain": "Measure how long boot and reset take and the most memory the server uses, and save the numbers.",
+  "why": "The earlier memory number was one sample, and the plan for how many servers to run at once depends on the peak.",
+  "done_when": "A results file holds boot seconds, reset seconds and the peak memory in megabytes."
+ },
+ {
+  "id": "N2.G1.3",
+  "title": "No game files in our repo",
+  "plain": "A check walks the whole repository and fails if it finds the server program, a world file or a server settings file.",
+  "why": "The game files belong to someone else, so none may ever be committed.",
+  "done_when": "The check passes on the repo and fails on a copy that has a jar or a region file in it."
+ },
+ {
+  "id": "N2.G1.4",
+  "title": "Many worlds per gigabyte",
+  "plain": "Memory is the limit, so the lab measures which way of making many fresh worlds gives the most worlds per minute for each gigabyte: several ordinary servers, or many worlds inside one game process the way speedrunners do.",
+  "why": "The order experiment needs dozens of fresh worlds, and the cheaper way to get them saves hours; this is a measured choice and not a belief.",
+  "done_when": "Both ways have saved numbers (or a stated reason one could not run), and a choice file names the winner."
+ },
+ {
+  "id": "N2.G1.4.1",
+  "title": "Several ordinary servers",
+  "plain": "Run one, two and three of our private servers at once, resetting each over and over for three minutes, and count fresh worlds per minute and memory per world.",
+  "why": "This is the baseline route and needs nothing new to be downloaded.",
+  "done_when": "The results file holds worlds per minute, total memory and memory per world for one, two and three servers."
+ },
+ {
+  "id": "N2.G1.4.2",
+  "title": "What is installed already",
+  "plain": "List, without downloading or changing anything, whether the owner's game folder already holds a 1.16.1 client, the Fabric mod loader, a mods folder and the right Java.",
+  "why": "Whether the many-worlds route can start at all depends on this, and the answer is read, not remembered.",
+  "done_when": "The results file says found or missing for each item, and the game folder is unchanged."
+ },
+ {
+  "id": "N2.G1.4.3",
+  "title": "Many worlds in one game",
+  "plain": "Measure worlds per minute and memory per world with the speedrunner mods that prepare several worlds inside one game process; it downloads nothing until the owner approves the file list, and otherwise records exactly why it is blocked.",
+  "why": "Several worlds sharing one process could beat several servers per gigabyte, but this route needs a game window and downloads, so it must not hold anything else up.",
+  "done_when": "The results file holds the measured numbers, or says blocked with the reason."
+ },
+ {
+  "id": "N2.G1.4.4",
+  "title": "Choose the route",
+  "plain": "Read the saved numbers and pick the route with more worlds per minute for each gigabyte, falling back to ordinary servers whenever the other route is missing or blocked.",
+  "why": "One file tells every later experiment which route and how many workers to use.",
+  "done_when": "Made-up numbers give the right winner, a blocked or missing route falls back to ordinary servers, and the real choice file is saved."
+ },
+ {
+  "id": "N2.G1.4.5",
+  "title": "Run jobs on several workers",
+  "plain": "Hand a list of build orders to the chosen workers, never more than three servers at once, and get the results back in the order the jobs were given.",
+  "why": "The order experiment gets its dozens of worlds faster, and it can use either route without being rewritten.",
+  "done_when": "With pretend workers the results come back in job order, one worker failing is reported, and asking for four servers is refused."
+ },
+ {
+  "id": "N2.G2",
+  "title": "The chunk reader",
+  "plain": "A Python reader opens the world files the server saved and says which block sits at any position.",
+  "why": "The experiments compare blocks, so the reader must be right before any number is believed.",
+  "done_when": "The reader returns exactly the blocks we placed with commands on a live server."
+ },
+ {
+  "id": "N2.G2.7",
+  "title": "Reading one region file",
+  "plain": "The reader learns to open a region file, unpack the data format and turn a slice of a chunk into block names.",
+  "why": "These are the steps every later read depends on.",
+  "done_when": "Hand-built region files and slices read back exactly."
+ },
+ {
+  "id": "N2.G2.1",
+  "title": "Read the NBT format",
+  "plain": "Read the nested data format (NBT) the game saves chunks in: named values, lists and arrays of numbers.",
+  "why": "Everything in a world file is stored in this format.",
+  "done_when": "A hand-built sample with a compound, a list and a long array reads back exactly."
+ },
+ {
+  "id": "N2.G2.2",
+  "title": "Open a region file",
+  "plain": "A region file holds up to 1024 chunks; find which are present and unpack one chunk's bytes.",
+  "why": "This is how we know which chunks the server has built.",
+  "done_when": "A made-up region file with two chunks lists exactly those two and unpacks one."
+ },
+ {
+  "id": "N2.G2.3",
+  "title": "Unpack a 16-block slice",
+  "plain": "Turn one slice of a chunk (a palette of block names plus packed numbers) into 4096 block names, using the 1.16 packing where numbers never straddle two values.",
+  "why": "Version 1.16 changed the packing, and the old layout silently gives wrong blocks.",
+  "done_when": "Hand-packed slices with 5-bit and 6-bit entries unpack to the exact blocks."
+ },
+ {
+  "id": "N2.G2.4",
+  "title": "Block at any position",
+  "plain": "Ask for the block at x, y, z, including negative coordinates, plus a chunk's build status, with missing chunks answering nothing.",
+  "why": "Negative positions are where reading mistakes hide, and the build status shows if a chunk is finished.",
+  "done_when": "Positions in chunk minus one and at slice edges read right, and a missing chunk answers none."
+ },
+ {
+  "id": "N2.G2.8",
+  "title": "Using the reader",
+  "plain": "The reader reads a whole box of blocks, and is proven on the live server.",
+  "why": "A reader is only trusted after it reads back what the game itself wrote.",
+  "done_when": "A box fingerprint is stable and five placed blocks are read back right."
+ },
+ {
+  "id": "N2.G2.5",
+  "title": "Read a box of blocks",
+  "plain": "Read every block in a box and fingerprint it, so two boxes can be compared quickly.",
+  "why": "The order experiment compares boxes of blocks and a fingerprint tells at once if they match.",
+  "done_when": "The same box read twice gives the same fingerprint, and one changed block changes it."
+ },
+ {
+  "id": "N2.G2.6",
+  "title": "Proof on the live server",
+  "plain": "Place five known blocks with commands, save, stop, and check the reader finds every one of them.",
+  "why": "This is the only proof that the reader sees what the game really wrote.",
+  "done_when": "All five placed blocks, including a negative position and a slice edge, are read back right."
+ },
+ {
+  "id": "N2.G3",
+  "title": "The next-chunk lever",
+  "plain": "Find out whether anything the player does before a chunk is built changes what that chunk holds, starting with the order the chunks are built in.",
+  "why": "This is goal one: a move made before a chunk exists that changes the chunk, measured on the real game.",
+  "done_when": "A results file says, with counts, whether building order or a player edit changed any block, and whether it moved diamonds."
+ },
+ {
+  "id": "N2.G3.8",
+  "title": "Build chunks and compare them",
+  "plain": "The tools, the one-at-a-time building, the first pair and the wider search over orders.",
+  "why": "This is the order experiment itself, from smallest step to widest search.",
+  "done_when": "Every order is built, compared and counted, and the control is zero."
+ },
+ {
+  "id": "N2.G3.1",
+  "title": "Measuring tools",
+  "plain": "Two small tools: one finds every block that differs between two builds, the other counts ores.",
+  "why": "Every claim in this branch is a count made by these tools.",
+  "done_when": "Both tools give the right counts on hand-made examples."
+ },
+ {
+  "id": "N2.G3.1.1",
+  "title": "Find differing blocks",
+  "plain": "Compare two block maps and list every position whose block changed, appeared or vanished.",
+  "why": "Zero or not zero differing blocks decides the whole order question.",
+  "done_when": "Three planted differences are found and identical maps give an empty list."
+ },
+ {
+  "id": "N2.G3.1.2",
+  "title": "Count the ores",
+  "plain": "Count diamond, iron, coal, gold, lapis, redstone and emerald blocks in a box, chunk by chunk.",
+  "why": "The aim is more diamond, so diamond must be counted per chunk.",
+  "done_when": "A hand-made box with known ores gives the exact counts per chunk."
+ },
+ {
+  "id": "N2.G3.2",
+  "title": "Building chunks one at a time",
+  "plain": "The lab builds chosen chunks one after another, far from the world spawn, and waits for each to finish before asking for the next.",
+  "why": "If two chunks are built at once the order is not ours, so the order experiment would mean nothing.",
+  "done_when": "Chunks come out in the order we gave, and a neighbour of a finished chunk is still half built."
+ },
+ {
+  "id": "N2.G3.2.1",
+  "title": "Wait until a chunk is built",
+  "plain": "Ask the server to hold a chunk loaded, then keep asking whether bedrock is there until the answer is yes or time runs out.",
+  "why": "This is how one chunk is finished before the next is requested.",
+  "done_when": "A pretend server that says not yet three times and then yes makes it wait, and a timeout is reported."
+ },
+ {
+  "id": "N2.G3.2.2",
+  "title": "Spawn is not in the way",
+  "plain": "The server builds a big area around spawn at start; check that a chunk thousands of blocks away is not built until we ask.",
+  "why": "If spawn already built our test chunks, the order would be the server's and not ours.",
+  "done_when": "The far chunk is absent from the saved files before we ask and finished after."
+ },
+ {
+  "id": "N2.G3.2.3",
+  "title": "A neighbour is only half built",
+  "plain": "Build one chunk, then read the status of its neighbour in the saved files.",
+  "why": "Building a chunk makes the neighbours partly, which is why order could matter.",
+  "done_when": "The neighbour exists but its status is not full."
+ },
+ {
+  "id": "N2.G3.2.4",
+  "title": "Run one build order",
+  "plain": "Given a list of chunks, build them in exactly that order on a fresh world and return the blocks of the whole area.",
+  "why": "Everything after this is a comparison of such runs.",
+  "done_when": "A run of two chunks returns both chunks as finished with the full box of blocks."
+ },
+ {
+  "id": "N2.G3.3",
+  "title": "The first pair",
+  "plain": "The smallest honest experiment: one pair of neighbour chunks built A then B and B then A, with a control that repeats one order.",
+  "why": "One pair is cheap, and the control says whether a difference could be noise.",
+  "done_when": "The control shows zero differing blocks, and the pair has an exact count."
+ },
+ {
+  "id": "N2.G3.3.1",
+  "title": "Same order twice",
+  "plain": "Build A then B twice on fresh worlds and count the differing blocks; this must be zero or the test is too noisy to use.",
+  "why": "If the same order differs from itself, nothing later can be trusted; if so, mask the moving water and lava and run it again before going on.",
+  "done_when": "The count is zero, or the leftover differences are listed and masked."
+ },
+ {
+  "id": "N2.G3.3.2",
+  "title": "A then B against B then A",
+  "plain": "Build the pair in both orders and count the differing blocks; zero means this pair has no lever, and more pairs are tried next.",
+  "why": "Differing blocks here would be the first proof that building order changes a chunk.",
+  "done_when": "The results file holds the exact count of differing blocks and where they are."
+ },
+ {
+  "id": "N2.G3.4",
+  "title": "More orders and places",
+  "plain": "If the pair showed nothing, widen the search: every order of four chunks in a square, then more squares far apart.",
+  "why": "One pair at one place proves little; all 24 orders at three places is a fair test of the order idea.",
+  "done_when": "Every order of every square is tallied, and the number of differing blocks is exact, even if zero."
+ },
+ {
+  "id": "N2.G3.4.1",
+  "title": "List the 24 orders",
+  "plain": "Write down every order in which four chunks of a square can be built, and start the empty not-run table that the later runs fill in.",
+  "why": "The experiment must not miss or repeat an order, and an unfilled table must read as not run.",
+  "done_when": "There are 24 orders, all different, each with the four chunks, and the starter table says not run."
+ },
+ {
+  "id": "N2.G3.4.2",
+  "title": "All 24 orders, first square",
+  "plain": "Build the square in all 24 orders, compare each with the first, and tally the ores per chunk for every order.",
+  "why": "This is the main table: how many blocks and how many diamonds change with the order.",
+  "done_when": "The results file has 24 rows with differing-block counts and ore counts."
+ },
+ {
+  "id": "N2.G3.4.3",
+  "title": "Two more squares",
+  "plain": "Repeat all 24 orders on two other squares far from the first.",
+  "why": "A lever that exists only at one place would not help a speedrun.",
+  "done_when": "The results file holds 48 more rows from two other squares."
+ },
+ {
+  "id": "N2.G3.9",
+  "title": "What to do with the answer",
+  "plain": "The player-edit lever, the aim at diamonds and the verdict that closes goal one.",
+  "why": "These steps turn the measured counts into an answer, whichever way they came out.",
+  "done_when": "The edit lever is tested, the aim says aimed or no lever, and the verdict is written."
+ },
+ {
+  "id": "N2.G3.5",
+  "title": "The player edit lever",
+  "plain": "If the order did nothing, test the other lever: blocks the player broke or placed in a finished chunk before its neighbour is built.",
+  "why": "A player can do this in the real game, so it is the next place to look.",
+  "done_when": "Cells outside the edit are counted as changed or not, against a no-edit control."
+ },
+ {
+  "id": "N2.G3.5.1",
+  "title": "Edit commands",
+  "plain": "Turn a list of blocks to break or place into server commands that only touch finished, loaded chunks.",
+  "why": "A command into an unloaded chunk would build it early and spoil the order.",
+  "done_when": "The commands are right for a break and a place, and one into an unloaded chunk is refused."
+ },
+ {
+  "id": "N2.G3.5.2",
+  "title": "Edit then build the neighbour",
+  "plain": "Build chunk A, break blocks near its edge, build chunk B, and count changed cells outside the edit against a run with no edit.",
+  "why": "Changed cells outside the edit would mean the player shaped the next chunk.",
+  "done_when": "The results file holds the count of changed cells outside the edit and where they are."
+ },
+ {
+  "id": "N2.G3.6",
+  "title": "Aiming at diamonds",
+  "plain": "Only if something differed: find the order that gives a chosen chunk the most diamonds, and check it holds up; if nothing differed, these steps must say no lever.",
+  "why": "This is the owner's sketch: a move before the chunk is built that gives it more diamond.",
+  "done_when": "The result says aimed with a repeatable gain, or says no lever."
+ },
+ {
+  "id": "N2.G3.6.1",
+  "title": "Pick the best order",
+  "plain": "Given a table of orders and diamond counts, pick the order with the most diamonds in the target chunk, or say there is no lever when all counts are equal.",
+  "why": "Both answers must be correct, because a zero result is a result.",
+  "done_when": "A table with a clear best picks it, and an all-equal table answers no lever."
+ },
+ {
+  "id": "N2.G3.6.2",
+  "title": "Aim on the real table",
+  "plain": "Run the picker on the real tables and save the answer, with the average over all orders next to it.",
+  "why": "The gain only means something against the average order.",
+  "done_when": "The file says aimed with the best count and the average, or says no lever."
+ },
+ {
+  "id": "N2.G3.6.3",
+  "title": "Repeat the best order",
+  "plain": "Build the chosen order twice on fresh worlds; the diamond count must match the table both times, or the difference was noise.",
+  "why": "A gain that does not repeat is not a gain.",
+  "done_when": "Both repeats give the table's count, or the file says nothing to repeat."
+ },
+ {
+  "id": "N2.G3.6.4",
+  "title": "Does it work on a new place",
+  "plain": "Take the rule found on the first squares and try it on a square it never saw, against that square's average.",
+  "why": "A rule that only works where it was found cannot be used in a run.",
+  "done_when": "The rule's diamonds beat the average at the new square, or the file says it did not."
+ },
+ {
+  "id": "N2.G3.7",
+  "title": "The verdict",
+  "plain": "One file states what is alive and what is dead for goal one, with every claim tied to its limits.",
+  "why": "A no must be as exact as a yes, and no solver can answer every question about Minecraft, so each claim says its bound.",
+  "done_when": "The verdict file matches the result files and names the next route for anything dead."
+ },
+ {
+  "id": "N2.G3.7.1",
+  "title": "Write the verdict",
+  "plain": "Turn the result files into plain statements that each name the seed, area, height and number of orders, say not run for missing files, and give the next route for a dead lever.",
+  "why": "Every claim then carries its own bound.",
+  "done_when": "Made-up result files give the right alive, dead and not-run statements with the bounds and a reroute."
+ },
+ {
+  "id": "N2.G3.7.2",
+  "title": "Verdict on the real results",
+  "plain": "Run the verdict writer on the real result files and save the file the website reads.",
+  "why": "This is the single answer to goal one.",
+  "done_when": "The saved verdict repeats the exact counts in the result files."
+ },
+ {
+  "id": "N2.G4",
+  "title": "The fastest run",
+  "plain": "Read real seed 7 terrain with the new reader, then race the round 1 planner against the round 1 plain search on it in game ticks; playing the route in the real game with a bot is a later round.",
+  "why": "This is goal two: a fastest route on the real map, beating a simple baseline in game ticks.",
+  "done_when": "On the real map the planner finishes in fewer ticks than the plain search, with numbers saved."
+ },
+ {
+  "id": "N2.G4.1",
+  "title": "Real terrain as a grid",
+  "plain": "The real world, 3D, is flattened into the flat grid the solver already understands, and checked against the live game.",
+  "why": "The solver and the real game meet here, so a mistake here ruins every route.",
+  "done_when": "A real area of seed 7 is a grid file, and sampled squares match the live server."
+ },
+ {
+  "id": "N2.G4.7",
+  "title": "The flat file both languages agree on",
+  "plain": "Python flattens the terrain and writes a grid file, and Rust reads the very same bytes back.",
+  "why": "Python writes and Rust reads, so one shared sample stops them drifting apart.",
+  "done_when": "The bytes Python writes equal the saved sample, and Rust reads the sample's squares correctly."
+ },
+ {
+  "id": "N2.G4.1.1",
+  "title": "Flatten columns",
+  "plain": "Turn each column of blocks into one square: tree if a log stands there, water, iron if ore is within six blocks below, a stone wall if the ground jumps two blocks, else open ground.",
+  "why": "The solver is flat, so this rule is a stated model, and it is tested so it can be changed.",
+  "done_when": "A made-up landscape gives the expected tree, water, iron, wall and open squares."
+ },
+ {
+  "id": "N2.G4.1.2",
+  "title": "Write the grid file",
+  "plain": "Write the squares in the byte format the Rust grid reads, and keep one tiny sample file both languages must agree on.",
+  "why": "Python writes and Rust reads, so one shared sample stops them drifting apart.",
+  "done_when": "The bytes Python writes equal the saved sample file, byte for byte."
+ },
+ {
+  "id": "N2.G4.1.3",
+  "title": "Rust reads the grid",
+  "plain": "The round 1 Rust grid reader loads the shared sample file and gives the right size and squares; no new Rust library is needed.",
+  "why": "If Python and Rust ever disagree about the file, this test fails first.",
+  "done_when": "Loading the shared sample gives the right size and the right squares."
+ },
+ {
+  "id": "N2.G4.1.6",
+  "title": "Area export script",
+  "plain": "A script turns a box of real blocks into a grid file using the flattening rule and the grid writer, with the area (64 by 64 squares around spawn) written down in one place.",
+  "why": "The export logic is checked on made-up blocks before it ever touches the real world.",
+  "done_when": "A made-up box of blocks becomes the expected grid bytes."
+ },
+ {
+  "id": "N2.G4.1.4",
+  "title": "Export a real seed 7 area",
+  "plain": "Build an area of the real seed 7 world, read it, and save it as a grid; it must have open ground, a tree, stone and iron, or the area is widened.",
+  "why": "This is the real map the race is run on.",
+  "done_when": "The grid file exists and contains a start square, a tree, stone and iron."
+ },
+ {
+  "id": "N2.G4.1.5",
+  "title": "Check squares on the live server",
+  "plain": "Pick random squares from the grid and ask the running server what block is really there.",
+  "why": "This tests the flattening rule against the game, not against our idea of it.",
+  "done_when": "Every sampled square agrees with the live server."
+ },
+ {
+  "id": "N2.G4.2",
+  "title": "The race on real terrain",
+  "plain": "The round 1 planner races the round 1 plain move-counting search on the real grid, from one start and then from many starts.",
+  "why": "Beating a fair simple rival, with the control, is the proof the planner is any good.",
+  "done_when": "The planner is never slower, and its wins are counted."
+ },
+ {
+  "id": "N2.G4.2.1",
+  "title": "Pick a start and a finish",
+  "plain": "Choose a start square near the middle and a finish square next to the nearest iron, on any grid, so every race uses the same rule.",
+  "why": "Fixed rules for start and finish keep the race fair and repeatable.",
+  "done_when": "On a hand-made grid the start and the finish are the squares worked out on paper."
+ },
+ {
+  "id": "N2.G4.2.2",
+  "title": "Wall trap map",
+  "plain": "On a map with a short wall and a long way round, the round 1 plain search digs the wall and the planner walks round in fewer ticks.",
+  "why": "This shows on a small map exactly why planning in ticks beats counting moves.",
+  "done_when": "The planner's ticks are lower than the plain search's on the trap map."
+ },
+ {
+  "id": "N2.G4.2.3",
+  "title": "Race on seed 7",
+  "plain": "Run both on the real seed 7 grid from one start and save the ticks of each.",
+  "why": "This is the first real result for goal two.",
+  "done_when": "The planner's ticks are not above the rival's, and the file records both numbers."
+ },
+ {
+  "id": "N2.G4.2.4",
+  "title": "Race from many starts",
+  "plain": "Repeat the race from twenty different start squares and count the wins, ties and losses.",
+  "why": "One start can be luck; twenty show if the planner really is faster.",
+  "done_when": "Zero losses in twenty starts, with the number of strict wins saved."
+ },
+ {
+  "id": "N2.G5",
+  "title": "The website shows round 2",
+  "plain": "A web page shows the round 2 goals in plain words and the experiment's numbers, and says not run yet for anything not measured.",
+  "why": "The owner watches the project here, and the numbers must be the real ones.",
+  "done_when": "The page at http://127.0.0.1:7740/r2.html shows every goal and the real experiment numbers."
+ },
+ {
+  "id": "N2.G5.1",
+  "title": "Build the round 2 data",
+  "plain": "A script merges the fellows' plain-English files for round 2 with each goal's status into one data file.",
+  "why": "The page reads one file, the same way round 1 does.",
+  "done_when": "Goals from two chart files are merged by id and a goal without a status shows pending."
+ },
+ {
+  "id": "N2.G5.2",
+  "title": "Pull in the experiment numbers",
+  "plain": "The same script copies the numbers from the result files into the data file, and a missing file is marked not run, never zero.",
+  "why": "A missing result shown as zero would look like a finding.",
+  "done_when": "With no result files every number says not run, and with files the counts are copied exactly."
+ },
+ {
+  "id": "N2.G5.3",
+  "title": "The round 2 page",
+  "plain": "A page draws a card for every goal and one bar for every build order showing its differing-block count.",
+  "why": "A bar chart of counts per order is the picture of the experiment.",
+  "done_when": "The page reads the data file and has a card hook per goal and a bar hook per order."
+ },
+ {
+  "id": "N2.G5.4",
+  "title": "Serve the page",
+  "plain": "The existing local web server returns the round 2 page at its address.",
+  "why": "The owner opens it in a browser, so it must load.",
+  "done_when": "A request to the page on a free local port returns it."
+ },
+ {
+  "id": "N2.G5.5",
+  "title": "Link from the main page",
+  "plain": "The round 1 page gets one link to the round 2 page.",
+  "why": "One door between the two pages.",
+  "done_when": "The main page contains a link to r2.html."
+ }
+]

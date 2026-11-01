@@ -30,7 +30,10 @@
   "G2.8": "reached",
   "G3.2": "reached",
   "G4.5": "reached",
-  "G4.6": "reached"
+  "G4.6": "reached",
+  "G1.6": "reached",
+  "G3.3": "reached",
+  "G3.5": "reached"
  },
  "goals": [
   [

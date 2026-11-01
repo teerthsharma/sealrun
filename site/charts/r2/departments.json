@@ -1,0 +1,375 @@
+{
+ "departments": [
+  {
+   "name": "lab",
+   "title": "The Lab (server and chunk reader)",
+   "goals": [
+    "N2.G1",
+    "N2.G2"
+   ],
+   "plain": "Starts the real Minecraft 1.16.1 server with no game client, sends it commands, reads its saved chunks back as blocks, and shuts it down cleanly.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "tdd-fix",
+     "why": "a reader that disagrees with /setblock is a bug: RED, fix, mutate"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "find the first byte or block where reader and server differ"
+    },
+    {
+     "skill": "investigator",
+     "why": "chase a hung server or a leaked process to evidence"
+    },
+    {
+     "skill": "discover-debugging",
+     "why": "debugging playbooks for odd process and socket failures"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "a test that boots a server needs timeouts and guaranteed cleanup"
+    },
+    {
+     "skill": "discover-distributed",
+     "why": "a client and a server talking over RCON: framing, timeouts, retries"
+    },
+    {
+     "skill": "discover-systems-theory",
+     "why": "RAM budget of three 1 GB servers on a 16 GB box"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "a reader is trusted only after it reads back a placed block"
+    },
+    {
+     "skill": "discover-engineering",
+     "why": "stdlib-only Python tooling layout, run scripts as plain files"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "basic-toolkit",
+     "why": "read logs, grep, collect command output verbatim"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each claim about the server against its log"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive byte offsets and counts by hand"
+    },
+    {
+     "skill": "investigator",
+     "why": "find leaked java processes and stuck ports"
+    }
+   ]
+  },
+  {
+   "name": "lever",
+   "title": "The Lever (next-chunk experiment)",
+   "goals": [
+    "N2.G3"
+   ],
+   "plain": "Generates the same seed in different orders and compares every block, to learn whether anything done before a chunk exists can change it.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "discover-research",
+     "why": "design a fair order experiment with a control"
+    },
+    {
+     "skill": "research-verdict",
+     "why": "say alive or dead from the measured block differences"
+    },
+    {
+     "skill": "discover-topology",
+     "why": "fractal and manifold ideas from the owner's sketch, as falsifiable tests"
+    },
+    {
+     "skill": "discover-math",
+     "why": "order-search bounds, and a Godel/Turing statement placed honestly"
+    },
+    {
+     "skill": "tdd-fix",
+     "why": "a claimed lever with no RED differing block is not a finding"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "find which block differs first and why"
+    },
+    {
+     "skill": "discover-testing",
+     "why": "repeat runs to separate real order effects from noise"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each claim about the game against the server run"
+    },
+    {
+     "skill": "discover-systems-theory",
+     "why": "feedback between player actions, loaded chunks and generation"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "super-investigator",
+     "why": "recount differing blocks from the raw dumps"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each reported difference against source"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "compare two orders side by side"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "collect the dumps and diffs"
+    }
+   ]
+  },
+  {
+   "name": "speedrun",
+   "title": "Speedrun (route on real terrain)",
+   "goals": [
+    "N2.G4"
+   ],
+   "plain": "Plans the fastest wood-to-iron route on the real seed-7 world read from the saved chunks, and races it against a baseline.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "discover-math",
+     "why": "metric and A* admissibility on the real block grid"
+    },
+    {
+     "skill": "discover-systems-theory",
+     "why": "the tech tree as a DAG with a tick budget"
+    },
+    {
+     "skill": "discover-research",
+     "why": "design the fair planner-vs-baseline experiment"
+    },
+    {
+     "skill": "research-verdict",
+     "why": "say alive or dead from the measured ticks"
+    },
+    {
+     "skill": "discover-rust-game-design",
+     "why": "speedrun route and inventory state design"
+    },
+    {
+     "skill": "rust-patterns",
+     "why": "idiomatic Rust for the planner"
+    },
+    {
+     "skill": "m10-performance",
+     "why": "search speed decides the same-budget race"
+    },
+    {
+     "skill": "m14-mental-model",
+     "why": "keep state, cost and heuristic straight"
+    },
+    {
+     "skill": "m05-type-driven",
+     "why": "newtypes so ticks, blocks and items cannot mix"
+    },
+    {
+     "skill": "m06-error-handling",
+     "why": "a missing chunk is an error, not a zero block"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "rust-code-navigator",
+     "why": "find the metric and Dijkstra code to reuse"
+    },
+    {
+     "skill": "rust-trait-explorer",
+     "why": "map the planner trait and its implementors"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "compare planner outputs side by side"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive a claimed tick count by hand"
+    }
+   ]
+  },
+  {
+   "name": "window",
+   "title": "The Window (website for round 2)",
+   "goals": [
+    "N2.G5"
+   ],
+   "plain": "Shows the round 2 goals in plain English with the experiment's measured numbers.",
+   "residents_skills": [
+    {
+     "skill": "ponytail:ponytail",
+     "why": "write the least code that passes"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "house code style before the first line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "RED test first, then the fix"
+    },
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "re-run the test and show the output before saying done"
+    },
+    {
+     "skill": "frontend-design:frontend-design",
+     "why": "distinctive, readable page design"
+    },
+    {
+     "skill": "site-revamp",
+     "why": "full rebuild standard, not a reskin"
+    },
+    {
+     "skill": "visual-companion",
+     "why": "show the experiment as pictures"
+    },
+    {
+     "skill": "dataviz",
+     "why": "colour only by meaningful data, such as differing blocks"
+    },
+    {
+     "skill": "anti-slop",
+     "why": "no filler copy or decoration"
+    },
+    {
+     "skill": "domain-web",
+     "why": "serve the page with the standard library"
+    }
+   ],
+   "nurses_skills": [
+    {
+     "skill": "dataviz",
+     "why": "check chart colours and labels"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "collect the page text and status JSON"
+    }
+   ]
+  },
+  {
+   "name": "ward2",
+   "title": "Nurses' Ward (audit and evidence)",
+   "goals": [],
+   "plain": "Reads, greps, re-runs and cross-checks what the residents claim, including server logs and region-file bytes.",
+   "residents_skills": [],
+   "nurses_skills": [
+    {
+     "skill": "superpowers:verification-before-completion",
+     "why": "report command, exit code and first failing line"
+    },
+    {
+     "skill": "superpowers:test-driven-development",
+     "why": "confirm the RED run came before the fix"
+    },
+    {
+     "skill": "superpowers:systematic-debugging",
+     "why": "isolate a failing check before reporting"
+    },
+    {
+     "skill": "ponytail:ponytail",
+     "why": "report only what was asked"
+    },
+    {
+     "skill": "coding-guidelines",
+     "why": "check diffs against house style"
+    },
+    {
+     "skill": "anthropic-skills:verify-claims",
+     "why": "check each claim against source"
+    },
+    {
+     "skill": "super-investigator",
+     "why": "re-derive numbers and paths"
+    },
+    {
+     "skill": "investigator",
+     "why": "chase a hang or crash to evidence"
+    },
+    {
+     "skill": "discover-debugging",
+     "why": "debugging playbooks for odd failures"
+    },
+    {
+     "skill": "meta-cognition-parallel",
+     "why": "cross-check independent readings"
+    },
+    {
+     "skill": "super-genius-rick",
+     "why": "hard-problem second opinion"
+    },
+    {
+     "skill": "rust-code-navigator",
+     "why": "definitions and usages"
+    },
+    {
+     "skill": "rust-call-graph",
+     "why": "who calls what"
+    },
+    {
+     "skill": "basic-toolkit",
+     "why": "grep, read and collect"
+    }
+   ]
+  }
+ ],
+ "unassigned": []
+}
