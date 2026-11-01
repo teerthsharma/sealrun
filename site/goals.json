@@ -800,7 +800,7 @@
    "leaf": true,
    "fellow": "Foreman",
    "test": "workspace_manifest_is_valid",
-   "status": "pending",
+   "status": "reached",
    "department": "skeleton",
    "title": "Top-level project file",
    "plain": "Create the main Rust project file that says every code library lives in one folder.",

@@ -1,5 +1,7 @@
 {
- "status": {},
+ "status": {
+  "G6.1": "reached"
+ },
  "goals": [
   [
    "G0",
