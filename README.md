@@ -6,7 +6,6 @@
   <img alt="Rust" src="https://img.shields.io/badge/solver-Rust-b7410e?style=flat-square">
   <img alt="Minecraft" src="https://img.shields.io/badge/tested%20on-Minecraft%201.16.1%20seed%207-2d6a4f?style=flat-square">
   <img alt="Tests" src="https://img.shields.io/badge/every%20finding-red%20test%20first-1f2933?style=flat-square">
-  <img alt="Licence" src="https://img.shields.io/badge/licence-MIT-6b7785?style=flat-square">
 </p>
 
 <p align="center"><b>Invented by <a href="https://teerthsharma.vercel.app/">Teerth Sharma</a></b> · <a href="mailto:teerths57@gmail.com">teerths57@gmail.com</a></p>
@@ -26,15 +25,17 @@ It also asks a weird question. Minecraft builds the world in square pieces calle
 Every line below was measured on a real Minecraft 1.16.1 server on seed 7.
 
 - **One `/forceload` builds 25 chunks, not 1.** A 5 by 5 block around it. The wiki predicted it. The server gave 25 of 25.
-- **Build order really changes the world.** Four chunks in a square, built in different orders, gave 4 different worlds.
+- **Build order really changes the world.** Four chunks in a square, built in 4 different orders (not all 24), gave 4 different worlds.
 - **But only a little, and only for common ore.** In chunk (64,64), iron plus gold is 163 in every world. One order swaps 2 iron for 2 gold. **Diamonds never moved.**
-- **The world forgets some of its own history.** 24 build orders, 4 worlds. You cannot tell which of the 24 happened from the world alone. That is 2.58 bits lost.
+- **The world can forget how it was built.** Two different build orders of the square gave the exact same world, block for block. So the world alone cannot always tell you how it was built.
 - **We killed our own first idea.** We guessed a rule, wrote it down before testing, then ran it. On a five-chunk ring it said 5 worlds and the server gave 6. A bolder version of the rule lost on the same test too.
-- **A wider rule is still alive.** Widening the reach to 4 chunks matched all 13 chunks that gave a clear signal. A lead, not a win yet.
+- **The wider rule mostly lost too.** We let each chunk remember the order of the tickets within 4 chunks. It explains only 19 of the 102 chunks that change with build order. Where it did fit, all 19 fits sit exactly on the 4-chunk reach, and luck would give about 6. So it is a clue, not an answer.
+- **A spacing test said no as well.** The rule predicted 1 world when tickets sit 5 or 7 chunks apart. The server gave 6 different worlds from 6 orders, on the chunks where repeats agreed.
+- **The old planner could not leave spawn.** From none of the 1,417 open tiles at spawn did the round 1 planner find a route, because no walkable area there touches a tree, so it could never get wood. The dig-and-swim planner routes from spawn in 538 ticks.
 - **The spawn area is islands.** On the seed 7 spawn map there are 158 separate walkable regions. Pay 10 to swim and they merge to 77. Pay 23 to dig and they merge to 1.
 - **A planner that can dig and swim routes every start point.** 179 of 179 at a million steps, same as plain search. At 10,000 steps plain search is ahead (67 against 13). Where both find a route, the planner's route is never slower in game ticks.
-- **Nobody has written this down.** We searched 51 sources (the Minecraft wiki, bug trackers, math papers) and found no one who states how build order shapes a Minecraft world.
-- **The Blood Lab works.** Small AI agents rebuilt published results from scratch: 104 of 256 simple rules that ignore update order (matches the paper), and 24, 14 and 20 corners for three classic shapes.
+- **We found nobody who has written this down.** We searched 53 sources (the Minecraft wiki, bug trackers, math papers) and found no one who states how build order shapes a Minecraft world.
+- **The Blood Lab works.** 10 of 16 rebuilt so far. Small AI agents rebuilt published results from scratch: 104 of 256 simple rules that ignore update order (matches the paper), 24, 14 and 20 corners for three classic shapes, the counts 6, 8, 14, 24 for ways to point the links of small maps, 1, 3, 8, 21, 55 for trace counts, 36 links in the order graph of 4 tickets, and 200 random maps where two region-counting methods agree.
 
 ## See it: one ticket, 25 chunks
 
@@ -42,7 +43,7 @@ Every line below was measured on a real Minecraft 1.16.1 server on seed 7.
 
 A ticket starts at level 31. Each chunk away adds 1. A chunk is finished up to level 33. That is two chunks out in every direction, so 5 by 5. The picture is the real server's answer.
 
-This matters for one reason. If a second ticket lands inside a block that is already built, there is nothing left for it to build. So the first ticket in a neighbourhood does the deciding.
+This matters for one reason. If a second ticket lands inside a block that is already built, there is nothing left for it to build. That was our first guess: the first ticket in a neighbourhood does the deciding. The server said no (see below).
 
 ## How it was built, round by round
 
@@ -52,7 +53,7 @@ This matters for one reason. If a second ticket lands inside a block that is alr
 
 **Round 3, the rule.** Before running anything new, we wrote down a rule and committed it: each chunk keeps only the first ticket that reaches it. Then we tested it. It lost. We now test a wider version.
 
-**The Blood Lab.** 16 papers, bug reports and algorithms, re-built in code under `lab/blood/`. Each one must reproduce a number printed in its source or it does not go in.
+**The Blood Lab.** 10 of 16 papers, bug reports and algorithms rebuilt so far, in code under `lab/blood/`. Each one must reproduce a number printed in its source or it does not go in.
 
 **The bug hunt.** We search our own code for real bugs in six areas. Each area announces up front how many probes it runs and how many real bugs end the hunt. A bug only counts with a test that fails on today's code and prints the wrong answer it saw.
 
@@ -60,11 +61,11 @@ This matters for one reason. If a second ticket lands inside a block that is alr
 
 **Two orders, one world.** Chunks A and B touch. Build A first and a granite blob across their border lands one way. Build B first and the same blob can turn out andesite. So a world carries a faint trace of what was built first.
 
-**Counting worlds.** Four chunks can be built in 4 × 3 × 2 × 1 = 24 orders. Many orders end in the same world. Put orders that give the same world in one group. The number of groups is the number of different worlds. For the square it is 4, so each group holds 6 orders.
+**Counting worlds.** Four chunks can be built in 4 × 3 × 2 × 1 = 24 orders. Many orders end in the same world. Put orders that give the same world in one group. The number of groups is the number of different worlds. Our first model said 4 worlds from 24 orders, 6 orders per group. That was a prediction, never run over all 24 orders.
 
-**Bits lost.** Pick one order out of 6 and you need about 2.58 yes-or-no questions to name it. That is how much the finished world no longer tells you. In plain words: the world holds true facts about how you built it that it cannot show you any more.
+**Bits lost.** If the model were right, picking one order out of 6 would take about 2.58 yes-or-no questions, and that is how much the finished world would no longer tell you. In plain words: the world holds true facts about how you built it that it cannot show you any more.
 
-**Do the groups make sense?** Picture every build order as a dot, with dots close together when the orders are almost the same. The orders that give one world should sit in one solid clump with no holes. 111 of 114 groups did.
+**Do the groups make sense?** Picture every build order as a dot, with dots close together when the orders are almost the same. Orders that give one world should sit in one solid clump. We checked the groups that hold more than one order: 3 of 3 came out in two separate pieces, not one clump. One more sign the first rule was too simple.
 
 **Islands and prices.** Treat water and stone as "you can cross, for a price" instead of "wall". At price 0 the spawn map is 158 islands. As the price rises, islands merge.
 
