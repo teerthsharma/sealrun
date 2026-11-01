@@ -310,12 +310,14 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   answer computed by hand, a tie on distance broken by (y, x), a nearest iron walled by stone skipped for the next,
   no iron -> None, no Air -> None.
 - `crates/route/tests/real_trap.rs` (N2.G4.2.2): the round 1 grid never changes when mined (state.rs: blocks never
-  deplete), so a wall cannot be dug through; the trap is tool speed instead. Map 3x1: (0,0) Tree, (1,0) Air start,
-  (2,0) Stone; done = `inv.stone >= 11`, goal_pos (1,0), start `Inv::EMPTY`. Hand ticks (metric.rs): BFS fewest moves
-  = 3 trees x 60 + table 20 + wood pick 20 + 11 stone x 23 = 473 in 16 moves; plan = 4 trees x 60 + 20 + 20 + 3 x 23
-  + stone pick 20 + 8 x 12 = 465 in 18 moves. Test `planner_beats_move_counter_on_wall_trap`: `baseline::bfs(..,
-  1_000_000)` ticks 473 and 16 moves, `plan::plan` ticks 465 and 18 moves, both routes replay through
-  `state::moves` to a done state with the summed ticks equal to the reported ticks, and 465 < 473.
+  deplete), so a wall cannot be dug through; the trap is tool order instead. Map 3x1: (0,0) Tree, (1,0) Air start,
+  (2,0) Stone; goal_pos (1,0), start `Inv::EMPTY`. Correction (House, 12:05): `done = inv.stone >= 11` is no trap,
+  because the stone pick consumes 3 stone (state.rs `crafts`); measured plan = bfs = 473 ticks, 16 moves. New done =
+  `inv.furnace && inv.pick >= Tool::Stone`. Measured (throwaway probe on res/N2.G4.2.2, max_nodes 1_000_000): bfs 573
+  ticks, 19 moves (11 stone with the wood pick, then stone pick, then furnace); plan 485 ticks, 19 moves (stone pick
+  after 3 stone, then 8 stone x 12). Hand check: 4 x 60 + 20 + 20 + 3 x 23 + 20 + 8 x 12 + 20 = 485. Test
+  `planner_beats_move_counter_on_wall_trap`: bfs ticks 573 and 19 moves, plan ticks 485 and 19 moves, both routes
+  replay through `state::moves` to a done state with the summed ticks equal to the reported ticks, and 485 < 573.
 - `crates/route/tests/guard_real_rules.rs` (N2.G4.C1, guard of N2.G4): an independent replay checker in the test
   file, written from the rules, not importing `state::moves` or `metric::dig`: walk to a 4-neighbour Air/Goal, 5
   ticks; mine a 4-neighbour, position unchanged: Tree any tool 60 -> wood+1; Stone needs pick >= Wood (23 wood, 12
@@ -323,7 +325,8 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   recipes of state.rs `crafts`; smelt 200 with a furnace and ore. `check(grid, start, route) -> Result<(u64, State),
   String>`. Test `guard_real_rules`: on a hand map with tree, stone and iron, `plan` to `iron_ore >= 1` replays Ok with
   ticks equal to plan's; a hand route that mines the iron with a wood pick is Err containing "stone pickaxe"; a walk
-  into stone is Err. Run `cargo test -p sealrun-route --test guard_real_rules` (the chart's `-p route` names no
+  into stone is Err; and (House, 12:05, the 12-tick branch had no assert) on the real_trap 3x1 map, `plan` to
+  `inv.furnace && inv.pick >= Tool::Stone` replays Ok to 485 ticks through `check`. Run `cargo test -p sealrun-route --test guard_real_rules` (the chart's `-p route` names no
   package).
 
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
