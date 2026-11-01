@@ -1,0 +1,30 @@
+[
+ {
+  "id": "N4.G1",
+  "title": "What the game states",
+  "plain": "Facts the game itself states about how chunks are built, each re-derived in code from a quoted source and checked against what the lab measured.",
+  "why": "A fact that the lab can reproduce is a fact we can build on.",
+  "done_when": "Each fact has a quoted source, a small program that gives the same number, and a lab measurement it agrees with."
+ },
+ {
+  "id": "N4.G2",
+  "title": "The counting maths",
+  "plain": "The counting maths behind which orders make the same world, each theorem re-derived in code on small cases from its paper.",
+  "why": "The order law rests on known theorems, and re-deriving them checks we read them right.",
+  "done_when": "Each theorem reproduces its paper's worked numbers on small cases."
+ },
+ {
+  "id": "N4.G3",
+  "title": "Reading the terrain",
+  "plain": "The tools that read the shape of the real terrain, each re-derived in code from its paper on a worked example.",
+  "why": "The terrain results are only as good as the tools that produced them.",
+  "done_when": "Each tool reproduces the paper's worked example exactly."
+ },
+ {
+  "id": "N4.G4",
+  "title": "Used by round 3",
+  "plain": "Where a study material is used by a round 3 finding: the implementation must reproduce a number that round 3 already recorded.",
+  "why": "This is the test that the study actually matters to the findings.",
+  "done_when": "Each named use reproduces a recorded round 3 number."
+ }
+]
