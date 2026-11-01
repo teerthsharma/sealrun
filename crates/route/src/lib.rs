@@ -4,5 +4,6 @@ pub mod tech;
 pub mod state;
 pub mod plan;
 pub mod baseline;
+pub mod realmodel;
 
 pub const NAME: &str = "sealrun-route";
