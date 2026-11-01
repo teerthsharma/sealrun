@@ -1,0 +1,1688 @@
+{
+  "lane": "determinism",
+  "run": "n3",
+  "branch": "research/determinism",
+  "q1": {
+    "tile": "62..66 x 62..66, one forceload at (64, 64)",
+    "blocks_per_chunk": 65536,
+    "runs": {
+      "1": {
+        "boot_s": 30.69,
+        "settle_s": 0.62,
+        "stop_code": 0,
+        "java_pid": null,
+        "not_full_chunks": 0
+      },
+      "2": {
+        "boot_s": 18.48,
+        "settle_s": 0.28,
+        "stop_code": 0,
+        "java_pid": 19276,
+        "not_full_chunks": 0
+      },
+      "3": {
+        "boot_s": 16.83,
+        "settle_s": 0.53,
+        "stop_code": 0,
+        "java_pid": 7964,
+        "not_full_chunks": 0
+      }
+    },
+    "differing_blocks_per_chunk": {
+      "62,62": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "62,63": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "62,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "62,65": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "62,66": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "63,62": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "63,63": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "63,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "63,65": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "63,66": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "64,62": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              21
+            ],
+            [
+              "minecraft:tall_grass",
+              "minecraft:grass",
+              2
+            ],
+            [
+              "minecraft:tall_grass",
+              "minecraft:air",
+              2
+            ]
+          ],
+          "2-3": [
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              21
+            ],
+            [
+              "minecraft:tall_grass",
+              "minecraft:grass",
+              2
+            ],
+            [
+              "minecraft:tall_grass",
+              "minecraft:air",
+              2
+            ]
+          ]
+        },
+        "1-3": 25,
+        "2-3": 25
+      },
+      "64,63": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "64,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "64,65": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "64,66": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "65,62": {
+        "1-2": 31,
+        "name_pairs": {
+          "1-2": [
+            [
+              "minecraft:diorite",
+              "minecraft:granite",
+              25
+            ],
+            [
+              "minecraft:diorite",
+              "minecraft:andesite",
+              4
+            ],
+            [
+              "minecraft:andesite",
+              "minecraft:granite",
+              2
+            ]
+          ],
+          "1-3": [
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              13
+            ]
+          ],
+          "2-3": [
+            [
+              "minecraft:granite",
+              "minecraft:diorite",
+              25
+            ],
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              17
+            ],
+            [
+              "minecraft:granite",
+              "minecraft:andesite",
+              2
+            ]
+          ]
+        },
+        "1-3": 13,
+        "2-3": 44
+      },
+      "65,63": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "65,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "65,65": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "65,66": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "66,62": {
+        "1-2": 23,
+        "name_pairs": {
+          "1-2": [
+            [
+              "minecraft:andesite",
+              "minecraft:granite",
+              11
+            ],
+            [
+              "minecraft:diorite",
+              "minecraft:andesite",
+              9
+            ],
+            [
+              "minecraft:diorite",
+              "minecraft:granite",
+              3
+            ]
+          ],
+          "1-3": [
+            [
+              "minecraft:diorite",
+              "minecraft:andesite",
+              2
+            ]
+          ],
+          "2-3": [
+            [
+              "minecraft:granite",
+              "minecraft:andesite",
+              11
+            ],
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              9
+            ],
+            [
+              "minecraft:granite",
+              "minecraft:diorite",
+              3
+            ],
+            [
+              "minecraft:diorite",
+              "minecraft:andesite",
+              2
+            ]
+          ]
+        },
+        "1-3": 2,
+        "2-3": 25
+      },
+      "66,63": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "66,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "66,65": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      },
+      "66,66": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": [],
+          "1-3": [],
+          "2-3": []
+        },
+        "1-3": 0,
+        "2-3": 0
+      }
+    },
+    "differing_blocks_total": {
+      "1-2": 54,
+      "1-3": 40,
+      "2-3": 94
+    },
+    "examples": [
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          64,
+          62
+        ],
+        "pos": [
+          1036,
+          27,
+          998
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          64,
+          62
+        ],
+        "pos": [
+          1036,
+          71,
+          996
+        ],
+        "a": "minecraft:tall_grass",
+        "b": "minecraft:grass"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          64,
+          62
+        ],
+        "pos": [
+          1036,
+          72,
+          996
+        ],
+        "a": "minecraft:tall_grass",
+        "b": "minecraft:air"
+      },
+      {
+        "prefix": "q1",
+        "pair": "2-3",
+        "chunk": [
+          64,
+          62
+        ],
+        "pos": [
+          1036,
+          27,
+          998
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "2-3",
+        "chunk": [
+          64,
+          62
+        ],
+        "pos": [
+          1036,
+          71,
+          996
+        ],
+        "a": "minecraft:tall_grass",
+        "b": "minecraft:grass"
+      },
+      {
+        "prefix": "q1",
+        "pair": "2-3",
+        "chunk": [
+          64,
+          62
+        ],
+        "pos": [
+          1036,
+          72,
+          996
+        ],
+        "a": "minecraft:tall_grass",
+        "b": "minecraft:air"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-2",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1052,
+          36,
+          1004
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:granite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-2",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1052,
+          37,
+          1004
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:granite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-2",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1053,
+          36,
+          1004
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:granite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1040,
+          26,
+          999
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1040,
+          27,
+          998
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1040,
+          27,
+          999
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "2-3",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1040,
+          26,
+          999
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "2-3",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1040,
+          27,
+          998
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "2-3",
+        "chunk": [
+          65,
+          62
+        ],
+        "pos": [
+          1040,
+          27,
+          999
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-2",
+        "chunk": [
+          66,
+          62
+        ],
+        "pos": [
+          1056,
+          21,
+          992
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:andesite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-2",
+        "chunk": [
+          66,
+          62
+        ],
+        "pos": [
+          1056,
+          21,
+          993
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:andesite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-2",
+        "chunk": [
+          66,
+          62
+        ],
+        "pos": [
+          1056,
+          21,
+          994
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:andesite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          66,
+          62
+        ],
+        "pos": [
+          1058,
+          41,
+          1004
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:andesite"
+      },
+      {
+        "prefix": "q1",
+        "pair": "1-3",
+        "chunk": [
+          66,
+          62
+        ],
+        "pos": [
+          1058,
+          42,
+          1004
+        ],
+        "a": "minecraft:diorite",
+        "b": "minecraft:andesite"
+      }
+    ]
+  },
+  "q2": {
+    "grid": "64x64 from per-chunk reads, window spawn -32..+31 (x0 = spawn_x - 32, z0 = spawn_z - 32)",
+    "runs": {
+      "1": {
+        "spawn": [
+          128,
+          192
+        ],
+        "java_pid": 3228,
+        "chunk_reads": 16,
+        "not_full_blocks": 0,
+        "tile_counts": {
+          "0": 1417,
+          "1": 1075,
+          "2": 1538,
+          "3": 21,
+          "4": 45
+        }
+      },
+      "2": {
+        "spawn": [
+          128,
+          192
+        ],
+        "java_pid": 25184,
+        "chunk_reads": 16,
+        "not_full_blocks": 0,
+        "tile_counts": {
+          "0": 1417,
+          "1": 1075,
+          "2": 1538,
+          "3": 21,
+          "4": 45
+        }
+      },
+      "3": {
+        "spawn": [
+          128,
+          192
+        ],
+        "java_pid": 9792,
+        "chunk_reads": 16,
+        "not_full_blocks": 0,
+        "tile_counts": {
+          "0": 1418,
+          "1": 1064,
+          "2": 1552,
+          "3": 21,
+          "4": 41
+        }
+      }
+    },
+    "base_rate_per_boot": {
+      "1": {
+        "cells": 4096,
+        "water_tile_cells": 1538,
+        "adj_water4": 2085,
+        "adj_water8": 2218
+      },
+      "2": {
+        "cells": 4096,
+        "water_tile_cells": 1538,
+        "adj_water4": 2085,
+        "adj_water8": 2218
+      },
+      "3": {
+        "cells": 4096,
+        "water_tile_cells": 1552,
+        "adj_water4": 2093,
+        "adj_water8": 2223
+      }
+    },
+    "differing_cells_per_pair": {
+      "1-2": 0,
+      "1-3": 18,
+      "2-3": 18
+    },
+    "differing_cells_union": 18,
+    "ground_only_differences": 0,
+    "differing_cells_next_to_water": {
+      "any_4_neighbour_water": 18,
+      "any_8_neighbour_water": 18,
+      "any_cell_is_water_tile": 14
+    },
+    "cells": [
+      {
+        "xz": [
+          145,
+          173
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 60
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 60
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          148,
+          172
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:grass_block",
+            "y": 62
+          },
+          "2": {
+            "block": "minecraft:grass_block",
+            "y": 62
+          },
+          "3": {
+            "block": "minecraft:grass_block",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          148,
+          173
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 60
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 60
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          148,
+          174
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:stone",
+            "y": 60
+          },
+          "2": {
+            "block": "minecraft:stone",
+            "y": 60
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          149,
+          174
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:stone",
+            "y": 60
+          },
+          "2": {
+            "block": "minecraft:stone",
+            "y": 60
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          149,
+          177
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 60
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 60
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          150,
+          172
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          },
+          "2": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          },
+          "3": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          150,
+          173
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          150,
+          177
+        ],
+        "tile": {
+          "1": 4,
+          "2": 4,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:iron_ore",
+            "y": 60
+          },
+          "2": {
+            "block": "minecraft:iron_ore",
+            "y": 60
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          151,
+          173
+        ],
+        "tile": {
+          "1": 0,
+          "2": 0,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          151,
+          176
+        ],
+        "tile": {
+          "1": 4,
+          "2": 4,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          152,
+          172
+        ],
+        "tile": {
+          "1": 0,
+          "2": 0,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:lily_pad",
+            "y": 63
+          },
+          "2": {
+            "block": "minecraft:lily_pad",
+            "y": 63
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          152,
+          174
+        ],
+        "tile": {
+          "1": 0,
+          "2": 0,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          152,
+          175
+        ],
+        "tile": {
+          "1": 4,
+          "2": 4,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          152,
+          176
+        ],
+        "tile": {
+          "1": 4,
+          "2": 4,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": false,
+          "2": false,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          153,
+          173
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "2": {
+            "block": "minecraft:dirt",
+            "y": 61
+          },
+          "3": {
+            "block": "minecraft:water",
+            "y": 62
+          }
+        },
+        "water_adj4": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "water_adj8": {
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          153,
+          176
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          },
+          "2": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          },
+          "3": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          }
+        },
+        "water_adj4": {
+          "1": false,
+          "2": false,
+          "3": true
+        },
+        "water_adj8": {
+          "1": false,
+          "2": false,
+          "3": true
+        }
+      },
+      {
+        "xz": [
+          154,
+          173
+        ],
+        "tile": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "ground": {
+          "1": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          },
+          "2": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          },
+          "3": {
+            "block": "minecraft:grass_block",
+            "y": 63
+          }
+        },
+        "water_adj4": {
+          "1": false,
+          "2": false,
+          "3": true
+        },
+        "water_adj8": {
+          "1": false,
+          "2": false,
+          "3": true
+        }
+      }
+    ]
+  },
+  "q3": {
+    "flow": "lab/tests/test_order_edit.py run_fresh(False), gametime read at each phase",
+    "chunks": [
+      [
+        64,
+        64
+      ],
+      [
+        65,
+        64
+      ],
+      [
+        66,
+        64
+      ],
+      [
+        67,
+        64
+      ],
+      [
+        68,
+        64
+      ]
+    ],
+    "not_full": {
+      "1": 0,
+      "2": 0
+    },
+    "java_pid": {
+      "1": 6880,
+      "2": 18040
+    },
+    "settle_s": {
+      "1": {
+        "A": 1.06,
+        "A2": 0.01,
+        "B": 0.2
+      },
+      "2": {
+        "A": 0.91,
+        "A2": 0.01,
+        "B": 0.27
+      }
+    },
+    "boot_s": {
+      "1": 18.39,
+      "2": 27.52
+    },
+    "gametime_phases": {
+      "1": [
+        {
+          "phase": "boot",
+          "ticks": 6,
+          "t_s": 18.41
+        },
+        {
+          "phase": "A ticket loaded",
+          "ticks": 8,
+          "t_s": 18.77
+        },
+        {
+          "phase": "settle A",
+          "ticks": 259,
+          "t_s": 30.91
+        },
+        {
+          "phase": "settle A again",
+          "ticks": 468,
+          "t_s": 41.36
+        },
+        {
+          "phase": "B ticket loaded",
+          "ticks": 469,
+          "t_s": 41.42
+        },
+        {
+          "phase": "settle B",
+          "ticks": 676,
+          "t_s": 51.77
+        }
+      ],
+      "2": [
+        {
+          "phase": "boot",
+          "ticks": 3,
+          "t_s": 27.53
+        },
+        {
+          "phase": "A ticket loaded",
+          "ticks": 5,
+          "t_s": 27.91
+        },
+        {
+          "phase": "settle A",
+          "ticks": 248,
+          "t_s": 39.64
+        },
+        {
+          "phase": "settle A again",
+          "ticks": 453,
+          "t_s": 49.86
+        },
+        {
+          "phase": "B ticket loaded",
+          "ticks": 454,
+          "t_s": 49.95
+        },
+        {
+          "phase": "settle B",
+          "ticks": 663,
+          "t_s": 60.39
+        }
+      ]
+    },
+    "differing_blocks_per_chunk": {
+      "64,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": []
+        }
+      },
+      "65,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": []
+        }
+      },
+      "66,64": {
+        "1-2": 30,
+        "name_pairs": {
+          "1-2": [
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              27
+            ],
+            [
+              "minecraft:dirt",
+              "minecraft:iron_ore",
+              3
+            ]
+          ]
+        }
+      },
+      "67,64": {
+        "1-2": 8,
+        "name_pairs": {
+          "1-2": [
+            [
+              "minecraft:andesite",
+              "minecraft:diorite",
+              8
+            ]
+          ]
+        }
+      },
+      "68,64": {
+        "1-2": 0,
+        "name_pairs": {
+          "1-2": []
+        }
+      }
+    },
+    "differing_blocks_total": {
+      "1-2": 38
+    },
+    "examples": [
+      {
+        "prefix": "q3",
+        "pair": "1-2",
+        "chunk": [
+          66,
+          64
+        ],
+        "pos": [
+          1059,
+          50,
+          1039
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q3",
+        "pair": "1-2",
+        "chunk": [
+          66,
+          64
+        ],
+        "pos": [
+          1059,
+          51,
+          1039
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q3",
+        "pair": "1-2",
+        "chunk": [
+          66,
+          64
+        ],
+        "pos": [
+          1060,
+          52,
+          1039
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q3",
+        "pair": "1-2",
+        "chunk": [
+          67,
+          64
+        ],
+        "pos": [
+          1077,
+          21,
+          1024
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q3",
+        "pair": "1-2",
+        "chunk": [
+          67,
+          64
+        ],
+        "pos": [
+          1077,
+          22,
+          1024
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      },
+      {
+        "prefix": "q3",
+        "pair": "1-2",
+        "chunk": [
+          67,
+          64
+        ],
+        "pos": [
+          1078,
+          21,
+          1024
+        ],
+        "a": "minecraft:andesite",
+        "b": "minecraft:diorite"
+      }
+    ],
+    "round2_reference": {
+      "noise_union_count": 42,
+      "by_chunk": {
+        "66,64": 34,
+        "67,64": 8
+      },
+      "note": "union of (p1 != p2) or (e1 != e2) in round 2; pure p1-vs-p2 count not recorded"
+    }
+  }
+}
