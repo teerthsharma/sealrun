@@ -1,14 +1,16 @@
 import itertools
 
 
+def signature(order, family):
+    """For each set in family, the ticket of that set that comes first in order."""
+    sets = sorted({frozenset(s) for s in family}, key=sorted)
+    rank = {t: i for i, t in enumerate(order)}
+    return tuple(min(s, key=rank.__getitem__) for s in sets)
+
+
 def count_classes(k, family):
     """Number of distinct first-ticket signatures over all k! orders."""
-    sets = sorted({frozenset(s) for s in family}, key=sorted)
-    seen = set()
-    for order in itertools.permutations(range(k)):
-        rank = {t: i for i, t in enumerate(order)}
-        seen.add(tuple(min(s, key=rank.__getitem__) for s in sets))
-    return len(seen)
+    return len({signature(order, family) for order in itertools.permutations(range(k))})
 
 
 def ball_family(tickets, chunks, R):
