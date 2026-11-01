@@ -1,0 +1,1713 @@
+{
+  "boot_secs": 15.81,
+  "settle_s": 10.12,
+  "chunks": {
+    "62,62": {
+      "sha256": "36aed47899955ec5595eface7d301c64e4bef3be5e092f0ce5f34ef2fdf3fa2f",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 77,
+        "coal": 218,
+        "gold": 14,
+        "lapis": 0,
+        "redstone": 23,
+        "emerald": 0
+      }
+    },
+    "62,63": {
+      "sha256": "d7a46d8dc2cbce5cf8b55f131dac3a2f029a03ee84ff62f68c8140c81e33be12",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 98,
+        "coal": 221,
+        "gold": 6,
+        "lapis": 5,
+        "redstone": 30,
+        "emerald": 0
+      }
+    },
+    "62,64": {
+      "sha256": "8413f94a9002b03d4d6d0edc71cecc0e05f913d5b31f3fb70646599fe35466a0",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 113,
+        "coal": 157,
+        "gold": 9,
+        "lapis": 6,
+        "redstone": 18,
+        "emerald": 0
+      }
+    },
+    "62,65": {
+      "sha256": "76195f98e834969264958ca844ab9b27afed944e8f07693a9ee16ed369fa735f",
+      "none": 0,
+      "ores": {
+        "diamond": 2,
+        "iron": 93,
+        "coal": 111,
+        "gold": 16,
+        "lapis": 0,
+        "redstone": 25,
+        "emerald": 0
+      }
+    },
+    "62,66": {
+      "sha256": "188cec6290cc67919fd694ef370d902533298beef878fa8f806fecbbdff7e930",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 105,
+        "coal": 177,
+        "gold": 6,
+        "lapis": 0,
+        "redstone": 24,
+        "emerald": 0
+      }
+    },
+    "62,67": {
+      "sha256": "8f279ffb7727be4be68c9aa0c580fd367b1601b7e2f6686e46fe5ea741b91acd",
+      "none": 0,
+      "ores": {
+        "diamond": 7,
+        "iron": 73,
+        "coal": 170,
+        "gold": 15,
+        "lapis": 4,
+        "redstone": 26,
+        "emerald": 0
+      }
+    },
+    "62,68": {
+      "sha256": "af3689337bc124f694f97e16faae914f5bfaa59c578304aca5052b2d86467b3c",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 96,
+        "coal": 174,
+        "gold": 8,
+        "lapis": 4,
+        "redstone": 26,
+        "emerald": 0
+      }
+    },
+    "62,69": {
+      "sha256": "b5552f812d3b56482697c413d76db8d29f591b32960cf8ece4925868830c225e",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 101,
+        "coal": 120,
+        "gold": 5,
+        "lapis": 8,
+        "redstone": 25,
+        "emerald": 0
+      }
+    },
+    "62,70": {
+      "sha256": "1f9fa1f937dc5feb20d1777825e70f9534454eabbcd462937edc61f1ef21cdd9",
+      "none": 0,
+      "ores": {
+        "diamond": 2,
+        "iron": 109,
+        "coal": 260,
+        "gold": 13,
+        "lapis": 5,
+        "redstone": 30,
+        "emerald": 0
+      }
+    },
+    "62,71": {
+      "sha256": "5da87772364e525c38f08fd7ebec8e362f1d870046c110cf9450ca25be650211",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 92,
+        "coal": 174,
+        "gold": 13,
+        "lapis": 4,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "63,62": {
+      "sha256": "353c93debb7247fc235f7768c2bbbab78250f312ce6b1348ead104cee46acb43",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 85,
+        "coal": 199,
+        "gold": 5,
+        "lapis": 4,
+        "redstone": 43,
+        "emerald": 0
+      }
+    },
+    "63,63": {
+      "sha256": "d293b6b45b2aed089d06aae7f05cae20659174b32f52d615aa9354914aa1b022",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 103,
+        "coal": 99,
+        "gold": 6,
+        "lapis": 5,
+        "redstone": 22,
+        "emerald": 0
+      }
+    },
+    "63,64": {
+      "sha256": "2c5bc9859e9b006c51d5adfccacfbb9cd996e2610ed6058ae51de92e85c54045",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 94,
+        "coal": 172,
+        "gold": 3,
+        "lapis": 6,
+        "redstone": 26,
+        "emerald": 0
+      }
+    },
+    "63,65": {
+      "sha256": "34b81a1d689252147071255ba2e601e462200c788ff8537139bc5a6a5258ba93",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 140,
+        "coal": 168,
+        "gold": 7,
+        "lapis": 4,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "63,66": {
+      "sha256": "3dd12e0e14e73ae6b47f1ff6a966ebedbc39c73cf90108f6b85a3d9a8a150600",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 112,
+        "coal": 189,
+        "gold": 16,
+        "lapis": 6,
+        "redstone": 33,
+        "emerald": 0
+      }
+    },
+    "63,67": {
+      "sha256": "463cf186353e4f564431130dc75ff2c8c966d5b76e1ea007b9d8f4a591b0c4ba",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 84,
+        "coal": 152,
+        "gold": 2,
+        "lapis": 0,
+        "redstone": 13,
+        "emerald": 0
+      }
+    },
+    "63,68": {
+      "sha256": "e872e2cc69c17f70c2f14f6f8c08b4e91a48236527d840dc6e0a42853579e66d",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 115,
+        "coal": 127,
+        "gold": 0,
+        "lapis": 0,
+        "redstone": 7,
+        "emerald": 0
+      }
+    },
+    "63,69": {
+      "sha256": "179664cc357f0979f66c33bc4ba7ebed9d24e0b3c12b5186222cde94691c3238",
+      "none": 0,
+      "ores": {
+        "diamond": 2,
+        "iron": 70,
+        "coal": 195,
+        "gold": 8,
+        "lapis": 7,
+        "redstone": 25,
+        "emerald": 0
+      }
+    },
+    "63,70": {
+      "sha256": "1238f08d5f063a35f2007dd97972dc0210df3e970d3f2fe4a943ac2d90d8f528",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 125,
+        "coal": 121,
+        "gold": 6,
+        "lapis": 8,
+        "redstone": 14,
+        "emerald": 0
+      }
+    },
+    "63,71": {
+      "sha256": "fb18c8db0b12c75b01571b24627387b13e51442e2d850acb57c0057f9807939f",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 120,
+        "coal": 268,
+        "gold": 10,
+        "lapis": 6,
+        "redstone": 29,
+        "emerald": 0
+      }
+    },
+    "64,62": {
+      "sha256": "11e17cdbec96b597bb78da3b503ce61572c88d4451abdbeee0abb7e2abdf9c1a",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 98,
+        "coal": 232,
+        "gold": 18,
+        "lapis": 0,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "64,63": {
+      "sha256": "70381d8bd7c4a8a98eb3ad700b9ca86c7160759c569755e0a62128b5c00324dc",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 105,
+        "coal": 247,
+        "gold": 15,
+        "lapis": 6,
+        "redstone": 31,
+        "emerald": 0
+      }
+    },
+    "64,64": {
+      "sha256": "b8e3333878eff995ada1efb92c334dd994cf93801f5feeb8eb793ac0ab0553cc",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 147,
+        "coal": 217,
+        "gold": 16,
+        "lapis": 2,
+        "redstone": 35,
+        "emerald": 0
+      }
+    },
+    "64,65": {
+      "sha256": "ceabb892a9572656bed7138770bda330448a1b351e10a92441992c9d541996df",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 108,
+        "coal": 187,
+        "gold": 12,
+        "lapis": 5,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "64,66": {
+      "sha256": "6b2db699cc2a243371e6d6033ca5efa6e3f2c487b266d6db6879127565ad7160",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 81,
+        "coal": 226,
+        "gold": 8,
+        "lapis": 0,
+        "redstone": 21,
+        "emerald": 0
+      }
+    },
+    "64,67": {
+      "sha256": "31dab01c9cc25a778439b82a48341b7729a845482dc79a5ab49a9dccb346dc17",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 123,
+        "coal": 191,
+        "gold": 0,
+        "lapis": 0,
+        "redstone": 17,
+        "emerald": 0
+      }
+    },
+    "64,68": {
+      "sha256": "2b899fb3f4494594d287d03bbdb18db3c9ddc73a9f2f3c43a691554a2cfc76a3",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 119,
+        "coal": 226,
+        "gold": 6,
+        "lapis": 5,
+        "redstone": 37,
+        "emerald": 0
+      }
+    },
+    "64,69": {
+      "sha256": "75e83ebf8079421c64b647427208660f43df8c461865a03a43a745efaec3c955",
+      "none": 0,
+      "ores": {
+        "diamond": 2,
+        "iron": 135,
+        "coal": 258,
+        "gold": 12,
+        "lapis": 0,
+        "redstone": 21,
+        "emerald": 0
+      }
+    },
+    "64,70": {
+      "sha256": "30199154663a4e9c50b242bd8a7d1f018a7b160a6eabae2520955041321aca94",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 111,
+        "coal": 290,
+        "gold": 10,
+        "lapis": 5,
+        "redstone": 20,
+        "emerald": 0
+      }
+    },
+    "64,71": {
+      "sha256": "704f2760f1df2c1f1d9af7ed24a66923c852cb6cdb69013e64ebbd1fa72b2b3c",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 128,
+        "coal": 128,
+        "gold": 19,
+        "lapis": 2,
+        "redstone": 26,
+        "emerald": 0
+      }
+    },
+    "65,62": {
+      "sha256": "491f37d72b8bf5d26ef9926005a6ced6052c794379c78cdf34a66109148da626",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 126,
+        "coal": 222,
+        "gold": 4,
+        "lapis": 4,
+        "redstone": 29,
+        "emerald": 0
+      }
+    },
+    "65,63": {
+      "sha256": "495c7edcd6880b2cc1aba272c946594f517577fec2fed5bd6eaa9077d8085699",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 134,
+        "coal": 166,
+        "gold": 10,
+        "lapis": 8,
+        "redstone": 26,
+        "emerald": 0
+      }
+    },
+    "65,64": {
+      "sha256": "325585a86f648dcef6562b7e48fca5fb4ed09ac5a1ed723ee6b958ec7dc46e70",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 138,
+        "coal": 117,
+        "gold": 8,
+        "lapis": 5,
+        "redstone": 41,
+        "emerald": 0
+      }
+    },
+    "65,65": {
+      "sha256": "6ac5d82e305faf9268e2d705f4d5cab174cb0abec0d888715ad2c1c70d4f0d12",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 88,
+        "coal": 274,
+        "gold": 10,
+        "lapis": 0,
+        "redstone": 18,
+        "emerald": 0
+      }
+    },
+    "65,66": {
+      "sha256": "ff3bbc89dfcd53982ded469ba173514eb54b626c63fae81c757f9ce9572cb0fc",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 111,
+        "coal": 241,
+        "gold": 4,
+        "lapis": 6,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "65,67": {
+      "sha256": "2e7aa222c2d242edddc95ac445ce17486669e34853f2f924dd3e97232c1a51da",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 139,
+        "coal": 186,
+        "gold": 14,
+        "lapis": 2,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "65,68": {
+      "sha256": "dbee4326f7e70747f76d9e0a1a9fb2554697f9739ab17e7e33fbdc5bf9bcf633",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 105,
+        "coal": 233,
+        "gold": 16,
+        "lapis": 2,
+        "redstone": 30,
+        "emerald": 0
+      }
+    },
+    "65,69": {
+      "sha256": "bbaf1c7fc8dfd63c97f6e1dbb0cf8d67fbd6f41722140b27dde488e0f5f4fb49",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 134,
+        "coal": 236,
+        "gold": 6,
+        "lapis": 9,
+        "redstone": 28,
+        "emerald": 0
+      }
+    },
+    "65,70": {
+      "sha256": "2794ed51c3c2930a7c739797f816198a6f1f33f3cf5e233ee6079fedaebe0ccf",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 121,
+        "coal": 221,
+        "gold": 13,
+        "lapis": 2,
+        "redstone": 29,
+        "emerald": 0
+      }
+    },
+    "65,71": {
+      "sha256": "7b25dc11cc32fe0c87183dee6891427a1128ec03408ecec993151c1ecddf1cb0",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 114,
+        "coal": 152,
+        "gold": 12,
+        "lapis": 2,
+        "redstone": 32,
+        "emerald": 0
+      }
+    },
+    "66,62": {
+      "sha256": "f1df692295ac3b932aae03da56efd0cb66fbd87073aa00791d02d8ec59ed298d",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 134,
+        "coal": 154,
+        "gold": 15,
+        "lapis": 7,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "66,63": {
+      "sha256": "251580b4f24d76301c3462a69305e50904890a333087c026a9ef403fa6602905",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 88,
+        "coal": 192,
+        "gold": 9,
+        "lapis": 2,
+        "redstone": 13,
+        "emerald": 0
+      }
+    },
+    "66,64": {
+      "sha256": "b674152e6e73bc618edab6f212c1dada124a980f2e81a65fe97743bdd76a86c9",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 111,
+        "coal": 259,
+        "gold": 10,
+        "lapis": 6,
+        "redstone": 19,
+        "emerald": 0
+      }
+    },
+    "66,65": {
+      "sha256": "ba4e87cc7c722fe9c4e3ae4a01e78908f8b2ac2d84bfd92f93707e97b0ca47fd",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 114,
+        "coal": 180,
+        "gold": 15,
+        "lapis": 4,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "66,66": {
+      "sha256": "7c1034a1b92f25c7c29962ffb006aa11eedc03ccc36d947c219dfda619f3241e",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 112,
+        "coal": 185,
+        "gold": 11,
+        "lapis": 3,
+        "redstone": 47,
+        "emerald": 0
+      }
+    },
+    "66,67": {
+      "sha256": "4b3d842386c6fa06a0ff9260278b005ec837abe4722b0021ace62b5adb206528",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 131,
+        "coal": 164,
+        "gold": 14,
+        "lapis": 5,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "66,68": {
+      "sha256": "0b2e616032644667315955aef94e8b61643cc5b0bf2004648c99bbadcae8a0f4",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 97,
+        "coal": 189,
+        "gold": 16,
+        "lapis": 5,
+        "redstone": 41,
+        "emerald": 0
+      }
+    },
+    "66,69": {
+      "sha256": "3c4c9dcdd88b65d68dace4fef6ecaff9486b0b80ba0bd6cb88c5d65543c5fa4c",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 117,
+        "coal": 252,
+        "gold": 11,
+        "lapis": 3,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "66,70": {
+      "sha256": "5b2be1694f30aac74c3fa62aa38a033ac2e2022ef77093eafca57b340f7350a1",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 111,
+        "coal": 179,
+        "gold": 8,
+        "lapis": 0,
+        "redstone": 40,
+        "emerald": 0
+      }
+    },
+    "66,71": {
+      "sha256": "b0274be10ee2fe4425a355bd686a895bea882c0e32c6f725926d805ff5d75381",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 129,
+        "coal": 169,
+        "gold": 14,
+        "lapis": 8,
+        "redstone": 33,
+        "emerald": 0
+      }
+    },
+    "67,62": {
+      "sha256": "1be4efe6ed8f10a41f7dbc7edd03f5e802924eaedc54b44bdf8a8dfbade36101",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 86,
+        "coal": 231,
+        "gold": 5,
+        "lapis": 0,
+        "redstone": 17,
+        "emerald": 0
+      }
+    },
+    "67,63": {
+      "sha256": "9455f3b287bc5013296301c48f6b079571549a46824e8aef691cc06e778fa70a",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 89,
+        "coal": 154,
+        "gold": 10,
+        "lapis": 0,
+        "redstone": 29,
+        "emerald": 0
+      }
+    },
+    "67,64": {
+      "sha256": "09ced50b3d8fb1d6315deeb724a855345a21fc295927329437482ff358ae6d56",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 126,
+        "coal": 179,
+        "gold": 4,
+        "lapis": 2,
+        "redstone": 14,
+        "emerald": 0
+      }
+    },
+    "67,65": {
+      "sha256": "fb1b6dbf5aee4a42c740baa0856f9217cd0224993f83b61b56bdacca3cda1b62",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 95,
+        "coal": 191,
+        "gold": 14,
+        "lapis": 6,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "67,66": {
+      "sha256": "dac73f41fcf37e26148c65813b29270e5df80e7338fb8459c77d3ab81c4da0c1",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 146,
+        "coal": 200,
+        "gold": 13,
+        "lapis": 4,
+        "redstone": 28,
+        "emerald": 0
+      }
+    },
+    "67,67": {
+      "sha256": "85f5ced1f1b7b188237336b435cff13c3d9cd79f97ee5c26921825229a55bdf4",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 120,
+        "coal": 250,
+        "gold": 7,
+        "lapis": 5,
+        "redstone": 31,
+        "emerald": 0
+      }
+    },
+    "67,68": {
+      "sha256": "3ba4ef419bf7426ec8dfb306792206b159135cb9cda214c67c539a9f69ab8c82",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 100,
+        "coal": 301,
+        "gold": 7,
+        "lapis": 0,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "67,69": {
+      "sha256": "01bac716cb5437efbb5deec359bbd8b1f794545ea86773622fa97bdb5a235743",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 141,
+        "coal": 210,
+        "gold": 7,
+        "lapis": 4,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "67,70": {
+      "sha256": "40455f103c391415531f8375523cd7732d912ed423f8c7039d7e33ff938f8cc9",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 86,
+        "coal": 274,
+        "gold": 10,
+        "lapis": 4,
+        "redstone": 33,
+        "emerald": 0
+      }
+    },
+    "67,71": {
+      "sha256": "749e706f43fe02b115b3c4f707da3dd145b7e49640f66667443f3fbd6dd12ee5",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 99,
+        "coal": 161,
+        "gold": 0,
+        "lapis": 5,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "68,62": {
+      "sha256": "b1437f3190a3ffeb2e2f050e9b7cf333a5c08058f4fde919e27e52f18b7cf476",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 122,
+        "coal": 228,
+        "gold": 14,
+        "lapis": 4,
+        "redstone": 22,
+        "emerald": 0
+      }
+    },
+    "68,63": {
+      "sha256": "ac860781770a791c08662d76435d0cfd4183db9ff143cac8d88a11be9fc7922c",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 92,
+        "coal": 202,
+        "gold": 14,
+        "lapis": 6,
+        "redstone": 36,
+        "emerald": 0
+      }
+    },
+    "68,64": {
+      "sha256": "b290a16fce452404f43d1a7ea36b3226fcb7d73c9b949ad91a9170916320036b",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 121,
+        "coal": 211,
+        "gold": 2,
+        "lapis": 2,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "68,65": {
+      "sha256": "c342c6897138a7c1b14b8b6b727a8a9b51e24cae9e32e83191ea874baa78c338",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 99,
+        "coal": 140,
+        "gold": 7,
+        "lapis": 4,
+        "redstone": 24,
+        "emerald": 0
+      }
+    },
+    "68,66": {
+      "sha256": "09b220e22a0c3c2442bafff0af34aefc4177e6c6ae8de2e1ea9c89631122d56c",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 107,
+        "coal": 186,
+        "gold": 17,
+        "lapis": 4,
+        "redstone": 31,
+        "emerald": 0
+      }
+    },
+    "68,67": {
+      "sha256": "ac283d0cbd0dce70327cfd34912119593e5d8f68e19c5c8d68b1f297e88f157d",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 143,
+        "coal": 189,
+        "gold": 19,
+        "lapis": 3,
+        "redstone": 40,
+        "emerald": 0
+      }
+    },
+    "68,68": {
+      "sha256": "ba4baf4cc70c35fe67716eb24bac03a90ee2df46b25c68511421ea0be617ead1",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 88,
+        "coal": 186,
+        "gold": 12,
+        "lapis": 8,
+        "redstone": 39,
+        "emerald": 0
+      }
+    },
+    "68,69": {
+      "sha256": "8b962843d864c05dad3b124e04199a38d2ac99ae34b0f53fd336a1447c065420",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 153,
+        "coal": 250,
+        "gold": 9,
+        "lapis": 2,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "68,70": {
+      "sha256": "ddd92480f5f357b77f3a2ebc1855b92269765dc9b6180d21522226cee7363fa6",
+      "none": 0,
+      "ores": {
+        "diamond": 2,
+        "iron": 121,
+        "coal": 219,
+        "gold": 18,
+        "lapis": 8,
+        "redstone": 30,
+        "emerald": 0
+      }
+    },
+    "68,71": {
+      "sha256": "1c9c0be2513e35b2d44d0602cb9b6dd734ce88d2bc17fd5fc9f381617d68fa78",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 107,
+        "coal": 256,
+        "gold": 12,
+        "lapis": 5,
+        "redstone": 26,
+        "emerald": 0
+      }
+    },
+    "69,62": {
+      "sha256": "32f715cb6757a52178a671708f9a25d88d186eb6a7809e460f160b2fd514a141",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 106,
+        "coal": 201,
+        "gold": 5,
+        "lapis": 4,
+        "redstone": 36,
+        "emerald": 0
+      }
+    },
+    "69,63": {
+      "sha256": "87aedf4f1f258f44fccc820791c3a9a18eb23e2028b2c9a043c6784781d160b4",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 136,
+        "coal": 161,
+        "gold": 12,
+        "lapis": 4,
+        "redstone": 38,
+        "emerald": 0
+      }
+    },
+    "69,64": {
+      "sha256": "2a022faedec83ea1290c6792f293007f58a273a20c1d1b2d3b361704415bd74b",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 116,
+        "coal": 233,
+        "gold": 12,
+        "lapis": 5,
+        "redstone": 37,
+        "emerald": 0
+      }
+    },
+    "69,65": {
+      "sha256": "d26ac83ae85bcdbe9f87895d3934720b2bf7cad960c62026bd5d78419449782f",
+      "none": 0,
+      "ores": {
+        "diamond": 3,
+        "iron": 134,
+        "coal": 229,
+        "gold": 18,
+        "lapis": 10,
+        "redstone": 37,
+        "emerald": 0
+      }
+    },
+    "69,66": {
+      "sha256": "f5e654cffa39b1b38d63362a30aa0caaa850704bc75b46a5d77eec6b08097065",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 101,
+        "coal": 240,
+        "gold": 9,
+        "lapis": 3,
+        "redstone": 43,
+        "emerald": 0
+      }
+    },
+    "69,67": {
+      "sha256": "3b1558b1a04f2cab768785fd63b7c590f541c06fbefd6f666c694667b5c6c18f",
+      "none": 0,
+      "ores": {
+        "diamond": 2,
+        "iron": 120,
+        "coal": 264,
+        "gold": 11,
+        "lapis": 5,
+        "redstone": 35,
+        "emerald": 0
+      }
+    },
+    "69,68": {
+      "sha256": "eebf1ce8f53cc078ed3a51fb0c97d5468fdf120a945aa9ff749b815f9f40bc28",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 124,
+        "coal": 159,
+        "gold": 15,
+        "lapis": 6,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "69,69": {
+      "sha256": "7037d2771d51d84d996ce86b1626cf7c8748a812e3ca36859e13f466efce0b89",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 95,
+        "coal": 202,
+        "gold": 1,
+        "lapis": 5,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "69,70": {
+      "sha256": "149fcb2d33d3192ac5737e71219067ba7edd7100bacf9b4761559564141bff10",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 136,
+        "coal": 324,
+        "gold": 14,
+        "lapis": 3,
+        "redstone": 14,
+        "emerald": 0
+      }
+    },
+    "69,71": {
+      "sha256": "d307626b9e2d4637ceccef54679d63878f9879ba3b9766408eb2292d6b58b12a",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 95,
+        "coal": 226,
+        "gold": 15,
+        "lapis": 4,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "70,62": {
+      "sha256": "a7758e619b76b0fe22a8b6c5cf0608ee4fed60e599d312246a271984671a2564",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 138,
+        "coal": 229,
+        "gold": 11,
+        "lapis": 0,
+        "redstone": 37,
+        "emerald": 0
+      }
+    },
+    "70,63": {
+      "sha256": "a950e79de0b9a5006af019a24f838d122cc6b8f4efe80b2151b32c640e29ce68",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 114,
+        "coal": 196,
+        "gold": 17,
+        "lapis": 0,
+        "redstone": 30,
+        "emerald": 0
+      }
+    },
+    "70,64": {
+      "sha256": "dc71c821ed4f47eb47be65a154d45283ca054aad2134732f14d2f28bacf0138f",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 99,
+        "coal": 198,
+        "gold": 6,
+        "lapis": 6,
+        "redstone": 22,
+        "emerald": 0
+      }
+    },
+    "70,65": {
+      "sha256": "556caa7353a9d8c50fffa09cf5668c522b4665ca50fe896ca83e2cb1b7732192",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 107,
+        "coal": 233,
+        "gold": 15,
+        "lapis": 4,
+        "redstone": 32,
+        "emerald": 0
+      }
+    },
+    "70,66": {
+      "sha256": "b18d70ee54fb8ffdfe259a32a4f5b650b18a1258dc3e429d6aea341b3564dbb5",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 91,
+        "coal": 273,
+        "gold": 11,
+        "lapis": 5,
+        "redstone": 30,
+        "emerald": 0
+      }
+    },
+    "70,67": {
+      "sha256": "d6481ef6d1696f55d855e23ecfb9a494fbdfa5d539bee8facbf6eca17d64124c",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 123,
+        "coal": 251,
+        "gold": 4,
+        "lapis": 0,
+        "redstone": 17,
+        "emerald": 0
+      }
+    },
+    "70,68": {
+      "sha256": "4ae68211c825c553f29e175502adb49eface657c70caf0df986bd7365ac7355d",
+      "none": 0,
+      "ores": {
+        "diamond": 7,
+        "iron": 97,
+        "coal": 172,
+        "gold": 4,
+        "lapis": 5,
+        "redstone": 13,
+        "emerald": 0
+      }
+    },
+    "70,69": {
+      "sha256": "6aed23f5c58d976c94a5134c40f83cae0af57466a02ee1baa3f707311fdd5404",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 103,
+        "coal": 252,
+        "gold": 6,
+        "lapis": 1,
+        "redstone": 28,
+        "emerald": 0
+      }
+    },
+    "70,70": {
+      "sha256": "839ccb4da5aff51cdb01373404d629ab74a44f496b5ad40ec031b282e81da2e5",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 135,
+        "coal": 269,
+        "gold": 16,
+        "lapis": 1,
+        "redstone": 34,
+        "emerald": 0
+      }
+    },
+    "70,71": {
+      "sha256": "679e55ea8a0e11f7221bf03f6c7388b20bb46055db55f573d7344f31bd3d2fbe",
+      "none": 0,
+      "ores": {
+        "diamond": 8,
+        "iron": 125,
+        "coal": 367,
+        "gold": 8,
+        "lapis": 3,
+        "redstone": 23,
+        "emerald": 0
+      }
+    },
+    "71,62": {
+      "sha256": "82cf6c7b5f80d3231e566883c13ea7a1c7738328e12431669e68b2d354809834",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 122,
+        "coal": 361,
+        "gold": 8,
+        "lapis": 6,
+        "redstone": 29,
+        "emerald": 0
+      }
+    },
+    "71,63": {
+      "sha256": "efc6f17ccf92fc361ec4a0203f59909869e0c79c63da73d32f2428b1c4f5d06a",
+      "none": 0,
+      "ores": {
+        "diamond": 4,
+        "iron": 112,
+        "coal": 200,
+        "gold": 10,
+        "lapis": 0,
+        "redstone": 24,
+        "emerald": 0
+      }
+    },
+    "71,64": {
+      "sha256": "624070ca001b97f6087ef78257c07379b381f56db435ec2918a5210186355180",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 96,
+        "coal": 194,
+        "gold": 13,
+        "lapis": 3,
+        "redstone": 32,
+        "emerald": 0
+      }
+    },
+    "71,65": {
+      "sha256": "b45a9525fd22f991977b5f8a21630d969b72adda002003ab8fc89b06840f6875",
+      "none": 0,
+      "ores": {
+        "diamond": 7,
+        "iron": 133,
+        "coal": 269,
+        "gold": 18,
+        "lapis": 3,
+        "redstone": 22,
+        "emerald": 0
+      }
+    },
+    "71,66": {
+      "sha256": "43e5c6fc960b91a6d8c10759c0c1d7a665a6decf230bd12b9c97df89424cab6d",
+      "none": 0,
+      "ores": {
+        "diamond": 6,
+        "iron": 114,
+        "coal": 133,
+        "gold": 17,
+        "lapis": 4,
+        "redstone": 38,
+        "emerald": 0
+      }
+    },
+    "71,67": {
+      "sha256": "bf3e4fa2cc77b3ef64cfb3f4d60cc1bebd549c1c54ec108a2b127cd996ba3a3c",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 107,
+        "coal": 138,
+        "gold": 6,
+        "lapis": 6,
+        "redstone": 22,
+        "emerald": 0
+      }
+    },
+    "71,68": {
+      "sha256": "c44e08937a691e76f35e743185d12f60a5fc9e34fd5ca91f8c8b43f95cbe19e9",
+      "none": 0,
+      "ores": {
+        "diamond": 0,
+        "iron": 77,
+        "coal": 132,
+        "gold": 6,
+        "lapis": 0,
+        "redstone": 14,
+        "emerald": 0
+      }
+    },
+    "71,69": {
+      "sha256": "ec500322d9ea3054de5049fa9740eced80b12b516aafff3f1f030f9d19b96cdc",
+      "none": 0,
+      "ores": {
+        "diamond": 5,
+        "iron": 84,
+        "coal": 143,
+        "gold": 8,
+        "lapis": 2,
+        "redstone": 27,
+        "emerald": 0
+      }
+    },
+    "71,70": {
+      "sha256": "f773e786b6f6cb45542d0486472ff950f6a4744f5f49d2207c9d7e8611ff9a96",
+      "none": 0,
+      "ores": {
+        "diamond": 7,
+        "iron": 110,
+        "coal": 244,
+        "gold": 4,
+        "lapis": 5,
+        "redstone": 36,
+        "emerald": 0
+      }
+    },
+    "71,71": {
+      "sha256": "0f67246b90e7aecbc71b93471308e116b372d5c6b2b82af983f8ee76f6288a0b",
+      "none": 0,
+      "ores": {
+        "diamond": 1,
+        "iron": 102,
+        "coal": 187,
+        "gold": 18,
+        "lapis": 6,
+        "redstone": 34,
+        "emerald": 0
+      }
+    }
+  },
+  "raw": "C:\\Users\\seal\\sealrun-lab\\raw\\squares_s5_CDAB",
+  "when": "2026-11-01T14:26:28.482248+05:30",
+  "order": [
+    [
+      64,
+      69
+    ],
+    [
+      69,
+      69
+    ],
+    [
+      64,
+      64
+    ],
+    [
+      69,
+      64
+    ]
+  ],
+  "window": "62,62,71,71",
+  "window_chunks": 100,
+  "skipped_far": [],
+  "spacing": 5,
+  "label": "CDAB",
+  "order_named": "CDAB",
+  "pre_registered": "lab/results/research/squares_s5.json predictions block",
+  "lab_servers": {
+    "at_launch": 2,
+    "at_boot": 3,
+    "at_last_sample": 2,
+    "max_during": 3,
+    "samples": [
+      [
+        0.0,
+        2
+      ],
+      [
+        1.0,
+        2
+      ],
+      [
+        2.0,
+        3
+      ],
+      [
+        3.0,
+        3
+      ],
+      [
+        4.0,
+        3
+      ],
+      [
+        5.0,
+        3
+      ],
+      [
+        6.0,
+        3
+      ],
+      [
+        7.0,
+        2
+      ],
+      [
+        8.0,
+        2
+      ],
+      [
+        9.0,
+        2
+      ],
+      [
+        10.1,
+        2
+      ],
+      [
+        11.1,
+        2
+      ],
+      [
+        12.1,
+        2
+      ],
+      [
+        13.1,
+        2
+      ],
+      [
+        14.1,
+        2
+      ],
+      [
+        15.1,
+        2
+      ],
+      [
+        16.1,
+        2
+      ],
+      [
+        17.1,
+        2
+      ],
+      [
+        18.1,
+        2
+      ],
+      [
+        19.1,
+        2
+      ],
+      [
+        20.1,
+        2
+      ],
+      [
+        21.1,
+        2
+      ],
+      [
+        22.1,
+        2
+      ],
+      [
+        23.1,
+        2
+      ],
+      [
+        24.1,
+        2
+      ],
+      [
+        25.1,
+        2
+      ],
+      [
+        26.1,
+        3
+      ],
+      [
+        27.1,
+        3
+      ],
+      [
+        28.1,
+        3
+      ],
+      [
+        29.1,
+        3
+      ],
+      [
+        30.1,
+        3
+      ],
+      [
+        31.1,
+        3
+      ],
+      [
+        32.1,
+        3
+      ],
+      [
+        33.1,
+        2
+      ],
+      [
+        34.1,
+        2
+      ],
+      [
+        35.1,
+        2
+      ],
+      [
+        36.2,
+        2
+      ],
+      [
+        37.2,
+        2
+      ],
+      [
+        38.2,
+        2
+      ],
+      [
+        39.2,
+        2
+      ],
+      [
+        40.2,
+        2
+      ],
+      [
+        41.2,
+        2
+      ],
+      [
+        42.2,
+        2
+      ],
+      [
+        43.2,
+        1
+      ],
+      [
+        44.2,
+        1
+      ],
+      [
+        45.2,
+        1
+      ],
+      [
+        46.2,
+        2
+      ],
+      [
+        47.2,
+        2
+      ],
+      [
+        48.2,
+        2
+      ],
+      [
+        49.2,
+        2
+      ],
+      [
+        50.2,
+        2
+      ],
+      [
+        51.2,
+        2
+      ],
+      [
+        52.2,
+        2
+      ],
+      [
+        53.2,
+        2
+      ],
+      [
+        54.2,
+        2
+      ],
+      [
+        55.2,
+        1
+      ],
+      [
+        56.2,
+        1
+      ],
+      [
+        57.2,
+        1
+      ],
+      [
+        58.2,
+        1
+      ],
+      [
+        59.2,
+        1
+      ],
+      [
+        60.2,
+        1
+      ],
+      [
+        61.2,
+        1
+      ],
+      [
+        62.2,
+        1
+      ],
+      [
+        63.2,
+        2
+      ],
+      [
+        64.2,
+        2
+      ],
+      [
+        65.2,
+        3
+      ],
+      [
+        66.2,
+        3
+      ],
+      [
+        67.2,
+        3
+      ],
+      [
+        68.2,
+        3
+      ],
+      [
+        69.3,
+        3
+      ],
+      [
+        70.3,
+        3
+      ],
+      [
+        71.3,
+        3
+      ],
+      [
+        72.3,
+        3
+      ],
+      [
+        73.3,
+        3
+      ],
+      [
+        74.3,
+        3
+      ],
+      [
+        75.3,
+        2
+      ],
+      [
+        76.3,
+        2
+      ],
+      [
+        77.3,
+        2
+      ],
+      [
+        78.3,
+        2
+      ],
+      [
+        79.3,
+        2
+      ],
+      [
+        80.3,
+        2
+      ],
+      [
+        81.3,
+        2
+      ],
+      [
+        82.3,
+        2
+      ],
+      [
+        83.3,
+        2
+      ],
+      [
+        84.4,
+        2
+      ],
+      [
+        85.4,
+        2
+      ],
+      [
+        86.4,
+        2
+      ],
+      [
+        87.4,
+        2
+      ],
+      [
+        88.4,
+        2
+      ],
+      [
+        89.4,
+        2
+      ],
+      [
+        90.4,
+        2
+      ],
+      [
+        91.4,
+        2
+      ],
+      [
+        92.4,
+        2
+      ]
+    ]
+  }
+}
