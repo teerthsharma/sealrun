@@ -129,4 +129,14 @@ fn guard_real_rules() {
 
     let err = check(&g, s, &[Move::Walk((1, 1))]).expect_err("walking into stone must fail");
     assert!(err.contains("Stone"), "error was: {err}");
+
+    let mut row = Grid::new(3, 1);
+    row.set(0, 0, Tile::Tree);
+    row.set(2, 0, Tile::Stone);
+    let done = |st: &State| st.inv.furnace && st.inv.pick >= Tool::Stone;
+    let (furnace_ticks, furnace_route) = plan(&row, s, (1, 0), done).expect("plan finds a furnace with a stone pickaxe");
+    assert_eq!(furnace_ticks, 485, "hand count: 4 trees 240, 4 crafts 80, 3 stone with wood pick 69, 8 stone with stone pick 96");
+    let (replayed, end) = check(&row, s, &furnace_route).expect("furnace route replays");
+    assert_eq!(replayed, furnace_ticks, "checker ticks vs plan ticks, furnace route");
+    assert!(end.pos == (1, 0) && end.inv.furnace && end.inv.pick >= Tool::Stone, "end state {end:?}");
 }
