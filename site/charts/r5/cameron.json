@@ -1,0 +1,44 @@
+[
+ {
+  "id": "N5.G1",
+  "title": "Hunt bugs in the world readers",
+  "plain": "Six probes look for wrong answers in the code that reads Minecraft save files and writes build commands. Two are already proven: a block name with a line break sneaks in a second server command, and a height of 300 is sent to a world that stops at 255.",
+  "why": "The hunt stops after 2 real bugs are fixed, so it cannot run forever.",
+  "done_when": "Two bugs fixed with the failing output quoted, or six probes run."
+ },
+ {
+  "id": "N5.G2",
+  "title": "Hunt bugs in the server drivers",
+  "plain": "Five probes check the scripts that start the real server, talk to it and stop it: bad replies, repeated settings, a stopped process whose number was reused.",
+  "why": "Each probe runs first; a probe that shows the right answer is dropped, not counted.",
+  "done_when": "Two bugs fixed, or five probes run."
+ },
+ {
+  "id": "N5.G3",
+  "title": "Hunt bugs in the result scripts",
+  "plain": "Five probes look at the scripts that turn measurements into sentences and numbers. Three are proven: an unmeasured noise level still prints a next step, an empty benchmark list crashes with no name, flat ground crashes with a maths error.",
+  "why": "A sentence that claims more than was measured is a bug, even if no crash happens.",
+  "done_when": "Two bugs fixed, or five probes run."
+ },
+ {
+  "id": "N5.G4",
+  "title": "Hunt tests that check nothing",
+  "plain": "One guard is red on main today: its list of equal worlds is empty, so the check has nothing to check. A plain run of the same file says 0 tests and OK.",
+  "why": "A test that passes with nothing checked is worse than a missing test.",
+  "done_when": "Two bugs fixed, or four probes run."
+ },
+ {
+  "id": "N5.G5",
+  "title": "Hunt bugs in the website builders",
+  "plain": "Four probes look at the scripts that build the progress page: duplicate cards, a missing fellow file, a port that cannot be found.",
+  "why": "One real bug is enough here because the site is small.",
+  "done_when": "One bug fixed, or four probes run."
+ },
+ {
+  "id": "N5.G6",
+  "title": "Hunt bugs in the Rust solver",
+  "plain": "Five probes try odd maps. Two are proven: a world of 1 by 1 or 0 by 0 cells panics, and a map file with zero width and a height of four billion is accepted.",
+  "why": "Rust must stay green: all tests and clippy with warnings as errors.",
+  "done_when": "Two bugs fixed, or five probes run."
+ }
+]
