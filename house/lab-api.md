@@ -159,4 +159,15 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   `list` answers `There are 0 of a max of 4 players online: `. A block check is `execute if block x y z <block>`
   after `forceload add x z` (`orderrun.wait_loaded`).
 
+## Round 2, batch 7
+- `bench.py` (N2.G1.2.5): `peak_mb(pid: int) -> float`: PeakWorkingSetSize of that process in MB via `ctypes`
+  (`OpenProcess` with PROCESS_QUERY_LIMITED_INFORMATION | PROCESS_VM_READ, `K32GetProcessMemoryInfo`), read while it
+  runs. `measure(root: Path) -> dict`: make_scratch, `boot` (boot_secs), `reset` timed (reset_secs), peak_mb of each
+  java read just before its stop, always stopped and `serverdir.remove`d. Keys: `boot_secs`, `reset_secs`,
+  `peak_mb` (max of the two javas), `xmx` ("1G"), `free_mb_before`, `when` (ISO time), `runs` (1).
+  `python lab/bench.py` writes `lab/results/lab_timing.json`. Numbers are measured, never typed in.
+- `test_anvil_live.py` (N2.G2.6): boot, `wait_loaded`, place five known blocks with `setblock` (different sections
+  and both chunks of a border pair inside loaded chunks), `save-all flush`, `stop`, then `anvil.block_at(scratch_dir /
+  "world" / "region", x, y, z)` equals each placed name. Only the test file is written.
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
