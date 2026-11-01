@@ -3,7 +3,10 @@ PASS = frozenset(
     "minecraft:" + n
     for n in (
         "air", "cave_air", "void_air", "grass", "tall_grass", "fern", "large_fern", "snow",
-        "seagrass", "tall_seagrass", "kelp", "kelp_plant", "flowers", "sugar_cane", "dead_bush",
+        "seagrass", "tall_seagrass", "kelp", "kelp_plant", "sugar_cane", "dead_bush",
+        "dandelion", "poppy", "blue_orchid", "allium", "azure_bluet", "red_tulip", "orange_tulip",
+        "white_tulip", "pink_tulip", "oxeye_daisy", "cornflower", "lily_of_the_valley",
+        "wither_rose", "sunflower", "lilac", "rose_bush", "peony",
     )
 )
 

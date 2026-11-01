@@ -35,11 +35,11 @@ class Lab(unittest.TestCase):
             column(2, 0, 62, "minecraft:oak_log", {63: "minecraft:oak_leaves", 64: "minecraft:oak_leaves"}),
             column(3, 0, 62, "minecraft:water"),
             column(0, 1, 62, GRASS, {59: IRON}),
-            column(1, 1, 62, GRASS, {63: "minecraft:fern"}),
+            column(1, 1, 62, GRASS, {63: "minecraft:poppy"}),
             column(2, 1, 62, GRASS, {55: IRON}),
             column(3, 1, 62),
             column(0, 2, 62),
-            column(1, 2, 62),
+            column(1, 2, 61),
             column(2, 2, 62),
             column(3, 2, 62),
         )
