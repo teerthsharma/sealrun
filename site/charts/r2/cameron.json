@@ -26,5 +26,26 @@
   "plain": "The page reads the experiment's result files when it opens instead of copying them in a build step. A missing file shows not run.",
   "why": "A copied number can go stale after a reset and look like a finding; a live read cannot.",
   "done_when": "With no result files every number says not run, and a changed file shows its new number at once."
+ },
+ {
+  "id": "N2.G6.1",
+  "title": "How tightly neighbours depend on each other",
+  "plain": "The 24 build orders of four chunks become a table of how much each chunk changes when the order changes, plus one number for how strongly neighbours lean on each other.",
+  "why": "One number says whether order is a real lever or noise, and which neighbouring pairs carry it.",
+  "done_when": "On made-up tables the script gives zero for no dependence and a known value for a planted one."
+ },
+ {
+  "id": "N2.G6.2",
+  "title": "How far one change reaches",
+  "plain": "After one change, a swapped build or one placed block, the script counts the blocks that differ at each chunk distance and says whether the damage grows or dies out.",
+  "why": "It shows whether a move before a chunk builds can only touch its neighbour or spread further.",
+  "done_when": "On a made-up chain with known decay the script reports the right counts per distance and the right growth rate."
+ },
+ {
+  "id": "N2.G6.3",
+  "title": "Is the ground really fractal",
+  "plain": "The script measures how rough seed 7's ground is at different distances and checks whether a straight line fits the numbers.",
+  "why": "The word fractal is used only if the measurement earns it.",
+  "done_when": "On made-up ground with known roughness the fitted slope matches, and on seed 7 the fit quality is reported."
  }
 ]
