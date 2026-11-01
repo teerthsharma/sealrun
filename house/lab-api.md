@@ -166,8 +166,23 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   java read just before its stop, always stopped and `serverdir.remove`d. Keys: `boot_secs`, `reset_secs`,
   `peak_mb` (max of the two javas), `xmx` ("1G"), `free_mb_before`, `when` (ISO time), `runs` (1).
   `python lab/bench.py` writes `lab/results/lab_timing.json`. Numbers are measured, never typed in.
+  Batch 7 fix (Wilson r2-batch7): one more key `other_java` = java.exe processes running when `measure` starts
+  (`tasklist`), so a boot timed beside another server says so. The committed file is measured with `other_java` 0.
+  The test checks the committed file against its own fresh measurement (boot, reset, peak within 50 %), and
+  `reset_secs` against the wall time of `server.reset` itself (within 0.25 s).
 - `test_anvil_live.py` (N2.G2.6): boot, `wait_loaded`, place five known blocks with `setblock` (different sections
   and both chunks of a border pair inside loaded chunks), `save-all flush`, `stop`, then `anvil.block_at(scratch_dir /
   "world" / "region", x, y, z)` equals each placed name. Only the test file is written.
+
+## Round 2, batch 8
+- Far chunk = `orders.SQUARES[0]` corner (64, 64) (blocks 1024..1039), file `r.2.2.mca`. World spawn comes from the
+  scratch `world/level.dat` (`nbt.read`, `Data.SpawnX`, `Data.SpawnZ`); every result names its distance in chunks.
+- Statuses are the raw `anvil.chunk_status` strings after `save-all flush` (None = not on disk). Dr House's leap
+  n2-L1 (unverified, from memory) predicts a forceloaded chunk's neighbours at Chebyshev distance 1 and 2 are
+  `"full"` (forceload ticket level 31, FULL at level <= 33) and distance 3 is not. The real server decides; a test
+  written to Foreman's hypothesis that fails on real data is a finding, never bent to pass.
+- `test_guard_setblock_edges.py` (N2.G2.C2, guard `test_guard_setblock_edges`): real server; blocks at x 15|16 and
+  z -1|0 (both sides of chunk borders), at (-17, 64, -33) (`r.-1.-1.mca`), at y 0 and y 255; `save-all flush`, stop,
+  every one read back exactly with `anvil.block_at`.
 
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
