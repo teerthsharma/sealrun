@@ -166,6 +166,10 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   java read just before its stop, always stopped and `serverdir.remove`d. Keys: `boot_secs`, `reset_secs`,
   `peak_mb` (max of the two javas), `xmx` ("1G"), `free_mb_before`, `when` (ISO time), `runs` (1).
   `python lab/bench.py` writes `lab/results/lab_timing.json`. Numbers are measured, never typed in.
+  Batch 7 fix (Wilson r2-batch7): one more key `other_java` = java.exe processes running when `measure` starts
+  (`tasklist`), so a boot timed beside another server says so. The committed file is measured with `other_java` 0.
+  The test checks the committed file against its own fresh measurement (boot, reset, peak within 50 %), and
+  `reset_secs` against the wall time of `server.reset` itself (within 0.25 s).
 - `test_anvil_live.py` (N2.G2.6): boot, `wait_loaded`, place five known blocks with `setblock` (different sections
   and both chunks of a border pair inside loaded chunks), `save-all flush`, `stop`, then `anvil.block_at(scratch_dir /
   "world" / "region", x, y, z)` equals each placed name. Only the test file is written.
