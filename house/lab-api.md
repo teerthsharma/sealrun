@@ -286,4 +286,44 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   [three None counts], "when"} before asserting. Asserts: 0 None in all three windows, control_changed 0, pair_changed
   0 (the 4-class collapse). Nonzero is a finding (the collapse is false), reported, never bent.
 
+## Round 2, batch 15 (goal 2, the route)
+- `gridfile.py` (N2.G4.1.2), pure: `to_bytes(rows: list[list[int]]) -> bytes` = `struct.pack("<II", w, h)` then
+  every cell row by row (row = z, cell = x), the layout of `crates/world/src/grid.rs` `Grid::to_bytes` (u32 LE w,
+  u32 LE h, then `cells[y * w + x]`). ValueError on no rows, ragged rows, or a value outside `flatten.TILES`.
+  `write(path, rows)`. Fixture `crates/route/tests/fixtures/contract_4x3.grid` = to_bytes([[0, 1, 2, 3], [4, 5, 0, 1],
+  [2, 3, 4, 5]]) (20 bytes, header 04 00 00 00 03 00 00 00). Test `gridfile_matches_committed_contract_bytes`: the
+  committed fixture equals to_bytes of that sample, byte for byte, and equals the hand bytes
+  `bytes([4,0,0,0, 3,0,0,0, 0,1,2,3, 4,5,0,1, 2,3,4,5])`; the three ValueError cases raise. (Rust reading it back is
+  N2.G4.1.3.)
+- `spawn_area.py` (N2.G4.1.A1), one boot: `read(scratch, half=48) -> (blocks, spawn)` boots, sends only
+  `save-all flush` (no forceload, no other command), stops, reads `Data.SpawnX/SpawnZ` from `world/level.dat` (as
+  test_far_chunk.py:35) and returns `window.box` over x spawn_x-half..spawn_x+half, z likewise, y 0..255. Test file
+  `test_spawn_area.py`, method `test_boot_spawn_area_has_tree_stone_iron` (the file runs whole): one fresh scratch, read,
+  0 None cells, `flatten.grid(blocks, spawn_x-half, spawn_z-half, 2*half+1, 2*half+1)` holds at least one tree, one
+  stone and one iron tile; prints spawn, the tile counts and the None count. Fewer than one of a kind is a finding,
+  reported, never bent (do not widen `half`).
+- `crates/route/tests/common/mod.rs` + `real_setup.rs` (N2.G4.2.1): `pub fn start_finish(grid: &Grid) ->
+  Option<((u32, u32), (u32, u32))>`. start = the Air tile with the smallest (|x - w/2| + |y - h/2|, y, x) (integer
+  w/2, h/2). finish: irons sorted by (Manhattan distance to start, y, x); for the first iron that has one, the first
+  of its neighbours (x-1, y), (x+1, y), (x, y-1), (x, y+1) that is in bounds and `is_open`. None when there is no Air
+  tile or no iron with an open neighbour. Test `start_and_finish_picked_on_hand_grid` on hand grids: a 5x5 with the
+  answer computed by hand, a tie on distance broken by (y, x), a nearest iron walled by stone skipped for the next,
+  no iron -> None, no Air -> None.
+- `crates/route/tests/real_trap.rs` (N2.G4.2.2): the round 1 grid never changes when mined (state.rs: blocks never
+  deplete), so a wall cannot be dug through; the trap is tool speed instead. Map 3x1: (0,0) Tree, (1,0) Air start,
+  (2,0) Stone; done = `inv.stone >= 11`, goal_pos (1,0), start `Inv::EMPTY`. Hand ticks (metric.rs): BFS fewest moves
+  = 3 trees x 60 + table 20 + wood pick 20 + 11 stone x 23 = 473 in 16 moves; plan = 4 trees x 60 + 20 + 20 + 3 x 23
+  + stone pick 20 + 8 x 12 = 465 in 18 moves. Test `planner_beats_move_counter_on_wall_trap`: `baseline::bfs(..,
+  1_000_000)` ticks 473 and 16 moves, `plan::plan` ticks 465 and 18 moves, both routes replay through
+  `state::moves` to a done state with the summed ticks equal to the reported ticks, and 465 < 473.
+- `crates/route/tests/guard_real_rules.rs` (N2.G4.C1, guard of N2.G4): an independent replay checker in the test
+  file, written from the rules, not importing `state::moves` or `metric::dig`: walk to a 4-neighbour Air/Goal, 5
+  ticks; mine a 4-neighbour, position unchanged: Tree any tool 60 -> wood+1; Stone needs pick >= Wood (23 wood, 12
+  stone, 8 iron) -> stone+1; Iron needs pick >= Stone (23 stone, 15 iron) -> iron_ore+1; crafts 20 ticks with the
+  recipes of state.rs `crafts`; smelt 200 with a furnace and ore. `check(grid, start, route) -> Result<(u64, State),
+  String>`. Test `guard_real_rules`: on a hand map with tree, stone and iron, `plan` to `iron_ore >= 1` replays Ok with
+  ticks equal to plan's; a hand route that mines the iron with a wood pick is Err containing "stone pickaxe"; a walk
+  into stone is Err. Run `cargo test -p sealrun-route --test guard_real_rules` (the chart's `-p route` names no
+  package).
+
 Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
