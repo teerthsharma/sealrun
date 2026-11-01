@@ -41,4 +41,8 @@ def _tile(blocks, ground, x, z):
 
 def grid(blocks, x0, z0, w, h):
     ground = _ground(blocks)
+    for x in range(x0, x0 + w):
+        for z in range(z0, z0 + h):
+            if (x, z) not in ground:
+                raise ValueError(f"no ground block at ({x}, {z})")
     return [[_tile(blocks, ground, x, z) for x in range(x0, x0 + w)] for z in range(z0, z0 + h)]

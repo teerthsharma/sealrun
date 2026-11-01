@@ -56,6 +56,12 @@ class Lab(unittest.TestCase):
         with self.assertRaises(ValueError):
             flatten.grid(empty, 0, 0, 1, 1)
 
+    def missing_column_raises_value_error(self):
+        blocks = column(0, 0, 64)
+        with self.assertRaises(ValueError) as cm:
+            flatten.grid(blocks, 0, 0, 2, 1)
+        self.assertIn("(1, 0)", str(cm.exception))
+
 
 if __name__ == "__main__":
     unittest.main()
