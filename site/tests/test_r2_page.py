@@ -8,6 +8,7 @@ from pathlib import Path
 
 SITE = Path(__file__).resolve().parents[1]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+BADGE = {"reached": "passing", "blocked": "failing", "active": "in progress"}
 
 
 class Parsed(html.parser.HTMLParser):
@@ -17,19 +18,25 @@ class Parsed(html.parser.HTMLParser):
         self.goals = []
         self.orders = []
         self.all_text = []
+        self.marks = []
 
     def handle_starttag(self, tag, attrs):
         if tag in VOID:
             return
         a = dict(attrs)
         sink = None
+        owner = next((o for _, _, o in reversed(self.stack) if o), None)
         if "data-goal" in a:
             sink = []
+            owner = ("goal", a["data-goal"])
             self.goals.append((a["data-goal"], sink))
         elif "data-order" in a:
             sink = []
+            owner = ("order", len(self.orders))
             self.orders.append(sink)
-        self.stack.append((tag, sink))
+        if owner:
+            self.marks.append((owner, a))
+        self.stack.append((tag, sink, owner))
 
     def handle_endtag(self, tag):
         for i in range(len(self.stack) - 1, -1, -1):
@@ -39,13 +46,21 @@ class Parsed(html.parser.HTMLParser):
 
     def handle_data(self, data):
         self.all_text.append(data)
-        for _, sink in self.stack:
+        for _, sink, _ in self.stack:
             if sink is not None:
                 sink.append(data)
 
 
 def norm(s):
     return " ".join(s.split())
+
+
+def marks(parsed, owner, name):
+    return [a[name] for o, a in parsed.marks if o == owner and name in a]
+
+
+def card_text(parsed, gid):
+    return norm(" ".join(next(s for g, s in parsed.goals if g == gid)))
 
 
 def extract_render(source):
@@ -79,7 +94,7 @@ def render(render_src, data):
 
 def goal(gid, title, status="pending", department=None):
     return {
-        "id": gid, "fellows": ["foreman"], "title": title, "plain": f"Plain {title}",
+        "id": gid, "fellows": ["foreman"], "title": title, "plain": f"About {gid}",
         "why": "why", "done_when": "done", "status": status, "department": department,
     }
 
@@ -97,22 +112,45 @@ class Lab(unittest.TestCase):
             goal("N2.A", "First goal", "reached", "neurology"),
             goal("N2.B", "Second goal", "blocked"),
             goal("N2.C", "Third goal", "active", "oncology"),
+            goal("N2.D", "Fourth goal", "reached"),
         ]
+        ids = [g["id"] for g in goals]
         route = {"played": False, "note": "NOTE MARKER"}
         orders = [
-            {"order": [[0, 0], [1, 0]], "diff": 1234},
-            {"order": [[0, 1]], "diff": 56},
+            {"order": [[0, 0], [1, 0]], "diff": 10},
+            {"order": [[0, 1]], "diff": 20},
         ]
 
         with_orders = render(render_src, {"route": route, "goals": goals, "orders": orders})
-        self.assertEqual([g for g, _ in with_orders.goals], ["N2.A", "N2.B", "N2.C"])
+        self.assertEqual([g for g, _ in with_orders.goals], ids)
         self.assertEqual(len(with_orders.orders), 2)
-        for sink, diff in zip(with_orders.orders, [1234, 56]):
-            self.assertIn(str(diff), norm(" ".join(sink)))
         self.assertIn("NOTE MARKER", norm(" ".join(with_orders.all_text)))
 
+        for g in goals:
+            text = card_text(with_orders, g["id"])
+            self.assertIn(g["title"], text)
+            self.assertIn(BADGE[g["status"]], text)
+            if g["department"]:
+                self.assertIn(g["department"], text)
+            else:
+                self.assertNotIn("null", text)
+
+        status = {g["id"]: marks(with_orders, ("goal", g["id"]), "data-status") for g in goals}
+        for g in goals:
+            self.assertEqual(status[g["id"]], [g["status"]])
+        self.assertNotEqual(status["N2.A"], status["N2.B"])
+        self.assertEqual(status["N2.A"], status["N2.D"])
+
+        heights = []
+        for i, o in enumerate(orders):
+            style = marks(with_orders, ("order", i), "style")
+            self.assertEqual(len(style), 1)
+            heights.append(int(re.search(r"height:(\d+)px", style[0]).group(1)))
+            self.assertIn(str(o["diff"]), norm(" ".join(with_orders.orders[i])).split())
+        self.assertEqual(heights[1], 2 * heights[0])
+
         without = render(render_src, {"route": route, "goals": goals})
-        self.assertEqual([g for g, _ in without.goals], ["N2.A", "N2.B", "N2.C"])
+        self.assertEqual([g for g, _ in without.goals], ids)
         self.assertIn("not run yet", norm(" ".join(without.all_text)))
         self.assertEqual(without.orders, [])
 
