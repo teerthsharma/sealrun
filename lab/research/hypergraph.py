@@ -119,7 +119,7 @@ def analyze(worlds):
         s_hat = smallest(fits)
         rec["fits"] = [sorted(S) for S in fits]
         rec["S_hat"] = [sorted(S) for S in s_hat]
-        if not any(is_ball(S, c, tickets) for S in s_hat):
+        if not rec["constant"] and not any(is_ball(S, c, tickets) for S in s_hat):
             non_ball.append(key)
         rec["ball"] = {}
         for R in RADII:
