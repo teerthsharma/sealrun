@@ -1,5 +1,4 @@
 import os
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -18,20 +17,6 @@ SRC = Path(os.environ.get("SEALRUN_SERVER", "C:/Users/seal/Desktop/sanitised min
 ROOT = Path(os.environ.get("SEALRUN_LAB", Path.home() / "sealrun-lab"))
 
 
-def remove_scratch(d: Path) -> None:
-    if not (d / serverdir.MARKER).is_file():
-        return
-    deadline = time.monotonic() + 10
-    while True:
-        try:
-            shutil.rmtree(d)
-            return
-        except OSError:
-            if time.monotonic() > deadline:
-                raise
-            time.sleep(0.5)
-
-
 class Lab(unittest.TestCase):
     def server_boots_to_done_and_answers_list(self):
         ROOT.mkdir(parents=True, exist_ok=True)
@@ -45,7 +30,7 @@ class Lab(unittest.TestCase):
             self.assertEqual(server.running_count(), 0)
             print(f"boot_secs={srv.boot_secs:.2f} list={reply!r}")
         finally:
-            remove_scratch(scratch["dir"])
+            serverdir.remove(scratch["dir"])
 
     def interrupt_during_boot_stops_the_process(self):
         real_popen = subprocess.Popen

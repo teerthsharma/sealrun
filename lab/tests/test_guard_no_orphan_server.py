@@ -38,7 +38,7 @@ def rmtree_within(path: Path, secs: float = 10.0) -> bool:
 
 def drop_scratch(path: Path) -> None:
     if (path / serverdir.MARKER).exists():
-        shutil.rmtree(path, ignore_errors=True)
+        serverdir.remove(path)
 
 
 class Lab(unittest.TestCase):
