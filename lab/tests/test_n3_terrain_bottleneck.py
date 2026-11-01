@@ -3,7 +3,10 @@
 Convention (terrain_persistence.json): vertices are walkable tile centres, edges join
 4-neighbours; a tile is walkable at price T iff its cost <= T (air 0, water s, stone d,
 tree and iron never walkable). The join price is the least T at which the start
-component is 4-adjacent to an iron tile.
+component reaches the target set below.
+Targets (terrain_ph.py): iron_touch = walkable tiles 4-adjacent to an iron tile; tree_touch =
+walkable tiles 4-adjacent to a tree tile; stone_enter = stone tiles themselves (start component
+contains stone).
 """
 import heapq
 import json
@@ -36,12 +39,16 @@ def price_of(cells, s, d):
     return [table.get(c) for c in cells]
 
 
-def iron_adjacent(w, h, cells):
+def adjacent_to(w, h, cells, kind):
     out = set()
     for i, c in enumerate(cells):
-        if c == IRON:
+        if c == kind:
             out.update(neighbours4(i, w, h))
     return out
+
+
+def tiles_of(cells, kind):
+    return {i for i, c in enumerate(cells) if c == kind}
 
 
 def minimax_join(w, h, cost, start, target):
@@ -92,20 +99,26 @@ class Lab(unittest.TestCase):
         sx, sy = data["start"]
         start = sy * w + sx
         self.assertEqual(cells[start], AIR)
-        target = iron_adjacent(w, h, cells)
-        self.assertTrue(target)
+        targets = {
+            "iron_touch": adjacent_to(w, h, cells, IRON),
+            "tree_touch": adjacent_to(w, h, cells, TREE),
+            "stone_enter": tiles_of(cells, STONE),
+        }
+        for tgt in targets.values():
+            self.assertTrue(tgt)
         rows = []
         for name, sysrep in data["systems"].items():
             s, d = sysrep["s"], sysrep["d"]
-            saved = sysrep["bottleneck_T"]["iron_touch"]
             cost = price_of(cells, s, d)
-            mm = minimax_join(w, h, cost, start, target)
-            sw = sweep_join(w, h, cost, start, target, data["T_grid"])
-            print(f"{name}  s={s} d={d}  saved={saved} minimax={mm} sweep={sw}")
-            rows.append((name, saved, mm, sw))
-        for name, saved, mm, sw in rows:
-            self.assertEqual(mm, saved, f"{name}: minimax != saved join price")
-            self.assertEqual(sw, mm, f"{name}: union-find sweep != minimax")
+            for field, target in targets.items():
+                saved = sysrep["bottleneck_T"][field]
+                mm = minimax_join(w, h, cost, start, target)
+                sw = sweep_join(w, h, cost, start, target, data["T_grid"])
+                print(f"{name}  s={s} d={d}  {field}: saved={saved} minimax={mm} sweep={sw}")
+                rows.append((f"{name}/{field}", saved, mm, sw))
+        for label, saved, mm, sw in rows:
+            self.assertEqual(mm, saved, f"{label}: minimax != saved bottleneck price")
+            self.assertEqual(sw, mm, f"{label}: union-find sweep != minimax")
 
 
 if __name__ == "__main__":
