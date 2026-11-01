@@ -15,7 +15,7 @@ import det_common as dc
 import noise_world as nw
 
 CHUNK_BLOCKS = 16 * 256 * 16
-CONDS = ("a", "b", "c", "s", "bx")
+CONDS = ("a", "b", "c", "s", "bx", "t")
 OUT = dc.REPO / "lab" / "results" / "research" / "noise.json"
 Q1 = dc.REPO / "lab" / "results" / "research" / "determinism.json"
 
@@ -45,10 +45,7 @@ def conc(w, key):
             "java_cwd_lab": c["java_cwd_lab"]}
 
 
-def summarize(cond):
-    paths = sorted(nw.RAW.glob(f"noise_{cond}_*.json"))
-    if not paths:
-        return None
+def summarize(cond, paths):
     worlds = [json.loads(p.read_text(encoding="utf-8")) for p in paths]
     tags = [w["tag"] for w in worlds]
     per_chunk_distinct, per_chunk_states, pair_totals, per_chunk_pairs = {}, {}, Counter(), {}
@@ -89,13 +86,18 @@ def summarize(cond):
             "java_pid": w["java_pid"], "tile_load_s": w["tile_load_s"], "ring_load_s": w.get("ring_load_s"),
             "stop_code": w["stop_code"], "not_full": sum(c["not_full"] for c in w["chunks"].values()),
             "exclusive_wait": w.get("exclusive_wait"),
+            "java_gate_found": None if "java_gate" not in w else w["java_gate"]["found"],
+            "sampling": w.get("sampling") and {k: w["sampling"][k] for k in ("samples", "foreign_samples")},
+            "foreign_seen": w.get("sampling", {}).get("foreign_seen"),
+            "solo": w.get("solo"),
             "conc_boot": conc(w, "conc_boot"), "conc_save": conc(w, "conc_save"),
         } for w in worlds],
         "per_chunk_distinct_sha": per_chunk_distinct,
         "per_chunk_states": {k: v for k, v in per_chunk_states.items() if len(v) > 1},
-        "pair_diffs_total": {k: pair_totals[k] for k in sorted(pair_totals)},
+        "pair_diffs_total": {f"{a}-{b}": pair_totals[f"{a}-{b}"] for a, b in itertools.combinations(tags, 2)},
         "pair_diffs_per_chunk": per_chunk_pairs,
         "union_differing_blocks": len(union),
+        "mean_pair_diff": round(sum(pair_totals[f"{a}-{b}"] for a, b in itertools.combinations(tags, 2)) / len(list(itertools.combinations(tags, 2))), 1),
         "y_range": [min(ys), max(ys)] if ys else None,
         "block_name_pairs": [[a, b, n] for (a, b), n in names.most_common(12)],
         "edge_distance_histogram": {str(d): edges[d] for d in sorted(edges)},
@@ -118,6 +120,7 @@ def main():
             "b": "settle 60 s: 60 s after the tile loads, before the first flush; then the a tail",
             "c": "settle 10 s plus a ticket on the 24 chunks of the distance-3 ring; then the a tail; only the 5x5 is read",
             "s": "condition a protocol, run only when no other java has its cwd under sealrun-lab (polled every 15 s, up to 1200 s)",
+            "t": "condition a protocol after a java gate (zero java of any cwd before boot); a 1 s sampler records foreign java from before boot to after stop; solo = no foreign sample; not-solo worlds are summarized separately as t_not_solo",
             "bx": "condition b protocol (60 s before flush), with the same exclusive-server wait as s",
         },
         "reference_determinism_q1": {"boots": 3, "differing_blocks_total": q1["q1"]["differing_blocks_total"],
@@ -126,9 +129,18 @@ def main():
         "results": {},
     }
     for cond in CONDS:
-        s = summarize(cond)
-        if s is not None:
-            out["results"][cond] = s
+        paths = sorted(nw.RAW.glob(f"noise_{cond}_*.json"))
+        if not paths:
+            continue
+        if cond == "t":
+            solo = [p for p in paths if json.loads(p.read_text(encoding="utf-8")).get("solo")]
+            kept_apart = [p for p in paths if p not in solo]
+            if solo:
+                out["results"]["t"] = summarize("t", solo)
+            if kept_apart:
+                out["results"]["t_not_solo"] = summarize("t", kept_apart)
+        else:
+            out["results"][cond] = summarize(cond, paths)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
     for cond, s in out["results"].items():
