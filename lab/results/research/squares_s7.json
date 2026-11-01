@@ -52,5 +52,806 @@
       "ABCD_rep"
     ],
     "count_note": "the s=5 and s=7 list in the brief names 7 worlds (6 distinct orders plus the repeat); identity ABCD is rotation 0, so it is not counted twice"
+  },
+  "amendments": [
+    {
+      "date": "2026-11-01",
+      "reason": "coordinator note: the same order can give different worlds (determinism.json on main: differing blocks 54, 40, 94 across its three pairs)",
+      "changes": [
+        "added repeat control DCBA_rep (order DCBA built twice) per spacing",
+        "class counts computed on chunks where both repeat pairs agree; noisy chunks listed apart",
+        "concurrent lab server count recorded at launch, boot, last sample and max, per world",
+        "predictions block above is unchanged"
+      ]
+    }
+  ],
+  "results": {
+    "worlds_run": [
+      "ABCD",
+      "DCBA",
+      "BCDA",
+      "CDAB",
+      "DABC",
+      "ACBD",
+      "ABCD_rep",
+      "DCBA_rep"
+    ],
+    "window_chunks": 100,
+    "clean_chunks": 49,
+    "noisy_chunks": 51,
+    "class_count_clean": 6,
+    "classes_clean": [
+      {
+        "members": [
+          "ABCD"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DCBA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "BCDA"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "CDAB"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "DABC"
+        ],
+        "size": 1
+      },
+      {
+        "members": [
+          "ACBD"
+        ],
+        "size": 1
+      }
+    ],
+    "class_count_all_chunks_reference": 6,
+    "noisy_chunk_list": [
+      {
+        "chunk": "62,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 10,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "62,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "62,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 39,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "62,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 8,
+          "DCBA|DCBA_rep": 6
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "62,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 8
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "62,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 14
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "63,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 24
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "63,66",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 3,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "63,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 641,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "63,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 9,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "63,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 22
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "64,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 20
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "64,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "64,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 52,
+          "DCBA|DCBA_rep": 16
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "64,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 3,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "65,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 31
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 2
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "65,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 14
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 23
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 4,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "66,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 33
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 30
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,72",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "66,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 7
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 35
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 30,
+          "DCBA|DCBA_rep": 31
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 2
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 21,
+          "DCBA|DCBA_rep": 21
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 18,
+          "DCBA|DCBA_rep": 24
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,72",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 3,
+          "DCBA|DCBA_rep": 9
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "69,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 437,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "70,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 14
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "70,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 11
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "70,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "70,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 2,
+          "DCBA|DCBA_rep": 1
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "70,73",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 9,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "71,66",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 8
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "71,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 4
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "71,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 13,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "71,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 0
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep"
+        ]
+      },
+      {
+        "chunk": "72,63",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 29
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "72,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 7
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "72,65",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 49,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "72,66",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 1,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "ABCD|ABCD_rep",
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "73,62",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "73,63",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 352
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "73,64",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 32
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "73,69",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 2
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "73,70",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 18
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      },
+      {
+        "chunk": "73,71",
+        "blocks_by_pair": {
+          "ABCD|ABCD_rep": 0,
+          "DCBA|DCBA_rep": 3
+        },
+        "pairs_hash_differs": [
+          "DCBA|DCBA_rep"
+        ]
+      }
+    ],
+    "repeat_pairs": {
+      "ABCD|ABCD_rep": {
+        "differing_chunks_by_hash": 26,
+        "differing_blocks_raw": 1362
+      },
+      "DCBA|DCBA_rep": {
+        "differing_chunks_by_hash": 42,
+        "differing_blocks_raw": 873
+      }
+    },
+    "between_classes": [
+      {
+        "class_reps": [
+          "ABCD",
+          "DCBA"
+        ],
+        "members": [
+          "DCBA"
+        ],
+        "differing_clean_chunks": [
+          "62,72",
+          "63,63",
+          "63,65",
+          "64,63",
+          "64,64",
+          "65,63",
+          "65,64",
+          "66,69",
+          "69,63",
+          "69,66",
+          "70,63",
+          "71,62"
+        ],
+        "differing_blocks_clean": 119
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "BCDA"
+        ],
+        "members": [
+          "BCDA"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "63,63",
+          "63,65",
+          "64,63",
+          "64,64",
+          "65,63",
+          "65,64",
+          "66,69",
+          "69,63",
+          "69,66",
+          "70,63",
+          "71,62",
+          "72,62"
+        ],
+        "differing_blocks_clean": 1024
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "CDAB"
+        ],
+        "members": [
+          "CDAB"
+        ],
+        "differing_clean_chunks": [
+          "62,72",
+          "63,63",
+          "63,64",
+          "63,65",
+          "64,64",
+          "64,70",
+          "65,66",
+          "65,70",
+          "66,69",
+          "69,66",
+          "71,72",
+          "72,69"
+        ],
+        "differing_blocks_clean": 775
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "DABC"
+        ],
+        "members": [
+          "DABC"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,66",
+          "66,69",
+          "69,63",
+          "69,66",
+          "70,66",
+          "71,65"
+        ],
+        "differing_blocks_clean": 164
+      },
+      {
+        "class_reps": [
+          "ABCD",
+          "ACBD"
+        ],
+        "members": [
+          "ACBD"
+        ],
+        "differing_clean_chunks": [
+          "62,63",
+          "62,66",
+          "66,69",
+          "72,69"
+        ],
+        "differing_blocks_clean": 105
+      }
+    ],
+    "boot_secs": {
+      "min": 16.31,
+      "max": 26.42,
+      "per_world": {
+        "ABCD": 23.19,
+        "DCBA": 24.19,
+        "BCDA": 21.58,
+        "CDAB": 23.11,
+        "DABC": 16.31,
+        "ACBD": 18.45,
+        "ABCD_rep": 21.45,
+        "DCBA_rep": 26.42
+      }
+    },
+    "settle_s": {
+      "min": 10.11,
+      "max": 11.84
+    },
+    "lab_servers": {
+      "per_world": {
+        "ABCD": {
+          "at_launch": 3,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 3
+        },
+        "DCBA": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 2,
+          "max_during": 3
+        },
+        "BCDA": {
+          "at_launch": 2,
+          "at_boot": 3,
+          "at_last_sample": 1,
+          "max_during": 3
+        },
+        "CDAB": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 3
+        },
+        "DABC": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 2
+        },
+        "ACBD": {
+          "at_launch": 1,
+          "at_boot": 2,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "ABCD_rep": {
+          "at_launch": 0,
+          "at_boot": 1,
+          "at_last_sample": 0,
+          "max_during": 2
+        },
+        "DCBA_rep": {
+          "at_launch": 0,
+          "at_boot": 2,
+          "at_last_sample": 1,
+          "max_during": 2
+        }
+      },
+      "at_boot": {
+        "min": 1,
+        "max": 3
+      },
+      "at_last_sample": {
+        "min": 0,
+        "max": 2
+      },
+      "max_during": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    "cameron_8a3707c_expected": 1,
+    "cameron_match_clean": false,
+    "polytope": "lab/results/research/quotient_polytope.json at research/polytope head 43faa40 (last file commit b04b482) has no squares-at-spacing-s rows"
   }
 }
