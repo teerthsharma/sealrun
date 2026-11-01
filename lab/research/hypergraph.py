@@ -84,19 +84,30 @@ def repeat_mismatches(worlds):
     return bad
 
 
+def repeat_diffs(worlds):
+    counts = {}
+    for x in repeat_mismatches(worlds):
+        counts[x["chunk"]] = counts.get(x["chunk"], 0) + 1
+    return counts
+
+
 def analyze(worlds):
     tickets = sorted({tuple(t) for t in worlds[0]["order"]})
     index = {t: i for i, t in enumerate(tickets)}
     k = len(tickets)
     orders = [tuple(index[tuple(t)] for t in w["order"]) for w in worlds]
     keys = sorted(set.intersection(*(set(w["chunks"]) for w in worlds)))
+    noisy = repeat_diffs(worlds)
     chunks, violations, non_ball = {}, [], []
     match = {R: {"exact": 0, "tied": 0, "fits": 0} for R in RADII}
     for key in keys:
+        if key in noisy:
+            chunks[key] = {"noisy": True, "repeat_diff_orders": noisy[key]}
+            continue
         c = tuple(int(v) for v in key.split(","))
         shas = [w["chunks"][key]["sha256"] for w in worlds]
         fits = fitting_sets(orders, shas, k)
-        rec = {"constant": is_constant(shas), "n_fits": len(fits)}
+        rec = {"noisy": False, "constant": is_constant(shas), "n_fits": len(fits)}
         if not fits:
             violations.append(key)
             rec["violation"] = True
@@ -125,10 +136,12 @@ def analyze(worlds):
         "k": k,
         "tickets": [list(t) for t in tickets],
         "distinct_orders": len({o for o in orders}),
-        "chunks_analyzed": len(keys),
+        "chunks_total": len(keys),
+        "chunks_stable": len(keys) - len(noisy),
         "summary": {
+            "noisy": sorted(key for key in keys if key in noisy),
             "violations": violations,
-            "constant": sum(r["constant"] for r in chunks.values()),
+            "constant": sum(r.get("constant", False) for r in chunks.values()),
             "non_ball_S_hat": non_ball,
             "match_by_R": {str(R): match[R] for R in RADII},
         },
@@ -158,10 +171,9 @@ def run(exp):
     ctrl = repeat_mismatches(worlds)
     entry = {"experiment": exp, "campaign_sha": sha, "worlds": paths,
              "tickets": [list(t) for t in sorted({tuple(t) for t in worlds[0]["order"]})],
-             "repeat_control": {"void": bool(ctrl), "mismatches": ctrl},
+             "repeat_control": {"noisy_chunks": len(repeat_diffs(worlds)), "mismatches": ctrl},
              "when": datetime.now(IST).isoformat()}
-    if not ctrl:
-        entry.update(analyze(worlds))
+    entry.update(analyze(worlds))
     return entry
 
 
@@ -175,10 +187,10 @@ def main(argv):
         res["runs"].append(entry)
         OUT.parent.mkdir(parents=True, exist_ok=True)
         OUT.write_text(json.dumps(res, indent=2) + "\n", encoding="utf-8")
-        s = entry.get("summary")
+        s = entry["summary"]
         print(f"{exp} @ {entry['campaign_sha'][:7]} worlds {len(entry['worlds'])} "
-              f"void {entry['repeat_control']['void']} "
-              + ("" if s is None else f"violations {len(s['violations'])} match {s['match_by_R']}"))
+              f"chunks {entry['chunks_total']} noisy {len(s['noisy'])} stable {entry['chunks_stable']} "
+              f"violations {len(s['violations'])} match {s['match_by_R']}")
     return 0
 
 

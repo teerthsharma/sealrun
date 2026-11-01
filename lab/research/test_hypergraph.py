@@ -44,6 +44,29 @@ class Hypergraph(unittest.TestCase):
         self.assertEqual(H.repeat_mismatches(same), [])
         self.assertEqual(len(H.repeat_mismatches(diff)), 1)
 
+    def test_noisy_chunk_is_split_out_and_stable_chunk_is_fitted(self):
+        TICK = [(0, 0), (3, 0), (0, 4)]
+        def w(perm, shas):
+            return {"order": [list(TICK[i]) for i in perm], "chunks": {k: {"sha256": v} for k, v in shas.items()}}
+        def sha(perm):
+            return {"9,9": perm[0], "8,8": perm[0]}
+        worlds = [w(p, sha(p)) for p in PERMS]
+        repeat = sha(PERMS[0])
+        repeat["8,8"] = "changed"
+        worlds.append(w(PERMS[0], repeat))
+        res = H.analyze(worlds)
+        self.assertEqual(res["chunks"]["8,8"], {"noisy": True, "repeat_diff_orders": 1})
+        self.assertEqual(res["summary"]["noisy"], ["8,8"])
+        self.assertEqual(res["chunks"]["9,9"]["S_hat"], [[0, 1, 2]])
+        self.assertEqual(res["summary"]["violations"], [])
+
+    def test_stable_chunk_with_no_fit_is_a_violation(self):
+        TICK = [(0, 0), (3, 0), (0, 4)]
+        worlds = [{"order": [list(TICK[i]) for i in p], "chunks": {"9,9": {"sha256": p[-1]}}} for p in PERMS]
+        res = H.analyze(worlds)
+        self.assertTrue(res["chunks"]["9,9"]["violation"])
+        self.assertEqual(res["summary"]["violations"], ["9,9"])
+
 
 if __name__ == "__main__":
     unittest.main()
