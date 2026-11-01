@@ -1,0 +1,1 @@
+{"model":"round1: crates/route/src/plan.rs plan() over state.rs moves (walk, mine with pickaxe, craft, smelt; no swim, no tunnel); done = iron_ore >= 1; goal = open tile next to iron","grid":"lab/results/research/seed7_spawn.grid","starts":1417,"routed":0,"source_commit":"78fab25d2371289d613cfff87654e8a8f1314acb"}
