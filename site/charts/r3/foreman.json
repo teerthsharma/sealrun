@@ -1,0 +1,268 @@
+[
+ {
+  "id": "N3.G1",
+  "title": "The law, written down first",
+  "plain": "A short rule says how many different worlds a set of build orders can make, and the numbers it predicts are saved in the repo before any server run.",
+  "why": "A prediction made after the answer proves nothing.",
+  "done_when": "The law's counts match hand values and the predictions file is older than every result."
+ },
+ {
+  "id": "N3.G2",
+  "title": "Four experiments against the prediction",
+  "plain": "Each ticket layout is built on the real server in every order, and the number of different worlds is compared with the prediction.",
+  "why": "This is where the law can be killed by one wrong number.",
+  "done_when": "E1 to E4 each have a measured class count and a verdict next to the prediction."
+ },
+ {
+  "id": "N3.G3",
+  "title": "How much order the world forgets",
+  "plain": "The world keeps some facts about how it was built and drops others; we count the dropped information in bits and check that 'same world' behaves like a proper grouping.",
+  "why": "This is the Godel-style quantity: what a finished world cannot say about its own history.",
+  "done_when": "The bits lost are computed from measurements and equal the law's value."
+ },
+ {
+  "id": "N3.G4",
+  "title": "Has anyone stated this law?",
+  "plain": "A search of the Minecraft wiki, bug tracker and mathematics papers, with every source and its link kept in one file.",
+  "why": "A law that already exists in a paper is not a discovery.",
+  "done_when": "The file lists queries, links, and for each close hit what it does not say."
+ },
+ {
+  "id": "N3.G5",
+  "title": "The shape of the real terrain",
+  "plain": "Real seed 7 terrain is measured with persistent homology: at what price do separate regions join into one.",
+  "why": "The round 2 map showed only islands; the joining price tells how much digging or swimming a route needs.",
+  "done_when": "The joining price of start and iron equals an independent cheapest-bottleneck path."
+ },
+ {
+  "id": "N3.G6",
+  "title": "Does it change the route?",
+  "plain": "A planner that may dig through stone and swim at a price is raced against plain breadth-first search with the same number of steps allowed.",
+  "why": "Round 2 found no route at all on real terrain, so the priced model decides whether routing is possible.",
+  "done_when": "Equal budgets, a route where round 1 found none, and a stated effect of the build order on the route."
+ },
+ {
+  "id": "N3.G7",
+  "title": "Round 3 on the website",
+  "plain": "A round 3 page shows the goals, their status and each prediction beside its measurement.",
+  "why": "The owner reads the result on the site, not in the repo.",
+  "done_when": "site/r3.html loads r3.json and links from the main page."
+ },
+ {
+  "id": "N3.G1.1",
+  "title": "Count worlds by brute force",
+  "plain": "A small function tries every order of k tickets, treats pairs that cannot swap as fixed, and counts the different results.",
+  "why": "It gives the law's number without any server.",
+  "done_when": "Path of 3 gives 4, triangle 6, path of 4 gives 8, four mutually fixed gives 24, no fixed pairs gives 1."
+ },
+ {
+  "id": "N3.G1.2",
+  "title": "A ticket on built ground does nothing",
+  "plain": "If a ticket's chunk is already built by an earlier ticket it adds nothing, so only the first ticket of a close group matters.",
+  "why": "This is what turns the 2x2 square's 24 orders into 4.",
+  "done_when": "The square (all four within 2 chunks) gives 4 classes, one per first ticket."
+ },
+ {
+  "id": "N3.G1.3",
+  "title": "Saved predictions equal the law",
+  "plain": "The predictions file written by the simulator lane must give the same class counts as the brute-force function for E1, E3 and E4.",
+  "why": "Two independent routes to the same number.",
+  "done_when": "E1 4, E3 6, E4 8 in the file; E2 holds a whole number from 1 to 6."
+ },
+ {
+  "id": "N3.G1.4",
+  "title": "Predictions came first",
+  "plain": "The commit that adds the predictions file must be an ancestor of the commit that adds each experiment result.",
+  "why": "This is the pre-registration, checked by git itself.",
+  "done_when": "git says predictions are an ancestor of the E1, E2, E3 and E4 results."
+ },
+ {
+  "id": "N3.G2.1",
+  "title": "E1: a line of 3 tickets 5 apart",
+  "plain": "All orders of a line of 3 tickets 5 apart are built on the real server; the number of different worlds must equal the prediction (4).",
+  "why": "Equal numbers support the law; a different number kills it and says which pair of tickets was misjudged.",
+  "done_when": "Measured classes equal the saved prediction, and the grouping of orders matches too."
+ },
+ {
+  "id": "N3.G2.2",
+  "title": "E2: the 2x2 square seen through the wide window",
+  "plain": "All orders of the 2x2 square seen through the wide window are built on the real server; the number of different worlds must equal the prediction (the predicted count).",
+  "why": "Equal numbers support the law; a different number kills it and says which pair of tickets was misjudged.",
+  "done_when": "Measured classes equal the saved prediction, and the grouping of orders matches too."
+ },
+ {
+  "id": "N3.G2.3",
+  "title": "E3: a triangle of 3 tickets 3 apart",
+  "plain": "All orders of a triangle of 3 tickets 3 apart are built on the real server; the number of different worlds must equal the prediction (6).",
+  "why": "Equal numbers support the law; a different number kills it and says which pair of tickets was misjudged.",
+  "done_when": "Measured classes equal the saved prediction, and the grouping of orders matches too."
+ },
+ {
+  "id": "N3.G2.4",
+  "title": "E4: a line of 4 tickets 5 apart",
+  "plain": "All orders of a line of 4 tickets 5 apart are built on the real server; the number of different worlds must equal the prediction (8).",
+  "why": "Equal numbers support the law; a different number kills it and says which pair of tickets was misjudged.",
+  "done_when": "Measured classes equal the saved prediction, and the grouping of orders matches too."
+ },
+ {
+  "id": "N3.G2.5",
+  "title": "Repeat controls are clean",
+  "plain": "Every experiment repeats at least one order and the two copies must be identical block for block.",
+  "why": "If a repeat differs, the differences are noise and no class count means anything.",
+  "done_when": "All repeat controls show 0 differing blocks."
+ },
+ {
+  "id": "N3.G3.1",
+  "title": "Bits lost, by formula",
+  "plain": "The information lost is log2 of the number of orders divided by the number of worlds; the exact loss counts how many orders share each world.",
+  "why": "This is the one number the Godel idea needs.",
+  "done_when": "24 orders in 4 worlds gives 2.585 bits; 6 orders in 4 worlds gives 0.585."
+ },
+ {
+  "id": "N3.G3.2",
+  "title": "Bits lost, measured",
+  "plain": "From each experiment's class sizes the bits lost are computed and must equal the value the law predicted.",
+  "why": "The loss is a prediction too, not just a count.",
+  "done_when": "Measured bits equal predicted bits for E1 to E4."
+ },
+ {
+  "id": "N3.G3.3",
+  "title": "'Same world' is a real grouping",
+  "plain": "If A equals B and B equals C then A must equal C, checked on every measured triple of orders.",
+  "why": "Without this the classes would not be well defined.",
+  "done_when": "Zero violating triples in partitions.json."
+ },
+ {
+  "id": "N3.G3.4",
+  "title": "A wider window can only split worlds",
+  "plain": "Looking at more chunks can separate two worlds that looked equal but never join two that looked different.",
+  "why": "So 'order does not matter' can be refuted by one block but never proven for every window.",
+  "done_when": "Classes in the wide window are at least the classes in the narrow window for the same orders."
+ },
+ {
+  "id": "N3.G3.5",
+  "title": "Ore moves in swaps",
+  "plain": "Between the worlds of the square, iron and gold in chunk (64,64) change by equal and opposite amounts.",
+  "why": "It shows what the lost information is made of: contested cells, not new material.",
+  "done_when": "Iron plus gold is 163 in all four classes, diamonds stay 1."
+ },
+ {
+  "id": "N3.G4.1",
+  "title": "Every source has a link and a query",
+  "plain": "Each entry in the source file has the search words used, a web address and a one-line finding.",
+  "why": "A claim of 'nobody noticed' must show where we looked.",
+  "done_when": "Every entry has query, an https address and a finding."
+ },
+ {
+  "id": "N3.G4.2",
+  "title": "The right places were searched",
+  "plain": "The file covers the Minecraft wiki, the bug tracker, trace monoids, acyclic orientations, left regular bands and order-independent generation.",
+  "why": "A missing family is a hole in the novelty claim.",
+  "done_when": "All six families appear with at least one address each."
+ },
+ {
+  "id": "N3.G4.3",
+  "title": "Closest prior work says what it lacks",
+  "plain": "For each near hit the file states in one line what the law adds that the source does not say.",
+  "why": "This is the honest edge of the novelty.",
+  "done_when": "Every near hit has a non-empty 'lacks' line."
+ },
+ {
+  "id": "N3.G5.1",
+  "title": "Persistence output is consistent",
+  "plain": "At each price level the Euler number from the counts of cells equals components minus loops in the saved output.",
+  "why": "A wrong persistence run would poison the route model.",
+  "done_when": "All listed levels agree."
+ },
+ {
+  "id": "N3.G5.2",
+  "title": "Joining price is the cheapest bottleneck",
+  "plain": "The price at which the start region joins the iron region equals the cheapest path where the dearest step is as small as possible.",
+  "why": "A known theorem ties persistence to routing; we check it on real terrain.",
+  "done_when": "The persistence value equals an independent bottleneck search on the seed 7 grid."
+ },
+ {
+  "id": "N3.G6.1",
+  "title": "Dig and swim prices",
+  "plain": "A prototype lets a route dig through stone or swim water at a set price per step, on a tiny hand-made map.",
+  "why": "Round 1 treated stone and water as walls, which made real terrain islands.",
+  "done_when": "The hand map costs exactly the hand-computed total with one dig and one swim."
+ },
+ {
+  "id": "N3.G6.2",
+  "title": "Route cost never beats the bottleneck",
+  "plain": "A route's total price is at least its dearest single step, equal when the route is one cell wide.",
+  "why": "This links the terrain measurement to the planner.",
+  "done_when": "True on three hand maps."
+ },
+ {
+  "id": "N3.G6.3",
+  "title": "Equal step budget",
+  "plain": "In every row of the race both solvers are allowed the same number of expanded cells.",
+  "why": "Otherwise the race is not fair.",
+  "done_when": "Budget equal in every row."
+ },
+ {
+  "id": "N3.G6.4",
+  "title": "Planner against breadth-first search",
+  "plain": "At equal budget the planner's route price is never above the breadth-first route price.",
+  "why": "This is the round 2 race, redone on a model where real terrain has routes.",
+  "done_when": "In every row planner price <= BFS price, or BFS found none."
+ },
+ {
+  "id": "N3.G6.5",
+  "title": "A route on real terrain",
+  "plain": "The priced model finds a route from the spawn grid start to iron where round 1 found none from 1,417 starts.",
+  "why": "The islands finding is either dissolved or confirmed.",
+  "done_when": "At least one start has a route, with its price and step count recorded."
+ },
+ {
+  "id": "N3.G6.6",
+  "title": "What the build order moves",
+  "plain": "Across the four worlds of the square the order changes iron and gold in chunk (64,64) by 2 but changes diamonds by 0.",
+  "why": "So the lever reaches iron, not diamonds, for route purposes.",
+  "done_when": "Iron spread is 2, diamond spread is 0."
+ },
+ {
+  "id": "N3.G7.1",
+  "title": "Merge the cards with status",
+  "plain": "A script joins the round 3 cards with each goal's status, a missing goal being pending.",
+  "why": "One file feeds the page.",
+  "done_when": "build() returns every card with a status."
+ },
+ {
+  "id": "N3.G7.2",
+  "title": "Numbers read from files",
+  "plain": "The page numbers come from the result files on disk; a missing file shows 'not run', never 0.",
+  "why": "A zero would look like a measurement.",
+  "done_when": "Each missing file maps to 'not run'."
+ },
+ {
+  "id": "N3.G7.3",
+  "title": "The round 3 page",
+  "plain": "One page function draws a card per goal with title, plain text and status.",
+  "why": "The owner reads the result here.",
+  "done_when": "Every card has data-goal, title, plain and status."
+ },
+ {
+  "id": "N3.G7.4",
+  "title": "Prediction beside measurement",
+  "plain": "For each experiment the page shows the predicted class count and the measured one; colour marks only agree or disagree.",
+  "why": "The law is judged in public.",
+  "done_when": "Both numbers and a verdict appear for E1 to E4."
+ },
+ {
+  "id": "N3.G7.5",
+  "title": "Status file",
+  "plain": "A file maps every round 3 goal id to a status, exported by House after each report.",
+  "why": "The page cannot show a status the harness has not set.",
+  "done_when": "Every key is an N3 id and every value is a known status."
+ },
+ {
+  "id": "N3.G7.6",
+  "title": "Link from the main page",
+  "plain": "The main page gets one link to the round 3 page.",
+  "why": "One door between the pages.",
+  "done_when": "index.html contains a link to r3.html."
+ }
+]
