@@ -1,0 +1,108 @@
+# Research lane "sources" (round 3, run n3)
+
+Status: partial, committed at 14:20 IST. Everything below is a lead, not a fact. Quotes are the text returned by WebFetch or WebSearch extraction, under 15 words, and must be re-checked verbatim before any citation. No files were downloaded or saved by this lane (see Process notes).
+
+## A. Minecraft Java 1.16.x chunk generation
+
+### A1. Status order and radius table
+
+Control for each row: the status order list is taken from two different sources, and the radius column is the community NeoForge suggestion, which has not been checked against 1.16 source.
+
+| Status (1.16 name) | Order | Neighbour requirement | Source |
+|---|---|---|---|
+| empty | 1 | none stated | [neoforged/Documentation #347](https://github.com/neoforged/Documentation/issues/347) (May 2026, community suggestion): "A chunk with no information. Stage zero" |
+| structure_starts | 2 | own chunk only | same, "This chunk may only see itself, accessing beyond itself throws a crash." |
+| structure_references | 3 | 17x17 area (radius 8) | same, "a 17 x 17 dependency chunk area"; Yarn 1.16 doc summary: radius of 8 chunks searched for structure starts ([yarn-1.16.5 ChunkStatus](https://maven.fabricmc.net/docs/yarn-1.16.5+build.5/net/minecraft/world/chunk/ChunkStatus.html), snippet only) |
+| biomes | 4 | reads 17x17 structure data; biome list from own chunk and 8 surrounding | #347 ("17x17 area"); [minecraft.wiki World generation](https://minecraft.wiki/w/World_generation) ("or the 8 surrounding chunks") |
+| noise (1.16 name; 26.3 renamed terrain) | 5 | places in own chunk; sees 3x3 biome area | #347, "This chunk may only see a 3x3(1 chunk in all horizontal axis directions) chunk area of biomes" |
+| surface | 6 | places in own chunk | #347, "Placing blocks outside this chunk will result in a crash." |
+| carvers | 7 | places in own chunk; reads 17x17 structure data | #347, "It may only place blocks within itself." |
+| liquid_carvers | 8 | not covered by #347 | constant listed in [mappings.dev 1.15 ChunkStatus](https://mappings.dev/1.15/net/minecraft/world/level/chunk/ChunkStatus.html); radius unknown |
+| features | 9 | places across 3x3 chunk space; reads 3x3 carver area | #347, "It may also place blocks in neighboring chunks, giving it a total space of 3x3 chunks"; [minecraft.wiki World generation](https://minecraft.wiki/w/World_generation): "limited in the nearby 3×3 area" (fetch extraction) |
+| light (1.16: initialize_light, light) | 10 | none; no block placement | #347, "Blocks are not placed in these stages." |
+| spawn | 11 | none stated; uses light and biome data | #347 |
+| heightmaps | 12 | not a status in current wiki or #347; 1.15 mapping lists a HEIGHTMAPS constant | #347: heightmaps primed during FEATURES; [mappings.dev 1.15](https://mappings.dev/1.15/net/minecraft/world/level/chunk/ChunkStatus.html) |
+| full | 13 | none; promotion to LevelChunk | #347, "Chunk is promoted from a ProtoChunk(world gen chunks) to a LevelChunk" |
+
+Unverified: the `taskMargin` / range integer for each 1.16 status. Mapping pages show the constructor signature (String id, previous, int taskMargin, ...) but not the values ([mappings.dev 1.16.5](https://mappings.dev/1.16.5/net/minecraft/world/level/chunk/ChunkStatus.html)). The 1.16 values I half-remember (structure_references 8, noise 8, features 8, light 1) are memory only and are NOT verified here. The fetched wiki list (`minecraft.wiki/w/Chunk_format`) is the current snapshot list (empty, structure_starts, structure_references, biomes, terrain, features, initialize_light, light, spawn, full). Two statuses in the question (liquid_carvers, heightmaps) were removed in 23w16a according to that page's version notes; noise, surface and carvers were replaced by terrain in 26.3 snapshot 10.
+
+### A2. Ticket levels to load types
+
+- Level 31 and below: entity ticking. Level 32: block ticking. Level 33: border. Level 34 and above: inaccessible. Source: [minecraft.wiki Chunk](https://minecraft.wiki/w/Chunk) (fetch extraction): "Nothing runs or is accessible, though world generation still occurs." Control: the 1.14 gist below gives the same bands.
+- Levels 35 and above are described on that page as "identical to 34" in effect. Source: same page.
+- Propagation: each chunk step out from a ticket raises the level by 1, up to 44. Source: [minecraft.wiki Chunk](https://minecraft.wiki/w/Chunk); [electronicboy 1.14 gist](https://gist.github.com/electronicboy/aa5b6fa068ec09a1d2ccbeda8657510b) (created 2021-02-09, tested 1.14.4).
+- Forceload ticket: level 31. Source: [minecraft.wiki Commands/forceload](https://minecraft.wiki/w/Commands/forceload), "created individually at load level 31 for each chunk specified."
+- Light ticket at 33 (only used during world generation): from search snippets of the fandom Chunk page, not fetched directly. The 1.14 gist calls the light ticket type something it does not understand.
+- Mapping of levels 34 to 44 onto individual statuses (the question's "34..44 = lower statuses?"): NOT FOUND. The wiki treats all of 34 and above as one tier. The 1.16 status-by-level function was not located in any source in this run. This remains open.
+
+### A3. Does features write into neighbours; the +8 offset
+
+- Features can place blocks outside their chunk, limited to the 3x3 area. Source: [minecraft.wiki World generation](https://minecraft.wiki/w/World_generation), fetch extraction, quote: "Features can place block outside the current chunk's boundaries..."
+- Population precondition: a chunk is populated only after the three chunks in +x, +z are loaded. Source: [Sponge docs, wgen](https://docs.spongepowered.org/stable/en/plugin/wgen/index.html), which says it targets SpongeAPI 8 but was written for API 7 and may be out of date. This is an API-level precedence rule, not the vanilla 1.16 code path.
+- The +8 offset: [delvr gist](https://gist.github.com/delvr/bfac43cd48675ec74b905ffe640a6a11) (no version named, last active 2024-08-19): "if you forget the +8 offset you risk spilling over to the northwest." Its other line: "chunks cannot know about their ungenerated neighbors." Version-specific claims are not in this guide.
+- Older versions: a Forge forum thread (topic 58520, 1.11.2 era) mentions vanilla ores offset by +8, +8 (search snippet only). A Forge primer gist (Rongmario) says the +8 population offset "is not a thing anymore" in 1.13 or 1.14 (search snippet only; not fetched).
+
+### A4. Multi-threading and order dependence
+
+- Bug evidence that generation order changes the output, all from [mojira.dev](https://mojira.dev) mirrors (bugs.mojang.com is JS-only; fetch returned the title only):
+  - MC-55596 (created 2014-05-21, Reopened, Confirmed, affects 1.7.9 through 25w36b). Quote: "The issue appears to occur depending upon the order of chunk generation." [mojira.dev/MC-55596](https://mojira.dev/MC-55596). Control: a commenter reports the same seed and the same chunk generated from different directions.
+  - MC-199702 (created 2020-09-06, Resolved Fixed in 21w20a, affects 1.16.2 and 1.16.3). Quote: "generates differently based on the order that chunks are populated." [mojira.dev/MC-199702](https://mojira.dev/MC-199702). This is the 1.16 datapoint for A. The cause was netherrack_replace_blobs with large blobs.
+  - MC-125007 (created 2018-02-10, Reopened, Confirmed, over 80 versions 18w06a to 26.4 snapshot 6). Commenters link decoration failure to chunk generation order. [mojira.dev/MC-125007](https://mojira.dev/MC-125007).
+  - MC-238073 (created 2021-10-01, Fixed 21w43a): "Decorators vary between worlds made with the same seed." It notes setFeatureSeed varies between runs. [mojira.dev/MC-238073](https://mojira.dev/MC-238073). Links MC-239247 (feature generation order not consistent), a duplicate not analysed.
+  - MC-272481 (created 2024-05-26, Won't Fix, 1.20.6 and 24w21b). Attributes stronghold chest loot to chunk generation order because a shared RNG is used. [mojira.dev/MC-272481](https://mojira.dev/MC-272481).
+  - MC-241546 (created 2021-11-14, Open, 1.18 pre-release). A remark says chunk population "could depend on generation order." [mojira.dev/MC-241546](https://mojira.dev/MC-241546).
+  - MC-188076 (created 2020-06-07, closed as duplicate of MC-55596 about 12 minutes after filing; affects 1.15.2 and 1.16 pre-release 2). The reporter says decoration generation "isn't tied to the world seed." A commenter says developers decided it is intentional. That claim is unverified. [mojira.dev/MC-188076](https://mojira.dev/MC-188076).
+- Forum evidence: a 2015 Forge post, "chunk generation order would influence the result" ([forums.minecraftforge.net topic 27256](https://forums.minecraftforge.net/topic/27256-worldgen-and-worldrand)). A 2019 Minecraft Forum thread on 1.14 says lava and water sources on chunk borders depend on which chunk generates first ([minecraftforum 2967431](https://www.minecraftforum.net/forums/minecraft-java-edition/discussion/2967431-are-worlds-created-with-same-seed-identical)). No poster ran a controlled comparison.
+- Multi-threading: NOT VERIFIED from a vanilla source. A mod page for Adrenaline (Forge 1.20.1 per Modrinth, 1.20.4 to 1.20.6 per a hosting listing) says vanilla generation "runs almost entirely on a single dedicated worldgen thread." This is the developer's claim. Its design uses a footprint per job, and the author says output is unchanged. [Adrenaline on Modrinth](https://modrinth.com/project/ZOetjTKq). Atlas (Fabric) states its ordering is non-deterministic (search snippet). A C2ME page says vanilla generation "is non-deterministic" (search snippet only).
+
+## B. Prior art: order-to-world law
+
+- Minecraft wiki, [World generation](https://minecraft.wiki/w/World_generation), Features section (fetch extraction): "Thus, the feature order specified above is not always adhered to." Also: terrain can "differ slightly depending on the players' travel routes." This is a qualitative statement that order changes the result. It does not count orders or classes.
+- MC-55596 (see A4) is the bug-tracker form of the same statement.
+- WorldgenLib wiki ([Concepts](https://github.com/Zaldaryon/WorldgenLib/wiki/Concepts), page edited 2026-08-28): "For the same seed, world configuration, and registration set, effect order is stable." And: consumers "must not use ... shared mutable state across columns." A design rule, not a characterisation of orders.
+- MtSharpGrain wiki ([WorldGeneration](https://github.com/OxillenGlow/MtSharpGrain/wiki/WorldGeneration), last edit 2026-09-08): randomness "used as the single source of randomness", "ensuring 100% order-independent and reproducible" generation. A design claim with no proof or count.
+- Adrenaline (see A4): a footprint scheduler that claims vanilla output with parallel order. Developer claim.
+- Nearest formal analogue with a count: Macauley, McCammond and Mortveit, "Order Independence in Asynchronous Cellular Automata", J. Cellular Automata 3(1) 2008, arXiv [0707.2360](https://arxiv.org/abs/0707.2360). Abstract (fetch extraction): an ACA is pi-independent if its periodic states do not depend on the permutation; for n > 3, 104 of 256 Wolfram rules are pi-independent. This counts rules, not generation orders.
+- Schönfisch and de Roos, "Synchronous and asynchronous updating in cellular automata", BioSystems 51 (1999) 123-143, per a listing on [dare.uva.nl](https://dare.uva.nl/id/d0fa09ce-df84-48b6-8a04-44ca7f6cdcb3) (abstract summary from search, not fetched). Stationary states stay the same across the updating schemes. Not a count of orders.
+
+## C. Mathematics
+
+### C1. Trace monoids and acyclic orientations
+
+- Trace monoid: [Wikipedia Trace monoid](https://en.wikipedia.org/wiki/Trace_monoid) (fetch extraction). "Traces were introduced by Pierre Cartier and Dominique Foata in 1969." And: "sets of commuting letters are given by an independency relation." The page also says trace monoids are isomorphic to the monoid of dependency graphs.
+- Stanley 1973: [MathWorld Acyclic orientation](https://mathworld.wolfram.com/AcyclicOrientation.html) (fetch extraction): "the number of acyclic orientations is (-1)^n pi_G(-1)," citing Stanley, Disc. Math. 5, 171-178 (1973). This is the chromatic-polynomial-at-minus-one identity for acyclic orientations.
+- Link between traces and acyclic orientations: NOT FOUND in any fetched source. Two searches did not reach the Diekert text. My own derivation, to be checked in Diekert and Rozenberg, *The Book of Traces* (1995) or Cartier and Foata (1969): take a graph G with one vertex per chunk and an edge between chunks that interact. Two orderings of the chunks give the same world iff they induce the same orientation on every edge. The classes are then the acyclic orientations, and their count is |chi_G(-1)| by Stanley. This is a hypothesis, not a source claim.
+- Uniform generation in trace monoids, [arXiv 1506.02455](https://arxiv.org/pdf/1506.02455), search snippet only: says uniform generation of traces matters for probabilistic model checking of concurrent systems. The PDF fetch failed (see Process notes).
+
+### C2. Confluence and order independence
+
+- Fatès, "A guided tour of asynchronous cellular automata", [arXiv 1406.0792](https://arxiv.org/abs/1406.0792), fetch: no order-independence, confluence, Fates theorem, trace monoid or procedural-generation content in the abstract. Not useful for the question.
+- Gács, 2001 preprint, [arXiv cs/0101026](https://arxiv.org/pdf/cs/0101026) (search snippet, not fetched): the invariant history property is typically undecidable, though a sufficient condition is checkable.
+- Trace rewriting undecidability and decidable subclasses: search snippets from Diekert et al. (Siegen TI papers, e.g. [sc22diekert](https://mat.univie.ac.at/~slc/opapers/sc22diekert.pdf) — this is a PDF; not fetched). Snippet: confluence can be hard for trace systems, with infinitely many critical pairs.
+
+### C3. Postnikov, hypergraphic polytopes, nestohedra (new question added by coordinator)
+
+Question: does any paper connect (i) the image of the map from linear orders to the first element of each set in a family with (ii) vertices of generalized permutohedra or nestohedra?
+
+- Postnikov, "Permutohedra, associahedra, and beyond" ([arXiv math/0507163](https://arxiv.org/pdf/math/0507163)) and Postnikov, Reiner, Williams, "Faces of generalized permutohedra" ([arXiv math/0609184](https://arxiv.org/abs/math/0609184)). Search summary: for a connected chordal building set on [n], B-permutations are in bijection with vertices of the nestohedron P_B. This is the closest bijection found. The "first element of each set" description is NOT stated in any extracted text. Verdict on (i)-(ii): not confirmed. The natural match is B-permutation = linear order whose initial segments respect the building set, but I have not verified the exact map.
+- Nestohedron as Minkowski sum: P_B is the sum of coordinate simplices Delta_I over I in B. Same search summary, citing [arXiv 1010.5477, "Hypergraph Polytopes"](https://arxiv.org/pdf/1010.5477) and [arXiv 1712.08848](https://arxiv.org/pdf/1712.08848) (hypergraphic polytopes; faces relate to acyclic orientations via preposets). Snippets only.
+- Descent statistics: h-vector of P_B is a generating function over permutations in S_n(B). Source: PRW lecture notes ([umn.edu PostnikovReinerWilliams.pdf](https://www-users.cse.umn.edu/~reiner/REU/REU2019notes/PostnikovReinerWilliams.pdf)), snippet.
+- Applied to procedural generation or Minecraft: NONE FOUND. Two searches ("permutohedron nestohedron procedural generation Minecraft", "graph associahedron level generation") returned only combinatorics papers and a permutoassociahedron paper ([arXiv 1708.02482](https://ar5iv.labs.arxiv.org/html/1708.02482)).
+
+## Novelty verdict
+
+No prior statement found of an order-to-world law for Minecraft, meaning a characterisation of which generation orders give the same world, an equivalence-class count, or a commutation law. The closest prior statements are qualitative: the Minecraft wiki says generation order changes results, and MC-55596 reports the same (closest URL: https://minecraft.wiki/w/World_generation, plus https://mojira.dev/MC-55596). The closest formal, counted analogue is order independence of asynchronous cellular automata (arXiv 0707.2360), which counts rules, not orders. Coverage is limited: about 25 searches and 25 fetches in this run, with the bugs.mojang.com JS pages and several PDFs unreachable.
+
+## Process notes
+
+- WebFetch on two PDF URLs (arXiv 1506.02455 and sc19diekert.pdf) returned binary content and saved it automatically to `C:\Users\seal\.claude\projects\C--Users-seal-Documents-GitHub-sealrun\f708d1ce-97b8-4985-b4ab-75b219fa060b\tool-results\` (webfetch-1793521198566-6wacli.pdf and webfetch-1793521202742-u5d75c.pdf). This lane did not write those files. They sit outside the worktree and are not committed. They should be deleted by the owner, or I can delete them on request. I did not fetch any PDF after that.
+- bugs.mojang.com returns only the title to WebFetch; mojira.dev mirrors were used instead.
+- Minecraft fandom (minecraft.fandom.com) returned HTTP 402 to WebFetch; minecraft.wiki was used instead.
+- The 2026 date context: several sources are 2026 edits (MC-55596 updated 2026-08-27; neoforged #347 May 2026). Version claims are dated accordingly.
+
+## Still open
+
+1. The 1.16 taskMargin integers per status (need Mojang or Yarn ChunkStatus source for 1.16.5).
+2. The 34 to 44 mapping of levels to statuses (needs ChunkManager / ChunkTicketManager source for 1.16).
+3. The Diekert or Cartier-Foata text for traces to acyclic orientations, to replace my derivation.
+4. The exact Postnikov-Reiner-Williams construction for the first-element map (new C3 question).
