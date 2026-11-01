@@ -15,7 +15,7 @@ import det_common as dc
 import noise_world as nw
 
 CHUNK_BLOCKS = 16 * 256 * 16
-CONDS = ("a", "b", "c")
+CONDS = ("a", "b", "c", "s", "bx")
 OUT = dc.REPO / "lab" / "results" / "research" / "noise.json"
 Q1 = dc.REPO / "lab" / "results" / "research" / "determinism.json"
 
@@ -88,6 +88,7 @@ def summarize(cond):
             "free_mb_before_boot": w["free_mb_before_boot"], "boot_s": w["boot_s"],
             "java_pid": w["java_pid"], "tile_load_s": w["tile_load_s"], "ring_load_s": w.get("ring_load_s"),
             "stop_code": w["stop_code"], "not_full": sum(c["not_full"] for c in w["chunks"].values()),
+            "exclusive_wait": w.get("exclusive_wait"),
             "conc_boot": conc(w, "conc_boot"), "conc_save": conc(w, "conc_save"),
         } for w in worlds],
         "per_chunk_distinct_sha": per_chunk_distinct,
@@ -116,6 +117,8 @@ def main():
             "a": "settle 10 s (det_q1 protocol: load, flush, 10 s, flush, 10 s, stop)",
             "b": "settle 60 s: 60 s after the tile loads, before the first flush; then the a tail",
             "c": "settle 10 s plus a ticket on the 24 chunks of the distance-3 ring; then the a tail; only the 5x5 is read",
+            "s": "condition a protocol, run only when no other java has its cwd under sealrun-lab (polled every 15 s, up to 1200 s)",
+            "bx": "condition b protocol (60 s before flush), with the same exclusive-server wait as s",
         },
         "reference_determinism_q1": {"boots": 3, "differing_blocks_total": q1["q1"]["differing_blocks_total"],
                                      "note": "determinism.json q1, same protocol as condition a, 3 boots"},

@@ -31,7 +31,10 @@ LAB = Path.home() / "sealrun-lab"
 CENTRE = (64, 64)
 RING3 = [(cx, cz) for cx in range(61, 68) for cz in range(61, 68) if max(abs(cx - 64), abs(cz - 64)) == 3]
 SETTLE_S = 10.0
-PRE_FLUSH_S = {"a": 0.0, "b": 60.0, "c": 0.0}
+PRE_FLUSH_S = {"a": 0.0, "b": 60.0, "c": 0.0, "s": 0.0, "bx": 60.0}
+EXCLUSIVE = {"s", "bx"}
+EXCLUSIVE_POLL_S = 15.0
+EXCLUSIVE_TIMEOUT_S = 1200.0
 
 
 def load_wait(srv, tile, timeout: float = 120.0) -> float:
@@ -75,13 +78,43 @@ def concurrent() -> dict:
     }
 
 
+def other_jvms() -> list:
+    pids = []
+    for p in psutil.process_iter(["name"]):
+        try:
+            if (p.info["name"] or "").lower().startswith("java") and "sealrun-lab" in (p.cwd() or ""):
+                pids.append(p.pid)
+        except (psutil.Error, OSError):
+            continue
+    return pids
+
+
+def wait_exclusive() -> dict:
+    t0 = time.monotonic()
+    polls, first = 0, None
+    while True:
+        pids = other_jvms()
+        polls += 1
+        if first is None:
+            first = len(pids)
+        if not pids:
+            return {"polls": polls, "waited_s": round(time.monotonic() - t0, 1),
+                    "other_jvms_at_first_poll": first}
+        if time.monotonic() - t0 > EXCLUSIVE_TIMEOUT_S:
+            raise RuntimeError(f"other lab JVMs still running after {EXCLUSIVE_TIMEOUT_S} s: {pids}")
+        time.sleep(EXCLUSIVE_POLL_S)
+
+
 def world(cond: str, tag: str) -> dict:
     RAW.mkdir(parents=True, exist_ok=True)
+    out = {"cond": cond, "tag": tag, "pre_flush_wait_s": PRE_FLUSH_S[cond],
+           "ring_ticket": cond == "c", "exclusive": cond in EXCLUSIVE}
+    if cond in EXCLUSIVE:
+        out["exclusive_wait"] = wait_exclusive()
     free_before = server.free_mb()
+    out["free_mb_before_boot"] = free_before
     scratch = dc.fresh_scratch()
     srv = None
-    out = {"cond": cond, "tag": tag, "pre_flush_wait_s": PRE_FLUSH_S[cond],
-           "ring_ticket": cond == "c", "free_mb_before_boot": free_before}
     try:
         srv = server.boot(scratch)
         out.update(boot_s=round(srv.boot_secs, 2), java_pid=srv.proc.pid, conc_boot=concurrent())
