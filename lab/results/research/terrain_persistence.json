@@ -1,0 +1,3866 @@
+{
+ "method": "plain_python_union_find",
+ "grid": "lab/results/research/seed7_spawn.grid",
+ "size": [
+  64,
+  64
+ ],
+ "tile_counts": {
+  "air": 1417,
+  "stone": 1075,
+  "water": 1538,
+  "tree": 21,
+  "iron": 45,
+  "goal": 0
+ },
+ "start": [
+  32,
+  32
+ ],
+ "start_tile": "air",
+ "convention": "vertices = walkable tile centres, 4-neighbour edges, 2x2 faces; walkable iff cost<=T; tree/iron never walkable; touch = 4-adjacent to start component",
+ "T_grid": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "systems": {
+  "a_swim10_dig23": {
+   "s": 10,
+   "d": 23,
+   "table": [
+    {
+     "T": 0,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 1,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 2,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 3,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 4,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 5,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 6,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 7,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 8,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 9,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 10,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 11,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 12,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 13,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 14,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 15,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 16,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 17,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 18,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 19,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 20,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 21,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 22,
+     "b0": 77,
+     "b1": 33,
+     "chi_VEF": 44,
+     "V": 2955,
+     "E": 5007,
+     "F": 2096,
+     "euler_ok": true,
+     "start_size": 2776,
+     "tree_adj": 8,
+     "iron_adj": 30,
+     "stone_adj": 548,
+     "stone_in_start": 0,
+     "tree_edges": 23,
+     "iron_edges": 66,
+     "stone_edges": 1091,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 23,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 24,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 25,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 26,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 27,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 28,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 29,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 30,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    }
+   ],
+   "islands_T0": 158,
+   "start_island_T0": 471,
+   "barcode_H0": {
+    "finite_positive": [
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      10,
+      23
+     ],
+     [
+      10,
+      23
+     ],
+     [
+      10,
+      23
+     ],
+     [
+      10,
+      23
+     ],
+     [
+      10,
+      23
+     ],
+     [
+      10,
+      23
+     ]
+    ],
+    "zero_persistence_pairs": 3866,
+    "essential_births": [
+     0
+    ]
+   },
+   "bottleneck_T": {
+    "tree_touch": 10,
+    "iron_touch": 0,
+    "stone_touch": 0,
+    "stone_enter": 23
+   },
+   "euler_all_T_ok": true
+  },
+  "b_equal_cost23": {
+   "s": 23,
+   "d": 23,
+   "table": [
+    {
+     "T": 0,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 1,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 2,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 3,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 4,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 5,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 6,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 7,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 8,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 9,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 10,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 11,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 12,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 13,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 14,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 15,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 16,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 17,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 18,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 19,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 20,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 21,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 22,
+     "b0": 158,
+     "b1": 4,
+     "chi_VEF": 154,
+     "V": 1417,
+     "E": 2013,
+     "F": 750,
+     "euler_ok": true,
+     "start_size": 471,
+     "tree_adj": 0,
+     "iron_adj": 6,
+     "stone_adj": 93,
+     "stone_in_start": 0,
+     "tree_edges": 0,
+     "iron_edges": 10,
+     "stone_edges": 161,
+     "water_edges": 109,
+     "water_adj": 67
+    },
+    {
+     "T": 23,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 24,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 25,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 26,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 27,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 28,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 29,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    },
+    {
+     "T": 30,
+     "b0": 1,
+     "b1": 33,
+     "chi_VEF": -32,
+     "V": 4030,
+     "E": 7835,
+     "F": 3773,
+     "euler_ok": true,
+     "start_size": 4030,
+     "tree_adj": 21,
+     "iron_adj": 45,
+     "stone_adj": 0,
+     "stone_in_start": 1075,
+     "tree_edges": 82,
+     "iron_edges": 118,
+     "stone_edges": 0,
+     "water_edges": 0,
+     "water_adj": 0
+    }
+   ],
+   "islands_T0": 158,
+   "start_island_T0": 471,
+   "barcode_H0": {
+    "finite_positive": [
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ],
+     [
+      0,
+      23
+     ]
+    ],
+    "zero_persistence_pairs": 3872,
+    "essential_births": [
+     0
+    ]
+   },
+   "bottleneck_T": {
+    "tree_touch": 23,
+    "iron_touch": 0,
+    "stone_touch": 0,
+    "stone_enter": 23
+   },
+   "euler_all_T_ok": true
+  }
+ },
+ "mlm_inputs": {
+  "air_T0": {
+   "mask": "lab/results/research/mlm_inputs/mask_air_T0.npy",
+   "points": "lab/results/research/mlm_inputs/points_air_T0.npy",
+   "n_walkable": 1417
+  },
+  "air_water_T10": {
+   "mask": "lab/results/research/mlm_inputs/mask_air_water_T10.npy",
+   "points": "lab/results/research/mlm_inputs/points_air_water_T10.npy",
+   "n_walkable": 2955
+  },
+  "air_water_stone_T23": {
+   "mask": "lab/results/research/mlm_inputs/mask_air_water_stone_T23.npy",
+   "points": "lab/results/research/mlm_inputs/points_air_water_stone_T23.npy",
+   "n_walkable": 4030
+  }
+ },
+ "mlm_cross_check": {
+  "raw": "lab/results/research/terrain_mlm_raw.json",
+  "systems": {
+   "a_swim10_dig23": {
+    "rows": [
+     {
+      "T": 0,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 1,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 2,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 3,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 5,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 6,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 7,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 8,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 9,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 10,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 11,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 12,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 13,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 14,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 15,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 16,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 17,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 18,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 19,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 20,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 21,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 22,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "mask": "air_water_T10",
+      "mlm_b0": 77,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 77,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 23,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 24,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 25,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 26,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 27,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 28,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 29,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 30,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     }
+    ],
+    "all_T_b0_agree": true,
+    "all_T_b1_agree": true
+   },
+   "b_equal_cost23": {
+    "rows": [
+     {
+      "T": 0,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 1,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 2,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 3,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 5,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 6,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 7,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 8,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 9,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 10,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 11,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 12,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 13,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 14,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 15,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 16,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 17,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 18,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 19,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 20,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 21,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 22,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "mask": "air_T0",
+      "mlm_b0": 158,
+      "mlm_b1": 4,
+      "mlm_ph_b0_thresh1": 158,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 23,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 24,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 25,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 26,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 27,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 28,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 29,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     },
+     {
+      "T": 30,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "mask": "air_water_stone_T23",
+      "mlm_b0": 1,
+      "mlm_b1": 33,
+      "mlm_ph_b0_thresh1": 1,
+      "b0_agree": true,
+      "b1_agree": true
+     }
+    ],
+    "all_T_b0_agree": true,
+    "all_T_b1_agree": true
+   }
+  }
+ },
+ "mlm_status": "mlm MCP unavailable after 13:57 (failed to reconnect after the 13:53 freeze and reboot). mlm_cross_check rows were produced by mlm calls made before that time and are transcribed in lab/results/research/terrain_mlm_raw.json; they are not re-run.",
+ "gudhi_cross_check": {
+  "method": "gudhi.CubicalComplex sublevel, persistence(field 2)",
+  "gudhi_version": "3.12.0",
+  "OBST": 1000.0,
+  "OBST_CUT": 500.0,
+  "systems": {
+   "a_swim10_dig23": {
+    "s": 10,
+    "d": 23,
+    "betti_rows": [
+     {
+      "T": 0,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 1,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 2,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 3,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 4,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 5,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 6,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 7,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 8,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 9,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 10,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 11,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 12,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 13,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 14,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 15,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 16,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 17,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 18,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 19,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 20,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 21,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 22,
+      "gudhi_b0": 77,
+      "gudhi_b1": 33,
+      "plain_b0": 77,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 23,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 24,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 25,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 26,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 27,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 28,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 29,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 30,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     }
+    ],
+    "all_T_agree": true,
+    "H0_finite_pairs_gudhi": 163,
+    "H0_finite_pairs_plain": 163,
+    "H0_finite_pairs_multiset_equal": true,
+    "H1_finite_pairs_gudhi": 25
+   },
+   "b_equal_cost23": {
+    "s": 23,
+    "d": 23,
+    "betti_rows": [
+     {
+      "T": 0,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 1,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 2,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 3,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 4,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 5,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 6,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 7,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 8,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 9,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 10,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 11,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 12,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 13,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 14,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 15,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 16,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 17,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 18,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 19,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 20,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 21,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 22,
+      "gudhi_b0": 158,
+      "gudhi_b1": 4,
+      "plain_b0": 158,
+      "plain_b1": 4,
+      "agree": true
+     },
+     {
+      "T": 23,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 24,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 25,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 26,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 27,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 28,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 29,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     },
+     {
+      "T": 30,
+      "gudhi_b0": 1,
+      "gudhi_b1": 33,
+      "plain_b0": 1,
+      "plain_b1": 33,
+      "agree": true
+     }
+    ],
+    "all_T_agree": true,
+    "H0_finite_pairs_gudhi": 157,
+    "H0_finite_pairs_plain": 157,
+    "H0_finite_pairs_multiset_equal": true,
+    "H1_finite_pairs_gudhi": 1
+   }
+  }
+ }
+}
