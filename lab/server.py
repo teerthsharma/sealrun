@@ -1,5 +1,6 @@
 import ctypes
 import os
+import shutil
 import subprocess
 import time
 from ctypes import wintypes
@@ -7,6 +8,7 @@ from pathlib import Path
 
 import procs
 import rcon
+import serverdir
 
 JAVA = os.environ.get(
     "SEALRUN_JAVA",
@@ -126,3 +128,18 @@ def boot(scratch: dict, timeout: float = 120.0) -> Server:
     srv = Server(proc, scratch, client, boot_secs)
     _servers.append(srv)
     return srv
+
+
+def delete_world(scratch_dir: Path, root: Path) -> None:
+    d = Path(scratch_dir).resolve()
+    r = Path(root).resolve()
+    if not d.is_relative_to(r) or d == r or not (d / serverdir.MARKER).is_file():
+        raise ValueError(f"refusing to delete a world outside a marked scratch folder under {r}: {d}")
+    if (d / "world").exists():
+        shutil.rmtree(d / "world")
+
+
+def reset(srv: Server, root: Path) -> Server:
+    srv.stop()
+    delete_world(srv.scratch["dir"], root)
+    return boot(srv.scratch)
