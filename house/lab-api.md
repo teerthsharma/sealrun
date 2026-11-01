@@ -83,3 +83,28 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   the statement names seed, area, height and orders; `repeat_diff` None gives "noise floor not measured" and no
   claim that order matters; `repeat_diff > 0` gives "shaky"; `lever` false ends with `"next route: " +
   verdict.NEXT_ROUTE` (`"edit the border band before the neighbour is built (N2.G3.5)"`).
+
+## Round 2, batch 4
+- `window.box(region_dir, lo, hi) -> dict[(x, y, z), str | None]` for every position with lo <= pos <= hi (inclusive,
+  absolute coords), None where `block_at` gives None; `chunk_blocks` and `fingerprint` as in batch 3. A section with
+  no `Palette` (real data has a `Y = -1` section holding only `Y`) is skipped by `chunk_blocks`, never a KeyError.
+- `lever.py` (no leaf writes it yet; chart gap, Foreman adds one): `lever.ADMIN = {"forceload", "setblock", "fill",
+  "tp", "teleport", "gamerule", "time", "weather", "execute", "save-all", "stop", "kill", "summon", "give"}`;
+  `lever.kinds(steps: list[str]) -> list[str]`, each `"admin"` when the first word (without `/`) is in ADMIN, else
+  `"player"`; `lever.label(steps) -> str` = `"lab-only"` if any step is admin, else `"player-legal"`.
+- `aim.accept(found: int, replays: list[int], default: int | None) -> dict` (to be added by N2.G3.6.3): `{"accepted":
+  True}` only when there are at least 2 replays, every replay equals `found`, `default` is not None and `found >
+  default`; otherwise `{"accepted": False, "reason": "..."}`.
+- `site/build_r2.py`: `build(charts_dir: Path, status: dict[str, str]) -> dict` merges `site/charts/r2/{foreman,
+  chase,cameron}.json` cards by goal id with the status (missing id gives `"pending"`); department of an `N2.Gk...`
+  id comes from `departments.json` by its `Gk` part, never from `"N2"`. `python site/build_r2.py` writes `site/r2.json`.
+  `r2.json` carries `"route": {"played": false, "note": "planned on a map, not yet played in the real game"}` until a
+  played result file exists.
+- `site/r2_numbers.py`: `numbers(results_dir: Path) -> dict[str, dict | str]`, read from disk on every call (no
+  cache): each expected result file name maps to its parsed JSON, or to the string `"not run"` when missing. A missing
+  number is never 0.
+- `lab/fractal.py`: `variogram(heights: dict[(x, z), float], lags: list[int]) -> list[(lag, gamma)]` with gamma =
+  half the mean squared height difference over pairs at that lag along x and z; `hurst(heights, lags) -> float` =
+  half the least-squares slope of log gamma on log lag. Synthetic test ground comes from a seeded `random.Random`.
+
+Every agent that stops a process kills only the PID it started (`procs.stop`), never `taskkill /IM`.
