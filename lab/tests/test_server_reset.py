@@ -1,8 +1,10 @@
 import os
 import sys
+import types
 import time
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -47,6 +49,18 @@ class Lab(unittest.TestCase):
             for s in servers:
                 s.stop()
             serverdir.remove(scratch["dir"])
+
+    def reset_stops_before_deleting_and_boots_last(self):
+        order = []
+        scratch = {"dir": Path("scratch")}
+        srv = types.SimpleNamespace(scratch=scratch, stop=lambda: order.append("stop"))
+        booted = object()
+        with patch.object(server, "delete_world", side_effect=lambda d, r: order.append("delete")) as delete,                 patch.object(server, "boot", side_effect=lambda s: order.append("boot") or booted) as boot:
+            got = server.reset(srv, Path("root"))
+        self.assertEqual(order, ["stop", "delete", "boot"])
+        delete.assert_called_once_with(scratch["dir"], Path("root"))
+        self.assertIs(boot.call_args.args[0], scratch)
+        self.assertIs(got, booted)
 
 
 if __name__ == "__main__":
