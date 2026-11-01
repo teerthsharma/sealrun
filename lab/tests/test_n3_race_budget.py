@@ -1,8 +1,8 @@
-"""Both solvers in the realmodel race get the same expanded-node budget on every row.
+"""Both solvers in the realmodel race get the same expanded-node budget at every level of every row.
 
-plan_real's allowance is the top-level node_cap (rows carry no plan budget); bfs_real's
-allowance is each row's bfs[].budget. A row holds when every BFS budget equals the plan
-allowance and neither solver expanded more cells than its allowance.
+Each row carries levels[]; each level holds a plan and a bfs record with budget, expanded and
+routed. A level holds when plan_real's budget equals bfs_real's and neither solver expanded
+more cells than its budget. The legacy_plan_cap_2000000 field is ignored.
 """
 import json
 import os
@@ -18,43 +18,48 @@ MIN_ROWS = 100
 class Lab(unittest.TestCase):
     def race_node_budgets_equal(self):
         data = json.loads(RACE.read_text())
-        if "node_cap" not in data:
-            self.fail(f"{RACE.name}: missing top-level field 'node_cap' (the plan_real budget)")
-        plan_budget = data["node_cap"]
+        if "rows" not in data:
+            self.fail(f"{RACE.name}: missing top-level field 'rows'")
         rows = data["rows"]
         for i, r in enumerate(rows):
-            for b in r["bfs"]:
-                if "budget" not in b:
-                    self.fail(f"{RACE.name}: row {i} bfs entry is missing field 'budget' (the bfs_real budget)")
-        levels = sorted({b["budget"] for r in rows for b in r["bfs"]})
-        print(f"rows={len(rows)} bfs budget levels={levels}")
-        print(f"routed plan_real (budget {plan_budget}): {sum(r['plan']['ticks'] is not None for r in rows)}/{len(rows)}")
+            if "levels" not in r:
+                self.fail(f"{RACE.name}: row {i} is missing field 'levels'")
+            for lv in r["levels"]:
+                for solver in ("plan", "bfs"):
+                    if "budget" not in lv[solver]:
+                        self.fail(f"{RACE.name}: row {i} level {lv.get('level')} {solver} is missing field 'budget'")
+        levels = sorted({lv["level"] for r in rows for lv in r["levels"]})
+        print(f"rows={len(rows)} levels={levels}")
         for lv in levels:
-            routed = sum(b["ticks"] is not None for r in rows for b in r["bfs"] if b["budget"] == lv)
-            print(f"routed bfs_real (budget {lv}): {routed}/{len(rows)}")
+            recs = [x for r in rows for x in r["levels"] if x["level"] == lv]
+            print(
+                f"level {lv}: routed plan_real {sum(x['plan']['routed'] for x in recs)}/{len(recs)}, "
+                f"routed bfs_real {sum(x['bfs']['routed'] for x in recs)}/{len(recs)}"
+            )
         self.assertGreaterEqual(len(levels), MIN_LEVELS, "fewer than 3 budget levels in the file")
         self.assertGreaterEqual(len(rows), MIN_ROWS, "fewer than 100 rows in the file")
 
         bad_rows = []
+        pairs = differ = 0
         for r in rows:
             where = f"{r['kind']} x={r['x']} y={r['y']}"
             notes = []
-            mismatched = [b["budget"] for b in r["bfs"] if b["budget"] != plan_budget]
-            if mismatched:
-                notes.append(f"bfs budget {mismatched} != plan_real budget {plan_budget}")
-            if r["plan"]["nodes"] > plan_budget:
-                notes.append(f"plan_real expanded {r['plan']['nodes']} > budget {plan_budget}")
-            for b in r["bfs"]:
-                if b["nodes"] > b["budget"]:
-                    notes.append(f"bfs_real@{b['budget']} expanded {b['nodes']} > budget")
+            for lv in r["levels"]:
+                p, b = lv["plan"], lv["bfs"]
+                pairs += 1
+                if p["budget"] != b["budget"]:
+                    differ += 1
+                    notes.append(f"level {lv['level']}: plan_real budget {p['budget']} != bfs_real budget {b['budget']}")
+                if p["expanded"] > p["budget"]:
+                    notes.append(f"level {lv['level']}: plan_real expanded {p['expanded']} > budget {p['budget']}")
+                if b["expanded"] > b["budget"]:
+                    notes.append(f"level {lv['level']}: bfs_real expanded {b['expanded']} > budget {b['budget']}")
             if notes:
                 bad_rows.append(f"{where}: " + "; ".join(notes))
         if bad_rows:
-            pairs = sum(len(r["bfs"]) for r in rows)
-            differ = sum(b["budget"] != plan_budget for r in rows for b in r["bfs"])
             self.fail(
                 f"{len(bad_rows)}/{len(rows)} rows break the equal-budget claim "
-                f"({differ}/{pairs} row-level budget pairs differ)\n" + "\n".join(bad_rows)
+                f"({differ}/{pairs} level pairs differ)\n" + "\n".join(bad_rows)
             )
 
 
