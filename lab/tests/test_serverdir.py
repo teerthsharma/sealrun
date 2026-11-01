@@ -70,6 +70,33 @@ class Lab(unittest.TestCase):
             self.assertNotEqual(first["dir"], second["dir"])
             self.assertEqual(before, snapshot(src))
 
+    def remove_keeps_marker_until_the_rest_is_gone(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            scratch = Path(tmp, "scratch")
+            (scratch / "world").mkdir(parents=True)
+            (scratch / serverdir.MARKER).write_text("scratch\n")
+            (scratch / "server.jar").write_bytes(b"FAKE-JAR")
+            (scratch / "server.properties").write_text(PROPERTIES)
+            (scratch / "world" / "level.dat").write_bytes(b"FAKE-LEVEL")
+
+            held = open(scratch / "world" / "level.dat", "rb")
+            try:
+                with self.assertRaises(OSError):
+                    serverdir.remove(scratch, timeout=1.0)
+                self.assertTrue((scratch / serverdir.MARKER).is_file())
+            finally:
+                held.close()
+
+            serverdir.remove(scratch)
+            self.assertFalse(scratch.exists())
+
+            bare = Path(tmp, "bare")
+            bare.mkdir()
+            (bare / "keep.txt").write_text("x")
+            with self.assertRaises(ValueError):
+                serverdir.remove(bare)
+            self.assertEqual((bare / "keep.txt").read_text(), "x")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -2,9 +2,33 @@ import secrets
 import shutil
 import socket
 import tempfile
+import time
 from pathlib import Path
 
 MARKER = ".sealrun-scratch"
+
+
+def remove(scratch_dir: Path, timeout: float = 10.0) -> None:
+    marker = Path(scratch_dir, MARKER)
+    if not marker.is_file():
+        raise ValueError(f"not a scratch folder (no {MARKER}): {scratch_dir}")
+    deadline = time.monotonic() + timeout
+    while True:
+        try:
+            for child in scratch_dir.iterdir():
+                if child.name == MARKER:
+                    continue
+                if child.is_dir():
+                    shutil.rmtree(child)
+                else:
+                    child.unlink()
+            marker.unlink()
+            scratch_dir.rmdir()
+            return
+        except OSError:
+            if time.monotonic() > deadline:
+                raise
+            time.sleep(0.5)
 
 
 def _free_port() -> int:

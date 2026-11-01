@@ -1,5 +1,4 @@
 import os
-import shutil
 import sys
 import time
 import unittest
@@ -14,20 +13,6 @@ import serverdir
 SRC = Path(os.environ.get("SEALRUN_SERVER", "C:/Users/seal/Desktop/sanitised mineraft/server-1.16.1"))
 ROOT = Path(os.environ.get("SEALRUN_LAB", Path.home() / "sealrun-lab"))
 PLACED = "execute if block 0 100 0 minecraft:gold_block"
-
-
-def remove_scratch(d: Path) -> None:
-    if not (d / serverdir.MARKER).is_file():
-        return
-    deadline = time.monotonic() + 10
-    while True:
-        try:
-            shutil.rmtree(d)
-            return
-        except OSError:
-            if time.monotonic() > deadline:
-                raise
-            time.sleep(0.5)
 
 
 class Lab(unittest.TestCase):
@@ -61,7 +46,7 @@ class Lab(unittest.TestCase):
         finally:
             for s in servers:
                 s.stop()
-            remove_scratch(scratch["dir"])
+            serverdir.remove(scratch["dir"])
 
 
 if __name__ == "__main__":
