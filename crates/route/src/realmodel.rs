@@ -48,7 +48,7 @@ pub fn moves(grid: &Grid, s: &State) -> Vec<(Step, State, u64)> {
 
 type Parents = BTreeMap<State, (u64, Option<(State, Step)>)>;
 
-pub fn plan_real(grid: &Grid, start: State, done: impl Fn(&State) -> bool) -> (Option<u64>, Vec<Step>, usize) {
+pub fn plan_real(grid: &Grid, start: State, done: impl Fn(&State) -> bool, cap: usize) -> (Option<u64>, Vec<Step>, usize) {
     let mut best: Parents = BTreeMap::new();
     let mut heap = BinaryHeap::new();
     best.insert(start, (0, None));
@@ -68,7 +68,7 @@ pub fn plan_real(grid: &Grid, start: State, done: impl Fn(&State) -> bool) -> (O
             path.reverse();
             return (Some(d), path, expanded);
         }
-        if expanded == NODE_CAP {
+        if expanded == cap {
             return (None, Vec::new(), expanded);
         }
         expanded += 1;
