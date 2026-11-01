@@ -1,0 +1,156 @@
+[
+ {
+  "id": "N4.G1.1",
+  "title": "Why one ticket builds 25 chunks",
+  "plain": "The code uses the Minecraft wiki rule that a forceload ticket is level 31 and each chunk step away adds one, and works out that a 5 by 5 block of chunks ends up fully built; it must match the block we measured.",
+  "why": "If the published rule predicts the tile we measured, we know why the tile is that size.",
+  "done_when": "The code gives 25 full chunks, distance 3 is not full, and it equals the saved measurement."
+ },
+ {
+  "id": "N4.G1.2",
+  "title": "The thirteen build stages",
+  "plain": "The code lists the thirteen stages a chunk goes through, in order, from the 1.16.5 class listing, and checks every stage name we ever saw on disk is on the list.",
+  "why": "The leftover half-built chunks are only understood once the stages are known.",
+  "done_when": "All 13 stages are in order and every saved stage name is on the list."
+ },
+ {
+  "id": "N4.G1.3",
+  "title": "What the bug tracker says",
+  "plain": "Two Mojang bug reports say the world changes with the order chunks are built; the code stores their numbers, dates and a short quote with the link.",
+  "why": "Claims about earlier knowledge must come with a link and a date.",
+  "done_when": "The dates match, each quote is under 15 words and every link is present."
+ },
+ {
+  "id": "N4.G1.4",
+  "title": "Which simple rules ignore order",
+  "plain": "A published paper counts which of the 256 one-line update rules give the same end states in any update order; the code repeats the count on a ring of 5 cells.",
+  "why": "It is the nearest published count to our question, so we check we read it correctly.",
+  "done_when": "Exactly 104 of the 256 rules are independent of order."
+ },
+ {
+  "id": "N4.G2.1",
+  "title": "Counting worlds by first ticket",
+  "plain": "Following Postnikov's paper, the code counts how many different worlds four tickets can make for several kinds of overlap, written fresh and apart from our own counter.",
+  "why": "Our law says worlds equal corners of a shape; an independent count must agree.",
+  "done_when": "The counts are 24, 14, 20 and 4 for the four kinds of overlap."
+ },
+ {
+  "id": "N4.G2.2",
+  "title": "The same count by a second rule",
+  "plain": "Postnikov, Reiner and Williams give a different rule for the same shapes, built from prefixes of an order; the code counts with that rule.",
+  "why": "Two different rules agreeing is the best evidence the shape reading is right.",
+  "done_when": "The counts are 24 for every subset and 14 for neighbour runs."
+ },
+ {
+  "id": "N4.G2.3",
+  "title": "Pointing the edges of a graph",
+  "plain": "Stanley proved that the number of ways to give every edge a direction with no loop of arrows is the chromatic polynomial at minus one; the code counts both ways on small graphs.",
+  "why": "It is the counting tool if worlds correspond to edge directions of a touching graph.",
+  "done_when": "The counts 6, 8, 14 and 24 match the polynomial on the four test graphs."
+ },
+ {
+  "id": "N4.G2.4",
+  "title": "Words that may swap letters",
+  "plain": "Cartier and Foata count words where some letters may swap; the code counts them by brute force and by the formula, for three letters where only two swap.",
+  "why": "Tickets that cannot affect each other are exactly letters that swap.",
+  "done_when": "The counts for lengths 0 to 4 are 1, 3, 8, 21, 55 and the formula gives the same."
+ },
+ {
+  "id": "N4.G2.5",
+  "title": "The map of all orders of four",
+  "plain": "The code builds the map of the 24 orders of four tickets, where one order is below another when it has a subset of its swapped pairs.",
+  "why": "Classes of orders are easiest to describe as regions of this map.",
+  "done_when": "The map has 36 neighbour links, layers 1, 3, 5, 6, 5, 3, 1 and one bottom and one top."
+ },
+ {
+  "id": "N4.G2.6",
+  "title": "Are the classes unbroken stretches",
+  "plain": "A paper on binary search trees says orders that give the same tree form an unbroken stretch of the map; the code checks it for our 14 classes.",
+  "why": "If classes are unbroken, one run per class plus the borders tells us everything.",
+  "done_when": "There are 14 classes and each holds every order between any two of its members."
+ },
+ {
+  "id": "N4.G3.1",
+  "title": "Joining cells into pieces",
+  "plain": "Tarjan's method keeps groups of joined cells; the code checks it on a worked example and against plain flood fill on random graphs.",
+  "why": "Counting separate regions of the terrain needs a method we trust.",
+  "done_when": "The example leaves 3 groups of 10 cells and 200 random graphs match flood fill."
+ },
+ {
+  "id": "N4.G3.2",
+  "title": "Pieces minus holes from corners",
+  "plain": "A standard theorem says corners minus edges plus squares equals pieces minus holes; the code checks it on pictures and on 100 random grids.",
+  "why": "It gives a second way to check the terrain counts.",
+  "done_when": "The sums 1, 0 and 2 match on the examples and all 100 random pictures agree."
+ },
+ {
+  "id": "N4.G3.3",
+  "title": "Which hill is older",
+  "plain": "The method of Edelsbrunner, Letscher and Zomorodian lets the younger of two meeting pieces die; the code runs it on a short list of heights.",
+  "why": "It is how the cost of joining two regions of terrain is read.",
+  "done_when": "The pairs are (2, 5) and (3, 6) and one piece born at 1 never dies."
+ },
+ {
+  "id": "N4.G3.4",
+  "title": "Pairing by matrix reduction",
+  "plain": "The same paper pairs births and deaths by reducing a table of boundaries; the code does it on a hollow square.",
+  "why": "It gives the loops of the terrain, not only the pieces.",
+  "done_when": "The corner pairs are (1,4) (2,5) (3,6), one corner never dies and one loop born at 7 never dies."
+ },
+ {
+  "id": "N4.G4.1",
+  "title": "Study numbers meet round 3",
+  "plain": "The code recounts the number of worlds for each of the 72 saved rows of the round 3 polytope results with Postnikov's counting.",
+  "why": "A study material only counts if a finding actually uses it.",
+  "done_when": "All 72 recounts equal the saved class counts."
+ },
+ {
+  "id": "N4.G4.2",
+  "title": "Study tools meet the terrain",
+  "plain": "The code counts pieces and holes of the seed 7 terrain with the union-find and corner-count code and compares with the saved terrain numbers.",
+  "why": "It proves our own code agrees with the tool the terrain lane used.",
+  "done_when": "The code finds 158 pieces and 4 holes, as saved."
+ },
+ {
+  "id": "N4.C1",
+  "title": "Every source named, nothing copied",
+  "plain": "The test checks each study file names its source, quotes stay under 15 words and no paper or book file is in the repo.",
+  "why": "Papers are not ours to publish.",
+  "done_when": "All files name a source, no long quote and no paper file exists."
+ },
+ {
+  "id": "N4.C2",
+  "title": "The study code stays offline",
+  "plain": "The test checks no study file reaches for the internet or downloads anything.",
+  "why": "The study code must give the same answer on any machine.",
+  "done_when": "No study or test file imports a network library."
+ },
+ {
+  "id": "N4.G1",
+  "title": "What the game states",
+  "plain": "This branch re-derives the facts the game and its bug tracker state about how chunks are built.",
+  "why": "Our measurements are only as good as our reading of these facts.",
+  "done_when": "Every leaf under it reaches."
+ },
+ {
+  "id": "N4.G2",
+  "title": "The counting maths",
+  "plain": "This branch re-derives the theorems that count which orders make the same world.",
+  "why": "The law about orders needs counts we can check by hand.",
+  "done_when": "Every leaf under it reaches."
+ },
+ {
+  "id": "N4.G3",
+  "title": "Reading the terrain",
+  "plain": "This branch re-derives the tools that read pieces, holes and joining costs of the terrain.",
+  "why": "The route result stands on these counts.",
+  "done_when": "Every leaf under it reaches."
+ },
+ {
+  "id": "N4.G4",
+  "title": "Used by round 3",
+  "plain": "This branch ties study code to numbers round 3 already recorded.",
+  "why": "A material nobody uses is not worth keeping.",
+  "done_when": "Both bridges reproduce the saved numbers."
+ }
+]
