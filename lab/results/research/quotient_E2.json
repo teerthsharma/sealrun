@@ -167,6 +167,50 @@
       "servers": null
     },
     {
+      "label": "E2_PRSQ_r2",
+      "order": [
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          65,
+          64
+        ]
+      ],
+      "boot_secs": 24.36,
+      "settle_s": 10.53,
+      "not_full_cells": 0,
+      "servers": {
+        "before_boot": {
+          "java_lab": 2,
+          "slots_live": 3,
+          "cpu_pct": 95.3,
+          "free_mb": 6406
+        },
+        "after_boot": {
+          "java_lab": 2,
+          "slots_live": 3,
+          "cpu_pct": 45.6,
+          "free_mb": 5657
+        },
+        "at_save": {
+          "java_lab": 1,
+          "slots_live": 3,
+          "cpu_pct": 85.0,
+          "free_mb": 6431
+        }
+      }
+    },
+    {
       "label": "E2_PSQR",
       "order": [
         [
@@ -239,21 +283,34 @@
         "67,63": 20,
         "67,64": 8
       }
+    },
+    {
+      "a": "E2_PRSQ",
+      "b": "E2_PRSQ_r2",
+      "diff_total": 122,
+      "diff_by_chunk": {
+        "62,62": 1,
+        "62,63": 36,
+        "62,64": 37,
+        "62,67": 2,
+        "63,67": 2,
+        "64,62": 25,
+        "64,66": 4,
+        "65,62": 13,
+        "66,62": 2
+      }
     }
   ],
   "controls_max_diff": 310,
   "agreeing_chunks": [
-    "62,62",
     "62,65",
     "63,62",
     "63,63",
     "63,64",
     "63,65",
-    "64,62",
     "64,63",
     "64,64",
     "64,65",
-    "65,62",
     "65,63",
     "65,64",
     "65,65",
@@ -266,32 +323,47 @@
     "67,67"
   ],
   "noisy_chunks": {
+    "62,62": {
+      "E2_PRSQ|E2_PRSQ_r2": 1
+    },
     "62,63": {
-      "E2_PQRS|E2_PQRS_r2": 36
+      "E2_PQRS|E2_PQRS_r2": 36,
+      "E2_PRSQ|E2_PRSQ_r2": 36
     },
     "62,64": {
-      "E2_PQRS|E2_PQRS_r2": 37
+      "E2_PQRS|E2_PQRS_r2": 37,
+      "E2_PRSQ|E2_PRSQ_r2": 37
     },
     "62,66": {
       "E2_PQRS|E2_PQRS_r2": 40
     },
     "62,67": {
-      "E2_PQRS|E2_PQRS_r2": 55
+      "E2_PQRS|E2_PQRS_r2": 55,
+      "E2_PRSQ|E2_PRSQ_r2": 2
     },
     "63,66": {
       "E2_PQRS|E2_PQRS_r2": 15
     },
     "63,67": {
-      "E2_PQRS|E2_PQRS_r2": 44
+      "E2_PQRS|E2_PQRS_r2": 44,
+      "E2_PRSQ|E2_PRSQ_r2": 2
+    },
+    "64,62": {
+      "E2_PRSQ|E2_PRSQ_r2": 25
     },
     "64,66": {
-      "E2_PQRS|E2_PQRS_r2": 4
+      "E2_PQRS|E2_PQRS_r2": 4,
+      "E2_PRSQ|E2_PRSQ_r2": 4
     },
     "64,67": {
       "E2_PQRS|E2_PQRS_r2": 13
     },
+    "65,62": {
+      "E2_PRSQ|E2_PRSQ_r2": 13
+    },
     "66,62": {
-      "E2_PQRS|E2_PQRS_r2": 2
+      "E2_PQRS|E2_PQRS_r2": 2,
+      "E2_PRSQ|E2_PRSQ_r2": 2
     },
     "66,63": {
       "E2_PQRS|E2_PQRS_r2": 2
@@ -313,18 +385,17 @@
     }
   },
   "order_dependent_chunks": [
-    "62,62",
     "62,65",
-    "63,62",
-    "64,62",
-    "65,62"
+    "63,62"
   ],
   "classes_agreeing_chunks": [
     {
       "class": 0,
       "worlds": [
         "E2_PQRS",
-        "E2_PQRS_r2"
+        "E2_PQRS_r2",
+        "E2_PSQR",
+        "E2_PSRQ"
       ],
       "orders": [
         [
@@ -362,15 +433,7 @@
             65,
             65
           ]
-        ]
-      ]
-    },
-    {
-      "class": 1,
-      "worlds": [
-        "E2_PQSR"
-      ],
-      "orders": [
+        ],
         [
           [
             64,
@@ -378,6 +441,20 @@
           ],
           [
             65,
+            65
+          ],
+          [
+            65,
+            64
+          ],
+          [
+            64,
+            65
+          ]
+        ],
+        [
+          [
+            64,
             64
           ],
           [
@@ -387,13 +464,18 @@
           [
             64,
             65
+          ],
+          [
+            65,
+            64
           ]
         ]
       ]
     },
     {
-      "class": 2,
+      "class": 1,
       "worlds": [
+        "E2_PQSR",
         "E2_PRQS"
       ],
       "orders": [
@@ -403,6 +485,24 @@
             64
           ],
           [
+            65,
+            64
+          ],
+          [
+            65,
+            65
+          ],
+          [
+            64,
+            65
+          ]
+        ],
+        [
+          [
+            64,
+            64
+          ],
+          [
             64,
             65
           ],
@@ -418,9 +518,10 @@
       ]
     },
     {
-      "class": 3,
+      "class": 2,
       "worlds": [
-        "E2_PRSQ"
+        "E2_PRSQ",
+        "E2_PRSQ_r2"
       ],
       "orders": [
         [
@@ -440,52 +541,18 @@
             65,
             64
           ]
-        ]
-      ]
-    },
-    {
-      "class": 4,
-      "worlds": [
-        "E2_PSQR"
-      ],
-      "orders": [
+        ],
         [
           [
             64,
             64
           ],
           [
-            65,
-            65
-          ],
-          [
-            65,
-            64
-          ],
-          [
             64,
             65
-          ]
-        ]
-      ]
-    },
-    {
-      "class": 5,
-      "worlds": [
-        "E2_PSRQ"
-      ],
-      "orders": [
-        [
-          [
-            64,
-            64
           ],
           [
             65,
-            65
-          ],
-          [
-            64,
             65
           ],
           [
@@ -496,11 +563,11 @@
       ]
     }
   ],
-  "class_count_agreeing_chunks": 6,
-  "class_count_all_chunks_hash": 7,
+  "class_count_agreeing_chunks": 3,
+  "class_count_all_chunks_hash": 8,
   "chunk_status": {
     "62,62": {
-      "repeat_agree": true,
+      "repeat_agree": false,
       "distinct_hashes": 2
     },
     "62,63": {
@@ -509,7 +576,7 @@
     },
     "62,64": {
       "repeat_agree": false,
-      "distinct_hashes": 3
+      "distinct_hashes": 4
     },
     "62,65": {
       "repeat_agree": true,
@@ -548,7 +615,7 @@
       "distinct_hashes": 4
     },
     "64,62": {
-      "repeat_agree": true,
+      "repeat_agree": false,
       "distinct_hashes": 3
     },
     "64,63": {
@@ -572,7 +639,7 @@
       "distinct_hashes": 2
     },
     "65,62": {
-      "repeat_agree": true,
+      "repeat_agree": false,
       "distinct_hashes": 2
     },
     "65,63": {
@@ -650,6 +717,7 @@
         "E2_PQRS",
         "E2_PQRS_r2",
         "E2_PRQS",
+        "E2_PRSQ_r2",
         "E2_PSQR"
       ],
       [
@@ -668,7 +736,8 @@
       ],
       [
         "E2_PQRS_r2",
-        "E2_PRQS"
+        "E2_PRQS",
+        "E2_PRSQ_r2"
       ]
     ],
     "62,64": [
@@ -684,6 +753,9 @@
       ],
       [
         "E2_PRSQ"
+      ],
+      [
+        "E2_PRSQ_r2"
       ]
     ],
     "62,65": [
@@ -696,7 +768,8 @@
         "E2_PSRQ"
       ],
       [
-        "E2_PRSQ"
+        "E2_PRSQ",
+        "E2_PRSQ_r2"
       ]
     ],
     "62,66": [
@@ -705,6 +778,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -716,6 +790,7 @@
       [
         "E2_PQRS",
         "E2_PQSR",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -732,6 +807,7 @@
         "E2_PQRS",
         "E2_PQRS_r2",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -747,6 +823,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -758,6 +835,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -769,6 +847,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -785,7 +864,8 @@
       ],
       [
         "E2_PQSR",
-        "E2_PRSQ"
+        "E2_PRSQ",
+        "E2_PRSQ_r2"
       ]
     ],
     "63,67": [
@@ -799,7 +879,8 @@
         "E2_PSQR"
       ],
       [
-        "E2_PQSR"
+        "E2_PQSR",
+        "E2_PRSQ_r2"
       ],
       [
         "E2_PRSQ"
@@ -817,6 +898,7 @@
         "E2_PRQS"
       ],
       [
+        "E2_PRSQ_r2",
         "E2_PSQR"
       ]
     ],
@@ -827,6 +909,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -838,6 +921,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -849,6 +933,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -862,6 +947,7 @@
       ],
       [
         "E2_PQRS_r2",
+        "E2_PRSQ_r2",
         "E2_PSQR"
       ],
       [
@@ -878,6 +964,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR"
       ]
     ],
@@ -891,6 +978,7 @@
         "E2_PSRQ"
       ],
       [
+        "E2_PRSQ_r2",
         "E2_PSQR"
       ]
     ],
@@ -901,6 +989,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -912,6 +1001,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -923,6 +1013,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -934,6 +1025,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -945,6 +1037,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -959,7 +1052,8 @@
       ],
       [
         "E2_PQRS_r2",
-        "E2_PQSR"
+        "E2_PQSR",
+        "E2_PRSQ_r2"
       ]
     ],
     "66,63": [
@@ -968,6 +1062,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -980,6 +1075,7 @@
         "E2_PQRS",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -996,6 +1092,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -1010,6 +1107,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -1021,6 +1119,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -1030,6 +1129,7 @@
         "E2_PQRS",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -1046,6 +1146,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -1059,6 +1160,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ],
@@ -1073,6 +1175,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -1084,6 +1187,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -1095,6 +1199,7 @@
         "E2_PQSR",
         "E2_PRQS",
         "E2_PRSQ",
+        "E2_PRSQ_r2",
         "E2_PSQR",
         "E2_PSRQ"
       ]
@@ -1174,6 +1279,25 @@
         "63,66": 3,
         "63,67": 54,
         "64,67": 13
+      }
+    },
+    {
+      "a": "E2_PQRS",
+      "b": "E2_PRSQ_r2",
+      "control": false,
+      "equal_chunks": "100011111100011100011111011111111111",
+      "diff_total": 200,
+      "diff_by_chunk": {
+        "62,63": 36,
+        "62,64": 47,
+        "62,65": 1,
+        "63,66": 3,
+        "63,67": 56,
+        "64,62": 25,
+        "64,66": 4,
+        "64,67": 13,
+        "65,62": 13,
+        "66,62": 2
       }
     },
     {
@@ -1274,6 +1398,29 @@
     },
     {
       "a": "E2_PQRS_r2",
+      "b": "E2_PRSQ_r2",
+      "control": false,
+      "equal_chunks": "110000111100011111011111100011000111",
+      "diff_total": 238,
+      "diff_by_chunk": {
+        "62,64": 10,
+        "62,65": 1,
+        "62,66": 40,
+        "62,67": 55,
+        "63,66": 18,
+        "63,67": 12,
+        "64,62": 25,
+        "65,62": 13,
+        "66,63": 2,
+        "66,64": 30,
+        "66,65": 2,
+        "67,62": 2,
+        "67,63": 20,
+        "67,64": 8
+      }
+    },
+    {
+      "a": "E2_PQRS_r2",
       "b": "E2_PSQR",
       "control": false,
       "equal_chunks": "100100111101011111011111000011000111",
@@ -1359,6 +1506,25 @@
     },
     {
       "a": "E2_PQSR",
+      "b": "E2_PRSQ_r2",
+      "control": false,
+      "equal_chunks": "000011011111011101011111110111011111",
+      "diff_total": 178,
+      "diff_by_chunk": {
+        "62,62": 1,
+        "62,63": 36,
+        "62,64": 47,
+        "62,65": 1,
+        "63,62": 24,
+        "64,62": 45,
+        "64,66": 4,
+        "65,62": 13,
+        "66,64": 4,
+        "67,62": 3
+      }
+    },
+    {
+      "a": "E2_PQSR",
       "b": "E2_PSQR",
       "control": false,
       "equal_chunks": "011111011100011101011111010111011111",
@@ -1413,6 +1579,25 @@
     },
     {
       "a": "E2_PRQS",
+      "b": "E2_PRSQ_r2",
+      "control": false,
+      "equal_chunks": "110010011100011101011111011111111111",
+      "diff_total": 116,
+      "diff_by_chunk": {
+        "62,64": 10,
+        "62,65": 1,
+        "62,67": 2,
+        "63,62": 24,
+        "63,66": 3,
+        "63,67": 12,
+        "64,62": 45,
+        "64,66": 4,
+        "65,62": 13,
+        "66,62": 2
+      }
+    },
+    {
+      "a": "E2_PRQS",
       "b": "E2_PSQR",
       "control": false,
       "equal_chunks": "100110011111011101011111111111111111",
@@ -1443,6 +1628,24 @@
         "64,62": 20,
         "64,66": 8,
         "64,67": 13
+      }
+    },
+    {
+      "a": "E2_PRSQ",
+      "b": "E2_PRSQ_r2",
+      "control": true,
+      "equal_chunks": "000110111110011101011111011111111111",
+      "diff_total": 122,
+      "diff_by_chunk": {
+        "62,62": 1,
+        "62,63": 36,
+        "62,64": 37,
+        "62,67": 2,
+        "63,67": 2,
+        "64,62": 25,
+        "64,66": 4,
+        "65,62": 13,
+        "66,62": 2
       }
     },
     {
@@ -1479,6 +1682,41 @@
       }
     },
     {
+      "a": "E2_PRSQ_r2",
+      "b": "E2_PSQR",
+      "control": false,
+      "equal_chunks": "100011111100111111111111011111111111",
+      "diff_total": 101,
+      "diff_by_chunk": {
+        "62,63": 36,
+        "62,64": 47,
+        "62,65": 1,
+        "63,66": 3,
+        "63,67": 12,
+        "66,62": 2
+      }
+    },
+    {
+      "a": "E2_PRSQ_r2",
+      "b": "E2_PSRQ",
+      "control": false,
+      "equal_chunks": "000011111100011100011111011111111111",
+      "diff_total": 201,
+      "diff_by_chunk": {
+        "62,62": 1,
+        "62,63": 36,
+        "62,64": 47,
+        "62,65": 1,
+        "63,66": 3,
+        "63,67": 56,
+        "64,62": 25,
+        "64,66": 4,
+        "64,67": 13,
+        "65,62": 13,
+        "66,62": 2
+      }
+    },
+    {
       "a": "E2_PSQR",
       "b": "E2_PSRQ",
       "control": false,
@@ -1494,5 +1732,5 @@
       }
     }
   ],
-  "when": "2026-11-01T14:16:33.694638+05:30"
+  "when": "2026-11-01T14:25:57.167329+05:30"
 }
