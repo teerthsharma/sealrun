@@ -1,0 +1,192 @@
+{
+  "A": [
+    64,
+    64
+  ],
+  "B": [
+    68,
+    64
+  ],
+  "edit": {
+    "lo": [
+      1068,
+      30,
+      1024
+    ],
+    "hi": [
+      1071,
+      33,
+      1027
+    ],
+    "op": "break"
+  },
+  "positions": 327680,
+  "inside_changed": 64,
+  "outside_changed": 6,
+  "added": 0,
+  "removed": 0,
+  "by_chunk_outside": {
+    "68,64": 6
+  },
+  "examples_outside": [
+    [
+      [
+        1092,
+        17,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1092,
+        18,
+        1025
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1092,
+        18,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1093,
+        17,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1093,
+        18,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1094,
+        18,
+        1026
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ]
+  ],
+  "edit_before": {
+    "minecraft:stone": 55,
+    "minecraft:granite": 9
+  },
+  "not_full": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "fingerprints": {
+    "p1": "9fd4b7ed847b0f7c61abb41cc4de9c493b67a43cdd289cd08262d6bc162aa0f4",
+    "p2": "9fd4b7ed847b0f7c61abb41cc4de9c493b67a43cdd289cd08262d6bc162aa0f4",
+    "e1": "3aaf87b10bab07d7039c7f67e53d41b499ef18110c4f04b59f8fc1ab88b57177",
+    "e2": "3aaf87b10bab07d7039c7f67e53d41b499ef18110c4f04b59f8fc1ab88b57177"
+  },
+  "noise": {
+    "count": 0,
+    "by_chunk": {}
+  },
+  "edit_attributed": {
+    "count": 6,
+    "by_chunk": {
+      "68,64": 6
+    },
+    "examples": [
+      [
+        [
+          1092,
+          18,
+          1025
+        ],
+        "minecraft:andesite",
+        "minecraft:diorite"
+      ],
+      [
+        [
+          1092,
+          17,
+          1026
+        ],
+        "minecraft:andesite",
+        "minecraft:diorite"
+      ],
+      [
+        [
+          1092,
+          18,
+          1026
+        ],
+        "minecraft:andesite",
+        "minecraft:diorite"
+      ],
+      [
+        [
+          1093,
+          17,
+          1026
+        ],
+        "minecraft:andesite",
+        "minecraft:diorite"
+      ],
+      [
+        [
+          1093,
+          18,
+          1026
+        ],
+        "minecraft:andesite",
+        "minecraft:diorite"
+      ],
+      [
+        [
+          1094,
+          18,
+          1026
+        ],
+        "minecraft:andesite",
+        "minecraft:diorite"
+      ]
+    ]
+  },
+  "settle_s": {
+    "p1": [
+      0.62,
+      0.02,
+      0.31
+    ],
+    "p2": [
+      0.42,
+      0.01,
+      0.28
+    ],
+    "e1": [
+      0.44,
+      0.0,
+      0.28
+    ],
+    "e2": [
+      0.52,
+      0.02,
+      0.3
+    ]
+  },
+  "when": "2026-11-01T11:48:47.608939+05:30"
+}
