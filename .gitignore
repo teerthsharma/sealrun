@@ -1,2 +1,9 @@
 target/
 *.log
+server.jar
+level.dat
+server.properties
+eula.txt
+*.mca
+*.mcr
+*.jar
