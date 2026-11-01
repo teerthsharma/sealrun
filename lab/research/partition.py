@@ -14,8 +14,12 @@ ORES = ("diamond", "iron", "coal", "gold", "lapis", "redstone", "emerald")
 ORE_KEYS = ORES + ("total",)
 RESAMPLES = 10000
 SEED = 20261101
+POLY_R = 3
 CAMERON_SQUARE = {1: 4, 2: 4, 3: 20, 4: 20, 5: 1, 6: 1, 7: 1}
 CAMERON_LINE4 = {2: 12, 3: 8, 4: 4}
+NOISE_RULE = ("a chunk is noisy when any same-order repeat pair differs in its hash; noisy chunks are "
+              "removed before the classes, per-chunk partitions and ore comparison; diff counts come "
+              "from the campaign diff report when given")
 
 
 def okey(order):
@@ -93,6 +97,45 @@ def refinement_violations(whole, per):
     return v
 
 
+def noise_split(worlds, report=None):
+    diff = {}
+    if report:
+        for p in report["pairs"]:
+            if p.get("control"):
+                diff[frozenset((p["a"], p["b"]))] = p["diff_by_chunk"]
+    by_order = {}
+    for w in worlds:
+        by_order.setdefault(okey(w["order"]), []).append(w)
+    chunks = sorted({k for w in worlds for k in w["chunks"]})
+    noisy, tested = {}, 0
+    for ws in by_order.values():
+        for a, b in itertools.combinations(ws, 2):
+            tested += 1
+            counts = diff.get(frozenset((a.get("label"), b.get("label"))))
+            for k in chunks:
+                if k not in a["chunks"] or k not in b["chunks"]:
+                    continue
+                differs = sha_of(a["chunks"][k]) != sha_of(b["chunks"][k])
+                count = None if counts is None else counts.get(k, 0)
+                if count is not None and differs != (count > 0):
+                    raise ValueError(f"hash and raw diff disagree for {a.get('label')} vs {b.get('label')} chunk {k}")
+                if differs:
+                    noisy.setdefault(k, []).append({"a": a.get("label"), "b": b.get("label"),
+                                                    "order": okey(a["order"]), "diff_blocks": count})
+    listed = []
+    for k in sorted(noisy):
+        counts = [x["diff_blocks"] for x in noisy[k]]
+        listed.append({"chunk": k, "repeat_pairs": noisy[k],
+                       "max_diff_blocks": max(counts) if None not in counts else None})
+    return {"rule": NOISE_RULE, "clean_chunks": [k for k in chunks if k not in noisy],
+            "noisy_chunks": sorted(noisy), "noisy": listed, "repeat_pairs_tested": tested}
+
+
+def restrict(worlds, keep):
+    keep = set(keep)
+    return [dict(w, chunks={k: c for k, c in w["chunks"].items() if k in keep}) for w in worlds]
+
+
 def transitivity(items, d, class_of=None):
     n = len(d)
     sym = sum(1 for a, b in itertools.combinations(range(n), 2) if d[a][b] != d[b][a])
@@ -117,10 +160,12 @@ def diff_matrix(report, labels):
     return d
 
 
-def verdict(source, measured, expected_orders, predicted, predicted_partition=None, basis=""):
+def verdict(source, measured, expected_orders, predicted, predicted_partition=None, basis="", excluded=False):
     base = {"source": source, "basis": basis, "n_orders": measured["n_orders"],
             "expected_orders": expected_orders, "predicted_classes": predicted,
             "measured_classes": measured["n_classes"]}
+    if excluded:
+        return base | {"status": "noisy_chunks_excluded", "match": None, "partition_match": None}
     if measured["n_orders"] != expected_orders:
         return base | {"status": "partial_coverage", "match": None, "partition_match": None}
     res = base | {"status": "compared", "match": predicted == measured["n_classes"],
@@ -139,7 +184,19 @@ def sim_record(doc, pts, r_dec):
     return None
 
 
-def predictions(measured, tickets, r_dec, sim_path, poly_path):
+def polytope_entry(doc, pts, R):
+    for e in doc["results"]:
+        if e["variant"] == "F" and e["R"] == R and sorted(map(tuple, e["tickets"])) == pts:
+            return e
+    return None
+
+
+def polytope_partition(e):
+    t = [list(x) for x in e["tickets"]]
+    return [[[t[i] for i in perm] for perm in cls] for cls in e["class_orders"]]
+
+
+def predictions(measured, tickets, r_dec, sim_path, poly_path, poly_r=POLY_R, excluded=False):
     pts = sorted({tuple(t) for t in tickets})
     out = []
     if r_dec is None:
@@ -152,10 +209,14 @@ def predictions(measured, tickets, r_dec, sim_path, poly_path):
             out.append({"source": "sim", "status": "no_entry", "match": None})
         else:
             out.append(verdict("sim", measured, rec["orders_considered"], rec["predicted_classes"],
-                               rec["classes"], basis=f"{rec['layout']} r_dec={r_dec}"))
+                               rec["classes"], basis=f"{rec['layout']} r_dec={r_dec}", excluded=excluded))
     if poly_path and Path(poly_path).exists():
-        out.append({"source": "polytope", "status": "present_unparsed", "match": None,
-                    "file": str(poly_path)})
+        e = polytope_entry(json.loads(Path(poly_path).read_text(encoding="utf-8")), pts, poly_r)
+        if e is None:
+            out.append({"source": "polytope", "status": "no_entry", "match": None, "R": poly_r})
+        else:
+            out.append(verdict("polytope", measured, sum(len(c) for c in e["class_orders"]), e["classes"],
+                               polytope_partition(e), basis=f"stamp family F, R={poly_r}", excluded=excluded))
     else:
         out.append({"source": "polytope", "status": "absent", "match": None})
     sh = shape(pts)
@@ -173,7 +234,7 @@ def predictions(measured, tickets, r_dec, sim_path, poly_path):
     if pred is None:
         out.append({"source": "cameron", "status": "no_entry", "match": None, "basis": basis})
     else:
-        out.append(verdict("cameron", measured, math.factorial(len(pts)), pred, None, basis))
+        out.append(verdict("cameron", measured, math.factorial(len(pts)), pred, None, basis, excluded=excluded))
     return out
 
 
@@ -283,19 +344,26 @@ def ore_comparison(worlds, whole):
                           **bootstrap_diff(a, b)})
     return {"status": status, "grouping": grouping, "grouping_reason": reason,
             "method": "plain-Python percentile bootstrap, random.choices, "
-                                         f"{RESAMPLES} resamples, seed {SEED}; not mlm runs_compare",
+                      f"{RESAMPLES} resamples, seed {SEED}; not mlm runs_compare",
             "keys_tested": len(ORE_KEYS), "comparisons": comps,
             "insufficient_repeats": insufficient, "repeat_spread_max": spread}
 
 
-def analyse(paths, *, experiment, r_dec, sim, sim_ref, poly, diff_path):
+def analyse(paths, *, experiment, r_dec, sim, sim_ref, poly, poly_ref, poly_r, diff_path):
     worlds, metas = load_worlds(paths)
-    whole = partition(worlds)
-    per = per_chunk(worlds)
     tickets = tickets_of(worlds)
-    if diff_path:
+    report = json.loads(Path(diff_path).read_text(encoding="utf-8")) if diff_path else None
+    full = partition(worlds)
+    noise = noise_split(worlds, report)
+    if not noise["clean_chunks"]:
+        raise ValueError("every chunk is noisy; nothing left to partition")
+    clean = restrict(worlds, noise["clean_chunks"])
+    whole = partition(clean)
+    per = per_chunk(clean)
+    excluded = bool(noise["noisy_chunks"])
+    if report:
         labels = [w["label"] for w in worlds]
-        d = diff_matrix(json.loads(Path(diff_path).read_text(encoding="utf-8")), labels)
+        d = diff_matrix(report, labels)
         index = {}
         class_of = [index.setdefault(signature(w), len(index)) for w in worlds]
         tr = transitivity(labels, d, class_of)
@@ -303,12 +371,15 @@ def analyse(paths, *, experiment, r_dec, sim, sim_ref, poly, diff_path):
         tr = {"status": "not_run", "reason": "no pairwise diff report given"}
     return {"experiment": experiment, "inputs": metas, "n_worlds": len(worlds),
             "tickets": [list(t) for t in tickets], "shape": shape(tickets), "r_dec": r_dec,
+            "noise": {k: noise[k] for k in ("rule", "clean_chunks", "noisy_chunks", "noisy", "repeat_pairs_tested")},
             **whole, "per_chunk": per,
             "per_chunk_refinement_violations": refinement_violations(whole, per),
+            "all_chunks": {k: full[k] for k in ("n_orders", "n_classes", "valid_partition",
+                                                  "conflicted_orders", "conflicted")},
             "transitivity": tr,
-            "predictions": predictions(whole, tickets, r_dec, sim, poly),
-            "predictions_ref": sim_ref,
-            "ore_comparison": ore_comparison(worlds, whole),
+            "predictions": predictions(whole, tickets, r_dec, sim, poly, poly_r=poly_r, excluded=excluded),
+            "predictions_refs": {"sim": sim_ref, "polytope": poly_ref, "polytope_R": poly_r},
+            "ore_comparison": ore_comparison(clean, whole),
             "when": datetime.now(timezone.utc).isoformat()}
 
 
@@ -327,12 +398,14 @@ def main(argv):
     ap.add_argument("--r-dec", type=int, default=None)
     ap.add_argument("--sim", default=None, help="quotient_predictions.json from research/sim")
     ap.add_argument("--sim-ref", default=None)
-    ap.add_argument("--poly", default=None, help="quotient_polytope.json, if it exists")
+    ap.add_argument("--poly", default=None, help="quotient_polytope.json from research/polytope")
+    ap.add_argument("--poly-ref", default=None)
+    ap.add_argument("--poly-r", type=int, default=POLY_R)
     ap.add_argument("--diff", default=None, help="campaign quotient.py report with pairs")
     ap.add_argument("--out", default=str(OUT))
     a = ap.parse_args(argv)
     entry = analyse(a.inputs, experiment=a.experiment, r_dec=a.r_dec, sim=a.sim, sim_ref=a.sim_ref,
-                    poly=a.poly, diff_path=a.diff)
+                    poly=a.poly, poly_ref=a.poly_ref, poly_r=a.poly_r, diff_path=a.diff)
     append_result(a.out, entry)
     print(json.dumps(entry, indent=2))
 

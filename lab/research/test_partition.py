@@ -280,5 +280,92 @@ class OreComparison(unittest.TestCase):
         self.assertEqual(r["keys_tested"], 8)
 
 
+def noisy_pair_worlds():
+    return [cworld([[0, 0], [1, 0]], "O1a", {"c_noisy": "x", "c_ok": "p"}),
+            cworld([[0, 0], [1, 0]], "O1b", {"c_noisy": "z", "c_ok": "p"}),
+            cworld([[1, 0], [0, 0]], "O2a", {"c_noisy": "y", "c_ok": "q"}),
+            cworld([[1, 0], [0, 0]], "O2b", {"c_noisy": "y", "c_ok": "q"})]
+
+
+class Noise(unittest.TestCase):
+    def test_noisy_chunk_is_excluded_and_clean_chunks_give_valid_partition(self):
+        worlds = noisy_pair_worlds()
+        n = P.noise_split(worlds)
+        self.assertEqual(n["noisy_chunks"], ["c_noisy"])
+        self.assertEqual(n["clean_chunks"], ["c_ok"])
+        self.assertFalse(P.partition(worlds)["valid_partition"])
+        r = P.partition(P.restrict(worlds, n["clean_chunks"]))
+        self.assertTrue(r["valid_partition"])
+        self.assertEqual(r["n_classes"], 2)
+
+    def test_repeat_diff_counts_come_from_the_diff_report(self):
+        report = {"pairs": [
+            {"a": "O1a", "b": "O1b", "control": True, "diff_total": 1, "diff_by_chunk": {"c_noisy": 1}},
+            {"a": "O2a", "b": "O2b", "control": True, "diff_total": 0, "diff_by_chunk": {}}]}
+        n = P.noise_split(noisy_pair_worlds(), report)
+        self.assertEqual(n["noisy"][0]["chunk"], "c_noisy")
+        self.assertEqual(n["noisy"][0]["max_diff_blocks"], 1)
+        self.assertEqual(n["repeat_pairs_tested"], 2)
+
+    def test_hash_disagreement_with_zero_raw_diff_is_an_error(self):
+        report = {"pairs": [
+            {"a": "O1a", "b": "O1b", "control": True, "diff_total": 0, "diff_by_chunk": {}}]}
+        with self.assertRaises(ValueError):
+            P.noise_split(noisy_pair_worlds(), report)
+
+    def test_no_repeats_means_noise_untested(self):
+        worlds = [cworld([[0, 0], [1, 0]], "A", {"c": "x"}), cworld([[1, 0], [0, 0]], "B", {"c": "y"})]
+        n = P.noise_split(worlds)
+        self.assertEqual(n["repeat_pairs_tested"], 0)
+        self.assertEqual(n["clean_chunks"], ["c"])
+
+
+class Polytope(unittest.TestCase):
+    TICKETS = [[64, 64], [69, 64], [74, 64]]
+    CLASSES = [[[0, 1, 2], [0, 2, 1]], [[1, 0, 2], [1, 2, 0]], [[2, 0, 1], [2, 1, 0]]]
+
+    def poly_file(self, d, r=3):
+        p = Path(d) / "poly.json"
+        p.write_text(json.dumps({"results": [
+            {"layout": "E1", "R": r, "variant": "F", "tickets": self.TICKETS,
+             "classes": len(self.CLASSES), "class_orders": self.CLASSES}]}))
+        return p
+
+    def worlds(self, key):
+        out = []
+        for p in itertools.permutations(range(3)):
+            out.append(world([self.TICKETS[i] for i in p], **{"0,0": str(key(p))}))
+        return out
+
+    def poly_entry(self, worlds, poly, **kw):
+        e = P.predictions(P.partition(worlds), self.TICKETS, 3, None, poly, **kw)
+        return [x for x in e if x["source"] == "polytope"][0]
+
+    def test_polytope_partition_compared_exactly(self):
+        with tempfile.TemporaryDirectory() as d:
+            e = self.poly_entry(self.worlds(lambda p: p[0]), self.poly_file(d))
+            self.assertEqual(e["status"], "compared")
+            self.assertTrue(e["match"])
+            self.assertTrue(e["partition_match"])
+
+    def test_same_count_different_partition_is_flagged(self):
+        with tempfile.TemporaryDirectory() as d:
+            e = self.poly_entry(self.worlds(lambda p: p[-1]), self.poly_file(d))
+            self.assertTrue(e["match"])
+            self.assertFalse(e["partition_match"])
+
+    def test_noisy_exclusion_withholds_every_verdict(self):
+        with tempfile.TemporaryDirectory() as d:
+            e = self.poly_entry(self.worlds(lambda p: p[0]), self.poly_file(d), excluded=True)
+            self.assertEqual(e["status"], "noisy_chunks_excluded")
+            self.assertIsNone(e["match"])
+
+    def test_polytope_uses_R_argument_not_r_dec(self):
+        with tempfile.TemporaryDirectory() as d:
+            poly = self.poly_file(d, r=3)
+            e = self.poly_entry(self.worlds(lambda p: p[0]), poly, poly_r=2)
+            self.assertEqual(e["status"], "no_entry")
+
+
 if __name__ == "__main__":
     unittest.main()
