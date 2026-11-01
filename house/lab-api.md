@@ -125,7 +125,8 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   If the real server shows `rcon.Client` wrong (the marker reply), fix `rcon.py` minimally and keep
   `lab/tests/test_rcon_fake.py` green; report the real reply text.
 - "Port free" in a test means a TCP connect to `127.0.0.1:<port>` is refused (never a bind: Windows keeps
-  TIME_WAIT). A guard proves no orphan by `proc.poll() is not None`, `running_count() == 0` and both ports refused.
+  TIME_WAIT). Windows refuses a closed loopback port only after 2.0-2.05 s (measured 3/3, SYN retries after the RST),
+  so the connect timeout is 5 s and only `ConnectionRefusedError` counts as free. A guard proves no orphan by `proc.poll() is not None`, `running_count() == 0` and both ports refused.
 - `lever.py` (N2.G3.7.3): exactly the batch 4 names; `lab/tests/test_guard_lever_player_legal.py` must pass.
 - `flatten.py` (N2.G4.1.1): `TILES = {"air": 0, "stone": 1, "water": 2, "tree": 3, "iron": 4, "goal": 5}`
   (the byte values of `crates/world/src/grid.rs` `Tile`). `flatten.grid(blocks, x0, z0, w, h) -> list[list[int]]`,
