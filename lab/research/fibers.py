@@ -278,19 +278,24 @@ def load_partition(rec):
     return k, classes
 
 
+def campaign_classes(rec):
+    return rec.get("classes_agreeing_chunks") or rec.get("classes")
+
+
 def load_campaign(rec):
-    tickets = sorted({tuple(t) for c in rec["classes"] for o in c["orders"] for t in o})
+    cls_list = campaign_classes(rec)
+    tickets = sorted({tuple(t) for c in cls_list for o in c["orders"] for t in o})
     tickets = [list(t) for t in tickets]
-    seen, classes, dups = {}, [], []
-    for c in rec["classes"]:
+    seen, groups, dups = {}, {}, []
+    for c in cls_list:
         for o in c["orders"]:
             perm = tuple(tickets.index(list(t)) for t in o)
             if perm in seen:
                 dups.append({"order": list(perm), "classes": [seen[perm], c["class"]]})
                 continue
             seen[perm] = c["class"]
-            classes.append([perm])
-    return len(tickets), classes, dups
+            groups.setdefault(c["class"], []).append(perm)
+    return len(tickets), list(groups.values()), dups
 
 
 def git_show(ref, path):
@@ -318,8 +323,8 @@ def run_source(ref, path):
     runs, skipped = [], []
     for rec in records:
         layout = rec.get("layout", rec.get("experiment"))
-        campaign = "classes" in rec and rec["classes"] and isinstance(rec["classes"][0], dict) \
-            and "orders" in rec["classes"][0]
+        cls_list = campaign_classes(rec)
+        campaign = bool(cls_list) and isinstance(cls_list[0], dict) and "orders" in cls_list[0]
         if not campaign and ("classes" not in rec or "tickets" not in rec):
             skipped.append({"source": source, "layout": layout, "reason": "no classes or tickets field"})
             continue
@@ -330,9 +335,12 @@ def run_source(ref, path):
         extra = {}
         if campaign:
             k, classes, dups = load_campaign(rec)
-            tickets = sorted({tuple(t) for c in rec["classes"] for o in c["orders"] for t in o})
+            tickets = sorted({tuple(t) for c in cls_list for o in c["orders"] for t in o})
             tickets = [list(t) for t in tickets]
-            extra = {"stored_classes": len(rec["classes"]), "control_duplicates": dups,
+            extra = {"partition_basis": "classes_agreeing_chunks" if "classes_agreeing_chunks" in rec
+                     else "classes",
+                     "class_count_all_chunks_hash": rec.get("class_count_all_chunks_hash"),
+                     "stored_classes": len(cls_list), "control_duplicates": dups,
                      "controls_max_diff": rec.get("controls_max_diff")}
         else:
             k, classes = load_partition(rec)

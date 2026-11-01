@@ -110,6 +110,26 @@ class LoaderTests(unittest.TestCase):
         self.assertEqual(classes, [[(0, 1, 2)], [(1, 0, 2)]])
         self.assertEqual(dups, [{"order": [0, 1, 2], "classes": [0, 1]}])
 
+    def test_load_campaign_prefers_agreeing_chunk_classes(self):
+        A = [[64, 64], [69, 64], [74, 64]]
+        rec = {"experiment": "E1", "classes": [{"class": 9, "worlds": ["X"], "orders": [A, A]}],
+               "classes_agreeing_chunks": [{"class": 0, "worlds": ["E1_ABC"], "orders": [A]}]}
+        k, classes, dups = load_campaign(rec)
+        self.assertEqual(classes, [[(0, 1, 2)]])
+        self.assertEqual(dups, [])
+
+    def test_load_campaign_groups_orders_by_class(self):
+        A = [[64, 64], [69, 64], [74, 64]]
+        B = [[69, 64], [64, 64], [74, 64]]
+        C = [[74, 64], [69, 64], [64, 64]]
+        rec = {"experiment": "E1", "classes_agreeing_chunks": [
+            {"class": 0, "worlds": ["E1_ABC", "E1_BAC"], "orders": [A, B]},
+            {"class": 1, "worlds": ["E1_CBA", "E1_CBA_r2"], "orders": [C, C]},
+        ]}
+        k, classes, dups = load_campaign(rec)
+        self.assertEqual(classes, [[(0, 1, 2), (1, 0, 2)], [(2, 1, 0)]])
+        self.assertEqual(dups, [{"order": [2, 1, 0], "classes": [1, 1]}])
+
     def test_overlapping_classes_are_rejected(self):
         P = Permutohedron(3)
         with self.assertRaises(ValueError):
