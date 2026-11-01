@@ -131,7 +131,9 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   (the byte values of `crates/world/src/grid.rs` `Tile`). `flatten.grid(blocks, x0, z0, w, h) -> list[list[int]]`,
   `h` rows of `w` ints, row `z - z0`, column `x - x0`; `blocks` is `window.box` output. Ground of a column = the
   highest y whose name is not in `flatten.PASS` (air, cave_air, void_air, grass, tall_grass, fern, large_fern,
-  snow, seagrass, tall_seagrass, kelp, kelp_plant, flowers, sugar_cane, dead_bush) and does not end in `_leaves`.
+  snow, seagrass, tall_seagrass, kelp, kelp_plant, sugar_cane, dead_bush, and the 1.16 flowers: dandelion, poppy,
+  blue_orchid, allium, azure_bluet, red_tulip, orange_tulip, white_tulip, pink_tulip, oxeye_daisy, cornflower,
+  lily_of_the_valley, wither_rose, sunflower, lilac, rose_bush, peony) and does not end in `_leaves`.
   First rule that holds wins: ground ends in `_log` gives tree; ground is `minecraft:water` gives water;
   `minecraft:iron_ore` at ground-6..ground gives iron; a 4-neighbour inside the box whose ground differs by 2 or
   more gives stone; else air. A column with no non-None block raises ValueError naming (x, z).
