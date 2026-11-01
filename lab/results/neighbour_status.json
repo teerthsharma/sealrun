@@ -1,0 +1,54 @@
+{
+ "centre": [
+  64,
+  64
+ ],
+ "ticket": "forceload add 1024 1024",
+ "wait_secs": 10,
+ "when": "2026-11-01T09:30:05+05:30",
+ "east": {
+  "0": "full",
+  "1": "full",
+  "2": "full",
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "10": null,
+  "11": null,
+  "12": null
+ },
+ "north": {
+  "0": "full",
+  "1": "full",
+  "2": "full",
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "10": null,
+  "11": null,
+  "12": null
+ },
+ "diagonal": {
+  "0": "full",
+  "1": "full",
+  "2": "full",
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "10": null,
+  "11": null,
+  "12": null
+ }
+}
