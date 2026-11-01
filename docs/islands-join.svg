@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="640" height="300" fill="#ffffff"/>
+<text x="40" y="34" font-size="20" font-weight="600" fill="#1f2933">Islands join as water and stone get a price</text>
+<text x="40" y="52" font-size="13" fill="#6b7785">Real seed 7 spawn map, 64 by 64 blocks. Bar length = number of regions.</text>
+<text x="40" y="104" font-size="15" fill="#1f2933">walk only (price 0)</text><rect x="230" y="84" width="410.8" height="26" fill="#2171b5"/><text x="648.8" y="103" font-size="15" fill="#1f2933">158 separate walkable regions</text><text x="40" y="166" font-size="15" fill="#1f2933">swimming costs 10</text><rect x="230" y="146" width="200.20000000000002" height="26" fill="#2171b5"/><text x="438.20000000000005" y="165" font-size="15" fill="#1f2933">77 separate walkable regions</text><text x="40" y="228" font-size="15" fill="#1f2933">digging costs 23</text><rect x="230" y="208" width="4" height="26" fill="#2171b5"/><text x="242" y="227" font-size="15" fill="#1f2933">1 separate walkable regions</text>
+<text x="40" y="282" font-size="12" fill="#6b7785">The first tree is reachable at exactly the cheaper of the two prices in all 961 price pairs tried.</text>
+</svg>
