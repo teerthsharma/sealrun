@@ -1,0 +1,28 @@
+{
+  "runs": [
+    {
+      "n": 1,
+      "secs": 180,
+      "worlds": 10,
+      "worlds_per_minute": 3.07,
+      "peak_mb_total": 812.2,
+      "mb_per_world": 812.2,
+      "other_java": 0,
+      "when": "2026-11-01T10:12:14+05:30"
+    },
+    {
+      "n": 2,
+      "secs": 180,
+      "worlds": 14,
+      "worlds_per_minute": 4.42,
+      "peak_mb_total": 1609.2,
+      "mb_per_world": 804.6,
+      "other_java": 0,
+      "when": "2026-11-01T10:15:51+05:30"
+    }
+  ],
+  "not_run": {
+    "n": 3,
+    "why": "owner cap of 2 real servers"
+  }
+}
