@@ -6,6 +6,28 @@ use sealrun_world::grid::{Grid, Tile};
 
 const N4: [(i64, i64); 4] = [(-1, 0), (1, 0), (0, -1), (0, 1)];
 
+fn open_uf(grid: &Grid) -> (UnionFind, usize) {
+    let (w, h) = (grid.w(), grid.h());
+    let mut uf = UnionFind::new(w as usize * h as usize);
+    let mut open_cells = 0usize;
+    for y in 0..h {
+        for x in 0..w {
+            if !grid.get(x, y).is_open() {
+                continue;
+            }
+            open_cells += 1;
+            let i = y as usize * w as usize + x as usize;
+            if x + 1 < w && grid.get(x + 1, y).is_open() {
+                uf.union(i, i + 1);
+            }
+            if y + 1 < h && grid.get(x, y + 1).is_open() {
+                uf.union(i, i + w as usize);
+            }
+        }
+    }
+    (uf, open_cells)
+}
+
 pub struct Surgery {
     grid: Grid,
     uf: UnionFind,
@@ -15,25 +37,8 @@ pub struct Surgery {
 
 impl Surgery {
     pub fn new(grid: Grid) -> Surgery {
-        let (w, h) = (grid.w(), grid.h());
-        let n = w as usize * h as usize;
-        let mut uf = UnionFind::new(n);
-        let mut open_cells = 0usize;
-        for y in 0..h {
-            for x in 0..w {
-                if !grid.get(x, y).is_open() {
-                    continue;
-                }
-                open_cells += 1;
-                let i = y as usize * w as usize + x as usize;
-                if x + 1 < w && grid.get(x + 1, y).is_open() {
-                    uf.union(i, i + 1);
-                }
-                if y + 1 < h && grid.get(x, y + 1).is_open() {
-                    uf.union(i, i + w as usize);
-                }
-            }
-        }
+        let (uf, open_cells) = open_uf(&grid);
+        let n = grid.w() as usize * grid.h() as usize;
         let b0 = uf.sets() - (n - open_cells);
         let chi = euler(&grid);
         Surgery { grid, uf, b0, chi }
@@ -63,6 +68,64 @@ impl Surgery {
             }
         }
         self.b0 = self.b0 + 1 - merged;
+    }
+
+    pub fn place(&mut self, x: u32, y: u32, tile: Tile) {
+        assert!(!tile.is_open(), "place needs a closed tile");
+        if !self.grid.get(x, y).is_open() {
+            self.grid.set(x, y, tile);
+            return;
+        }
+        self.chi -= chi_delta(mask_at(&self.grid, x, y));
+        self.grid.set(x, y, tile);
+        let (w, h) = (self.grid.w() as usize, self.grid.h() as usize);
+        let mut nbrs = [0usize; 4];
+        let mut k = 0;
+        for (dx, dy) in N4 {
+            let (nx, ny) = (x as i64 + dx, y as i64 + dy);
+            if self.grid.in_bounds(nx, ny) && self.grid.get(nx as u32, ny as u32).is_open() {
+                nbrs[k] = ny as usize * w + nx as usize;
+                k += 1;
+            }
+        }
+        if k == 0 {
+            self.b0 -= 1;
+            return;
+        }
+        // A closed cell left inside a union-find set would re-merge stale components on a later mine, so any cut rebuilds.
+        // ponytail: each cut rebuilds the union-find in O(cells); Holm-de Lichtenberg-Thorup dynamic connectivity if placing gets hot.
+        self.uf = open_uf(&self.grid).0;
+        if k == 1 {
+            return;
+        }
+        let nbrs = &nbrs[..k];
+        let mut seen = vec![false; w * h];
+        let mut stack = Vec::new();
+        let mut groups = 0usize;
+        for &start in nbrs {
+            if seen[start] {
+                continue;
+            }
+            groups += 1;
+            seen[start] = true;
+            stack.push(start);
+            while let Some(i) = stack.pop() {
+                let (cx, cy) = (i % w, i / w);
+                let around = [
+                    (cx > 0).then(|| i - 1),
+                    (cx + 1 < w).then(|| i + 1),
+                    (cy > 0).then(|| i - w),
+                    (cy + 1 < h).then(|| i + w),
+                ];
+                for j in around.into_iter().flatten() {
+                    if !seen[j] && self.grid.get((j % w) as u32, (j / w) as u32).is_open() {
+                        seen[j] = true;
+                        stack.push(j);
+                    }
+                }
+            }
+        }
+        self.b0 += groups - 1;
     }
 }
 
@@ -99,6 +162,62 @@ mod tests {
                 let x = (state >> 33) as u32 % 32;
                 let y = (state >> 45) as u32 % 32;
                 s.mine(x, y);
+                assert_eq!(s.betti(), betti(s.grid()), "seed {seed} step {step}");
+            }
+        }
+    }
+
+    #[test]
+    fn place_matches_full_recompute() {
+        let mut s = Surgery::new(Grid::new(5, 1));
+        assert_eq!(s.betti().b0, 1);
+        s.place(2, 0, Tile::Stone);
+        assert_eq!(s.betti().b0, 2);
+
+        let mut s = Surgery::new(Grid::new(3, 3));
+        assert_eq!(s.betti(), Betti { b0: 1, b1: 0 });
+        s.place(1, 1, Tile::Stone);
+        assert_eq!(s.betti(), Betti { b0: 1, b1: 1 });
+
+        let mut walls = Grid::new(3, 3);
+        for y in 0..3 {
+            for x in 0..3 {
+                if (x, y) != (1, 1) {
+                    walls.set(x, y, Tile::Stone);
+                }
+            }
+        }
+        let mut s = Surgery::new(walls);
+        assert_eq!(s.betti().b0, 1);
+        s.place(1, 1, Tile::Stone);
+        assert_eq!(s.betti().b0, 0);
+
+        let mut g = Grid::new(5, 1);
+        g.set(3, 0, Tile::Stone);
+        g.set(4, 0, Tile::Stone);
+        let mut s = Surgery::new(g);
+        s.place(2, 0, Tile::Stone);
+        s.place(1, 0, Tile::Stone);
+        s.mine(3, 0);
+        s.mine(2, 0);
+        s.mine(1, 0);
+        assert_eq!(s.betti(), betti(s.grid()));
+        assert_eq!(s.betti().b0, 1);
+
+        for seed in 0..20u64 {
+            let mut s = Surgery::new(generate(seed, 32, 32));
+            let mut state = seed.wrapping_mul(0x9E37_79B9_7F4A_7C15) | 1;
+            for step in 0..300 {
+                state = state
+                    .wrapping_mul(6_364_136_223_846_793_005)
+                    .wrapping_add(1_442_695_040_888_963_407);
+                let x = (state >> 33) as u32 % 32;
+                let y = (state >> 45) as u32 % 32;
+                if step % 2 == 0 {
+                    s.mine(x, y);
+                } else {
+                    s.place(x, y, Tile::Stone);
+                }
                 assert_eq!(s.betti(), betti(s.grid()), "seed {seed} step {step}");
             }
         }
