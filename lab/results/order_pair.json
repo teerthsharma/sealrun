@@ -1,0 +1,244 @@
+{
+  "orders": [
+    [
+      [
+        64,
+        64
+      ],
+      [
+        65,
+        64
+      ]
+    ],
+    [
+      [
+        65,
+        64
+      ],
+      [
+        64,
+        64
+      ]
+    ]
+  ],
+  "positions": 131072,
+  "changed": 18,
+  "added": 0,
+  "removed": 0,
+  "examples": [
+    [
+      [
+        1024,
+        26,
+        1024
+      ],
+      "minecraft:granite",
+      "minecraft:andesite"
+    ],
+    [
+      [
+        1024,
+        26,
+        1025
+      ],
+      "minecraft:granite",
+      "minecraft:andesite"
+    ],
+    [
+      [
+        1024,
+        55,
+        1038
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1024,
+        55,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1024,
+        56,
+        1038
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1024,
+        56,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1025,
+        26,
+        1024
+      ],
+      "minecraft:granite",
+      "minecraft:andesite"
+    ],
+    [
+      [
+        1025,
+        26,
+        1025
+      ],
+      "minecraft:granite",
+      "minecraft:andesite"
+    ],
+    [
+      [
+        1025,
+        54,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1025,
+        55,
+        1038
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1025,
+        55,
+        1039
+      ],
+      "minecraft:andesite",
+      "minecraft:diorite"
+    ],
+    [
+      [
+        1037,
+        70,
+        1030
+      ],
+      "minecraft:oxeye_daisy",
+      "minecraft:grass"
+    ],
+    [
+      [
+        1040,
+        71,
+        1026
+      ],
+      "minecraft:oxeye_daisy",
+      "minecraft:grass"
+    ],
+    [
+      [
+        1040,
+        71,
+        1030
+      ],
+      "minecraft:tall_grass",
+      "minecraft:grass"
+    ],
+    [
+      [
+        1040,
+        72,
+        1030
+      ],
+      "minecraft:tall_grass",
+      "minecraft:air"
+    ],
+    [
+      [
+        1043,
+        71,
+        1024
+      ],
+      "minecraft:grass",
+      "minecraft:tall_grass"
+    ],
+    [
+      [
+        1043,
+        72,
+        1024
+      ],
+      "minecraft:air",
+      "minecraft:tall_grass"
+    ],
+    [
+      [
+        1050,
+        27,
+        1024
+      ],
+      "minecraft:andesite",
+      "minecraft:granite"
+    ]
+  ],
+  "by_chunk": {
+    "64,64": 12,
+    "65,64": 6
+  },
+  "ores": {
+    "AB": {
+      "64,64": {
+        "diamond": 1,
+        "iron": 147,
+        "coal": 217,
+        "gold": 16,
+        "lapis": 2,
+        "redstone": 35,
+        "emerald": 0
+      },
+      "65,64": {
+        "diamond": 6,
+        "iron": 138,
+        "coal": 117,
+        "gold": 8,
+        "lapis": 5,
+        "redstone": 41,
+        "emerald": 0
+      }
+    },
+    "BA": {
+      "64,64": {
+        "diamond": 1,
+        "iron": 147,
+        "coal": 217,
+        "gold": 16,
+        "lapis": 2,
+        "redstone": 35,
+        "emerald": 0
+      },
+      "65,64": {
+        "diamond": 6,
+        "iron": 138,
+        "coal": 117,
+        "gold": 8,
+        "lapis": 5,
+        "redstone": 41,
+        "emerald": 0
+      }
+    }
+  },
+  "fingerprints": [
+    "1252bed18235d82edff8cc7e0c04535dc7ab7da01eeafcec2904148b451361ad",
+    "9291d83ad8051c6073aa8f42873f784d64673edeb9fe2c8ffa0bf5968f6cec7f"
+  ],
+  "control_fingerprint": "1252bed18235d82edff8cc7e0c04535dc7ab7da01eeafcec2904148b451361ad",
+  "when": "2026-11-01T10:33:16.240622+05:30"
+}
