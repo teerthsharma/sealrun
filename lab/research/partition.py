@@ -179,16 +179,16 @@ def verdict(source, measured, expected_orders, predicted, predicted_partition=No
     return res
 
 
-def sim_record(doc, pts, r_dec):
+def sim_record(doc, pts, r_dec, n_window=None):
     for rec in doc["records"]:
-        if rec["r_dec"] == r_dec and sorted(map(tuple, rec["tickets"])) == pts:
+        if rec["r_dec"] == r_dec and sorted(map(tuple, rec["tickets"])) == pts                 and (n_window is None or rec["window_chunks"] == n_window):
             return rec
     return None
 
 
-def polytope_entry(doc, pts, R):
+def polytope_entry(doc, pts, R, n_window=None):
     for e in doc["results"]:
-        if e["variant"] == "F" and e["R"] == R and sorted(map(tuple, e["tickets"])) == pts:
+        if e["variant"] == "F" and e["R"] == R and sorted(map(tuple, e["tickets"])) == pts                 and (n_window is None or e["window_size"] == n_window):
             return e
     return None
 
@@ -198,7 +198,7 @@ def polytope_partition(e):
     return [[[t[i] for i in perm] for perm in cls] for cls in e["class_orders"]]
 
 
-def predictions(measured, tickets, r_dec, sim_path, poly_path, poly_r=POLY_R, excluded=False):
+def predictions(measured, tickets, r_dec, sim_path, poly_path, poly_r=POLY_R, excluded=False, n_window=None):
     pts = sorted({tuple(t) for t in tickets})
     out = []
     if r_dec is None:
@@ -206,14 +206,14 @@ def predictions(measured, tickets, r_dec, sim_path, poly_path, poly_r=POLY_R, ex
     elif not sim_path or not Path(sim_path).exists():
         out.append({"source": "sim", "status": "file_missing", "match": None})
     else:
-        rec = sim_record(json.loads(Path(sim_path).read_text(encoding="utf-8")), pts, r_dec)
+        rec = sim_record(json.loads(Path(sim_path).read_text(encoding="utf-8")), pts, r_dec, n_window)
         if rec is None:
             out.append({"source": "sim", "status": "no_entry", "match": None})
         else:
             out.append(verdict("sim", measured, rec["orders_considered"], rec["predicted_classes"],
                                rec["classes"], basis=f"{rec['layout']} r_dec={r_dec}", excluded=excluded))
     if poly_path and Path(poly_path).exists():
-        e = polytope_entry(json.loads(Path(poly_path).read_text(encoding="utf-8")), pts, poly_r)
+        e = polytope_entry(json.loads(Path(poly_path).read_text(encoding="utf-8")), pts, poly_r, n_window)
         if e is None:
             out.append({"source": "polytope", "status": "no_entry", "match": None, "R": poly_r})
         else:
@@ -363,6 +363,7 @@ def analyse(paths, *, experiment, r_dec, sim, sim_ref, poly, poly_ref, poly_r, d
     whole = partition(clean)
     per = per_chunk(clean)
     excluded = bool(noise["noisy_chunks"])
+    n_window = len({k for w in worlds for k in w["chunks"]} - {"world"})
     if report:
         labels = [w["label"] for w in worlds]
         d = diff_matrix(report, labels)
@@ -383,7 +384,8 @@ def analyse(paths, *, experiment, r_dec, sim, sim_ref, poly, poly_ref, poly_r, d
             "all_chunks": {k: full[k] for k in ("n_orders", "n_classes", "valid_partition",
                                                   "conflicted_orders", "conflicted")},
             "transitivity": tr,
-            "predictions": predictions(whole, tickets, r_dec, sim, poly, poly_r=poly_r, excluded=excluded),
+            "predictions": predictions(whole, tickets, r_dec, sim, poly, poly_r=poly_r, excluded=excluded,
+                                       n_window=n_window),
             "predictions_refs": {"sim": sim_ref, "polytope": poly_ref, "polytope_R": poly_r},
             "ore_comparison": ore_comparison(clean, whole),
             "when": datetime.now(timezone.utc).isoformat()}

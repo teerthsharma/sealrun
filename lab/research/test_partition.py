@@ -419,5 +419,32 @@ class Pairs(unittest.TestCase):
             self.assertFalse(e["pairs_complete"])
 
 
+class SameTicketsDifferentWindow(unittest.TestCase):
+    T4 = [[64, 64], [65, 64], [64, 65], [65, 65]]
+
+    def test_sim_and_polytope_select_the_window_not_only_the_tickets(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            sim = d / "sim.json"
+            sim.write_text(json.dumps({"records": [
+                {"layout": "E0", "r_dec": 3, "tickets": self.T4, "window_chunks": 4,
+                 "orders_considered": 24, "predicted_classes": 4, "classes": []},
+                {"layout": "E2", "r_dec": 3, "tickets": self.T4, "window_chunks": 36,
+                 "orders_considered": 6, "predicted_classes": 5, "classes": []}]}))
+            perms = [[0, 1, 2, 3], [0, 1, 3, 2], [0, 2, 1, 3], [0, 2, 3, 1], [0, 3, 1, 2], [0, 3, 2, 1]]
+            poly = d / "poly.json"
+            poly.write_text(json.dumps({"results": [
+                {"layout": "E0", "R": 3, "variant": "F", "tickets": self.T4, "window_size": 4,
+                 "classes": 4, "class_orders": [[p] for p in perms[:4]]},
+                {"layout": "E2", "R": 3, "variant": "F", "tickets": self.T4, "window_size": 36,
+                 "classes": 5, "class_orders": [[p] for p in perms[:4]] + [perms[4:]]}]}))
+            measured = {"n_orders": 6, "n_classes": 6, "classes": []}
+            out = {x["source"]: x for x in P.predictions(measured, self.T4, 3, sim, poly, poly_r=3, n_window=36)}
+            self.assertEqual(out["sim"]["predicted_classes"], 5)
+            self.assertIn("E2", out["sim"]["basis"])
+            self.assertEqual(out["polytope"]["predicted_classes"], 5)
+            self.assertEqual(out["polytope"]["expected_orders"], 6)
+
+
 if __name__ == "__main__":
     unittest.main()
