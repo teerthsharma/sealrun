@@ -1,0 +1,37 @@
+[
+ {
+  "id": "N3.G0.A1",
+  "title": "Predict the order law without the server",
+  "plain": "Every chunk is stamped by the first ticket that reaches it, within three chunks. Two build orders give the same world when those stamps agree around the chunks we look at. This one rule, written down before any measurement, says a 2x2 square has 4 worlds, a line of 3 has 3, a line of 4 has 8, and that order stops mattering once tickets are 5 chunks apart.",
+  "why": "The rule has one dial (three chunks, from the earlier tile measurement), and the line of 4 reads it: 12 worlds if the dial is 2, 8 if 3, 4 if 4. It already matches the 4 worlds of the square measured earlier, and it runs in seconds.",
+  "done_when": "The script returns 4 worlds of 6 orders for the square, 3 for the line of 3 and the triangle, 8 for the line of 4, and 4,4,20,20,1,1,1 for squares spaced 1 to 7 chunks apart."
+ },
+ {
+  "id": "N3.G0.A2",
+  "title": "Test the law with 85 server starts, not 214",
+  "plain": "Build one world for each predicted class, one repeat as a control and one extra order from the biggest class. All the worlds are then compared with each other on disk, which costs no server start.",
+  "why": "Trying every order plus a control takes 214 starts, about 71 minutes on two servers. The class plan takes 85, about 28 minutes. At spacing 3 and 4 it saves only 3 of 25, and the plan says so.",
+  "done_when": "The plan counts 5, 5 and 10 starts for the line of 3, the triangle and the line of 4, 6,6,22,22,3,3,3 for the seven squares, and 85 in all against 214."
+ },
+ {
+  "id": "N3.G0.A3",
+  "title": "Pick the build order that gives the most ore",
+  "plain": "Given the table of worlds, choose the one with the most of an ore in a chosen chunk, and say if it is the only best one. On the measured square, iron in chunk (64,64) is 149 only when the first chunk built is (64,65). Diamonds are the same in all four worlds, so for diamonds the answer is no move.",
+  "why": "Four builds prove the best order, one per world. Searching the 24 orders needs all 24 to prove it, and about 3.6 builds just to stumble on it.",
+  "done_when": "On the measured square the picker returns 149 iron for (64,64), says gold (16) is not unique and diamonds give no move, and counts 4 builds."
+ },
+ {
+  "id": "N3.G0.A4",
+  "title": "Price digging and swimming instead of remembering holes",
+  "plain": "Digging through stone and swimming across water become prices on a step: a stone costs its digging time plus a step, water costs a swim price plus a step. One distance map per pickaxe level then replaces searching every map-and-backpack combination.",
+  "why": "Four maps of at most 4096 cells (16,384 numbers) against up to 75.5 million map-and-backpack states. The swim price is a dial to be measured in the real game.",
+  "done_when": "On a 4-cell strip with two stones the stone pickaxe costs 39 ticks to the end and the bare hand 315, and a strip with one water cell costs 15 with swimming and no route without."
+ },
+ {
+  "id": "N3.G0.A5",
+  "title": "Cross the islands on the real map",
+  "plain": "On the real 64x64 spawn map of seed 7, no walking route reaches any iron from any of 1,417 starts because water and stone are walls. With digging and swimming priced, the same start is asked for a route to the iron.",
+  "why": "It turns the finding that the real terrain is islands into a route, or into the proof that digging does not help.",
+  "done_when": "From the spawn start with a stone pickaxe the map gives a number of ticks to the cell next to the nearest iron, or an honest none that is reported."
+ }
+]
