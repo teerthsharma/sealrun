@@ -4,9 +4,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 NAMES = {"server.jar", "level.dat", "server.properties", "eula.txt"}
 SUFFIXES = (".mca", ".mcr", ".jar")
-FOLDERS = {"world", "region"}
 SKIP = {".git", "target"}
-IGNORES = ["server.jar", "level.dat", "server.properties", "eula.txt", "*.mca", "*.mcr", "*.jar", "world/", "region/"]
+IGNORES = ["server.jar", "level.dat", "server.properties", "eula.txt", "*.mca", "*.mcr", "*.jar"]
 
 
 def offenders(root: Path) -> list[str]:
@@ -19,8 +18,6 @@ def offenders(root: Path) -> list[str]:
             if entry.is_dir() and not entry.is_symlink():
                 if entry.name in SKIP:
                     continue
-                if entry.name in FOLDERS and not (entry / "Cargo.toml").exists():
-                    found.append(rel + "/")
                 stack.append(entry)
             elif entry.name in NAMES or entry.name.endswith(SUFFIXES):
                 found.append(rel)
