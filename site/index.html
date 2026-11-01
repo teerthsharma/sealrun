@@ -121,7 +121,7 @@ function renderPage(data) {
   const byId = Object.fromEntries(goals.map((g) => [g.id, g]));
   const deptTitle = Object.fromEntries(data.departments.map((d) => [d.name, d.title]));
   const role = { Foreman: 'plan step', Chase: 'safety check' };
-  const badge = (s) => ({ pending: 'not started', active: 'in progress', blocked: 'failing', reached: 'passing', retired: 'retired' })[s] ?? s;
+  const badge = (s = 'pending') => ({ pending: 'not started', active: 'in progress', blocked: 'failing', reached: 'passing', retired: 'retired' })[s] ?? s;
   const statuses = ['pending', 'active', 'blocked', 'reached'];
   const verdictKey = (v) => (/does not/.test(v) ? 'breaks' : /change/.test(v) ? 'change' : 'holds');
   const kids = (id) => goals.filter((g) => g.parent === id);
