@@ -57,3 +57,29 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   `square_orders(cx, cz) -> list of 24 tuples`; `table() -> dict` written to `lab/results/order_squares_more.json`.
 - `squares_plan.plan(squares, orders) -> list[list[(cx, cz)]]`: one boot per order, all squares in that order;
   `orders` are corner offsets, so pass `orders.square_orders(0, 0)`, never a square's absolute orders.
+
+## Round 2, batch 3
+- `anvil.block_at` / `chunk_status`: region file `r.{cx >> 5}.{cz >> 5}.mca`, local `(cx & 31, cz & 31)`, `cx = x >> 4`;
+  section `y >> 4`, index `(y & 15)*256 + (z & 15)*16 + (x & 15)`; status is `Level.Status`. `chunk_status` gives the
+  raw string, or None for a missing file or chunk. `block_at` gives None unless the status is `"full"`.
+  Known value for tests: y = 0 of a full overworld chunk is `minecraft:bedrock` (real files under
+  `SEALRUN_SERVER/world/region`, read only; `r.-1.0.mca` holds negative x).
+- `window.chunk_blocks(level: dict) -> dict[(x, y, z), str]` from a parsed chunk's `Level` compound, using only
+  `xPos`, `zPos` and each section's `Y`, `Palette`, `BlockStates`; `window.fingerprint(blocks: dict) -> str` is the
+  sha256 of the sorted items. (Written by N2.G2.5; the N2.G3.C1 guard imports it.)
+- `orderrun.wait_loaded(client, cx, cz, timeout=30.0, poll=0.5, sleep=time.sleep) -> bool`: sends
+  `forceload add {cx*16} {cz*16}` once, then repeats `execute if block {cx*16} 0 {cz*16} minecraft:bedrock` until a
+  reply contains `Test passed` (True) or `timeout` runs out (False). `client` is anything with `command(text) -> str`.
+  Reply texts are a hypothesis from memory; N2.G3.2.2 checks them on the real server.
+- `edits.commands(edits, loaded) -> list[str]`: `edits` are `(op, x, y, z, block)` with op `"break"` or `"place"`;
+  break gives `setblock x y z minecraft:air`, place gives `setblock x y z <block>`. `loaded` is a set of finished,
+  loaded `(cx, cz)`; any edit outside it raises `ValueError` naming the chunk, and no list is returned.
+- `aim.best_order(rows) -> dict`: rows are `{"order": [[cx, cz], ...], "diamonds": int | None}`, None rows ignored.
+  No numbers: `{"lever": None, "reason": "not run"}`; all equal: `{"lever": False, "diamonds": n, "reason": "all
+  orders equal"}`; else `{"lever": True, "order": <first row with the max>, "diamonds": max, "mean": mean}`.
+- Result file (every `lab/results/order_*.json` from batch 4 on): `{"seed", "area", "height", "orders": int,
+  "control": {"repeat_diff": int | None}, "lever": true | false | null, ...}`.
+  `verdict.statements(paths) -> list[str]`, one per path: a missing file gives `"<file name>: not run"`; otherwise
+  the statement names seed, area, height and orders; `repeat_diff` None gives "noise floor not measured" and no
+  claim that order matters; `repeat_diff > 0` gives "shaky"; `lever` false ends with `"next route: " +
+  verdict.NEXT_ROUTE` (`"edit the border band before the neighbour is built (N2.G3.5)"`).
