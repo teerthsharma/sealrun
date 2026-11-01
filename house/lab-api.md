@@ -96,8 +96,10 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   True}` only when there are at least 2 replays, every replay equals `found`, `default` is not None and `found >
   default`; otherwise `{"accepted": False, "reason": "..."}`.
 - `site/build_r2.py`: `build(charts_dir: Path, status: dict[str, str]) -> dict` merges `site/charts/r2/{foreman,
-  chase,cameron}.json` cards by goal id with the status (missing id gives `"pending"`); department of an `N2.Gk...`
-  id comes from `departments.json` by its `Gk` part, never from `"N2"`. `python site/build_r2.py` writes `site/r2.json`.
+  chase,cameron}.json` cards by goal id with the status (missing id gives `"pending"`); the department of a goal is the
+  one whose `departments.json` list holds its nearest listed ancestor: the id itself, then its parent (`N2.G3.6.1`,
+  `N2.G3.6`, `N2.G3`), never `"N2"`; None when no ancestor is listed. Status comes from `site/r2_status.json`
+  (`{gid: status}`, exported by House after each report). `python site/build_r2.py` writes `site/r2.json`.
   `r2.json` carries `"route": {"played": false, "note": "planned on a map, not yet played in the real game"}` until a
   played result file exists.
 - `site/r2_numbers.py`: `numbers(results_dir: Path) -> dict[str, dict | str]`, read from disk on every call (no
