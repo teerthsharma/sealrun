@@ -1,4 +1,5 @@
 use sealrun_route::baseline::bfs;
+use sealrun_route::metric::Tool;
 use sealrun_route::plan::plan;
 use sealrun_route::state::{moves, Inv, Move, State};
 use sealrun_world::grid::{Grid, Tile};
@@ -11,7 +12,7 @@ fn trap() -> Grid {
 }
 
 fn done(s: &State) -> bool {
-    s.inv.stone >= 11
+    s.inv.furnace && s.inv.pick >= Tool::Stone
 }
 
 fn replay(grid: &Grid, start: State, route: &[Move]) -> (u64, State) {
@@ -35,15 +36,15 @@ fn planner_beats_move_counter_on_wall_trap() {
     let goal = (1, 0);
 
     let (bfs_ticks, bfs_route) = bfs(&grid, start, goal, done, 1_000_000).expect("bfs route");
-    assert_eq!(bfs_ticks, 473, "bfs route {bfs_route:?}");
-    assert_eq!(bfs_route.len(), 16, "bfs route {bfs_route:?}");
+    assert_eq!(bfs_ticks, 573, "bfs route {bfs_route:?}");
+    assert_eq!(bfs_route.len(), 19, "bfs route {bfs_route:?}");
     let (replayed, end) = replay(&grid, start, &bfs_route);
     assert_eq!(replayed, bfs_ticks);
     assert!(done(&end));
 
     let (plan_ticks, plan_route) = plan(&grid, start, goal, done).expect("plan route");
-    assert_eq!(plan_ticks, 465, "plan route {plan_route:?}");
-    assert_eq!(plan_route.len(), 18, "plan route {plan_route:?}");
+    assert_eq!(plan_ticks, 485, "plan route {plan_route:?}");
+    assert_eq!(plan_route.len(), 19, "plan route {plan_route:?}");
     let (replayed, end) = replay(&grid, start, &plan_route);
     assert_eq!(replayed, plan_ticks);
     assert!(done(&end));
