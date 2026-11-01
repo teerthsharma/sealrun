@@ -1,6 +1,5 @@
 [workspace]
-# cargo 1.97 errors on a `crates/*` glob with no matches; restore it when G6.2 adds the crates.
-members = []
+members = ["crates/*"]
 resolver = "2"
 
 [workspace.package]
