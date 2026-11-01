@@ -39,7 +39,7 @@ H13 on the original and on mutants WA..WN, a regeneration of the json (probe R).
   (`11:06:34+05:30` -> `11:07:58+05:30`); route vanilla, 3.8705737503078055, vanilla_best_n 1 and the blocked "why"
   byte-identical. The committed json is consistent with `python lab/choice.py` on the committed worlds_vanilla.json;
   that it was produced by that command (rather than written by hand with the same bytes) is unverified.
-- The test never calls `choice.main` (test file has no `main(` call); main is tested only through the committed json
+- The test never calls `choice.main` (its only `main(` is `unittest.main()`); main is tested only through the committed json
   (test :49-58). Mutants of main survive unless the json is regenerated (WM, WN).
 - Not covered by contract or test: `pick([], ...)` raises `ValueError` from `max` (:13); `peak_mb_total` 0 raises
   `ZeroDivisionError` (:9). Read only, not run.
