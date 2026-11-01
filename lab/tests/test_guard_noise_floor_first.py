@@ -22,9 +22,9 @@ def result(repeat_diff, lever):
 class Lab(unittest.TestCase):
     def test_guard_noise_floor_first(self):
         cases = [
-            ("order_none.json", result(None, True)),
-            ("order_zero.json", result(0, True)),
-            ("order_shaky.json", result(2, True)),
+            ("case_a.json", result(None, True)),
+            ("case_b.json", result(0, True)),
+            ("case_c.json", result(2, True)),
         ]
         with tempfile.TemporaryDirectory() as tmp:
             paths = []

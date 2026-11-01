@@ -33,9 +33,9 @@ class Lab(unittest.TestCase):
             unmeasured = write(folder, "order_unmeasured.json", control={"repeat_diff": None})
             (s,) = verdict.statements([unmeasured])
             self.assertIn("noise floor not measured", s)
-            self.assertNotIn("matter", s)
+            self.assertNotIn("order lever", s)
 
-            shaky = write(folder, "order_shaky.json", control={"repeat_diff": 3})
+            shaky = write(folder, "case_c.json", control={"repeat_diff": 3})
             (s,) = verdict.statements([shaky])
             self.assertIn("shaky", s)
 
