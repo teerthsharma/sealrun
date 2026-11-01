@@ -247,10 +247,15 @@ Python 3.11 stdlib only. `lab/` is a flat folder of modules, not a package.
   `execute if block <cx*16> 0 <cz*16> minecraft:bedrock` every 0.5 s until "Test passed" (120 s budget for the
   whole tile, else RuntimeError), then `save-all flush`, then sleep 10 s; returns the poll seconds. Steps per world:
   boot; `wait_loaded(A)`; settle(A's tile); edit loop (edited world only); settle(A's tile); `wait_loaded(B)`;
-  settle(B's tile = chunks 66..70 x 62..66); `save-all flush`; stop. Three fresh worlds: plain, plain again
-  (control), edited. Asserts added: the two plain fingerprints are equal (the measurement needs a deterministic
-  control). The json adds "control_fingerprint" and "settle_s" {world: [three poll seconds]}. Lane numbers to
-  reproduce (settled, 2 of 2 per arm): outside 6, all in chunk (68, 64), andesite -> diorite.
+  settle(B's tile = chunks 66..70 x 62..66); `save-all flush`; stop.
+- Batch 12 fix, second form (fix run 1: the settled plain world is not deterministic either: plain fingerprints
+  9fd4b7ed x3, 5bf50afc x1, the odd one differing in chunk (66, 64), inside A's tile; edited 3aaf87b1 x3). Four fresh
+  worlds in the settled flow: plain p1, p2, edited e1, e2. Per cell outside EDIT: "noise" if p1 != p2 or e1 != e2;
+  "edit_attributed" if p1 == p2 and e1 == e2 and p1 != e1. Json: the earlier keys computed from p1 vs e1, minus
+  "control_fingerprint", plus "fingerprints" {p1, p2, e1, e2}, "noise" {count, by_chunk}, "edit_attributed" {count,
+  by_chunk, examples (<= 20 of (pos, p1, e1))}, "settle_s" {world: [three poll seconds]}. Asserts: 0 None in all four,
+  every edit cell air in e1 and e2, json written. No determinism assertion: noise is a result. Seen so far: 6
+  edit-attributed cells in (68, 64), andesite -> diorite.
 
 ## Round 2, batch 13
 - `choice.py` (N2.G1.4.4), pure: `per_gb(run) -> float` = `worlds_per_minute / (peak_mb_total / 1024)`.
