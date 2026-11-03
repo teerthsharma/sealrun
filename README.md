@@ -133,6 +133,9 @@ You need Rust (stable) and Python 3.11. The real-server tests also need your own
 cargo test --workspace
 cargo clippy --workspace --all-targets -- -D warnings
 
+# the seed-7 race from the saved grid: centre start, plus 20 starts
+cargo run -q -p sealrun-cli -- race crates/route/tests/fixtures/rs_seed7_spawn.grid --budget 100000 --starts 20
+
 python lab/tests/test_n3_bits_hand.py Lab.bits_lost_square_is_log2_six
 python lab/tests/test_ores.py Lab.ore_tally_counts_per_chunk
 
@@ -155,6 +158,7 @@ Each test world lives in a temporary folder outside this project and is deleted 
 crates/world   seed to map, same seed, same map
 crates/topo    walkable areas, loops, updates when a block changes
 crates/route   the planner, plain search, dig and swim costs
+crates/cli     the sealrun command: race a grid file, tally many starts
 lab/           scripts that run the real server and read its saves
 lab/research/  the rule tests, the group checks, the price curve
 lab/blood/     the Blood Lab rebuilds
