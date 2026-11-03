@@ -93,6 +93,9 @@ Our best guess: when a stone patch crosses a chunk edge, whichever chunk is deco
 
 Both got the same number of steps, from the same 179 start points on the spawn map.
 
+- Planned on a saved map. Not yet checked against the live server, and not yet played in the game.
+- At 10,000 steps the planner routes fewer starts, so "never slower" only holds at 100,000 steps or more.
+
 ## How we built it
 
 **Round 1: the planner.** Three small programs written in Rust. `world` turns a seed into a map, the same every time. `topo` counts separate areas and keeps the count up to date when you mine a block. `route` finds the cheapest route. On a test map where you need a stone pickaxe to pass a wall, the planner takes 485 ticks and plain search takes 573.
@@ -105,7 +108,7 @@ Both got the same number of steps, from the same 179 start points on the spawn m
 
 **The bug hunt.** We look for real bugs in our own code in six areas. Each area says up front how many checks it will run and how many bugs end the hunt. A bug only counts if a test fails on today's code and shows the wrong answer.
 
-**Who did the work.** Teerth Sharma set the questions and the rules. AI agents wrote much of the code and ran the tests. Every claim on this page comes from a test or a saved measurement in this project.
+**Who did the work.** Teerth Sharma asked the questions. AI helped write the code. Every claim here has a test behind it.
 
 ## Words we use
 
@@ -130,6 +133,9 @@ You need Rust (stable) and Python 3.11. The real-server tests also need your own
 cargo test --workspace
 cargo clippy --workspace --all-targets -- -D warnings
 
+# the seed-7 race from the saved grid: centre start, plus 20 starts
+cargo run -q -p sealrun-cli -- race crates/route/tests/fixtures/rs_seed7_spawn.grid --budget 100000 --starts 20
+
 python lab/tests/test_n3_bits_hand.py Lab.bits_lost_square_is_log2_six
 python lab/tests/test_ores.py Lab.ore_tally_counts_per_chunk
 
@@ -152,6 +158,7 @@ Each test world lives in a temporary folder outside this project and is deleted 
 crates/world   seed to map, same seed, same map
 crates/topo    walkable areas, loops, updates when a block changes
 crates/route   the planner, plain search, dig and swim costs
+crates/cli     the sealrun command: race a grid file, tally many starts
 lab/           scripts that run the real server and read its saves
 lab/research/  the rule tests, the group checks, the price curve
 lab/blood/     the Blood Lab rebuilds
